@@ -1,10 +1,11 @@
 // Refactor following solution
 // Filter array by type name
+'use strict';
 
-Filter = (T, t) => {
-  remove = [];
+const Filter = (T, t) => {
+  const remove = [];
   for (C of T) {
-    x = T.indexOf(C);
+    const x = T.indexOf(C);
     if (typeof T[x] !== t) {
       remove.unshift(x);
     }
