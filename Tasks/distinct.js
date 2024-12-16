@@ -5,16 +5,14 @@
 
 const distinct = (data) => {
   const array = [];
-  const w = 0;
-  data.forEach((a) => {
-    if (array.include(a)) {
-      delete data[w];
-    } else {
-      array.push(a);
+  for(const value of data)
+  {
+    if (array.includes(value) != 1)
+    {
+      array.push(value);
     }
-    w++;
-  });
-  return array.filter((x) => typeof x === "number");
+  }
+  return array;
 };
 
 module.exports = distinct;
