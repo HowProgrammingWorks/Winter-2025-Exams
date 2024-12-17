@@ -3,13 +3,11 @@
 
 'use strict'
 
-const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
 
 dayNumber = (day) => {
-  for (const i = 0; i < dayNames.length; i++) {
-    if (day.startsWith(dayNames[i].toLowerCase())) {
-      return i + 1
-    }
+  for (const i = 0; i < 7; i++) {
+    if (day === dayNames[i]) return i + 1
   }
   return -1
 };
