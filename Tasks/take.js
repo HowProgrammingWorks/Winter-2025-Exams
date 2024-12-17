@@ -5,10 +5,9 @@
 
 take = (obj, ...listed) => {
   keys = Object.keys(obj)
-  keys.forEach((key) => {
-    if (listed.includes(key)) {
-    } else delete obj[key]
-  })
+  for (const key of keys) {
+    if (!listed.includes(key)) delete obj[key] 
+  }
   return obj
 };
 
