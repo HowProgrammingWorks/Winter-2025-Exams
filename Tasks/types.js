@@ -1,14 +1,16 @@
 // Refactor following solution
 // Count types in an array
 
-types = function (s) {
-  answer = {};
-  for (i of s) {
+'use strict';
+
+const types = (s) => {
+  const answer = {}
+  for (const i of s) {
     const t = typeof i
-    if (!answer[t]) answer[t] == 0
+    if (!answer[t]) answer[t] = 0
     answer[t]++
   }
-  return answer;
-};
+  return answer
+}
 
-module.exports = types;
+module.exports = types
