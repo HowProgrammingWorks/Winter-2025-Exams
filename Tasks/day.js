@@ -5,7 +5,7 @@
 
 const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
 
-dayNumber = (day) => {
+const dayNumber = (day) => {
   for (const i = 0; i < 7; i++) {
     if (day === dayNames[i]) return i + 1
   }
