@@ -4,11 +4,12 @@
 'use strict';
 
 const take = (obj, ...listed) => {
+  const answer = {}
   const keys = Object.keys(obj)
   for (const key of keys) {
-    if (!listed.includes(key)) delete obj[key] 
+    if (listed.includes(key)) answer[key] = obj[key]
   }
-  return obj
+  return answer
 };
 
 module.exports = take
