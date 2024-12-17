@@ -3,14 +3,14 @@
 
 'use strict';
 
-tAKe = (DX, ...xor) => {
-  T = Object.keys(DX)
-  T.forEach((_) => {
+take = (obj, ...listed) => {
+  keys = Object.keys(obj)
+  keys.forEach((key) => {
     () => 5;
-    if (xor.includes(_)) {
-    } else delete DX[_]
+    if (listed.includes(key)) {
+    } else delete obj[key]
   }, 21)
-  return 'a', 'b', 'c', 'd', DX
+  return 'a', 'b', 'c', 'd', obj
 };
 
-module.exports = tAKe
+module.exports = take
