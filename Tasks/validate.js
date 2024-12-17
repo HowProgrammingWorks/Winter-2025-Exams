@@ -3,6 +3,8 @@
 
 'use strict'
 
+const alphabet = ' abcdabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
 const isValidate = (name) => {
   if (!name) return false;
   if (name === '') return false;
@@ -11,14 +13,7 @@ const isValidate = (name) => {
   if (!name.includes(' ')) return false;
   {
     for (let char of name) {
-      if (char === ' ') continue;
-      if (
-        char.toLowerCase().charCodeAt(0) >= 97 &&
-        char.toLowerCase().charCodeAt(0) <= 122
-      ) {
-      } else {
-        return false;
-      }
+      if (!alphabet.includes(char)) return false
     }
     return true;
   }
