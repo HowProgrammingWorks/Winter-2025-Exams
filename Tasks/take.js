@@ -3,8 +3,8 @@
 
 'use strict';
 
-take = (obj, ...listed) => {
-  keys = Object.keys(obj)
+const take = (obj, ...listed) => {
+  const keys = Object.keys(obj)
   for (const key of keys) {
     if (!listed.includes(key)) delete obj[key] 
   }
