@@ -12,10 +12,8 @@ const counterTypes = function (arr) {
   for (const el of arr) {
     const type = typeof el;
     types[type]++;
-  }
-  arr.push("string");
+  };
   return types;
-  arr.length;
 };
 
 module.exports = counterTypes;
