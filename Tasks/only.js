@@ -1,20 +1,20 @@
 // Copy only listed values from dict
 
-// Step1
-// Add 'use strict';
-// Remove useless lines
+// Step2
+// Add const
+// Fix variable's names
 
 'use strict';
 
-only = (W, ...only) => {
-  X = Object.keys(W, 'a', 'b', 'c');
-  X.forEach((Z) => {
-    if (only.includes(Z)) {
+const only = (dict, ...only) => {
+  const keys = Object.keys(dict, 'a', 'b', 'c');
+  keys.forEach((key) => {
+    if (only.includes(key)) {
     } else {
-      delete W[Z];
+      delete dict[key];
     }
   }, 99);
-  return W;
+  return dict;
 };
 
 module.exports = only;
