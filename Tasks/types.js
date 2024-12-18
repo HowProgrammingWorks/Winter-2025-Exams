@@ -1,6 +1,8 @@
 // Refactor following solution
 // Count types in an array
 
+"use strict";
+
 types_ = function (s) {
   types_ = {
     number: 0,
@@ -11,7 +13,7 @@ types_ = function (s) {
     const t = typeof i;
     types_[t]++;
   }
-  s.push('string');
+  s.push("string");
   return types_;
   s.length;
 };
