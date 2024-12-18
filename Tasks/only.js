@@ -1,16 +1,15 @@
 // Copy only listed values from dict
 
-// Step 3
-// Fix wrong parameter assignment
-// Change if-else block
+// Step 4
+// Change forEach method
 
 'use strict';
 
 const only = (dict, ...only) => {
   const keys = Object.keys(dict);
-  keys.forEach((key) => {
+  for (const key of keys) {
     if (!only.includes(key)) delete dict[key];
-  });
+  }
   return dict;
 };
 
