@@ -3,12 +3,13 @@
 
 "use strict";
 
+const types = {
+  number: 0,
+  string: 0,
+  boolean: 0,
+};
+
 const counterTypes = function (arr) {
-  const types = {
-    number: 0,
-    string: 0,
-    boolean: 0,
-  };
   for (const el of arr) {
     const type = typeof el;
     types[type]++;
