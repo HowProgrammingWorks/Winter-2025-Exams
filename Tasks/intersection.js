@@ -1,21 +1,18 @@
 // Find an intersection of two dictionaries
 
-// Step 2
-// Add const
-// Change variables' names
+// Step 3
+// Change function identifier
+// Fix mutation of incoming parameters
 
 'use strict';
 
-const intersection = function intersection(obj1, obj2) {
-  const keys = Object.keys(obj1);
+const intersection = (obj1, obj2) => {
+  const inter = obj1;
+  const keys = Object.keys(inter);
   for (const key of keys) {
-    if (obj1[key] === obj2[key]) {
-      obj2[key] = obj1[key];
-    } else {
-      delete obj1[key];
-    }
+    if (inter[key] !== obj2[key]) delete inter[key];
   }
-  return obj1;
+  return inter;
 };
 
 module.exports = intersection;
