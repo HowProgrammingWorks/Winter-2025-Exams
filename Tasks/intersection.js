@@ -1,16 +1,15 @@
 // Find an intersection of two dictionaries
 
-// Step 3
-// Change function identifier
-// Fix mutation of incoming parameters
+// Step 4
+// Remove delete operator
 
 'use strict';
 
 const intersection = (obj1, obj2) => {
-  const inter = obj1;
-  const keys = Object.keys(inter);
+  const inter = {};
+  const keys = Object.keys(obj1);
   for (const key of keys) {
-    if (inter[key] !== obj2[key]) delete inter[key];
+    if (obj1[key] === obj2[key]) inter[key] = obj1[key];
   }
   return inter;
 };
