@@ -1,18 +1,18 @@
 // Increment all numbers in dictionary
 
-// Step 2
-// Change variables' case
-// Remove unused parameters
+// Step 3
+// Fix mutation of incoming parameters
 
 'use strict';
 
 const incNumbers = (dict) => {
-  for (const item in dict) {
-    if ((typeof dict[item]).charAt(0).toUpperCase() === 'N') {
-      dict[item] = dict[item] + 1;
+  const incDict = dict;
+  for (const item in incDict) {
+    if ((typeof incDict[item]).charAt(0).toUpperCase() === 'N') {
+      incDict[item] = incDict[item] + 1;
     }
   }
-  return dict;
+  return incDict;
 };
 
 module.exports = incNumbers;
