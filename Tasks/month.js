@@ -15,10 +15,10 @@ Months = [
   'dec',
 ];
 
-Month = (s) => {
-  l = Months.length;
-  for (let i = 0; i < l; i++) {
-    if (s.toLowerCase().startsWith(Months[i])) return i + 1;
+Month = (inputString) => {
+  length = Months.length;
+  for (let i = 0; i < length; i++) {
+    if (inputString.toLowerCase().startsWith(Months[i])) return i + 1;
   }
   return -1;
 };
