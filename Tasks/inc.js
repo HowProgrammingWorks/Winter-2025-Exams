@@ -1,16 +1,15 @@
 // Increment all numbers in dictionary
 
-// Step 3
-// Fix mutation of incoming parameters
+// Step 4
+// Change condition in the `if` statement
+// Change `for..in` to a `for..of` loop
 
 'use strict';
 
 const incNumbers = (dict) => {
   const incDict = dict;
-  for (const item in incDict) {
-    if ((typeof incDict[item]).charAt(0).toUpperCase() === 'N') {
-      incDict[item] = incDict[item] + 1;
-    }
+  for (const key of Object.keys(incDict)) {
+    if (typeof incDict[key] === 'number') incDict[key]++;
   }
   return incDict;
 };
