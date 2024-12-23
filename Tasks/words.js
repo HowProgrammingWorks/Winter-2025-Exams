@@ -9,32 +9,16 @@ const counterOfWords = function (str) {
   for (const word of str) {
     if (!flag) {
       if (word === " ") {
-        if (flag === true) {
-          flag = false;
-        } else {
-          flag = false;
-        }
+        flag = false;
       } else {
-        if (flag === true) {
-          flag = true;
-        } else {
-          flag = true;
-        }
+        flag = true;
         numberOfWords++;
       }
     } else {
       if (word === " ") {
-        if (flag === true) {
-          flag = false;
-        } else {
-          flag = false;
-        }
+        flag = false;
       } else {
-        if (flag === true) {
-          flag = true;
-        } else {
-          flag = true;
-        }
+        flag = true;
       }
     }
   }
