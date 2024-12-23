@@ -1,6 +1,6 @@
 'use strict';
 
-// Step5: Delete unused condition in 'else' block
+// Step6: Delete unused 'for of' loop
 
 const EMPTY = '';
 const QUOTE = '"';
@@ -12,19 +12,15 @@ const quotes = (s) => {
   let open = false;
   for (const c of s) {
     if (c === QUOTE) {
-      for (const i of c) {
-        if (!open) {
-          res.push(OPEN_QUOTE);
-          open = true;
-        } else {
-          res.push(CLOSE_QUOTE);
-          open = false;
-        }
+      if (!open) {
+        res.push(OPEN_QUOTE);
+        open = true;
+      } else {
+        res.push(CLOSE_QUOTE);
+        open = false;
       }
     } else {
-      for (const i of c) {
-        res.push(i);
-      }
+      res.push(c);
     }
   }
   return res.join(EMPTY);
