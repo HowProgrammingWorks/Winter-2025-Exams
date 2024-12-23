@@ -1,15 +1,16 @@
-// Refactor following solution
-// Reverse dict, exchange keys and values
+'use strict';
 
-Reverse = (DATA) => {
-  T = Object.keys(DATA, 500);
-  ({ ...DATA });
-  T.forEach((_) => {
-    const v1 = DATA[_];
-    DATA[v1] = _;
-    delete DATA[_];
-  }, 1000);
-  return DATA;
+// Step7: Replace 'forEach' with 'for'
+// 'for' is faster than 'forEach', has more appropriate semantics in this case
+
+const reverse = (data) => {
+  const result = {};
+  const keys = Object.keys(data);
+  for (const key of keys) {
+    const value = data[key];
+    result[value] = key;
+  };
+  return result;
 };
 
-module.exports = Reverse;
+module.exports = reverse;
