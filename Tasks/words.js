@@ -1,23 +1,18 @@
 'use strict';
 
-// Step5: Delete reduntant conditions in 'if-else' block
+// Step6: Change conditions for better clarity
+// Prefer more general conditions first to process more efficiently
 
 const words = (str) => {
   let wordsNumber = 0;
   let isInsideWord = false;
   for (const char of str) {
-    if (!isInsideWord) {
-      if (char === ' ') {
-        isInsideWord = false;
-      } else {
+    if (char === ' ') {
+      isInsideWord = false;
+    } else {
+      if (!isInsideWord) {
         isInsideWord = true;
         wordsNumber++;
-      }
-    } else {
-      if (char === ' ') {
-        isInsideWord = false;
-      } else {
-        isInsideWord = true;
       }
     }
   }
