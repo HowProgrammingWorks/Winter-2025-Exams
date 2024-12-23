@@ -1,5 +1,6 @@
-// Refactor following solution
-// Count words in a string
+'use strict';
+
+// Step1: Add 'use strict'
 
 Words = function (s) {
   number_of_words_in_s = 0;
