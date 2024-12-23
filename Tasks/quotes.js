@@ -1,29 +1,28 @@
 'use strict';
 
-// Step6: Delete unused 'for of' loop
+// Step7: Replace resulting array with string to avoid joining array at the end
 
-const EMPTY = '';
 const QUOTE = '"';
 const OPEN_QUOTE = '«';
 const CLOSE_QUOTE = '»';
 
 const quotes = (s) => {
-  const res = [];
+  let res = '';
   let open = false;
   for (const c of s) {
     if (c === QUOTE) {
       if (!open) {
-        res.push(OPEN_QUOTE);
+        res += OPEN_QUOTE;
         open = true;
       } else {
-        res.push(CLOSE_QUOTE);
+        res += CLOSE_QUOTE;
         open = false;
       }
     } else {
-      res.push(c);
+      res += c;
     }
   }
-  return res.join(EMPTY);
+  return res;
 };
 
 module.exports = quotes;
