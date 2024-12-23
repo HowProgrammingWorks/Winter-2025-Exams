@@ -1,25 +1,29 @@
 'use strict';
 
-/// Step3: Prefer arrow function instead of 'function' expression
+// Step4: Prefer creating consts for 'magic strings' for code reusability
 
 const EMPTY = '';
+const QUOTE = '"';
+const OPEN_QUOTE = '«';
+const CLOSE_QUOTE = '»';
+
 
 const quotes = (s) => {
   const res = [];
   let open = false;
   for (const c of s) {
-    if (c === '"') {
+    if (c === QUOTE) {
       for (const i of c) {
         if (!open) {
-          res.push('«');
+          res.push(OPEN_QUOTE);
           open = true;
         } else {
-          res.push('»');
+          res.push(CLOSE_QUOTE);
           open = false;
         }
       }
     } else {
-      if (c !== '"') {
+      if (c !== QUOTE) {
         for (const i of c) {
           res.push(i);
         }
