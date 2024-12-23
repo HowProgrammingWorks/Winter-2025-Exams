@@ -3,7 +3,7 @@
 
 "use strict";
 
-const counterOfWords = function (str) {
+const counterOfWords = (str) => {
   let numberOfWords = 0;
   let flag = false;
   for (const word of str) {
@@ -13,15 +13,15 @@ const counterOfWords = function (str) {
       } else {
         flag = true;
         numberOfWords++;
-      }
+      };
     } else {
       if (word === " ") {
         flag = false;
       } else {
         flag = true;
-      }
-    }
-  }
+      };
+    };
+  };
   return numberOfWords;
 };
 
