@@ -1,15 +1,16 @@
 'use strict';
 
-// Step4: Get rid of 'dead code' and unreachable code
-// Change the if-else block
+// Step5: Make an arrow function return a value
 
 const find = (object, ...values) => {
+  let result;
   const value = values[0];
   for (const key in object) {
     if (object[key] === value) {
-      return key;
+      result = key;
     }
   }
+  return result;
 };
 
 module.exports = find;
