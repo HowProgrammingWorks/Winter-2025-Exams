@@ -1,12 +1,10 @@
 'use strict';
 
-// Step2: Prefer 'const' for declaration of never reassigned identifiers
-// Prefer 'let' if 'const' cannot be used
-// Never use 'var', it's outdated
+/// Step3: Prefer arrow function instead of 'function' expression
 
 const EMPTY = '';
 
-const quotes = function (s) {
+const quotes = (s) => {
   const res = [];
   let open = false;
   for (const c of s) {
