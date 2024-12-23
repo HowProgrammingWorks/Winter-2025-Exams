@@ -1,5 +1,6 @@
 # Winter 2025 Exams for SEF1
-
+Student: Dmytro Bohdan
+Group: IM-43 (KPI, 1st year)
 - You need github account, node.js and text editor or IDE installed
 - You can use any online materials, docs, FAQs, AI tools, Videos, etc. it is not important how can you get understanding of tasks and solutions, but we need understanding, not just solutions
 - Deadline for all students: 2025-01-?? 14:00
