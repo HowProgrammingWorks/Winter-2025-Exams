@@ -1,42 +1,22 @@
-// Refactor following solution
-// Count words in a string
+'use strict';
 
-Words = function (s) {
-  number_of_words_in_s = 0;
-  flag = false;
-  for (c of s) {
-    if (!flag) {
-      if (c === ' ') {
-        if (flag === true) {
-          flag = false;
-        } else {
-          flag = false;
-        }
-      } else {
-        if (flag === true) {
-          flag = true;
-        } else {
-          flag = true;
-        }
-        number_of_words_in_s++;
-      }
-    } else {
-      if (c === ' ') {
-        if (flag === true) {
-          flag = false;
-        } else {
-          flag = false;
-        }
-      } else {
-        if (flag === true) {
-          flag = true;
-        } else {
-          flag = true;
-        }
-      }
+// Step8 (optional): Create a variable for ' ' to boost reusability
+// Avoid magic string
+
+const EMPTY = ' ';
+
+const words = (str) => {
+  let wordsNumber = 0;
+  let isInsideWord = false;
+  for (const char of str) {
+    if (char === EMPTY) {
+      isInsideWord = false;
+    } else if (!isInsideWord) {
+        isInsideWord = true;
+        wordsNumber++;
     }
   }
-  return number_of_words_in_s;
+  return wordsNumber;
 };
 
-module.exports = Words;
+module.exports = words;
