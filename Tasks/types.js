@@ -3,17 +3,17 @@
 
 "use strict";
 
-const counterTypes = function (arr) {
+const counterOfTypes = function (arr) {
   const types = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (const el of arr) {
-    const type = typeof el;
+  for (const element of arr) {
+    const type = typeof element;
     types[type]++;
   };
   return types;
 };
 
-module.exports = counterTypes;
+module.exports = counterOfTypes;
