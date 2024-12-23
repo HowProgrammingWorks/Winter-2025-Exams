@@ -4,13 +4,7 @@
 "use strict";
 
 const counterOfWords = (str) => {
-  let numberOfWords = 0;
-  const arrayOfWords = str.split(" ");
-  for (const word of arrayOfWords) {
-    if (word === "") continue 
-    numberOfWords++;
-  };
-  return numberOfWords;
+  return str.split(" ").filter((word) => word !== "").length;
 };
 
 module.exports = counterOfWords;
