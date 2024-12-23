@@ -1,6 +1,7 @@
 'use strict';
 
-// Step7: Replace resulting array with string to avoid joining array at the end
+// Step8: Replace 'if-else' condition with ternary operator
+// change the value of 'open' with '!' operator
 
 const QUOTE = '"';
 const OPEN_QUOTE = '«';
@@ -11,13 +12,8 @@ const quotes = (s) => {
   let open = false;
   for (const c of s) {
     if (c === QUOTE) {
-      if (!open) {
-        res += OPEN_QUOTE;
-        open = true;
-      } else {
-        res += CLOSE_QUOTE;
-        open = false;
-      }
+      res += open ? CLOSE_QUOTE : OPEN_QUOTE;
+      open = !open;
     } else {
       res += c;
     }
