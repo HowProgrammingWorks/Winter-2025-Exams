@@ -1,6 +1,6 @@
 'use strict';
 
-// Step4: Improve naming of identifiers
+// Step5: Delete reduntant conditions in 'if-else' block
 
 const words = (str) => {
   let wordsNumber = 0;
@@ -8,32 +8,16 @@ const words = (str) => {
   for (const char of str) {
     if (!isInsideWord) {
       if (char === ' ') {
-        if (isInsideWord === true) {
-          isInsideWord = false;
-        } else {
-          isInsideWord = false;
-        }
+        isInsideWord = false;
       } else {
-        if (isInsideWord === true) {
-          isInsideWord = true;
-        } else {
-          isInsideWord = true;
-        }
+        isInsideWord = true;
         wordsNumber++;
       }
     } else {
       if (char === ' ') {
-        if (isInsideWord === true) {
-          isInsideWord = false;
-        } else {
-          isInsideWord = false;
-        }
+        isInsideWord = false;
       } else {
-        if (isInsideWord === true) {
-          isInsideWord = true;
-        } else {
-          isInsideWord = true;
-        }
+        isInsideWord = true;
       }
     }
   }
