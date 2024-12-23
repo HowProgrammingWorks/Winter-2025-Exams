@@ -1,15 +1,15 @@
 'use strict';
 
-// Step5: Improve naming of identifiers
+// Step6: Avoid changing the original object in function
 
 const reverse = (data) => {
+  const result = {};
   const keys = Object.keys(data);
   keys.forEach((key) => {
     const value = data[key];
-    data[value] = key;
-    delete data[key];
+    result[value] = key;
   });
-  return data;
+  return result;
 };
 
 module.exports = reverse;
