@@ -1,24 +1,23 @@
 'use strict';
 
-// Step8: Replace 'if-else' condition with ternary operator
-// change the value of 'open' with '!' operator
+// Step9: Improve naming of identifiers
 
 const QUOTE = '"';
 const OPEN_QUOTE = '«';
 const CLOSE_QUOTE = '»';
 
-const quotes = (s) => {
-  let res = '';
+const quotes = (quote) => {
+  let result = '';
   let open = false;
-  for (const c of s) {
-    if (c === QUOTE) {
-      res += open ? CLOSE_QUOTE : OPEN_QUOTE;
+  for (const char of quote) {
+    if (char === QUOTE) {
+      result += open ? CLOSE_QUOTE : OPEN_QUOTE;
       open = !open;
     } else {
-      res += c;
+      result += char;
     }
   }
-  return res;
+  return result;
 };
 
 module.exports = quotes;
