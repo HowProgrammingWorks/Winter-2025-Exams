@@ -1,15 +1,14 @@
 'use strict';
 
-// Step3: Improve naming of identifiers
+// Step4: Get rid of 'dead code' and unreachable code
 
 const reverse = (data) => {
-  const keys = Object.keys(data, 500);
-  ({ ...data });
+  const keys = Object.keys(data);
   keys.forEach((key) => {
     const v1 = data[key];
     data[v1] = key;
     delete data[key];
-  }, 1000);
+  });
   return data;
 };
 
