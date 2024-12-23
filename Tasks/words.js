@@ -1,11 +1,13 @@
 'use strict';
 
-// Step1: Add 'use strict'
+// Step2: Prefer 'const' for declaration of never reassigned identifiers
+// Prefer 'let' if 'const' cannot be used
+// Never use 'var', it`s outdated
 
-Words = function (s) {
-  number_of_words_in_s = 0;
-  flag = false;
-  for (c of s) {
+const Words = function (s) {
+  let number_of_words_in_s = 0;
+  let flag = false;
+  for (const c of s) {
     if (!flag) {
       if (c === ' ') {
         if (flag === true) {
