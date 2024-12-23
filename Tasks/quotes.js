@@ -1,15 +1,17 @@
 'use strict';
 
-// Step1: Add 'use strict'
+// Step2: Prefer 'const' for declaration of never reassigned identifiers
+// Prefer 'let' if 'const' cannot be used
+// Never use 'var', it's outdated
 
 const EMPTY = '';
 
-quotes = function (s) {
-  res = [];
-  open = false;
-  for (c of s) {
+const quotes = function (s) {
+  const res = [];
+  let open = false;
+  for (const c of s) {
     if (c === '"') {
-      for (i of c) {
+      for (const i of c) {
         if (!open) {
           res.push('«');
           open = true;
@@ -20,7 +22,7 @@ quotes = function (s) {
       }
     } else {
       if (c !== '"') {
-        for (i of c) {
+        for (const i of c) {
           res.push(i);
         }
       }
