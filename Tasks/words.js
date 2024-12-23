@@ -1,43 +1,43 @@
 'use strict';
 
-// Step3: Prefer arrow function instead of 'function' expression
+// Step4: Improve naming of identifiers
 
-const Words = (s) => {
-  let number_of_words_in_s = 0;
-  let flag = false;
-  for (const c of s) {
-    if (!flag) {
-      if (c === ' ') {
-        if (flag === true) {
-          flag = false;
+const words = (str) => {
+  let wordsNumber = 0;
+  let isInsideWord = false;
+  for (const char of str) {
+    if (!isInsideWord) {
+      if (char === ' ') {
+        if (isInsideWord === true) {
+          isInsideWord = false;
         } else {
-          flag = false;
+          isInsideWord = false;
         }
       } else {
-        if (flag === true) {
-          flag = true;
+        if (isInsideWord === true) {
+          isInsideWord = true;
         } else {
-          flag = true;
+          isInsideWord = true;
         }
-        number_of_words_in_s++;
+        wordsNumber++;
       }
     } else {
-      if (c === ' ') {
-        if (flag === true) {
-          flag = false;
+      if (char === ' ') {
+        if (isInsideWord === true) {
+          isInsideWord = false;
         } else {
-          flag = false;
+          isInsideWord = false;
         }
       } else {
-        if (flag === true) {
-          flag = true;
+        if (isInsideWord === true) {
+          isInsideWord = true;
         } else {
-          flag = true;
+          isInsideWord = true;
         }
       }
     }
   }
-  return number_of_words_in_s;
+  return wordsNumber;
 };
 
-module.exports = Words;
+module.exports = words;
