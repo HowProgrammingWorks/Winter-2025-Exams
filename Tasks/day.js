@@ -1,18 +1,19 @@
 // Get day number
 
-// Step 1
-// Add 'use strict';
-// Add `const`
+// Step 2
+// Change varable's case
+// Fix double `return`
 
-const D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const _parse_day_ = (s) => {
-  for (let i = 0; i < D.length; i++) {
-    if (s.startsWith(D[i].toLowerCase())) {
-      return i + 1;
+const parseDay = (str) => {
+  let result = -1;
+  for (let i = 0; i < DAYS.length; i++) {
+    if (str.startsWith(DAYS[i].toLowerCase())) {
+      result = i + 1;
     }
   }
-  return -1;
+  return result;
 };
 
-module.exports = _parse_day_;
+module.exports = parseDay;
