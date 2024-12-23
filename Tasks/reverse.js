@@ -1,18 +1,16 @@
 'use strict';
 
-// Step2: Prefer 'const' for declaration of never reassigned identifiers
-// Prefer 'let' if 'const' cannot be used
-// Never use 'var', it`s outdated
+// Step3: Improve naming of identifiers
 
-const Reverse = (DATA) => {
-  const T = Object.keys(DATA, 500);
-  ({ ...DATA });
-  T.forEach((_) => {
-    const v1 = DATA[_];
-    DATA[v1] = _;
-    delete DATA[_];
+const reverse = (data) => {
+  const keys = Object.keys(data, 500);
+  ({ ...data });
+  keys.forEach((key) => {
+    const v1 = data[key];
+    data[v1] = key;
+    delete data[key];
   }, 1000);
-  return DATA;
+  return data;
 };
 
-module.exports = Reverse;
+module.exports = reverse;
