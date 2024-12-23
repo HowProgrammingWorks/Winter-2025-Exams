@@ -1,12 +1,11 @@
 'use strict';
 
-// Step4: Prefer creating consts for 'magic strings' for code reusability
+// Step5: Delete unused condition in 'else' block
 
 const EMPTY = '';
 const QUOTE = '"';
 const OPEN_QUOTE = '«';
 const CLOSE_QUOTE = '»';
-
 
 const quotes = (s) => {
   const res = [];
@@ -23,10 +22,8 @@ const quotes = (s) => {
         }
       }
     } else {
-      if (c !== QUOTE) {
-        for (const i of c) {
-          res.push(i);
-        }
+      for (const i of c) {
+        res.push(i);
       }
     }
   }
