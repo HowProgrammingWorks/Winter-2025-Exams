@@ -1,5 +1,6 @@
-// Refactor following solution
-// Change double quotation to open or close quotation
+'use strict';
+
+// Step1: Add 'use strict'
 
 const EMPTY = '';
 
