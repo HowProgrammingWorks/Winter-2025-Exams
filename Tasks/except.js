@@ -1,17 +1,14 @@
 'use strict';
 
-// Step6: Replace 'forEach' with 'for'
-// 'for' is faster than 'forEach', has more appropriate semantics in this case
+// Step7(optional): Rewrite code into functional style for better readability:
+// Use methods like reduce, filter and others
 
-const except = (inputObject, ...exceptedKeys) => {
-  const result = {};
-  const keys = Object.keys(inputObject);
-  for (const key of keys) {
-    if (!exceptedKeys.includes(key)) {
+const except = (inputObject, ...exceptedKeys) =>
+  Object.keys(inputObject)
+    .filter((key) => !exceptedKeys.includes(key))
+    .reduce((result, key) => {
       result[key] = inputObject[key];
-    }
-  };
-  return result;
-};
+      return result;
+    }, {});
 
 module.exports = except;
