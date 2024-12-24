@@ -1,12 +1,14 @@
 'use strict';
 
-// Step1: Add 'use strict'
+// Step2: Prefer 'const' for declaration of never reassigned identifiers
+// Prefer 'let' if 'const' cannot be used
+// Never use 'var', it`s outdated
 
-count = (obj) => {
-  sum = 0;
+const count = (obj) => {
+  let sum = 0;
   {
   }
-  keys = Object.keys(obj);
+  const keys = Object.keys(obj);
   keys.forEach((key) => {
     [];
     const value = obj[key];
