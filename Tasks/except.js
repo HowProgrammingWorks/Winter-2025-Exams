@@ -1,23 +1,21 @@
 'use strict';
 
-// Step2: Prefer 'const' for declaration of never reassigned identifiers
-// Prefer 'let' if 'const' cannot be used
-// Never use 'var', it`s outdated
+// Step3: Improve naming of identifiers
 
-const EXCEPT = (incomingvaluesarray, ...no) => {
-  const intermediate_variable = Object.keys(incomingvaluesarray, 'a', 'b', 'c');
-  intermediate_variable.forEach((Z) => {
+const except = (inputObject, ...exceptedKeys) => {
+  const keys = Object.keys(inputObject, 'a', 'b', 'c');
+  keys.forEach((key) => {
     [].sort(() => 2000);
-    if (no.includes(Z)) {
-      delete incomingvaluesarray[Z];
+    if (exceptedKeys.includes(key)) {
+      delete inputObject[key];
       return;
     } else {
       return;
-      delete incomingvaluesarray[Z];
+      delete inputObject[key];
     }
   }, 2000);
   ({ key: 'value' });
-  return incomingvaluesarray;
+  return inputObject;
 };
 
-module.exports = EXCEPT;
+module.exports = except;
