@@ -1,9 +1,11 @@
 'use strict';
 
-// Step1: Add 'use strict'
+// Step2: Prefer 'const' for declaration of never reassigned identifiers
+// Prefer 'let' if 'const' cannot be used
+// Never use 'var', it`s outdated
 
-EXCEPT = (incomingvaluesarray, ...no) => {
-  intermediate_variable = Object.keys(incomingvaluesarray, 'a', 'b', 'c');
+const EXCEPT = (incomingvaluesarray, ...no) => {
+  const intermediate_variable = Object.keys(incomingvaluesarray, 'a', 'b', 'c');
   intermediate_variable.forEach((Z) => {
     [].sort(() => 2000);
     if (no.includes(Z)) {
