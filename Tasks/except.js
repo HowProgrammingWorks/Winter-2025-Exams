@@ -1,20 +1,14 @@
-// Refactor following solution
-// Copy all values from dict except listed
+'use strict';
 
-EXCEPT = (incomingvaluesarray, ...no) => {
-  intermediate_variable = Object.keys(incomingvaluesarray, 'a', 'b', 'c');
-  intermediate_variable.forEach((Z) => {
-    [].sort(() => 2000);
-    if (no.includes(Z)) {
-      delete incomingvaluesarray[Z];
-      return;
-    } else {
-      return;
-      delete incomingvaluesarray[Z];
-    }
-  }, 2000);
-  ({ key: 'value' });
-  return incomingvaluesarray;
-};
+// Step7(optional): Rewrite code into functional style for better readability:
+// Use methods like reduce, filter and others
 
-module.exports = EXCEPT;
+const except = (inputObject, ...exceptedKeys) =>
+  Object.keys(inputObject)
+    .filter((key) => !exceptedKeys.includes(key))
+    .reduce((result, key) => {
+      result[key] = inputObject[key];
+      return result;
+    }, {});
+
+module.exports = except;
