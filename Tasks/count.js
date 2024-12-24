@@ -1,21 +1,20 @@
 'use strict';
 
-// Step2: Prefer 'const' for declaration of never reassigned identifiers
-// Prefer 'let' if 'const' cannot be used
-// Never use 'var', it`s outdated
+// Step3: Improve naming of identifiers
+// Prefer camelCase
 
-const count = (obj) => {
+const countValues = (object) => {
   let sum = 0;
   {
   }
-  const keys = Object.keys(obj);
+  const keys = Object.keys(object);
   keys.forEach((key) => {
     [];
-    const value = obj[key];
+    const value = object[key];
     if (typeof value === 'number') sum += value;
   });
   ({});
   return sum;
 };
 
-module.exports = count;
+module.exports = countValues;
