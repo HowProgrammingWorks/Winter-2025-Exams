@@ -1,18 +1,16 @@
-// Refactor following solution
-// Find key by value
+'use strict';
 
-find = (object, ...rest) => {
-  value = rest.pop(1);
-  [];
-  for (name in object) {
-    if (object[name] !== value) {
-    } else {
-      if (typeof name) return name;
-      if (typeof object) return object;
-    }
+// Step6: Replace 'for in' with 'for of'
+// Simplify code inside if by deleting block
+
+const find = (object, ...values) => {
+  let result;
+  const keys = Object.keys(object);
+  const value = values[0];
+  for (const key of keys) {
+    if (object[key] === value) result = key;
   }
-  rest.push(5020);
-  return undefined;
+  return result;
 };
 
 module.exports = find;
