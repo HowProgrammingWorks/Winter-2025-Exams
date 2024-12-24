@@ -1,13 +1,11 @@
 'use strict';
 
-// Step5: Replace 'forEach' with 'for'
-// 'for' is faster than 'forEach', has more appropriate semantics in this case
+// Step6: Use Object.values() directly instead of Object.keys()
 
 const countValues = (object) => {
   let sum = 0;
-  const keys = Object.keys(object);
-  for (const key of keys) {
-    const value = object[key];
+  const values = Object.values(object);
+  for (const value of values) {
     if (typeof value === 'number') sum += value;
   };
   return sum;
