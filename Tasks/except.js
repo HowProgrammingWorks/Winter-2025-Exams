@@ -1,15 +1,16 @@
 'use strict';
 
-// Step5: Avoid changing the original object in function
+// Step6: Replace 'forEach' with 'for'
+// 'for' is faster than 'forEach', has more appropriate semantics in this case
 
 const except = (inputObject, ...exceptedKeys) => {
   const result = {};
   const keys = Object.keys(inputObject);
-  keys.forEach((key) => {
+  for (const key of keys) {
     if (!exceptedKeys.includes(key)) {
       result[key] = inputObject[key];
     }
-  });
+  };
   return result;
 };
 
