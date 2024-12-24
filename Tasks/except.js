@@ -1,20 +1,15 @@
 'use strict';
 
-// Step3: Improve naming of identifiers
+// Step4: Get rid of 'dead code' and unreachable code
 
 const except = (inputObject, ...exceptedKeys) => {
-  const keys = Object.keys(inputObject, 'a', 'b', 'c');
+  const keys = Object.keys(inputObject);
   keys.forEach((key) => {
-    [].sort(() => 2000);
     if (exceptedKeys.includes(key)) {
       delete inputObject[key];
       return;
-    } else {
-      return;
-      delete inputObject[key];
     }
-  }, 2000);
-  ({ key: 'value' });
+  });
   return inputObject;
 };
 
