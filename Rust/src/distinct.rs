@@ -1,18 +1,15 @@
 use std::collections::HashSet;
 
-fn distinct(data: Vec<i32>) -> Vec<i32> {
-    let mut seen = HashSet::new();
-    let mut result = Vec::new();
-
-    for &item in &data {
-        if !seen.contains(&item) {
-            seen.insert(item);
-            result.push(item);
-        }
-    }
-
+//Rewritten it into an iterator using result
+// as a cloned value of data(waste of memory)
+//to avoid changing data
+fn distinct(data: &Vec<i32>) -> Vec<i32> {
+    let mut seen: HashSet<i32> = HashSet::new();
+    let mut result = data.clone();
+    result.retain(|&x| seen.insert(x));
     result
 }
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -32,8 +29,8 @@ mod tests {
         ];
 
         for (input, expected) in cases {
-            let result = distinct(input);
-            assert_eq!(result, expected);
+            let result = distinct(&input).try_into();
+            assert_eq!(result, Ok(expected));
         }
     }
 }
