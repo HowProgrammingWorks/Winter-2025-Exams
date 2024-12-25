@@ -1,8 +1,7 @@
-//Simplified using iterator with counter var(not optimal)
-fn count_words(s: &str) -> usize {
-    let mut counter = 0;
-    s.split_whitespace().for_each(|_| { counter += 1 });
-    counter
+//Simplified using iterator with count method
+//renamed s to input for easier reading
+fn count_words(input: &str) -> usize {
+    input.split_whitespace().count()
 }
 
 #[cfg(test)]
