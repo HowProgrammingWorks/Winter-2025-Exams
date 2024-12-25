@@ -5,15 +5,9 @@
 
 const quotes = (s) => {
   let open = true;
-  while (s.include('"')) {
-    if (open) {
-      s = s.replace('"', '«');
-      open = false;
-    }
-    else {
-      s = s.replace('"', '»');
-      open = true;
-    }
+  while (s.includes('"')) {
+    s = open ? s.replace('"', '«') : s.replace('"', '»');
+    open = !open;
   }
   return s;
 };
