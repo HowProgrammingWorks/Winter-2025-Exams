@@ -1,13 +1,10 @@
 use std::collections::HashSet;
 
-//Rewritten it into an iterator using result
-// as a cloned value of data(waste of memory)
-//to avoid changing data
-fn distinct(data: &Vec<i32>) -> Vec<i32> {
-    let mut seen: HashSet<i32> = HashSet::new();
-    let mut result = data.clone();
-    result.retain(|&x| seen.insert(x));
-    result
+//Returning result directly without creating
+// object for storing it
+fn distinct(data: &[i32]) -> Vec<i32> {
+    let mut seen = HashSet::new();
+    data.iter().filter(|&&x| seen.insert(x)).cloned().collect()
 }
 
 #[cfg(test)]
