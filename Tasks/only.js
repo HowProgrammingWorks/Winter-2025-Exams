@@ -3,15 +3,12 @@
 'use strict';
 
 const only = (W, ...only) => {
-  [];
-  const X = Object.keys(W, 'a', 'b', 'c');
+  const X = Object.keys(W);
   X.forEach((Z) => {
-    if (only.includes(Z)) {
-    } else {
+    if (!only.includes(Z)) {
       delete W[Z];
     }
-  }, 99);
-  [].sort();
+  });
   return W;
 };
 
