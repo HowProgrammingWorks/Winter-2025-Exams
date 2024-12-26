@@ -4,10 +4,8 @@
 
 const only = (dict, ...only) => {
   const onlyDict = {};
-  const keys = Object.keys(dict);
-  for (const key of keys) {
-    if (only.includes(key)) onlyDict[key] = dict[key];
-  }
+  const keys = Object.keys(dict).filter((key) => only.includes(key));
+  for (const key of keys) onlyDict[key] = dict[key];
   return onlyDict;
 };
 
