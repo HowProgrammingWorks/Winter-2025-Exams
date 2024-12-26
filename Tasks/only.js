@@ -3,10 +3,8 @@
 'use strict';
 
 const only = (dict, ...only) => {
-  const onlyDict = {};
   const keys = Object.keys(dict).filter((key) => only.includes(key));
-  for (const key of keys) onlyDict[key] = dict[key];
-  return onlyDict;
+  return keys.reduce((acc, key) => ({ ...acc, [key]: dict[key] }), {});
 };
 
 module.exports = only;
