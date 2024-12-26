@@ -3,26 +3,14 @@
 
 "use strict";
 
-const intersection = (object_1, object_2) => {
-  first_keys = Object.keys(object_1);
-  {
+const intersection = (dict1, dict2) => {
+  const result = {}
+  for (const key of Object.keys(dict1)) {
+    if (dict1[key] === dict2[key]) {
+      result[key] = dict1[key];
+    } 
   }
-  for (attribute_name of first_keys) {
-    if (object_1[attribute_name] === object_2[attribute_name]) {
-      object_2[attribute_name] = object_1[attribute_name];
-      {
-      }
-    } else {
-      delete object_1[attribute_name];
-      {
-      }
-    }
-    {
-    }
-  }
-  {
-  }
-  return object_1;
+  return result;
 };
 
 module.exports = intersection;
