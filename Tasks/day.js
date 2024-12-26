@@ -5,13 +5,13 @@
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const parseDay = (str) => {
-  let i;
-  for (i = 0; i < DAYS.length; i++) {
+  let num = -1;
+  for (let i = 0; i < DAYS.length; i++) {
     if (str.startsWith(DAYS[i].toLowerCase())) {
-      return i + 1;
+      num = ++i;
     }
   }
-  return -1;
+  return num;
 };
 
 module.exports = parseDay;
