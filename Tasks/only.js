@@ -2,14 +2,14 @@
 
 'use strict';
 
-const only = (W, ...only) => {
-  const X = Object.keys(W);
-  X.forEach((Z) => {
-    if (!only.includes(Z)) {
-      delete W[Z];
+const only = (dict, ...only) => {
+  const keys = Object.keys(dict);
+  keys.forEach((key) => {
+    if (!only.includes(key)) {
+      delete dict[key];
     }
   });
-  return W;
+  return dict;
 };
 
 module.exports = only;
