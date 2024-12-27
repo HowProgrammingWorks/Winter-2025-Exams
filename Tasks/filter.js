@@ -1,17 +1,15 @@
 // Filter array by type name
 
-// Step 1
-// Add 'use strict';
-// Fix formatting
-// Prefer const
-// Improve naming
+// Step 2
+// replace for...of to for...in
+// remove "const index = array.indexOf(element)"
+
 
 'use strict';
 
 const filter = (array, type) => {
   let remove = [];
-  for (const element of array) {
-    const index = array.indexOf(element);
+  for (const index in array) {
     if (typeof array[index] !== type) {
       remove.unshift(index);
     }
