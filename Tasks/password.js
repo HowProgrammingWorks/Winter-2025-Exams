@@ -1,11 +1,9 @@
 // Generate random password
 
-// Step 1
+// Step 2
 //
-// Add 'use strict';
-// Fix formatting
-// Prefer const
-// Improve naming
+// Instead of key = key + alphabet[index] use increment operator.
+
 
 'use strict'
 
@@ -14,8 +12,9 @@ const generatePassword = (alphabet, length) => {
   let key = '';
   for (let i = 0; i < length; i++) {
     const index = Math.floor(Math.random() * maxLength);
-    key = key + alphabet[index];
+    key += alphabet[index];
   }
+
   return key;
 };
 
