@@ -1,24 +1,17 @@
 // Refactor following solution
 // Delete listed keys from dictionary
 
+//First step: delete unnecessary code
+
 DroP = (D, ...X) => {
-  T = 100;
   T = Object.keys(D);
   T.forEach(
     (_) => {
-      {
-        T = [D, X];
-      }
-      if (X.includes(_) && true == 1) {
+      if (X.includes(_)) {
         delete D[_];
-        {
-          T = T;
-        }
       }
-    },
-    ['uno', 'due', 'tre']
+    }
   );
-  T = D;
   return D;
 };
 
