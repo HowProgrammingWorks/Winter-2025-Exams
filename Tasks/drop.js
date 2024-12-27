@@ -1,10 +1,10 @@
 // Refactor following solution
 // Delete listed keys from dictionary
 
-//First step: delete unnecessary code
+//Second step: add const for function and variables
 
-DroP = (D, ...X) => {
-  T = Object.keys(D);
+const DroP = (D, ...X) => {
+  const T = Object.keys(D);
   T.forEach(
     (_) => {
       if (X.includes(_)) {
