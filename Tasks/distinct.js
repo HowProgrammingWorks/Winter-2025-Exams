@@ -1,21 +1,16 @@
 // Refactor following solution
 // Return an array without duplicates
 
-//Second step: rename variables and format to camelCase
+//Third step: optimize code. Replace set with a new array, remove counter and avoid mutation.
 
 const distinct = (array) => {
-  const set = new Set();
-  let counter = 0;
+  const res = [];
   array.forEach((el) => {
-    if (set.has(el)) {
-      delete array[counter];
-    } else {
-      set.add(el);
-    }
-    counter++;
+    if (!res.includes(el)) {
+      res.push(el);
+    } 
   });
-  return array.filter
-  (x => typeof x === 'number');
+  return res;
 };
 
 module.exports = distinct;
