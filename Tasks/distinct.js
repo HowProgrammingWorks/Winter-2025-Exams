@@ -1,15 +1,16 @@
 // Refactor following solution
 // Return an array without duplicates
 
-//Third step: optimize code. Replace set with a new array, remove counter and avoid mutation.
+//Fourth step: replace forEach with for..of
 
 const distinct = (array) => {
   const res = [];
-  array.forEach((el) => {
+  for (const el of array) {
     if (!res.includes(el)) {
       res.push(el);
     } 
-  });
+  }
+  
   return res;
 };
 
