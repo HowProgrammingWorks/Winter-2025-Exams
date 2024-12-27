@@ -1,21 +1,18 @@
 // Generate random password
 
-// Step 2
+// Step 3
 //
-// Instead of key = key + alphabet[index] use increment operator.
+// remove maxLength variable creation
 
 
 'use strict'
 
 const generatePassword = (alphabet, length) => {
-  const maxLength = alphabet.length;
   let key = '';
   for (let i = 0; i < length; i++) {
-    const index = Math.floor(Math.random() * maxLength);
+    const index = Math.floor(Math.random() * alphabet.length);
     key += alphabet[index];
   }
 
   return key;
 };
-
-module.exports = generatePassword;
