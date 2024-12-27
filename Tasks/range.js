@@ -1,19 +1,20 @@
 // Refactor following solution
 // Generate int array from given range
 
-//First step: add const for arrow function
+//Second step: create separate array for result
 
 const _range = (...Range) => {
   let [from, to] = Range;
+  const array = [];
   if (to >= from) {
     Range = new Array(to - from + 1);
     for (let i = from; i <= to; i++) {
-      Range[i - from] = i;
+      array.push(i);
     }
   } else {
     return [];
   }
-  return Range;
+  return array;
 };
 
 module.exports = _range;
