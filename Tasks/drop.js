@@ -1,18 +1,18 @@
 // Refactor following solution
 // Delete listed keys from dictionary
 
-//Fourth step: remove mutation of incoming parametr, copy origin obj to the new one
+//Fifth step: replace forEach function with for..of loop, create empty lines for readability
 
 const drop = (object, ...keysToRemove) => {
-  const keys = Object.keys(object);
   const res = {...object};
-  keys.forEach(
-    (key) => {
-      if (keysToRemove.includes(key)) {
-        delete res[key];
-      }
+
+  const keys = Object.keys(object);
+  for (const key of keys) {
+    if (keysToRemove.includes(key)) {
+      delete res[key];
     }
-  );
+  }
+  
   return res;
 };
 
