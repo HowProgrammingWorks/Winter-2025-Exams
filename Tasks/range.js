@@ -1,16 +1,12 @@
 // Refactor following solution
 // Generate int array from given range
 
-//Fourth step: replace "...rest" Range with two parametrs: from and to
-
+//fifth step: simplify function. Add preliminary conditional, delete unnecessary if..else
 const _range = (from, to) => {
+  if (from > to) return [];
   const array = [];
-  if (to >= from) {
-    for (let i = from; i <= to; i++) {
+  for (let i = from; i <= to; i++) {
       array.push(i);
-    }
-  } else {
-    return [];
   }
   return array;
 };
