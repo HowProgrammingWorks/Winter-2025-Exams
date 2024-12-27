@@ -4,8 +4,8 @@
 
 const incNumbers = (dict) => {
   const incDict = { ...dict };
-  for (const item in incDict) {
-    if (typeof incDict[item] === 'number') incDict[item]++;
+  for (const key of Object.keys(incDict)) {
+    if (typeof incDict[key] === 'number') incDict[key]++;
   }
   return incDict;
 };
