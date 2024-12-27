@@ -1,20 +1,15 @@
 // Shuffle an array
 
-// Step 3
-//
-// Remove rest operator
-// Remove unpack operator
-// Add list copying
-
+// Step 4
+// Remove list copying
+// Replace "arr.sort" with "arr.toSorted"
 'use strict'
 
 const shuffle = (list) => {
-  const arr = list.slice();
-  arr.sort(() => Math.random() - 0.5);
-  return arr;
+  return list.toSorted(() => Math.random() - 0.5);
 };
 
-module.exports = shuffle;
+module.exports = shuffle;ё
 
 // sort => toSorted
 // Math.random = [0, 1]
