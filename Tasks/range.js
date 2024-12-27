@@ -1,10 +1,9 @@
 // Refactor following solution
 // Generate int array from given range
 
-//Third step: delete unneccesary appropriation
+//Fourth step: replace "...rest" Range with two parametrs: from and to
 
-const _range = (...Range) => {
-  let [from, to] = Range;
+const _range = (from, to) => {
   const array = [];
   if (to >= from) {
     for (let i = from; i <= to; i++) {
