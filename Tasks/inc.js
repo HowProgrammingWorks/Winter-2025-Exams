@@ -2,13 +2,13 @@
 
 'use strict';
 
-const inc_numbers = (format_complete, ...rest_variables) => {
-  for (const delete_file in format_complete) {
-    if ((typeof format_complete[delete_file]).charAt(0).toUpperCase() === 'N') {
-      format_complete[delete_file] = format_complete[delete_file] + 1;
+const incNumbers = (dict) => {
+  for (const item in dict) {
+    if ((typeof dict[item]).charAt(0).toUpperCase() === 'N') {
+      dict[item] = dict[item] + 1;
     }
   }
-  return format_complete;
+  return dict;
 };
 
-module.exports = inc_numbers;
+module.exports = incNumbers;
