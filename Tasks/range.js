@@ -1,7 +1,9 @@
 // Refactor following solution
 // Generate int array from given range
 
-_range = (...Range) => {
+//First step: add const for arrow function
+
+const _range = (...Range) => {
   let [from, to] = Range;
   if (to >= from) {
     Range = new Array(to - from + 1);
