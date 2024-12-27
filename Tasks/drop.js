@@ -1,18 +1,18 @@
 // Refactor following solution
 // Delete listed keys from dictionary
 
-//Second step: add const for function and variables
+//Third step: rename variables to improve readability
 
-const DroP = (D, ...X) => {
-  const T = Object.keys(D);
-  T.forEach(
-    (_) => {
-      if (X.includes(_)) {
-        delete D[_];
+const drop = (object, ...keysToRemove) => {
+  const keys = Object.keys(object);
+  keys.forEach(
+    (key) => {
+      if (keysToRemove.includes(key)) {
+        delete object[key];
       }
     }
   );
-  return D;
+  return object;
 };
 
-module.exports = DroP;
+module.exports = drop;
