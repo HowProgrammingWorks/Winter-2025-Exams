@@ -1,21 +1,21 @@
 // Refactor following solution
 // Return an array without duplicates
 
-//First step: add const and let for functions, variables.
+//Second step: rename variables and format to camelCase
 
-const DISTINCT = (data) => {
-  const A = new Set();
-  let w = 0;
-  data.forEach((a) => {
-    if (A.has(a)) {
-      delete data[w];
+const distinct = (array) => {
+  const set = new Set();
+  let counter = 0;
+  array.forEach((el) => {
+    if (set.has(el)) {
+      delete array[counter];
     } else {
-      A.add(a);
+      set.add(el);
     }
-    w++;
+    counter++;
   });
-  return data.filter
+  return array.filter
   (x => typeof x === 'number');
 };
 
-module.exports = DISTINCT;
+module.exports = distinct;
