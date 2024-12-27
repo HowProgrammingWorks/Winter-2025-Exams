@@ -1,15 +1,11 @@
 // Refactor following solution
 // Find key by value
 
-//Second step: replace ...rest with value, remove unnecessary and pointless code
+//Third step: change inner logic of loop, remove extra conditionals
 
 const find = (object, value) => {
-  for (const name in object) {
-    if (object[name] !== value) {
-    } else {
-      if (typeof name) return name;
-      if (typeof object) return object;
-    }
+  for (const key in object) {
+    if (object[key] === value) return key;
   }
   return undefined;
 };
