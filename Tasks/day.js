@@ -1,24 +1,17 @@
 // Get day number
 
-// Step 1
+// Step 2
 //
-// Add 'use strict';
-// Fix formatting
-// Prefer const
-// Improve naming
+// Remove the brackets from the if statement and for statement
 
 'use strict';
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const parseDay = (s) => {
-  for (let i = 0; i < days.length; i++) {
-    if (s.startsWith(days[i].toLowerCase())) {
-      return i + 1; 
-    }
-  }
+  for (let i = 0; i < days.length; i++)
+    if (s.startsWith(days[i].toLowerCase())) return i + 1; 
   return -1;
 };
 
-module.exports = parseDay;
-
+console.log( parseDay( 'sunday' ) )
