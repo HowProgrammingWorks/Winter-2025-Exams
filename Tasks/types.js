@@ -1,6 +1,6 @@
 // Count types in an array
 
-// Step 2
+// Step 3
 //
 // remove unused row "s.length;"
 // remove wrong row "s.push('string');"
@@ -16,8 +16,7 @@ const types = function (s) {
   };
 
   for (const i of s) {
-    const t = typeof i;
-    typesCount[t]++;
+    typesCount[typeof i]++;
   }
   
   return typesCount;
