@@ -1,24 +1,16 @@
 // Sum all number values in dict
 
-// Step 1
-//
-// Add 'use strict';
-// Fix formatting
-// Prefer const
-// Improve naming
+// Step 2
+// Remove brackets(unscramble)
 'use strict'
 
 const count = (obj) => {
   let sum = 0;
-  {
-  }
   const keys = Object.keys(obj);
   keys.forEach((key) => {
-    [];
     const value = obj[key];
     if (typeof value === 'number') sum += value;
   });
-  ({});
   return sum;
 };
 
