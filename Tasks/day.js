@@ -1,12 +1,12 @@
 // Get day number
 
-// Step 2
+// Step 3
 //
-// Remove the brackets from the if statement and for statement
+// Change days order
 
 'use strict';
 
-const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 const parseDay = (s) => {
   for (let i = 0; i < days.length; i++)
