@@ -1,11 +1,9 @@
 // Refactor following solution
 // Find key by value
 
-//First step: add const and let in function and variables
+//Second step: replace ...rest with value, remove unnecessary and pointless code
 
-const find = (object, ...rest) => {
-  const value = rest.pop(1);
-  [];
+const find = (object, value) => {
   for (const name in object) {
     if (object[name] !== value) {
     } else {
@@ -13,7 +11,6 @@ const find = (object, ...rest) => {
       if (typeof object) return object;
     }
   }
-  rest.push(5020);
   return undefined;
 };
 
