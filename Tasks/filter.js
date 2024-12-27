@@ -1,18 +1,18 @@
 // Refactor following solution
 // Filter array by type name
 
-//First step: add const in variables and function
+//Second step: rename variables and format to camelCase
 
-const Filter = (T, t) => {
+const filter = (array, type) => {
   const remove = [];
-  for (const C of T) {
-    const x = T.indexOf(C);
-    if (typeof T[x] !== t) {
-      remove.unshift(x);
+  for (const el of array) {
+    const index = array.indexOf(el);
+    if (typeof array[index] !== type) {
+      remove.unshift(index);
     }
   }
-  for (const x of remove) T.splice(x, 1);
-  return T;
+  for (const el of remove) array.splice(el, 1);
+  return array;
 };
 
-module.exports = Filter;
+module.exports = filter;
