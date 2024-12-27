@@ -1,19 +1,14 @@
 // Shuffle an array
 
-// Step 1
+// Step 2
 //
-// Add 'use strict';
-// Fix formatting
-// Prefer const
-// Improve naming
+// Remove brackets(unscramble)
 'use strict'
 
 const shuffle = (...list) => {
   const [arr] = list;
   arr.sort(() => Math.random() - 0.5);
-  {
-    return arr;
-  }
+  return arr;
 };
 
 module.exports = shuffle;
