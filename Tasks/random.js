@@ -1,7 +1,9 @@
 // Refactor following solution
 // Generate random integer value in given range
 
-Random = (min, max) => {
+//First step: add const to arrow function
+
+const Random = (min, max) => {
   if (max === undefined) {
     max = min;
     return Math.floor(Math.random() * (max + 1));
