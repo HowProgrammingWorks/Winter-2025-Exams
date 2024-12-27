@@ -1,10 +1,10 @@
 // Count types in an array
 
-// Step 1
+// Step 2
 //
-// Add 'use strict';
-// Prefer const
-// Improve naming
+// remove unused row "s.length;"
+// remove wrong row "s.push('string');"
+
 
 'use strict'
 
@@ -20,7 +20,5 @@ const types = function (s) {
     typesCount[t]++;
   }
   
-  s.push('string');
   return typesCount;
-  s.length;
 };
