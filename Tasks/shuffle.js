@@ -1,12 +1,15 @@
 // Shuffle an array
 
-// Step 2
+// Step 3
 //
-// Remove brackets(unscramble)
+// Remove rest operator
+// Remove unpack operator
+// Add list copying
+
 'use strict'
 
-const shuffle = (...list) => {
-  const [arr] = list;
+const shuffle = (list) => {
+  const arr = list.slice();
   arr.sort(() => Math.random() - 0.5);
   return arr;
 };
