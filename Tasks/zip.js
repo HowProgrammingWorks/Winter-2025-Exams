@@ -4,14 +4,13 @@
 'use strict'
 
 const zip = (a = [], b = []) => {
-  let i = 0;
-  j = 0;
-  for (x of b) {
-    cell = [a[i++], x];
-    b[j++] = cell
-    if (cell[0] == undefined) b.length -= 1
+  let answer = []
+  const top = (a.length < b.length) ? a.length : b.length
+  for (let i = 0; i < top; i++) {
+    cell = [a[i], b[i]];
+    answer[i] = cell
   }
-  return b;
+  return answer;
 };
 
 module.exports = zip;
