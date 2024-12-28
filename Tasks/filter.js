@@ -1,5 +1,6 @@
-// Refactor following solution
-// Filter array by type name
+'use strict';
+
+// Step1: Add 'use strict'
 
 Filter = (T, t) => {
   remove = [];
