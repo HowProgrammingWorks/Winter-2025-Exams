@@ -4,8 +4,9 @@
 'use strict'
 
 const sample = (arr) => {
-  const answer = arr[Math.floor(Math.random() * arr.length)];
-  return answer;
-};
+  const random = Math.floor(Math.random() * arr.length)
+  const answer = arr[random]
+  return answer
+}
 
 module.exports = sample;
