@@ -1,18 +1,17 @@
 'use strict';
 
-// Step3: Improve naming of identifiers
-// Prefer camelCase and descriptive names
+// Step4: Avoid changing the original object in function
 
 const filterArray = (array, type) => {
-  const remove = [];
+  const result = [];
   for (const item of array) {
     const index = array.indexOf(item);
-    if (typeof array[index] !== type) {
-      remove.unshift(index);
+    if (typeof array[index] === type) {
+      result.push(item);
     }
   }
-  for (const item of remove) array.splice(item, 1);
-  return array;
+  for (const item of result) array.splice(item, 1);
+  return result;
 };
 
 module.exports = filterArray;
