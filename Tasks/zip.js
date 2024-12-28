@@ -7,7 +7,7 @@ const zip = (a = [], b = []) => {
   let answer = []
   const top = (a.length < b.length) ? a.length : b.length
   for (let i = 0; i < top; i++) {
-    cell = [a[i], b[i]];
+    const cell = [a[i], b[i]];
     answer[i] = cell
   }
   return answer;
