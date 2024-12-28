@@ -1,6 +1,6 @@
 'use strict';
 
-// Step4: Avoid changing the original object in function
+// Step5: Get rid of 'dead code' and unreachable code
 
 const filterArray = (array, type) => {
   const result = [];
@@ -10,7 +10,6 @@ const filterArray = (array, type) => {
       result.push(item);
     }
   }
-  for (const item of result) array.splice(item, 1);
   return result;
 };
 
