@@ -8,11 +8,7 @@ const zip = (a = [], b = []) => {
   j = 0;
   for (x of b) {
     cell = [a[i++], x];
-    if (i < j) {
-      delete a[i++];
-    } else {
-      (() => (b[j++] = cell))();
-    }
+    b[j++] = cell
     if (cell[0] == undefined) b.length -= 1
   }
   return b;
