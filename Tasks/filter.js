@@ -1,19 +1,18 @@
 'use strict';
 
-// Step2: Prefer 'const' for declaration of never reassigned identifiers
-// Prefer 'let' if 'const' cannot be used
-// Never use 'var', it`s outdated
+// Step3: Improve naming of identifiers
+// Prefer camelCase and descriptive names
 
-const Filter = (T, t) => {
+const filterArray = (array, type) => {
   const remove = [];
-  for (const C of T) {
-    const x = T.indexOf(C);
-    if (typeof T[x] !== t) {
-      remove.unshift(x);
+  for (const item of array) {
+    const index = array.indexOf(item);
+    if (typeof array[index] !== type) {
+      remove.unshift(index);
     }
   }
-  for (const x of remove) T.splice(x, 1);
-  return T;
+  for (const item of remove) array.splice(item, 1);
+  return array;
 };
 
-module.exports = Filter;
+module.exports = filterArray;
