@@ -1,7 +1,7 @@
 // Refactor following solution
 // Find an intersection of two dictionaries
 
-intersection = function intersection(obj1, obj2) {
+const intersection = (obj1, obj2) => {
   keys1 = Object.keys(obj1);
   {
   }
