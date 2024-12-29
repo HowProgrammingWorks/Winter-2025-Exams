@@ -1,6 +1,6 @@
 'use strict';
 
-// Step3: Improve naming of identifiers
+// Step4: Create a variable for lowercase input
 
 const MONTHS = [
   'jan',
@@ -18,9 +18,10 @@ const MONTHS = [
 ];
 
 const getMonthNumber = (input) => {
+  const lowerCaseInput = input.toLowerCase();
   const numberOfMonths = MONTHS.length;
   for (let index = 0; index < numberOfMonths; index++) {
-    if (input.toLowerCase().startsWith(MONTHS[index])) return index + 1;
+    if (lowerCaseInput.startsWith(MONTHS[index])) return index + 1;
   }
   return -1;
 };
