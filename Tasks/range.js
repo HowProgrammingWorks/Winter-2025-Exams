@@ -1,10 +1,10 @@
 // Refactor following solution
 // Generate int array from given range
 
-// Step 1. add 'use strict' and use Prettier
+// Step 2. add consts
 
-_range = (...Range) => {
-  let [from, to] = Range;
+const _range = (...Range) => {
+  const [from, to] = Range;
   if (to >= from) {
     Range = new Array(to - from + 1);
     for (let i = from; i <= to; i++) {
