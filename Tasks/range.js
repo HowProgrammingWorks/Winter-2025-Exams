@@ -1,6 +1,8 @@
 // Refactor following solution
 // Generate int array from given range
 
+// Step 1. add 'use strict' and use Prettier
+
 _range = (...Range) => {
   let [from, to] = Range;
   if (to >= from) {
