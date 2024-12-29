@@ -3,13 +3,14 @@
 'use strict';
 
 const intersection = (obj1, obj2) => {
+  const interDict = {};
   const keys = Object.keys(obj1);
   for (const key of keys) {
-    if (obj1[key] !== obj2[key]) {
-      delete obj1[key];
+    if (obj1[key] === obj2[key]) {
+      interDict[key] = obj1[key];
     }
   }
-  return obj1;
+  return interDict;
 };
 
 module.exports = intersection;
