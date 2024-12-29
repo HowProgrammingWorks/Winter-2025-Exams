@@ -1,5 +1,6 @@
-// Refactor following solution
-// Copy all listed keys from dictionary
+'use strict';
+
+// Step1: Add 'use strict'
 
 tAKe = (DX, ...xor) => {
   T = Object.keys(DX);
