@@ -1,6 +1,7 @@
 'use strict';
 
-// Step4: Create a variable for lowercase input
+//Step5 (optional): Rewrite code into functional style for better readability:
+// Use methods like findIndex, reduce, filter and others
 
 const MONTHS = [
   'jan',
@@ -17,13 +18,7 @@ const MONTHS = [
   'dec',
 ];
 
-const getMonthNumber = (input) => {
-  const lowerCaseInput = input.toLowerCase();
-  const numberOfMonths = MONTHS.length;
-  for (let index = 0; index < numberOfMonths; index++) {
-    if (lowerCaseInput.startsWith(MONTHS[index])) return index + 1;
-  }
-  return -1;
-};
+const getMonthNumber = (input) =>
+  MONTHS.findIndex((month) => input.toLowerCase().startsWith(month)) + 1 || -1;
 
 module.exports = getMonthNumber;
