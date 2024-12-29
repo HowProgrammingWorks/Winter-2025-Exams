@@ -1,16 +1,15 @@
 'use strict';
 
-// Step5: Replace 'forEach' with 'for'
-// 'for' is faster than 'forEach', has more appropriate semantics in this case
+// Step6: Avoid changing the original object in function
 
 const takeKeys = (object, ...keysToTake) => {
-  const existingKeys = Object.keys(object);
-  for (const key of existingKeys) {
-    if (!keysToTake.includes(key)) {
-      delete object[key];
+  const result = {};
+  for (const key of keysToTake) {
+    if (key in object) {
+      result[key] = object[key];
     }
   };
-  return object;
+  return result;
 };
 
 module.exports = takeKeys;
