@@ -1,10 +1,8 @@
 'use strict';
 
-// Step5: Avoid changing the original object in function
-// use Math.min to find minimal length and avoid doing it inside loop
-// push new arrays inside result
+// Step6: Prefer arrow function instead of 'function' expression
 
-const zipTwoArrays = function (firstArray, secondArray) {
+const zipTwoArrays = (firstArray, secondArray) => {
   const result = [];
   const length = Math.min(firstArray.length, secondArray.length);
   for (let index = 0; index < length; index++) {
