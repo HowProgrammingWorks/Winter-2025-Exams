@@ -1,19 +1,16 @@
 // Refactor following solution
 // Generate int array from given range
 
-// Step 3. fix naming
+// Step 3. rename input parameters, remove unusable parts of code
 
-const numbersRange = (...range) => {
-  const [from, to] = range;
+const range = (from, to) => {
+  const result = [];
   if (to >= from) {
-    range = new Array(to - from + 1);
     for (let i = from; i <= to; i++) {
-      range[i - from] = i;
+      result[i - from] = i;
     }
-  } else {
-    return [];
   }
-  return range;
+  return result;
 };
 
-module.exports = numbersRange;
+module.exports = range;
