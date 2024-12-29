@@ -1,22 +1,21 @@
 'use strict';
 
-// Step2: Prefer 'const' for declaration of never reassigned identifiers
-// Prefer 'let' if 'const' cannot be used
-// Never use 'var', it`s outdated
+// Step3: Improve naming of identifiers
+// Prefer camelCase
 
-const types_ = function (s) {
-  const types_ = {
+const countTypes = function (array) {
+  const typesList = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (const i of s) {
-    const t = typeof i;
-    types_[t]++;
+  for (const item of array) {
+    const type = typeof item;
+    typesList[type]++;
   }
-  s.push('string');
-  return types_;
-  s.length;
+  array.push('string');
+  return typesList;
+  array.length;
 };
 
-module.exports = types_;
+module.exports = countTypes;
