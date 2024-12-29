@@ -4,12 +4,8 @@
 
 const intersection = (obj1, obj2) => {
   const interDict = {};
-  const keys = Object.keys(obj1);
-  for (const key of keys) {
-    if (obj1[key] === obj2[key]) {
-      interDict[key] = obj1[key];
-    }
-  }
+  const keys = Object.keys(obj1).filter((key) => obj1[key] === obj2[key]);
+  for (const key of keys) interDict[key] = obj1[key];
   return interDict;
 };
 
