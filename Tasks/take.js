@@ -1,15 +1,15 @@
 'use strict';
 
-// Step4: Get rid of 'dead code' and unreachable code
-// Refactor condition if needed
+// Step5: Replace 'forEach' with 'for'
+// 'for' is faster than 'forEach', has more appropriate semantics in this case
 
 const takeKeys = (object, ...keysToTake) => {
   const existingKeys = Object.keys(object);
-  existingKeys.forEach((key) => {
+  for (const key of existingKeys) {
     if (!keysToTake.includes(key)) {
       delete object[key];
     }
-  });
+  };
   return object;
 };
 
