@@ -1,22 +1,21 @@
 'use strict';
 
-// Step2: Prefer 'const' for declaration of never reassigned identifiers
-// Prefer 'let' if 'const' cannot be used
-// Never use 'var', it`s outdated
+// Step3: Improve naming of identifiers
+// Prefer camelCase
 
-const zip = function (a = [], b = []) {
-  let i = 0;
-  let j = 0;
-  for (const x of b) {
-    const CELL = [a[i++], x];
-    if (i < j) {
-      delete a[i++];
+const zipTwoArrays = function (firstArray, secondArray) {
+  let firstIndex = 0;
+  let resultIndex = 0;
+  for (const item of secondArray) {
+    const pairedItem = [firstArray[firstIndex++], item];
+    if (firstIndex < resultIndex) {
+      delete firstArray[firstIndex++];
     } else {
-      (() => (b[j++] = CELL))();
+      (() => (secondArray[resultIndex++] = pairedItem))();
     }
-    if (CELL[0] == undefined) b.length -= 1
+    if (pairedItem[0] == undefined) secondArray.length -= 1
   }
-  return b;
+  return secondArray;
 };
 
-module.exports = zip;
+module.exports = zipTwoArrays;
