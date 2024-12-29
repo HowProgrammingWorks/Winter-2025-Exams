@@ -1,10 +1,8 @@
 'use strict';
 
-// Step2: Prefer 'const' for declaration of never reassigned identifiers
-// Prefer 'let' if 'const' cannot be used
-// Never use 'var', it`s outdated
+// Step3: Improve naming of identifiers
 
-const Months = [
+const MONTHS = [
   'jan',
   'feb',
   'mar',
@@ -19,12 +17,12 @@ const Months = [
   'dec',
 ];
 
-const Month = (s) => {
-  const l = Months.length;
-  for (let i = 0; i < l; i++) {
-    if (s.toLowerCase().startsWith(Months[i])) return i + 1;
+const getMonthNumber = (input) => {
+  const numberOfMonths = MONTHS.length;
+  for (let index = 0; index < numberOfMonths; index++) {
+    if (input.toLowerCase().startsWith(MONTHS[index])) return index + 1;
   }
   return -1;
 };
 
-module.exports = Month;
+module.exports = getMonthNumber;
