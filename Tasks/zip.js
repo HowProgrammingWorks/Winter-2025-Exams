@@ -1,7 +1,6 @@
 'use strict';
 
-// Step3: Improve naming of identifiers
-// Prefer camelCase
+// Step4: Add missing semicolon, add '===' for equality check instead of '=='
 
 const zipTwoArrays = function (firstArray, secondArray) {
   let firstIndex = 0;
@@ -13,7 +12,7 @@ const zipTwoArrays = function (firstArray, secondArray) {
     } else {
       (() => (secondArray[resultIndex++] = pairedItem))();
     }
-    if (pairedItem[0] == undefined) secondArray.length -= 1
+    if (pairedItem[0] === undefined) secondArray.length -= 1;
   }
   return secondArray;
 };
