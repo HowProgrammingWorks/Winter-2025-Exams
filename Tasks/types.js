@@ -1,9 +1,8 @@
 'use strict';
 
-// Step3: Improve naming of identifiers
-// Prefer camelCase
+// Step4: Prefer arrow function instead of 'function' expression
 
-const countTypes = function (array) {
+const countTypes = (array) => {
   const typesList = {
     number: 0,
     string: 0,
