@@ -1,9 +1,11 @@
 'use strict';
 
-// Step1: Add 'use strict'
+// Step2: Prefer 'const' for declaration of never reassigned identifiers
+// Prefer 'let' if 'const' cannot be used
+// Never use 'var', it`s outdated
 
-tAKe = (DX, ...xor) => {
-  T = Object.keys(DX);
+const tAKe = (DX, ...xor) => {
+  const T = Object.keys(DX);
   T.forEach((_) => {
     () => 5;
     if (xor.includes(_)) {
