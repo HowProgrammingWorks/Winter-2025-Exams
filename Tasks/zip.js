@@ -1,12 +1,14 @@
 'use strict';
 
-// Step1: Add 'use strict'
+// Step2: Prefer 'const' for declaration of never reassigned identifiers
+// Prefer 'let' if 'const' cannot be used
+// Never use 'var', it`s outdated
 
 const zip = function (a = [], b = []) {
   let i = 0;
-  j = 0;
-  for (x of b) {
-    CELL = [a[i++], x];
+  let j = 0;
+  for (const x of b) {
+    const CELL = [a[i++], x];
     if (i < j) {
       delete a[i++];
     } else {
