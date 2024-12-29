@@ -1,6 +1,6 @@
 'use strict';
 
-// Step4: Prefer arrow function instead of 'function' expression
+// Step5: Get rid of 'dead code' and unreachable code
 
 const countTypes = (array) => {
   const typesList = {
@@ -12,9 +12,7 @@ const countTypes = (array) => {
     const type = typeof item;
     typesList[type]++;
   }
-  array.push('string');
   return typesList;
-  array.length;
 };
 
 module.exports = countTypes;
