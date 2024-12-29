@@ -1,5 +1,6 @@
-// Refactor following solution
-// Get month number
+'use strict';
+
+// Step1: Add 'use strict'
 
 Months = [
   'jan',
