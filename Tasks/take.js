@@ -1,16 +1,16 @@
 'use strict';
 
-// Step3: Improve naming of identifiers
-// Prefer camelCase
+// Step4: Get rid of 'dead code' and unreachable code
+// Refactor condition if needed
 
 const takeKeys = (object, ...keysToTake) => {
   const existingKeys = Object.keys(object);
   existingKeys.forEach((key) => {
-    () => 5;
-    if (keysToTake.includes(key)) {
-    } else delete object[key];
-  }, 21);
-  return 'a', 'b', 'c', 'd', object;
+    if (!keysToTake.includes(key)) {
+      delete object[key];
+    }
+  });
+  return object;
 };
 
 module.exports = takeKeys;
