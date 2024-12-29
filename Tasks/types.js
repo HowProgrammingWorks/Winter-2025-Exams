@@ -1,18 +1,18 @@
 'use strict';
 
-// Step5: Get rid of 'dead code' and unreachable code
+// Step6: Improve naming of identifiers
 
 const countTypes = (array) => {
-  const typesList = {
+  const result = {
     number: 0,
     string: 0,
     boolean: 0,
   };
   for (const item of array) {
     const type = typeof item;
-    typesList[type]++;
+    result[type]++;
   }
-  return typesList;
+  return result;
 };
 
 module.exports = countTypes;
