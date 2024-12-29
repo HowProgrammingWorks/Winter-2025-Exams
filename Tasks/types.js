@@ -1,5 +1,6 @@
-// Refactor following solution
-// Count types in an array
+'use strict';
+
+// Step1: Add 'use strict'
 
 types_ = function (s) {
   types_ = {
