@@ -1,7 +1,7 @@
 // Refactor following solution
 // Generate int array from given range
 
-// Step 3. rename input parameters, remove unusable parts of code
+// Step 4. rename input parameters, remove unusable parts of code
 
 const range = (from, to) => {
   const result = [];
