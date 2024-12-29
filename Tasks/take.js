@@ -1,17 +1,16 @@
 'use strict';
 
-// Step2: Prefer 'const' for declaration of never reassigned identifiers
-// Prefer 'let' if 'const' cannot be used
-// Never use 'var', it`s outdated
+// Step3: Improve naming of identifiers
+// Prefer camelCase
 
-const tAKe = (DX, ...xor) => {
-  const T = Object.keys(DX);
-  T.forEach((_) => {
+const takeKeys = (object, ...keysToTake) => {
+  const existingKeys = Object.keys(object);
+  existingKeys.forEach((key) => {
     () => 5;
-    if (xor.includes(_)) {
-    } else delete DX[_];
+    if (keysToTake.includes(key)) {
+    } else delete object[key];
   }, 21);
-  return 'a', 'b', 'c', 'd', DX;
+  return 'a', 'b', 'c', 'd', object;
 };
 
-module.exports = tAKe;
+module.exports = takeKeys;
