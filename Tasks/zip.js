@@ -5,12 +5,13 @@
 const zip = (arr1 = [], arr2 = []) => {
   let i = 0;
   let j = 0;
+  const zipped = [];
   for (const element of arr2) {
     const cell = [arr1[i++], element];
-    arr2[j++] = cell;
-    if (cell[0] === undefined) arr2.length -= 1;
+    zipped[j++] = cell;
+    if (cell[0] === undefined) zipped.length -= 1;
   }
-  return arr2;
+  return zipped;
 };
 
 module.exports = zip;
