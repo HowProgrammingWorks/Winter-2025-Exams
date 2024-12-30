@@ -10,9 +10,9 @@ const zip = (arr1 = [], arr2 = []) => {
     if (i < j) {
       delete arr1[i++];
     } else {
-      (() => (arr2[j++] = cell))();
+      arr2[j++] = cell;
     }
-    if (cell[0] == undefined) arr2.length -= 1;
+    if (cell[0] === undefined) arr2.length -= 1;
   }
   return arr2;
 };
