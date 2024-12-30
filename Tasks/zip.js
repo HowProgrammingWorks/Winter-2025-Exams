@@ -2,19 +2,19 @@
 
 'use strict';
 
-const zip = function (a = [], b = []) {
+const zip = (arr1 = [], arr2 = []) => {
   let i = 0;
   let j = 0;
-  for (const x of b) {
-    const CELL = [a[i++], x];
+  for (const element of arr2) {
+    const cell = [arr1[i++], element];
     if (i < j) {
-      delete a[i++];
+      delete arr1[i++];
     } else {
-      (() => (b[j++] = CELL))();
+      (() => (arr2[j++] = cell))();
     }
-    if (CELL[0] == undefined) b.length -= 1;
+    if (cell[0] == undefined) arr2.length -= 1;
   }
-  return b;
+  return arr2;
 };
 
 module.exports = zip;
