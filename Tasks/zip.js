@@ -7,11 +7,7 @@ const zip = (arr1 = [], arr2 = []) => {
   let j = 0;
   for (const element of arr2) {
     const cell = [arr1[i++], element];
-    if (i < j) {
-      delete arr1[i++];
-    } else {
-      arr2[j++] = cell;
-    }
+    arr2[j++] = cell;
     if (cell[0] === undefined) arr2.length -= 1;
   }
   return arr2;
