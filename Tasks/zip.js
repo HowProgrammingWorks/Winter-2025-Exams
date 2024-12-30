@@ -3,12 +3,11 @@
 'use strict';
 
 const zip = (arr1 = [], arr2 = []) => {
-  let i = 0;
-  let j = 0;
   const zipped = [];
   for (const element of arr2) {
-    const cell = [arr1[i++], element];
-    zipped[j++] = cell;
+    const index = arr2.indexOf(element);
+    const cell = [arr1[index], element];
+    zipped[index] = cell;
     if (cell[0] === undefined) zipped.length -= 1;
   }
   return zipped;
