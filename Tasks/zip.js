@@ -4,10 +4,8 @@
 
 const zip = (arr1 = [], arr2 = []) => {
   const zipped = [];
-  for (let i = 0; i < arr2.length; i++) {
-    const cell = [arr1[i], arr2[i]];
-    if (cell[0] !== undefined) zipped.push(cell);
-  }
+  const maxIndex = arr1.length > arr2.length ? arr2.length : arr1.length;
+  for (let i = 0; i < maxIndex; i++) zipped.push([arr1[i], arr2[i]]);
   return zipped;
 };
 
