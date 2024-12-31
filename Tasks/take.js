@@ -4,11 +4,11 @@
 
 const take = (dict, ...xor) => {
   const keys = Object.keys(dict);
-  keys.forEach((key) => {
+  for (const key of keys) {
     if (!xor.includes(key)) {
       delete dict[key];
     }
-  });
+  }
   return dict;
 };
 
