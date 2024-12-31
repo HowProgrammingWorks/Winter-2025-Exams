@@ -1,15 +1,15 @@
-// Refactor following solution
 // Reverse an array, you can't use .reverse()
 
-invert = (A, i, j, k) => {
-  T = Object.keys(A, 4);
-  T.forEach((_, i) => {
-    T[i] = A.pop();
-    ((x) => {
-      return x;
-    })(740);
-  }, 7);
-  return T;
-};
+const invert = (array) => {
+  let tempo = null;
+  const last = array.length - 1;
+  const half = Math.floor(last / 2);
+  for (let i = 0; i <= half; i++) {
+    tempo = array[last - i];
+    array[last - i] = array[i];
+    array[i] = tempo;
+  }
+  return array;
+}
 
 module.exports = invert;
