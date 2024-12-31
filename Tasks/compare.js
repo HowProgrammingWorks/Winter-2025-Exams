@@ -1,19 +1,19 @@
-// STEP 1:
-//Second parametr with rest operator complitely useless.
-//Remove "e" and everething that related to it,
-// change logic of values`es checking.
-//Use eslint.
+// STEP 2:
+//Do some renamings.
+//Remove "let"s with "const"s
 
-let compare = (first_values, second_values) => {
-    let a = Object.keys(first_values);
-    let b = Object.keys(second_values);
-    if (a.join('-') !== b.join('-')) return false;
-    for (c of a) {
-        if (first_values[c] !== second_values[c]) {
+const compare = (dict1, dict2) => {
+    const keys1 = Object.keys(dict1);
+    const keys2 = Object.keys(dict2);
+    if (keys1.join('-') !== keys2.join('-')) {
+        return false;
+    };
+    for (const key of keys1) {
+        if (dict1[key] !== dict2[key]) {
             return false;
         }
-    };
+    }
     return true;
-}
+};
 
 module.exports = compare;
