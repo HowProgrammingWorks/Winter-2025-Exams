@@ -1,19 +1,20 @@
-// Refactor following solution
-// Count types in an array
+//STEP 1:
+//Do some renaming
+//Remove function declaration with function expression
 
-types_ = function (s) {
-  types_ = {
+const typesCounter = (array) => {
+  const types = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (i of s) {
-    const t = typeof i;
-    types_[t]++;
+  for (const element of array) {
+    const type = typeof element;
+    types[type]++;
   }
-  s.push('string');
-  return types_;
+  array.push('string');
+  return types;
   s.length;
 };
 
-module.exports = types_;
+module.exports = typesCounter;
