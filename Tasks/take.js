@@ -4,9 +4,8 @@
 
 const take = (dict, ...xor) => {
   const copiedDict = {};
-  for (const key of Object.keys(dict)) {
-    if (xor.includes(key)) copiedDict[key] = dict[key];
-  }
+  const keys = Object.keys(dict).filter((key) => xor.includes(key));
+  for (const key of keys) copiedDict[key] = dict[key];
   return copiedDict;
 };
 
