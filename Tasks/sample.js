@@ -1,12 +1,7 @@
-//STEP 2:
-//Add new const "RandIndex"
-//We should return new const,not "array"
+//STEP 2(v2):
+//Also we can write this code in 1 line
 
-const sample = (array) => {
-  const randIndex = Math.floor(Math.random() * array.length)
-  const randElement = array[randIndex];
-  return randElement;
-};
+const sample = (array) => array[Math.floor(Math.random() * array.length)] 
 
 module.exports = sample;
 
