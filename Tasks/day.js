@@ -1,17 +1,17 @@
-//STEP 2:
-//Change element of array to lower case,
-//so having a "toLowerCase" method for "day[i]" is pointless now.
-
+//STEP 3:
+//"for" loop removed by "for of".
+//Added finding index by "indexOf" method.
 
 const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
 const parseDay = (day) => {
-    for (let i = 0; i < days.length; i++) {
-        if (day.startsWith(days[i])) {
-            return i + 1;
+    for (const dayName of days) {
+        if (day.startsWith(dayName)) {
+            const index = days.indexOf(dayName);
+            return index + 1;
         }
     }
     return -1;
-};
+}; 
 
 module.exports = parseDay;
