@@ -1,8 +1,6 @@
-// STEP 1:
-//Do some renamings 
-//Remove "let"s with "const"s
-//Add new const scope
-//Use eslint
+// STEP 2:
+//Add new const "lowMonth"
+//Do some formatting
 
 const list = [
     'jan',
@@ -20,9 +18,12 @@ const list = [
 ];
 
 const position = (month) => {
+    const lowMonth = month.toLowerCase();
     const scope = list.length;
     for (let i = 0; i < scope; i++) {
-        if (month.toLowerCase().startsWith(list[i])) return i + 1;
+        if (lowMonth.startsWith(list[i])) {
+            return i + 1
+        }
     }
     return -1;
 };
