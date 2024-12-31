@@ -1,20 +1,10 @@
-// STEP 2:
-//Add new const "lowMonth"
-//Do some formatting
+// STEP 3:
+//change list`s form
 
 const list = [
-    'jan',
-    'feb',
-    'mar',
-    'apr',
-    'may',
-    'jun',
-    'jul',
-    'aug',
-    'sep',
-    'oct',
-    'nov',
-    'dec',
+    'jan', 'feb', 'mar', 'apr', 
+    'may', 'jun', 'jul', 'aug', 
+    'sep', 'oct', 'nov', 'dec',
 ];
 
 const position = (month) => {
