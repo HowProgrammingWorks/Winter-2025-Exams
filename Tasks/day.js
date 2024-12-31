@@ -1,13 +1,13 @@
-//STEP 1:
-//Fix naming.
-//Add "const"s.
-//Remove early "i" declaration.
+//STEP 2:
+//Change element of array to lower case,
+//so having a "toLowerCase" method for "day[i]" is pointless now.
 
-const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
 const parseDay = (day) => {
     for (let i = 0; i < days.length; i++) {
-        if (day.startsWith(days[i].toLowerCase())) {
+        if (day.startsWith(days[i])) {
             return i + 1;
         }
     }
