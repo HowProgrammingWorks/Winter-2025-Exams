@@ -1,15 +1,16 @@
-// STEP 1:
-//Remove useless brackets
-//Add "const" and "let"
+// STEP 2:
+//Remove .forEach with "Object.values(obj).reduce"
+//Add new const "res"
+////Remove useless parts
 
 const count = (obj) => {
-    let sum = 0;
-    const keys = Object.keys(obj);
-    keys.forEach((key) => {
-        const value = obj[key];
-        if (typeof value === 'number') sum += value;
-    });
-    return sum;
-};
-
-module.exports = count;
+    const res = Object.values(obj).reduce((sum, value) => {
+      if (typeof value === 'number') {
+        return sum + value;
+      }
+      return sum;
+    }, 0);
+    return res
+  };
+  
+  module.exports = count;
