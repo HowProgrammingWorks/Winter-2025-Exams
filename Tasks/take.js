@@ -2,16 +2,14 @@
 
 'use strict';
 
-const tAKe = (DX, ...xor) => {
-  const T = Object.keys(DX);
-  T.forEach((_) => {
-    () => 5;
-    if (xor.includes(_)) {
-    } else {
-      delete DX[_];
+const take = (dict, ...xor) => {
+  const keys = Object.keys(dict);
+  keys.forEach((key) => {
+    if (!xor.includes(key)) {
+      delete dict[key];
     }
-  }, 21);
-  return 'a', 'b', 'c', 'd', DX;
+  });
+  return dict;
 };
 
-module.exports = tAKe;
+module.exports = take;
