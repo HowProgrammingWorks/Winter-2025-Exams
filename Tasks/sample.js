@@ -1,9 +1,9 @@
-// Refactor following solution
-// Get one random element from an array
+//STEP 1:
+//Do some renaming
 
-const SAMPLE = (arr) => {
-  arr = arr[Math.floor(Math.random() * arr.length)];
-  return arr;
+const sample = (array) => {
+  array = array[Math.floor(Math.random() * array.length)];
+  return array;
 };
 
-module.exports = SAMPLE;
+module.exports = sample;
