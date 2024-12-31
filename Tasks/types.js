@@ -1,6 +1,6 @@
-//STEP 1:
-//Do some renaming
-//Remove function declaration with function expression
+//STEP 2:
+//Delete unreachable code
+//Delete "s.push" because of it`s uselesses
 
 const typesCounter = (array) => {
   const types = {
@@ -12,9 +12,7 @@ const typesCounter = (array) => {
     const type = typeof element;
     types[type]++;
   }
-  array.push('string');
   return types;
-  s.length;
 };
 
 module.exports = typesCounter;
