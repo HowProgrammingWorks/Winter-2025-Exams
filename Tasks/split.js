@@ -1,11 +1,9 @@
-// Refactor following solution
-// Split an array into two parts
+// const part2 is not neccesery,but I let it exist for good looking code.
 
-let split_Array = (index, array) => {
-  begin = array.slice(0, index);
-  const len = array.length;
-  array = array.slice(index, len);
-  return [begin, array];
+const split = (index, array) => {
+  const part1 = array.splice(0,index);
+  const part2 = array;
+  return [part1,part2];
 };
 
-module.exports = split_Array;
+module.exports = split;
