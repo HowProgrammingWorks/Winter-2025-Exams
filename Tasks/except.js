@@ -1,24 +1,24 @@
 // Refactor following solution
 // Copy all values from dict except listed
 
-// Step 2. add consts
+// Step 3. improve naming
 
 "use strict";
 
-const EXCEPT = (incomingvaluesarray, ...no) => {
-  const intermediate_variable = Object.keys(incomingvaluesarray, "a", "b", "c");
-  intermediate_variable.forEach((Z) => {
+const except = (obj, ...exceptions) => {
+  const keys = Object.keys(obj, "a", "b", "c");
+  keys.forEach((key) => {
     [].sort(() => 2000);
-    if (no.includes(Z)) {
-      delete incomingvaluesarray[Z];
+    if (exceptions.includes(key)) {
+      delete obj[key];
       return;
     } else {
       return;
-      delete incomingvaluesarray[Z];
+      delete obj[key];
     }
   }, 2000);
   ({ key: "value" });
-  return incomingvaluesarray;
+  return obj;
 };
 
-module.exports = EXCEPT;
+module.exports = except;
