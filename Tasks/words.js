@@ -2,12 +2,12 @@
 
 'use strict';
 
-const Words = function (s) {
-  let number_of_words_in_s = 0;
+const countWords = (str) => {
+  let wordsNum = 0;
   let flag = false;
-  for (const c of s) {
+  for (const char of str) {
     if (!flag) {
-      if (c === ' ') {
+      if (char === ' ') {
         if (flag === true) {
           flag = false;
         } else {
@@ -19,25 +19,21 @@ const Words = function (s) {
         } else {
           flag = true;
         }
-        number_of_words_in_s++;
+        wordsNum++;
       }
+    } else if (char === ' ') {
+      if (flag === true) {
+        flag = false;
+      } else {
+        flag = false;
+      }
+    } else if (flag === true) {
+      flag = true;
     } else {
-      if (c === ' ') {
-        if (flag === true) {
-          flag = false;
-        } else {
-          flag = false;
-        }
-      } else {
-        if (flag === true) {
-          flag = true;
-        } else {
-          flag = true;
-        }
-      }
+      flag = true;
     }
   }
-  return number_of_words_in_s;
+  return wordsNum;
 };
 
-module.exports = Words;
+module.exports = countWords;
