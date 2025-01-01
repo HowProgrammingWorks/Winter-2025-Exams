@@ -1,23 +1,15 @@
 // Refactor following solution
 // Copy all values from dict except listed
 
-// Step 3. improve naming
+// Step 4. remove unused parts
 
 "use strict";
 
 const except = (obj, ...exceptions) => {
-  const keys = Object.keys(obj, "a", "b", "c");
+  const keys = Object.keys(obj);
   keys.forEach((key) => {
-    [].sort(() => 2000);
-    if (exceptions.includes(key)) {
-      delete obj[key];
-      return;
-    } else {
-      return;
-      delete obj[key];
-    }
-  }, 2000);
-  ({ key: "value" });
+    if (exceptions.includes(key)) delete obj[key];
+  });
   return obj;
 };
 
