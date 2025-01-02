@@ -4,6 +4,15 @@
 
 const NOT_FOUND = -1;
 
+/**
+ * Extracts the substring between a prefix and an optional suffix.
+ *
+ * @param {string} inputString - The string to search within.
+ * @param {string} prefix - The prefix to search for.
+ * @param {string} [suffix] - The optional suffix to search for.
+ * @returns {string} - The extracted substring or an empty string if not found.
+ * @throws {TypeError} - If input types are incorrect.
+ */
 const getValueBetween = (inputString, prefix, suffix) => {
   if (typeof inputString !== 'string' || typeof prefix !== 'string') {
     throw new TypeError('inputString and prefix must be strings');
@@ -24,7 +33,5 @@ const getValueBetween = (inputString, prefix, suffix) => {
 
   return substringAfterPrefix.substring(0, suffixIndex);
 };
-
-
 
 module.exports = getValueBetween;
