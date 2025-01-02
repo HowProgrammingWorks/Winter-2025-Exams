@@ -1,11 +1,12 @@
 //1) Changed variable naming for better understanding
 //2) Rewrite using iterator(still not optimal beacuse of cloned value
-
+//3) Making loop run from the end
 fn invert(input: Vec<i32>) -> Vec<i32> {
-    let mut vector_to_ret = Vec::with_capacity(input.len());
-    let mut input_cloned = input.clone();
-    input.iter().for_each(|_| vector_to_ret.push(input_cloned.pop().unwrap()));
-    vector_to_ret
+    let mut result = Vec::with_capacity(input.len());
+    for i in (0..input.len()).rev() {
+        result.push(input[i]);
+    }
+    result
 }
 
 #[cfg(test)]
