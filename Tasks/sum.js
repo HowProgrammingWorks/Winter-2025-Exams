@@ -1,16 +1,14 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-// Step 5. rewrite program's logic to better understanding
+// Step 6. replace for...of-loop with .reduce
 
 "use strict";
 
-const sum = (array) => {
-  let result = 0;
-  for (const element of array) {
-    if (typeof element === "number") result += element;
-  }
-  return result;
-};
+const sum = (array) =>
+  array.reduce(
+    (total, element) => total + (typeof element === "number" ? element : 0),
+    0,
+  );
 
 module.exports = sum;
