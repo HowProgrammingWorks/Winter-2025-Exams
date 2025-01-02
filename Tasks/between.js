@@ -9,15 +9,12 @@ const getValueBetween = (inputString, prefix, suffix) => {
   const start = prefixIndex + prefix.length;
   const substringAfterPrefix = inputString.substring(start);
 
-  if (suffix) {
-    const suffixIndex = substringAfterPrefix.indexOf(suffix);
-    if (suffixIndex === -1) {
-      return '';
-    }
-    return substringAfterPrefix.substring(0, suffixIndex);
-  }
+  if (!suffix) return substringAfterPrefix;
 
-  return substringAfterPrefix;
+  const suffixIndex = substringAfterPrefix.indexOf(suffix);
+  if (suffixIndex === -1) return '';
+
+  return substringAfterPrefix.substring(0, suffixIndex);
 };
 
 
