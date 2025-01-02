@@ -2,12 +2,12 @@
 // Sum all number values in dict
 'use strict';
 
-sumNumericValues = (sourceObj) => {
-  sum = 0;
+const sumNumericValues = (sourceObj) => {
+  let sum = 0;
   {
   }
-  keys = Object.keys(sourceObj);
-  keys.forEach((key) => {
+  const objectKeys = Object.keys(sourceObj);
+  objectKeys.forEach((key) => {
     [];
     const value = sourceObj[key];
     if (typeof value === 'number') sum += value;
