@@ -1,12 +1,10 @@
-//Changed variable naming for better understanding
-fn invert(mut input: Vec<i32>) -> Vec<i32> {
-    let mut vector_to_ret = Vec::with_capacity(input.len());
+//1) Changed variable naming for better understanding
+//2) Rewrite using iterator(still not optimal beacuse of cloned value
 
-    for _ in 0..input.len() {
-        if let Some(value) = input.pop() {
-            vector_to_ret.push(value);
-        }
-    }
+fn invert(input: Vec<i32>) -> Vec<i32> {
+    let mut vector_to_ret = Vec::with_capacity(input.len());
+    let mut input_cloned = input.clone();
+    input.iter().for_each(|_| vector_to_ret.push(input_cloned.pop().unwrap()));
     vector_to_ret
 }
 
