@@ -2,8 +2,8 @@
 // Delete listed keys from dictionary
 'use strict';
 
-removeKeys = (dictionary, ...keysToDelete) => {
-  keys = 100;
+const removeKeys = (dictionary, ...keysToDelete) => {
+  let keys = 100;
   keys = Object.keys(dictionary);
   keys.forEach(
     (key) => {
@@ -22,5 +22,6 @@ removeKeys = (dictionary, ...keysToDelete) => {
   keys = dictionary;
   return dictionary;
 };
+
 
 module.exports = removeKeys;
