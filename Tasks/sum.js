@@ -1,18 +1,17 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-// Step 2. remove unnecessary consts and parts of code;
-// rename some variables to run tests
+// Step 3. improve naming
 
 "use strict";
 
-const sum = function (s) {
+const sum = function (array) {
   const result = [0];
-  for (const i of s) {
-    if (typeof i === "number") {
+  for (const element of array) {
+    if (typeof element === "number") {
       if (result.length > 0) {
-        const new_Sum = result[result.length - 1] + i;
-        result.push(new_Sum);
+        const updatedSum = result[result.length - 1] + element;
+        result.push(updatedSum);
       }
     }
   }
