@@ -6,7 +6,7 @@
 const incNumbers = (object) => {
   const result = {};
   for (let [key, value] of Object.entries(object)) {
-    typeof value === "number" ? (result[key] = ++value) : (result[key] = value);
+    result[key] = typeof value === "number" ? ++value : value;
   };
   return result;
 };
