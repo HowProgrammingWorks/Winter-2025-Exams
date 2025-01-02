@@ -1,19 +1,16 @@
 // Refactor following solution
 // Reverse an array, you can't use .reverse()
 
-// Step 2. add consts
+// Step 3. fix naming and remove unused params, parts of code, "magic numbers"
 
 "use strict";
 
-const invert = (A, i, j, k) => {
-  const T = Object.keys(A, 4);
-  T.forEach((_, i) => {
-    T[i] = A.pop();
-    ((x) => {
-      return x;
-    })(740);
-  }, 7);
-  return T;
+const invert = (array) => {
+  const result = Object.keys(array);
+  result.forEach((_, i) => {
+    result[i] = array.pop();
+  });
+  return result;
 };
 
 module.exports = invert;
