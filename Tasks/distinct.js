@@ -15,7 +15,7 @@ const removeDuplicates = (data) => {
   }
 
   const seenElements = new Set();
-  return data.filter(element => {
+  return data.filter((element) => {
     if (typeof element !== 'number') return false;
     if (seenElements.has(element)) {
       return false;
@@ -26,6 +26,4 @@ const removeDuplicates = (data) => {
   });
 };
 
-
 module.exports = removeDuplicates;
-
