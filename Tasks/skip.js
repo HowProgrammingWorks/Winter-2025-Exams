@@ -1,21 +1,21 @@
 // Refactor following solution
 // Return an remove without listed values
 
-// Step 2. add consts and let
+// Step 3. improve naming
 
 "use strict";
 
-const Skip = (T, ...Remove) => {
-  let x = 0;
-  for (const C of T) {
-    for (const X of Remove) {
-      if (C === X) {
-        T.splice(x, 1);
+const skip = (array, ...remove) => {
+  let counter = 0;
+  for (const element of array) {
+    for (const value of remove) {
+      if (element === value) {
+        array.splice(counter, 1);
       }
     }
-    x++;
+    counter++;
   }
-  return T;
+  return array;
 };
 
-module.exports = Skip;
+module.exports = skip;
