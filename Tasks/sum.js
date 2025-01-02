@@ -1,21 +1,16 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-// Step 4. replace function definition with arrow func declaration
+// Step 5. rewrite program's logic to better understanding
 
 "use strict";
 
 const sum = (array) => {
-  const result = [0];
+  let result = 0;
   for (const element of array) {
-    if (typeof element === "number") {
-      if (result.length > 0) {
-        const updatedSum = result[result.length - 1] + element;
-        result.push(updatedSum);
-      }
-    }
+    if (typeof element === "number") result += element;
   }
-  return result[result.length - 1];
+  return result;
 };
 
 module.exports = sum;
