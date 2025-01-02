@@ -1,11 +1,11 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-// Step 3. improve naming
+// Step 4. replace function definition with arrow func declaration
 
 "use strict";
 
-const sum = function (array) {
+const sum = (array) => {
   const result = [0];
   for (const element of array) {
     if (typeof element === "number") {
