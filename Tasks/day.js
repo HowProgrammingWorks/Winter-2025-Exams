@@ -5,8 +5,7 @@
 const dayAbbreviations = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const parseDay = (inputString) => {
-  let i;
-  for (i = 0; i < dayAbbreviations.length; i++) {
+  for (let i = 0; i < dayAbbreviations.length; i++) {
     if (inputString.startsWith(dayAbbreviations[i].toLowerCase())) {
       return i + 1;
     }
