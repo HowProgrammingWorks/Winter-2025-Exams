@@ -1,16 +1,13 @@
 'use strict';
 
-// Step6: Replace 'for in' with 'for of'
-// Simplify code inside if by deleting block
+// Step7: Delete rest operator and unused variables
+// Simplify code
 
-const find = (object, ...values) => {
-  let result;
+const find = (object, value) => {
   const keys = Object.keys(object);
-  const value = values[0];
   for (const key of keys) {
-    if (object[key] === value) result = key;
+    if (object[key] === value) return key;
   }
-  return result;
 };
 
 module.exports = find;
