@@ -4,7 +4,7 @@
 const getValueBetween = (str, startValue, endValue) => {
 
   const startIndex = str.indexOf(startValue)
-  if(startIndex === - 1) return ''
+  if(startIndex === -1) return ''
 
   const start = startIndex + startValue.length
 
