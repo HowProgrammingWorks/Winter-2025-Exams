@@ -4,10 +4,11 @@
 "use strict";
 
 const incNumbers = (object) => {
-  for (const [key, value] of Object.entries(object)) {
-    if (typeof value === "number") object[key]++;
+  const result = {};
+  for (let [key, value] of Object.entries(object)) {
+    typeof value === "number" ? (result[key] = ++value) : (result[key] = value);
   };
-  return object;
+  return result;
 };
 
 module.exports = incNumbers;
