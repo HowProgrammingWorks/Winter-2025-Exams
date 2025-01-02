@@ -3,7 +3,7 @@
 
 "use strict";
 
-const incNumbers = (object, ...restValue) => {
+const incNumbers = (object) => {
   for (const key in object) {
     if ((typeof object[key]).charAt(0).toUpperCase() === "N") {
       object[key] = object[key] + 1;
