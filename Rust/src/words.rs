@@ -18,7 +18,7 @@ mod tests {
 
         for (input, expected) in test_cases {
             let result = count_words(input);
-            assert_eq!(result, expected);
+            assert_eq!(result, expected, "Test failed: expected {:?}, got {:?}", expected, result);
         }
     }
 }

@@ -23,7 +23,7 @@ mod tests {
         ];
 
         for (input, expected) in cases {
-            assert_eq!(invert(input.clone()), expected);
+            assert_eq!(invert(input.clone()), expected, "Test failed: expected {:?}, got {:?}", expected, invert(input.clone()));
         }
     }
 }
