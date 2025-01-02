@@ -1,5 +1,5 @@
 //1) Changed variable naming for better understanding
-//2) Rewrite using iterator(still not optimal beacuse of cloned value
+//2) Rewrite using iterator(still not optimal beсause of cloned value
 //3) Making loop run from the end
 //4) Same logic but into iterator for cleaner code
 fn invert(input: Vec<i32>) -> Vec<i32> {
