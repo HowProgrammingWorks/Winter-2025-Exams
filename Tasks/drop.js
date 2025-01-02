@@ -3,8 +3,9 @@
 'use strict';
 
 const removeKeys = (dictionary, ...keysToDelete) => {
+  const keysToDeleteSet = new Set(keysToDelete);
   Object.keys(dictionary).forEach((key) => {
-    if (keysToDelete.includes(key)) {
+    if (keysToDeleteSet.has(key)) {
       delete dictionary[key];
     }
   });
