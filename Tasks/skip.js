@@ -1,21 +1,16 @@
 // Refactor following solution
 // Return an remove without listed values
 
-// Step 3. improve naming
+// Step 4. replace nested loop with .include to much optimize the code
 
 "use strict";
 
 const skip = (array, ...remove) => {
-  let counter = 0;
+  const result = [];
   for (const element of array) {
-    for (const value of remove) {
-      if (element === value) {
-        array.splice(counter, 1);
-      }
-    }
-    counter++;
+    if (!remove.includes(element)) result.push(element);
   }
-  return array;
+  return result;
 };
 
 module.exports = skip;
