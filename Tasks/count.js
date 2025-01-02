@@ -4,15 +4,11 @@
 
 const sumNumericValues = (sourceObj) => {
   let sum = 0;
-  {
-  }
   const objectKeys = Object.keys(sourceObj);
   objectKeys.forEach((key) => {
-    [];
     const value = sourceObj[key];
     if (typeof value === 'number') sum += value;
   });
-  ({});
   return sum;
 };
 
