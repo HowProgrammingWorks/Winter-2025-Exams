@@ -21,4 +21,3 @@ const sumNumericValues = (sourceObj) => {
 };
 
 module.exports = sumNumericValues;
-
