@@ -19,14 +19,11 @@ const removeKeys = (dictionary, ...keysToDelete) => {
     if (typeof key !== 'string') {
       throw new TypeError('All keys to delete must be strings');
     }
-  }
-
-  const keysToDeleteSet = new Set(keysToDelete);
-  Object.keys(dictionary).forEach((key) => {
-    if (keysToDeleteSet.has(key)) {
+    if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
       delete dictionary[key];
     }
-  });
+  }
+
   return dictionary;
 };
 
