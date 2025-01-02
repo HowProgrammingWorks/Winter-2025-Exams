@@ -1,16 +1,9 @@
 //Improved naming of the variables
-fn skip(mut main_vec: Vec<i32>, values_to_remove: Vec<i32>) -> Vec<i32> {
-    let mut i = 0;
-
-    while i < main_vec.len() {
-        if values_to_remove.contains(&main_vec[i]) {
-            main_vec.remove(i); // Remove element at index i
-        } else {
-            i += 1; // Only increment i if no element was removed
-        }
-    }
-
-    main_vec // Return the modified vector
+//rewrite to iterator using retain method
+fn skip(main_vec: Vec<i32>, values_to_remove: Vec<i32>) -> Vec<i32> {
+    let mut main_vec_cloned = main_vec.clone();
+    main_vec_cloned.retain(|x| !values_to_remove.contains(x));
+    main_vec_cloned
 }
 #[cfg(test)]
 mod tests {
