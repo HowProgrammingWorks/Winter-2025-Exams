@@ -4,15 +4,17 @@
 
 const removeDuplicates = (data) => {
   const seenElements = new Set();
-  const uniqueData = [];
-  data.forEach((element) => {
-    if (!seenElements.has(element) && typeof element === 'number') {
+  return data.filter(element => {
+    if (typeof element !== 'number') return false;
+    if (seenElements.has(element)) {
+      return false;
+    } else {
       seenElements.add(element);
-      uniqueData.push(element);
+      return true;
     }
   });
-  return uniqueData;
 };
+
 
 module.exports = removeDuplicates;
 
