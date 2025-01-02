@@ -1,7 +1,7 @@
 // Refactor following solution
 // Extract substring between prefix and suffix
 
-test = (str, p, s) => {
+getvaluebetween = (str, p, s) => {
   i = str.indexOf(p);
   if (i === -1) return '';
   else {
