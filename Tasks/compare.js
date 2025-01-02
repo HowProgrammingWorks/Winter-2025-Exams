@@ -6,15 +6,16 @@ const compareDictionaries = (firstDict, ...parametersList) => {
   const secondDict = parametersList[0];
   const firstKeys = Object.keys(firstDict);
   const secondKeys = Object.keys(secondDict);
+
   if (firstKeys.join('-') !== secondKeys.join('-')) return false;
-  let areEqual = true;
-  for (key of firstKeys) {
-    if (firstDict[key] === secondDict[key]) areEqual = areEqual && true;
-    else {
-      areEqual = areEqual && false;
+
+  for (const key of firstKeys) {
+    if (firstDict[key] !== secondDict[key]) {
+      return false;
     }
   }
-  return areEqual;
+
+  return true;
 };
 
 module.exports = compareDictionaries;
