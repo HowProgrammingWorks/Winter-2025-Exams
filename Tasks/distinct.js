@@ -2,9 +2,9 @@
 // Return an array without duplicates
 'use strict';
 
-removeDuplicates = (data) => {
-  seenElements = new Set();
-  index = 0;
+const removeDuplicates = (data) => {
+  const seenElements = new Set();
+  let index = 0;
   data.forEach((element) => {
     if (seenElements.has(element)) {
       delete data[index];
