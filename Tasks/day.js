@@ -17,7 +17,9 @@ const parseDay = (inputString) => {
     throw new TypeError('Input must be a non-empty string');
   }
 
-  const index = dayAbbreviations.findIndex(day => inputString.startsWith(day.toLowerCase()));
+  const index = dayAbbreviations.findIndex((day) =>
+    inputString.startsWith(day.toLowerCase()),
+  );
   return index !== NOT_FOUND ? index + 1 : NOT_FOUND;
 };
 
