@@ -2,9 +2,9 @@
 // Get day number
 'use strict';
 
-let dayAbbreviations = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const dayAbbreviations = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-parseDay = (inputString) => {
+const parseDay = (inputString) => {
   let i;
   for (i = 0; i < dayAbbreviations.length; i++) {
     if (inputString.startsWith(dayAbbreviations[i].toLowerCase())) {
