@@ -26,12 +26,11 @@ const compareDictionaries = (firstDict, ...parametersList) => {
   if (firstKeys.length !== secondKeys.length) return false;
 
   for (let i = 0; i < firstKeys.length; i++) {
-    if (firstKeys[i] !== secondKeys[i]) {
-      return false; // Keys are not in the same order
-    }
+    const key1 = firstKeys[i];
+    const key2 = secondKeys[i];
 
-    if (firstDict[firstKeys[i]] !== secondDict[secondKeys[i]]) {
-      return false; // Corresponding values do not match
+    if (key1 !== key2 || firstDict[key1] !== secondDict[key2]) {
+      return false;
     }
   }
 
@@ -39,4 +38,3 @@ const compareDictionaries = (firstDict, ...parametersList) => {
 };
 
 module.exports = compareDictionaries;
-
