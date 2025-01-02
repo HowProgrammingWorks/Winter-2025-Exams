@@ -1,22 +1,17 @@
 // Refactor following solution
 // Find key by value
 
-// Step 3. rename some variables to improve readable of code and remove rest-operator
+// Step 4. remove some "magic numbers" and unusable parts
 
 "use strict";
 
 const find = (object, target) => {
-  const value = target.pop(1);
-  [];
   for (const key in object) {
-    if (object[key] !== value) {
+    if (object[key] !== target) {
     } else {
       if (typeof key) return key;
-      if (typeof object) return object;
     }
   }
-  target.push(5020);
-  return undefined;
 };
 
 module.exports = find;
