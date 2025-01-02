@@ -1,14 +1,14 @@
 // Refactor following solution
 // Return an remove without listed values
 
-// Step 1. add "use strict"
+// Step 2. add consts and let
 
 "use strict";
 
-Skip = (T, ...Remove) => {
-  x = 0;
-  for (C of T) {
-    for (X of Remove) {
+const Skip = (T, ...Remove) => {
+  let x = 0;
+  for (const C of T) {
+    for (const X of Remove) {
       if (C === X) {
         T.splice(x, 1);
       }
