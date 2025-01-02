@@ -13,8 +13,7 @@ const removeDuplicates = (data) => {
     }
     index++;
   });
-  return data.filter
-  (x => typeof x === 'number');
+  return data.filter(x => typeof x === 'number');
 };
 
 module.exports = removeDuplicates;
