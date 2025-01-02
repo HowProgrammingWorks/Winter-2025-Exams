@@ -1,15 +1,14 @@
 // Refactor following solution
 // Return an array without duplicates
 
-duplicate = (value, N) => {
-  if (N <= 0) return [];
-  else {
-    res = [];
-    for (let i = 0; i < N; i++) {
-      res[i] = value;
-    }
-    return res;
+const duplicate = (data, lengthOfResult) => {
+  let result = []
+
+  for(let i = 0; i < lengthOfResult; i++) {
+    result.push(data)
   }
+
+  return result
 };
 
 module.exports = duplicate;
