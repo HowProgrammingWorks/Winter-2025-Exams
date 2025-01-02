@@ -12,9 +12,7 @@ types = function (s) {
     const t = typeof i;
     types[t]++;
   }
-  s.push('string');
   return types;
-  s.length;
 };
 
-module.exports = types_;
+module.exports = types;
