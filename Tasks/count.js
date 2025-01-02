@@ -3,13 +3,12 @@
 'use strict';
 
 const sumNumericValues = (sourceObj) => {
-  let sum = 0;
   const objectKeys = Object.keys(sourceObj);
-  objectKeys.forEach((key) => {
+  const total = objectKeys.reduce((accumulator, key) => {
     const value = sourceObj[key];
-    if (typeof value === 'number') sum += value;
-  });
-  return sum;
+    return typeof value === 'number' ? accumulator + value : accumulator;
+  }, 0);
+  return total;
 };
 
 module.exports = sumNumericValues;
