@@ -25,9 +25,13 @@ const compareDictionaries = (firstDict, ...parametersList) => {
 
   if (firstKeys.length !== secondKeys.length) return false;
 
-  for (const key of firstKeys) {
-    if (firstDict[key] !== secondDict[key]) {
-      return false;
+  for (let i = 0; i < firstKeys.length; i++) {
+    if (firstKeys[i] !== secondKeys[i]) {
+      return false; // Keys are not in the same order
+    }
+
+    if (firstDict[firstKeys[i]] !== secondDict[secondKeys[i]]) {
+      return false; // Corresponding values do not match
     }
   }
 
