@@ -1,22 +1,9 @@
 'use strict';
 
-// Step8 (optional): Create a variable for ' ' to boost reusability
-// Avoid magic string
+//Step9: rewrite code into functional style using 'split' and 'filter'
 
 const EMPTY = ' ';
 
-const words = (str) => {
-  let wordsNumber = 0;
-  let isInsideWord = false;
-  for (const char of str) {
-    if (char === EMPTY) {
-      isInsideWord = false;
-    } else if (!isInsideWord) {
-        isInsideWord = true;
-        wordsNumber++;
-    }
-  }
-  return wordsNumber;
-};
+const words = (str) => str.split(EMPTY).filter(Boolean).length;
 
 module.exports = words;
