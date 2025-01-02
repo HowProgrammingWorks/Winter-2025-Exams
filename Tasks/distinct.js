@@ -1,20 +1,24 @@
 // Refactor following solution
 // Return an array without duplicates
 
+//First variant of function
+//const distinct = (array) => {
+//  const numbersArray = array.filter(item => typeof item === 'number')
+//  return [...new Set(numbersArray)]
+//}
+
+//Second variant of function
 const distinct = (array) => {
-  const numberCollection = new Set();
-  let index = 0;
+  const collection = {};
 
-  array.forEach((a) => {
-    if (numberCollection.has(a)) {
-      delete array[index];
-    } else {
-      numberCollection.add(a);
+  return array.filter(item => {
+    if (collection[item]) {
+      return false;
     }
-    index++;
+    collection[item] = true;
+    return true;
   });
-
-  return array.filter(x => typeof x === 'number');
 };
+
 
 module.exports = distinct;
