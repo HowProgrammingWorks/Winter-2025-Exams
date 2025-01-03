@@ -1,9 +1,8 @@
 // Refactor following solution
 // Get month number
 
-// Step 1
-// Add 'use strict'
-// Add `const`
+// Step 2
+// Rename variable
 
 'use strict';
 
@@ -22,12 +21,12 @@ const Months = [
   'dec',
 ];
 
-const Month = (s) => {
+const getMonthNumber = (month) => {
   const l = Months.length;
   for (let i = 0; i < l; i++) {
-    if (s.toLowerCase().startsWith(Months[i])) return i + 1;
+    if (month.toLowerCase().startsWith(Months[i])) return i + 1;
   }
   return -1;
 };
 
-module.exports = Month;
+module.exports = getMonthNumber;
