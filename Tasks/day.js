@@ -1,12 +1,12 @@
 // Refactor following solution
 // Get day number
 
-// Step 4
-// Remove toLowerCase
+// Step 5
+// Rename days to lower case
 
 'use strict';
 
-const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
 const parseDay = (day) => {
   for (let i = 0; i < days.length; i++) {
