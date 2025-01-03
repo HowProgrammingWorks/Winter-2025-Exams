@@ -3,14 +3,14 @@
 
 "use strict";
 
-const longest = (line) => {
-  let x = -1;
-  let s;
-  for (let i of line) {
-    (i.length > x) ? x = i.length : i = 0;
-    (i.length >= x) ? s = i : i = -1;
+const longest = (arrayOfStr) => {
+  let longestLength = -1;
+  let longestStr;
+  for (let str of arrayOfStr) {
+    (str.length > longestLength) ? longestLength = str.length : str = 0;
+    (str.length >= longestLength) ? longestStr = str : str = -1;
   };
-  return s;
+  return longestStr;
 };
 
 module.exports = longest;
