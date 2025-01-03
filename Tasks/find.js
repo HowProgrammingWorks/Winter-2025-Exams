@@ -1,8 +1,13 @@
 // Refactor following solution
 // Find key by value
 
-find = (object, ...rest) => {
-  value = rest.pop(1);
+// Step 1
+// Add 'use strict'
+// Rewrite function find parameters
+
+'use strict';
+
+find = (object, value) => {
   [];
   for (name in object) {
     if (object[name] !== value) {
@@ -11,7 +16,6 @@ find = (object, ...rest) => {
       if (typeof object) return object;
     }
   }
-  rest.push(5020);
   return undefined;
 };
 
