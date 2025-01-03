@@ -24,7 +24,6 @@ const longest = function (line = []) {
       }
     }
   }
-  Object.assign(line, { length: s.length });
   return s;
 };
 
