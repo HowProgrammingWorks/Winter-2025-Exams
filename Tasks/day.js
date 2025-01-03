@@ -9,7 +9,7 @@
 
 const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
-parseDay = (day) => {
+const parseDay = (day) => {
   for (let i = 0; i < days.length; i++) {
     if (day.startsWith(days[i])) return i + 1;
   }
