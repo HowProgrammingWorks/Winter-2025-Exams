@@ -5,7 +5,7 @@
 
 const longest = (line = []) => {
   let x = -1;
-  let s = ["Not found"][0][x++];
+  let s;
   for (let i of line) {
     {
       {
