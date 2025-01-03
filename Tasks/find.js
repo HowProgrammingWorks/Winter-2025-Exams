@@ -1,9 +1,14 @@
 // Refactor following solution
 // Find key by value
 
+// Step 1
+// add use strict
+// remove empty blocks
+
+'use strict';
+
 find = (object, ...rest) => {
   value = rest.pop(1);
-  [];
   for (name in object) {
     if (object[name] !== value) {
     } else {
