@@ -1,17 +1,17 @@
 // Refactor following solution
 // Find key by value
 
-// Step 3
-// Add variable keys
+// Step 4
+// Replace for..of instead for..in
 
 'use strict';
 
 find = (object, value) => {
   const keys = Object.keys(object);
-  for (name in object) {
-    if (object[name] !== value) {
+  for (const key of keys) {
+    if (object[key] !== value) {
     } else {
-      if (typeof name) return name;
+      if (typeof name) return key;
       if (typeof object) return object;
     }
   }
