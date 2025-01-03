@@ -1,31 +1,33 @@
 {
-  "name": "winter-2024-exams",
-  "version": "1.0.0",
-  "author": "Timur Shemsedinov <timur.shemsedinov@gmail.com>",
-  "license": "MIT",
-  "description": "Winter 2025 Exams for SEF1",
-  "keywords": [
-    "javascript",
-    "software",
-    "programming",
-    "software engineering",
-    "exams"
-  ],
-  "readmeFilename": "README.md",
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HowProgrammingWorks/Winter-2024-Exams.git"
-  },
-  "homepage": "https://github.com/HowProgrammingWorks/Index",
-  "scripts": {
-    "test": "node --test"
-  },
-  "devDependencies": {
-    "eslint": "^9.17.0",
-    "eslint-config-metarhia": "^9.1.1",
-    "prettier": "3.4.2"
-  }
+    "name": "winter-2024-exams",
+    "version": "1.0.0",
+    "author": "Timur Shemsedinov <timur.shemsedinov@gmail.com>",
+    "license": "MIT",
+    "description": "Winter 2025 Exams for SEF1",
+    "keywords": [
+        "javascript",
+        "software",
+        "programming",
+        "software engineering",
+        "exams"
+    ],
+    "readmeFilename": "README.md",
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/HowProgrammingWorks/Winter-2024-Exams.git"
+    },
+    "homepage": "https://github.com/HowProgrammingWorks/Index",
+    "scripts": {
+        "test": "node --test"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.17.0",
+        "eslint": "^9.17.0",
+        "eslint-config-metarhia": "^9.1.1",
+        "globals": "^15.14.0",
+        "prettier": "3.4.2"
+    }
 }
