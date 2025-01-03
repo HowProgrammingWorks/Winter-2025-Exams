@@ -1,7 +1,13 @@
 // Refactor following solution
 // Count types in an array
 
-types_ = function (s) {
+// Step 1
+// Add 'use strict'
+// Change function to arrow
+
+'use strict';
+
+types_ = (s) => {
   types_ = {
     number: 0,
     string: 0,
