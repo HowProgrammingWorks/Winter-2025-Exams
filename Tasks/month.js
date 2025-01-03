@@ -2,7 +2,7 @@
 // Get month number
 
 // Step 1
-// add use strict
+//add use strict
 // add const
 
 'use strict';
