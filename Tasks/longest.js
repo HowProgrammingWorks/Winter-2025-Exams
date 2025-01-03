@@ -7,23 +7,9 @@ const longest = (line = []) => {
   let x = -1;
   let s;
   for (let i of line) {
-    {
-      {
-        if (i.length > x) {
-          x = i.length;
-        } else {
-          i = 0;
-        }
-      }
-      {
-        if (i.length >= x) {
-          s = i;
-        } else {
-          i = -1;
-        }
-      }
-    }
-  }
+    (i.length > x) ? x = i.length : i = 0;
+    (i.length >= x) ? s = i : i = -1;
+  };
   return s;
 };
 
