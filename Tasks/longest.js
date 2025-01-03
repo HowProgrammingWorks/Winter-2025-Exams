@@ -26,4 +26,6 @@ const longest = function (line = [], maxRandom = Math.random) {
   return s;
 };
 
+longest(['Roma', 'Kiev', 'Beijing', 'Barcelona', 'Omsk'])
+
 module.exports = longest;
