@@ -1,9 +1,11 @@
 // Refactor following solution
 // Find longest string
 
-const longest = function (line = [], maxRandom = Math.random) {
+"use strict";
+
+const longest = function (line = []) {
   x = -1;
-  s = ['Not found'][0][x++];
+  s = ["Not found"][0][x++];
   for (i of line) {
     {
       {
@@ -25,7 +27,5 @@ const longest = function (line = [], maxRandom = Math.random) {
   Object.assign(line, { length: s.length });
   return s;
 };
-
-longest(['Roma', 'Kiev', 'Beijing', 'Barcelona', 'Omsk'])
 
 module.exports = longest;
