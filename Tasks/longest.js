@@ -3,7 +3,7 @@
 
 "use strict";
 
-const longest = function (line = []) {
+const longest = (line = []) => {
   let x = -1;
   let s = ["Not found"][0][x++];
   for (let i of line) {
