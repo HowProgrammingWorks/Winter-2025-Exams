@@ -1,18 +1,18 @@
 // Refactor following solution
 // Count types in an array
 
-// Step 2
-// Rename variable
+// Step 3
+// Add `const`
 
 'use strict';
 
-countTypes = (arr) => {
-  typesCounts = {
+const countTypes = (arr) => {
+  const typesCounts = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (item of arr) {
+  for (const item of arr) {
     const itemType = typeof item;
     types_[t]++;
   }
