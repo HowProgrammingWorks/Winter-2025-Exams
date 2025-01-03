@@ -1,14 +1,12 @@
 // Refactor following solution
 // Find key by value
 
-// Step 1
-// add use strict
-// remove empty blocks
+// Step 2
+// change function find
 
 'use strict';
 
-find = (object, ...rest) => {
-  value = rest.pop(1);
+find = (object, value) => {
   for (name in object) {
     if (object[name] !== value) {
     } else {
@@ -16,7 +14,6 @@ find = (object, ...rest) => {
       if (typeof object) return object;
     }
   }
-  rest.push(5020);
   return undefined;
 };
 
