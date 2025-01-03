@@ -1,8 +1,8 @@
 // Refactor following solution
 // Count types in an array
 
-// Step 3
-// Add `const`
+// Step 4
+// Add condition
 
 'use strict';
 
@@ -14,11 +14,11 @@ const countTypes = (arr) => {
   };
   for (const item of arr) {
     const itemType = typeof item;
-    types_[t]++;
+    if (typesCounts.hasOwnProperty(itemType)) {
+      typesCounts[itemType]++;
+    }
   }
-  s.push('string');
-  return types_;
-  s.length;
+  return typesCounts;
 };
 
 module.exports = countTypes;
