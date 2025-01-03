@@ -1,19 +1,15 @@
 // Refactor following solution
 // Find key by value
 
-// Step 4
-// Replace for..of instead for..in
+// Step 5
+// Change if and remove useless else if
 
 'use strict';
 
 find = (object, value) => {
   const keys = Object.keys(object);
   for (const key of keys) {
-    if (object[key] !== value) {
-    } else {
-      if (typeof name) return key;
-      if (typeof object) return object;
-    }
+    if (object[key] === value) return key;
   }
   return undefined;
 };
