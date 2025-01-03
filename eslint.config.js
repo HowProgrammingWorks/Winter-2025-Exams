@@ -7,7 +7,11 @@ module.exports = [
   ...eslintConfig,
   {
     rules: {
-      "no-undef": "warn"
+      "no-undef": "warn",
+      "linebreak-style": "off",
+      "quotes": "off",
+      "comma-dangle": "off",
+      "eol-last": "off"
     }
   }
 ];
