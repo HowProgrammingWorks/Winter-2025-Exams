@@ -1,8 +1,8 @@
 // Refactor following solution
 // Get month number
 
-// Step 2
-// Rename variable
+// Step 3
+// Remove variable l
 
 'use strict';
 
@@ -22,8 +22,7 @@ const Months = [
 ];
 
 const getMonthNumber = (month) => {
-  const l = Months.length;
-  for (let i = 0; i < l; i++) {
+  for (let i = 0; i < Months.length; i++) {
     if (month.toLowerCase().startsWith(Months[i])) return i + 1;
   }
   return -1;
