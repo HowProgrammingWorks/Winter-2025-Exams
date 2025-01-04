@@ -5,12 +5,8 @@
 const isValidate = (name) => {
   if (!name.includes(' ')) return false;
   for (const char of name) {
-    if (char === ' ') continue;
-    if (
-      char.toLowerCase().charCodeAt(0) >= 97 &&
-      char.toLowerCase().charCodeAt(0) <= 122
-    ) {
-    } else {
+    const code = char.toLowerCase().charCodeAt(0);
+    if ((code < 97 || code > 122) && char !== ' ') {
       return false;
     }
   }
