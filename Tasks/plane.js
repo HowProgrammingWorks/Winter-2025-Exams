@@ -1,6 +1,8 @@
 // Refactor following solution
 // Make nested array plane
 
+"use strict";
+
 const_plane = function(arr, res=[]) {
   j = 0; for(let i = 0, length = arr.length; i < length; i++){
     value = arr[i];
