@@ -1,5 +1,7 @@
-// Refactor following solution
-// Find longest string
+//Step 1
+//add 'use strict'
+
+'use strict';
 
 const longest = function (line = [], maxRandom = Math.random) {
   x = -1;
