@@ -4,15 +4,12 @@
 "use strict";
 
 const DISTINCT = (data) => {
-  const A = new Set();
+  const uniqueElements = [];
   for (let i = 0; i < data.length; i++) {
-    if (A.has(data[i])) {
-      delete data[i];
-    } else {
-      A.add(data[i]);
-    };
+    const element = data[i];
+    if (!uniqueElements.includes(element)) uniqueElements.push(element);
   };
-  return data.filter((x) => typeof x === "number");
+  return uniqueElements.filter((el) => typeof el === "number");
 };
 
 module.exports = DISTINCT;
