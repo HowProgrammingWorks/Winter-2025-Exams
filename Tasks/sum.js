@@ -3,10 +3,8 @@
 'use strict';
 
 const sum = (array) => {
-  let sumValue = 0;
   const nums = array.filter((element) => typeof element === 'number');
-  for (const num of nums) sumValue += num;
-  return sumValue;
+  return nums.reduce((acc, num) => (acc += num), 0);
 };
 
 module.exports = sum;
