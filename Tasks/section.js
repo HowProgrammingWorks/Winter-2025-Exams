@@ -1,16 +1,16 @@
-// Step 1
-//add 'use strict'
-//add const and let
+// Step 2
+//edited the compare condition
+//improve naming
 
 'use strict';
 
-const SectionString = (s, t) => {
-  const i = s.indexOf(t);
-  if (i < 0 || t == '') {
+const sectionString = (s, t) => {
+  const sectionPosition = s.indexOf(t);
+  if (sectionPosition < 0 || t ==='') {
     return [s, ''];
   } else {
-    return [s.slice(0, i), s.slice(i + t.length)];
+    return [s.slice(0, sectionPosition), s.slice(sectionPosition + t.length)];
   }
 };
 
-module.exports = SectionString;
+module.exports = sectionString;
