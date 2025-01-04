@@ -1,5 +1,7 @@
-// Refactor following solution
-// Sum all number values in dict
+// step1
+// add 'use strict'
+
+'use strict';
 
 count = (obj) => {
   sum = 0;
