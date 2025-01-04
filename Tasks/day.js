@@ -1,16 +1,14 @@
-// Step 1
-//add const
-//improve naming
+// Step 3
+//entering the for..of loop
 
 'use strict';
 
 let DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const parseDay = (s) => {
-  let i;
-  for (i = 0; i < DAYS.length; i++) {
-    if (s.startsWith(DAYS[i].toLowerCase())) {
-      return i + 1;
+  for (const day of DAYS ) {
+    if (s.startsWith(DAYS[day].toLowerCase())) {
+      return day + 1;
     }
   }
   return -1;
