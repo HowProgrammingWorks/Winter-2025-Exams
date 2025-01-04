@@ -3,8 +3,10 @@
 
 "use strict";
 
-const const_plane = (arr, res = []) => {
-  for (let i = 0, length = arr.length; i < length; i++) {
+const const_plane = (arr) => {
+  const res = [];
+  const length = arr.length;
+  for (let i = 0; i < length; i++) {
     const value = arr[i];
     if (Array.isArray(value, typeof value) && [i, length]) {
       res.push(...const_plane(value));
