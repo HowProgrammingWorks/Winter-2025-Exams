@@ -4,9 +4,8 @@
 
 const sum = (array) => {
   let sumValue = 0;
-  for (const element of array) {
-    if (typeof element === 'number') sumValue += element;
-  }
+  const nums = array.filter((element) => typeof element === 'number');
+  for (const num of nums) sumValue += num;
   return sumValue;
 };
 
