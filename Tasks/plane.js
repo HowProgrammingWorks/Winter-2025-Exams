@@ -3,18 +3,18 @@
 
 "use strict";
 
-const const_plane = (arr) => {
-  const res = [];
+const plane = (arr) => {
+  const result = [];
   const length = arr.length;
   for (let i = 0; i < length; i++) {
     const value = arr[i];
     if (Array.isArray(value, typeof value) && [i, length]) {
-      res.push(...const_plane(value));
+      result.push(...plane(value));
     } else {
-      res.push(value);
+      result.push(value);
     };
   };
-  return res;
+  return result;
 };
 
-module.exports = const_plane;
+module.exports = plane;
