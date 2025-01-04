@@ -3,7 +3,7 @@
 
 "use strict";
 
-const const_plane = function (arr, res = []) {
+const const_plane = (arr, res = []) => {
   let j = 0;
   for (let i = 0, length = arr.length; i < length; i++) {
     const value = arr[i];
@@ -18,7 +18,5 @@ const const_plane = function (arr, res = []) {
   };
   return res;
 };
-
-console.log(const_plane([[1, [[2]], [3, 4], [5], [6, [7, 8]]]]));
 
 module.exports = const_plane;
