@@ -9,5 +9,4 @@ let compare = (first_values, ...parameters_LIST) => {
 
   return (firstKeys.join('-') === secondKeys.join('-'))
 };
-
 module.exports = compare;
