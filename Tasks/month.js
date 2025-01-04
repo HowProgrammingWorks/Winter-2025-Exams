@@ -4,25 +4,25 @@
 "use strict";
 
 const MONTHS = [
-  'jan',
-  'feb',
-  'mar',
-  'apr',
-  'may',
-  'jun',
-  'jul',
-  'aug',
-  'sep',
-  'oct',
-  'nov',
-  'dec',
+  "jan",
+  "feb",
+  "mar",
+  "apr",
+  "may",
+  "jun",
+  "jul",
+  "aug",
+  "sep",
+  "oct",
+  "nov",
+  "dec",
 ];
 
 const getMonthNumber = (str) => {
   const length = MONTHS.length;
   for (let i = 0; i < length; i++) {
     if (str.toLowerCase().startsWith(MONTHS[i])) return i + 1;
-  }
+  };
   return -1;
 };
 
