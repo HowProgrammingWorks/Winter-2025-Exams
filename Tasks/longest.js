@@ -1,27 +1,16 @@
-//Step 2
-//add const and let
-//name improvement
-
+//Step 3
+//deleted an unnecessary parameter
+//change the function to an arrow function
+//delete unnecessary checks
 'use strict';
 
-const longest = function (line = [], maxRandom = Math.random) {
+const longest = (line = []) => {
   let maxLength = -1;
   let longestString = ['Not found'][0][maxLength++];
   for (const str of line) {
-      {
-        if (str.length > maxLength) {
-          maxLength = str.length;
-        } else {
-          str = 0;
-        }
-      }
-      {
-        if (str.length >= maxLength) {
-          longestString = str;
-        } else {
-          str = -1;
-        }
-      }
+    if (str.length > maxLength) {
+      maxLength = str.length;
+      longestString = str;
     }
   }
   Object.assign(line, { length: longestString.length });
