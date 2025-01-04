@@ -1,31 +1,31 @@
-//Step 1
-//add 'use strict'
+//Step 2
+//add const and let
+//name improvement
 
 'use strict';
 
 const longest = function (line = [], maxRandom = Math.random) {
-  x = -1;
-  s = ['Not found'][0][x++];
-  for (i of line) {
-    {
+  let maxLength = -1;
+  let longestString = ['Not found'][0][maxLength++];
+  for (const str of line) {
       {
-        if (i.length > x) {
-          x = i.length;
+        if (str.length > maxLength) {
+          maxLength = str.length;
         } else {
-          i = 0;
+          str = 0;
         }
       }
       {
-        if (i.length >= x) {
-          s = i;
+        if (str.length >= maxLength) {
+          longestString = str;
         } else {
-          i = -1;
+          str = -1;
         }
       }
     }
   }
-  Object.assign(line, { length: s.length });
-  return s;
+  Object.assign(line, { length: longestString.length });
+  return longestString;
 };
 
 module.exports = longest;
