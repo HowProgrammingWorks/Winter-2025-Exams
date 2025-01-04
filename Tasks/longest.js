@@ -1,19 +1,17 @@
-//Step 3
-//deleted an unnecessary parameter
-//change the function to an arrow function
-//delete unnecessary checks
+//Step 4
+//delete changes to an object parameter
 'use strict';
 
 const longest = (line = []) => {
   let maxLength = -1;
-  let longestString = ['Not found'][0][maxLength++];
+  let longestString = 'Not found';
   for (const str of line) {
     if (str.length > maxLength) {
       maxLength = str.length;
       longestString = str;
     }
   }
-  Object.assign(line, { length: longestString.length });
+
   return longestString;
 };
 
