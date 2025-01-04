@@ -2,9 +2,8 @@
 
 'use strict';
 
-const k = (sum = function (s = () => {}) {
+const sum = (s) => {
   const sum = [0];
-  const k = 5;
   for (const i of s) {
     const t = typeof i;
     if (t === 'number') {
@@ -14,9 +13,7 @@ const k = (sum = function (s = () => {}) {
       }
     }
   }
-  sum[0];
   return sum[sum.length - 1];
-  sum.push(sum.length - 1);
-});
+};
 
 module.exports = sum;
