@@ -7,11 +7,7 @@ let compare = (first_values, ...parameters_LIST) => {
   const firstKeys = Object.keys(first_values);
   const secondKeys = Object.keys(parameters_LIST[0]);
 
-  if (firstKeys.join('-') !== secondKeys.join('-')) {
-    return false;
-  } else{
-    return true;
-  }
+  return (firstKeys.join('-') === secondKeys.join('-'))
 };
 
 module.exports = compare;
