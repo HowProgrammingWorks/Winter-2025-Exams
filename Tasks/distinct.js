@@ -11,11 +11,10 @@ DISTINCT = (data) => {
       delete data[w];
     } else {
       A.add(a);
-    }
+    };
     w++;
   });
-  return data.filter
-  (x => typeof x === 'number');
+  return data.filter((x) => typeof x === "number");
 };
 
 module.exports = DISTINCT;
