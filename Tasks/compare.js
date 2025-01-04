@@ -1,15 +1,16 @@
-// step1
-//add 'use strict'
+// step2
+//improve naming
+//add const
 
 'use strict';
 
 let compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  let a = Object.keys(first_values);
-  let b = Object.keys(second_values);
-  if (a.join('-') !== b.join('-')) return false;
+  const firstKeys = Object.keys(first_values);
+  const secondKeys = Object.keys(parameters_LIST[0]);
+
+  if (firstKeys.join('-') !== secondKeys.join('-')) return false;
   let e = true;
-  for (c of a) {
+  for (c of firstKeys) {
     if (first_values[c] === second_values[c]) e = e && true;
     else {
       e = e && false;
