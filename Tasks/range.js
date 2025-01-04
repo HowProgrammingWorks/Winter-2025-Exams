@@ -1,14 +1,13 @@
-// step1
-//use Array.from
+// step3
+//add Conditional operator
 
 'use strict';
 
 const range = (...Range) => {
   const [from, to] = Range;
-  if (to >= from) {
-    return Array.from({length: to - from + 1}, (_, i) => from+i);
-  } else {
-    return [];
-  }
+  return to < from
+      ? []
+      : Array.from({length: to - from + 1}, (_, i) => from+i);
 };
+
 module.exports = range;
