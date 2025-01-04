@@ -1,8 +1,11 @@
-// Refactor following solution
-// Generate int array from given range
+// step1
+//add const
+//improve naming
 
-_range = (...Range) => {
-  let [from, to] = Range;
+'use strict';
+
+const range = (...Range) => {
+  const [from, to] = Range;
   if (to >= from) {
     Range = new Array(to - from + 1);
     for (let i = from; i <= to; i++) {
@@ -13,5 +16,4 @@ _range = (...Range) => {
   }
   return Range;
 };
-
-module.exports = _range;
+module.exports = range;
