@@ -10,8 +10,9 @@ const MONTHS = [
 
 const getMonthNumber = (str) => {
   const length = MONTHS.length;
+  const lowerStr = str.toLowerCase();
   for (let i = 0; i < length; i++) {
-    if (str.toLowerCase().startsWith(MONTHS[i])) return i + 1;
+    if (lowerStr.startsWith(MONTHS[i])) return i + 1;
   };
   return -1;
 };
