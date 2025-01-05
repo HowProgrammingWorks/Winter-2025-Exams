@@ -1,18 +1,16 @@
-// Step 2
-// Improve the names of identifiers
+// Step 3
+// Simplify the filter by pushing elements with correct type
 
 'use strict';
 
 const filter = (array, typeName) => {
-  const remove = [];
+  const filteredArray = [];
   for (const element of array) {
-    const index = array.indexOf(element);
-    if (typeof array[index] !== typeName) {
-      remove.unshift(index);
+    if (typeof element === typeName) {
+      filteredArray.push(element);
     }
   }
-  for (const index of remove) array.splice(index, 1);
-  return array;
+  return filteredArray;
 };
 
 module.exports = filter;
