@@ -4,15 +4,12 @@
 "use strict";
 
 const intRange = (start, end) => {
-  if (end >= start) {
-    const range = new Array(end - start + 1);
-    for (let i = start; i <= end; i++) {
-      range[i - start] = i;
-    };
-    return range;
-  } else {
-    return [];
+  if (start > end) return [];
+  const range = new Array(end - start + 1);
+  for (let i = start; i <= end; i++) {
+    range[i - start] = i;
   };
+  return range;
 };
 
 module.exports = intRange;
