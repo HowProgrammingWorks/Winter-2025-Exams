@@ -1,12 +1,12 @@
-// Step 4
-// Rename all identifiers to camelCase
+// Step 5
+// Simplify the `typeof` condition by removing unnecessary string methods
 
 'use strict';
 
 const incNumbers = (dict) => {
   const copiedDict = { ...dict };
   for (const key in copiedDict) {
-    if ((typeof copiedDict[key]).charAt(0).toUpperCase() === 'N') {
+    if (typeof copiedDict[key] === 'number') {
       copiedDict[key] = copiedDict[key] + 1;
     }
   }
