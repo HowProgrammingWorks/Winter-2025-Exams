@@ -1,17 +1,17 @@
-// Step 4
+// Step 5
 // Improve iteration
-// Use Object.values method instead of Object.keys
-// Replace .forEach method for for...of method
+// Remove the `sum` variable
+// Use reduce method
 
 'use strict';
 
 const sumNums = (obj) => {
-  let sum = 0;
   const values = Object.values(obj);
-  for (const element of values) {
-    if (typeof element === 'number') sum += element;
-  }
-  return sum;
+  const fn = (acc, value) => {
+    if (typeof value === 'number') acc += value;
+    return acc;
+  };
+  return values.reduce(fn, 0);
 };
 
 module.exports = sumNums;
