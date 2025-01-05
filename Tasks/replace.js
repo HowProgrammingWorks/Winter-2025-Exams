@@ -1,13 +1,12 @@
-// Step 7
-// Remove condition
+// Step 8
+// Remove Array methods
+// Use String method .replace(), but add previous condition
 
 'use strict';
 
 const replaceWords = (str, substr, newStr) => {
-  const words = str.split(' ');
-  const index = words.indexOf(substr);
-  words[index] = newStr;
-  return words.join(' ');
+  if (!substr) return str;
+  return str.replace(substr, newStr);
 };
 
 module.exports = replaceWords;
