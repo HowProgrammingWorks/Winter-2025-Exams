@@ -1,16 +1,10 @@
-// Step 3
-// Simplify the filter by pushing elements with correct type
+// Step 4
+// Rewrite function to functional programming style
+// Improve the code by using JavaScript .filter() function
 
 'use strict';
 
-const filter = (array, typeName) => {
-  const filteredArray = [];
-  for (const element of array) {
-    if (typeof element === typeName) {
-      filteredArray.push(element);
-    }
-  }
-  return filteredArray;
-};
+const filter = (array, typeName) =>
+  array.filter((element) => typeof element === typeName);
 
 module.exports = filter;
