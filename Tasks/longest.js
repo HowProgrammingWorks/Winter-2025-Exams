@@ -1,9 +1,9 @@
-// Step 3
-// Fix initialization of variables
+// Step 4
+// Convert to arrow function
 
 'use strict';
 
-const longest = function (line = []) {
+const longest = (line = []) => {
   let x = -1;
   let s = undefined;
   for (const i of line) {
