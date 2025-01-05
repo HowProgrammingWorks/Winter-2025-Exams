@@ -1,11 +1,13 @@
-// Step 6
-// Use the increment operator instead of `=`
+// Step 7
+// Improve iteration by using `Object.keys` method
+// Replace `for...in` for `for...of`
 
 'use strict';
 
 const incNumbers = (dict) => {
   const copiedDict = { ...dict };
-  for (const key in copiedDict) {
+  const keys = Object.keys(copiedDict);
+  for (const key of keys) {
     if (typeof copiedDict[key] === 'number') {
       copiedDict[key]++;
     }
