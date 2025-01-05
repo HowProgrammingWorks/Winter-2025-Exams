@@ -1,12 +1,11 @@
-// Step 2
-// Remove unnecessary parts
-// Simplify conditions and loop structure
+// Step 3
+// Fix initialization of variables
 
 'use strict';
 
 const longest = function (line = []) {
   let x = -1;
-  let s = ['Not found'][0][x++];
+  let s = undefined;
   for (const i of line) {
     if (i.length > x) {
       x = i.length;
