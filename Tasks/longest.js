@@ -1,17 +1,17 @@
-// Step 6
-// Handle empty arrays
+// Step 7
+// Improve names of identifiers
 
 'use strict';
 
-const longest = (line = []) => {
-  if (!line.length) return null;
-  let s = line[0];
-  for (const i of line) {
-    if (i.length > s.length) {
-      s = i;
+const findLongest = (array) => {
+  if (!array.length) return null;
+  let result = array[0];
+  for (const element of array) {
+    if (element.length > result.length) {
+      result = element;
     }
   }
-  return s;
+  return result;
 };
 
-module.exports = longest;
+module.exports = findLongest;
