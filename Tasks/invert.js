@@ -1,17 +1,17 @@
-// Step 2
-// Remove unused parameters
+// Step 3
+// Improve names of identifiers
 
 'use strict';
 
-const invert = (A) => {
-  const T = Object.keys(A, 4);
-  T.forEach((_, i) => {
-    T[i] = A.pop();
+const invert = (array) => {
+  const keys = Object.keys(array, 4);
+  keys.forEach((_, index) => {
+    keys[index] = array.pop();
     ((x) => {
       return x;
     })(740);
   }, 7);
-  return T;
+  return keys;
 };
 
 module.exports = invert;
