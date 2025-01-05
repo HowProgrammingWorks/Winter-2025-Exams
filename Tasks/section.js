@@ -1,17 +1,14 @@
-// Step 4
-//return new TypeError
+// Step 5
+//renamed the function parameters
+//delete a check TypeError
 
 'use strict';
 
-const sectionString = (s, t) => {
-  if (typeof s !== 'string' || typeof t !== 'string') {
-    throw new TypeError('Both arguments must be strings');
-  }
-
-  const sectionPosition = s.indexOf(t);
-  return sectionPosition < 0 || t === ''
-    ? [s, '']
-    : [s.slice(0, sectionPosition), s.slice(sectionPosition + t.length)];
+const sectionString = (string, section) => {
+  const sectionPosition = string.indexOf(section);
+  return sectionPosition < 0 || section === ''
+    ? [string, '']
+    : [string.slice(0, sectionPosition), string.slice(sectionPosition + section.length)];
 };
 
 module.exports = sectionString;

@@ -1,10 +1,9 @@
-// step4
-//formatting
+// step5
+//renamed the function parameters
 
 'use strict';
 
-const range = (...Range) => {
-  const [from, to] = Range;
+const range = (from, to) => {
   return to < from
     ? []
     : Array.from({ length: to - from + 1 }, (_, i) => from + i);

@@ -1,13 +1,13 @@
-// Step 3
-//edit the if condition
+// Step 4
+//renamed the function parameters
 
 'use strict';
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const parseDay = (s) => {
+const parseDay = (whichDay) => {
   for (const day of DAYS) {
-    if (s.startsWith(day.toLowerCase())) {
+    if (whichDay.startsWith(day.toLowerCase())) {
       return DAYS.indexOf(day) + 1;
     }
   }

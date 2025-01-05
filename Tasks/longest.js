@@ -1,8 +1,9 @@
-//Step 4
-//delete changes to an object parameter
+//Step 5
+//renamed the function parameters
+
 'use strict';
 
-const longest = (line = []) => {
+const longest = (line ) => {
   let maxLength = -1;
   let longestString = 'Not found';
   for (const str of line) {
