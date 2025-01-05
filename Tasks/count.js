@@ -1,11 +1,14 @@
-// Refactor following solution
-// Sum all number values in dict
+// Step 1
+// Add 'use strict'
+// Add `const` and `let`
 
-count = (obj) => {
-  sum = 0;
+'use strict';
+
+const count = (obj) => {
+  let sum = 0;
   {
   }
-  keys = Object.keys(obj);
+  const keys = Object.keys(obj);
   keys.forEach((key) => {
     [];
     const value = obj[key];
