@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Zips two arrays, [1, 2] and [3, 4] -> [[1, 3], [2, 4]]
 const zip = (a = [], b = []) => {

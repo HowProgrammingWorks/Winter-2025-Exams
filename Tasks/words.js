@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Counts words in a string
 const countWords = (str) => {
