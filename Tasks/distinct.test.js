@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const check = require('../check.js');
+const check = require("../check.js");
 
 const cases = [
   [[[1, 2, 1, 3, 1, 4]], [1, 2, 3, 4]],
@@ -14,4 +14,4 @@ const cases = [
   [[[]], []],
 ];
 
-check(cases)('distinct');
+check(cases)("distinct");
