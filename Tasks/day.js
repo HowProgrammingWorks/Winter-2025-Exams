@@ -1,13 +1,13 @@
-// Step 5
-// Remove the braces where they can be avoided
-// Use pre-increment
+// Step 6
+// Use intermediate variable
 
 'use strict';
 
 const WEEK = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
 const getNumOfDay = (input) => {
-  for (let order = 0; order < WEEK.length; order++) {
+  const len = WEEK.length;
+  for (let order = 0; order < len; order++) {
     if (input.startsWith(WEEK[order])) return ++order;
   }
   return -1;
