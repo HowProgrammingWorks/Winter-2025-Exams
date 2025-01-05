@@ -1,16 +1,19 @@
-// Step 3
-// Remove unnecessary or unreachable parts of code
+// Step 4
+// Improve iteration
+// Copy values from the original dictionary
+// Replace `.forEach()` for `for` loop
 
 'use strict';
 
 const except = (dict, ...excludeKeys) => {
+  const copy = {};
   const keys = Object.keys(dict);
-  keys.forEach((key) => {
-    if (excludeKeys.includes(key)) {
-      delete dict[key];
+  for (const key of keys) {
+    if (!excludeKeys.includes(key)) {
+      copy[key] = dict[key];
     }
-  });
-  return dict;
+  }
+  return copy;
 };
 
 module.exports = except;
