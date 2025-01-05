@@ -1,14 +1,16 @@
-// Step 4
-// Remove unnecessary functions and parameters
+// Step 5
+// Improve iteration
+// Initiallize newArray
+// Replace .forEach() method for for...of loop
 
 'use strict';
 
 const invert = (array) => {
-  const keys = Object.keys(array);
-  keys.forEach((index) => {
-    keys[index] = array.pop();
-  });
-  return keys;
+  const newArray = [];
+  for (const element of array) {
+    newArray.unshift(element);
+  }
+  return newArray;
 };
 
 module.exports = invert;
