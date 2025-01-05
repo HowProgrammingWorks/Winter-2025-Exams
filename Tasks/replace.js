@@ -1,16 +1,16 @@
-// Step 5
-// Improve names of identifiers
+// Step 6
+// Improve methods
+// Remove String methods .indexOf() and .substring()
+// Use String.split() and Array methods .indexOf(), .join()
 
 'use strict';
 
 const replaceWords = (str, substr, newStr) => {
-  let anotherStr = str;
-  const index = anotherStr.indexOf(substr);
+  const words = str.split(' ');
+  const index = words.indexOf(substr);
   if (!substr || index === -1) return str;
-  const start = anotherStr.substring(0, index);
-  anotherStr = anotherStr.substring(index + substr.length, anotherStr.length);
-  const result = start + newStr + anotherStr;
-  return result;
+  words[index] = newStr;
+  return words.join(' ');
 };
 
 module.exports = replaceWords;
