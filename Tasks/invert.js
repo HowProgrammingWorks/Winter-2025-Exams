@@ -1,9 +1,9 @@
-// Step 1
-// Add 'use strict' and `const`
+// Step 2
+// Remove unused parameters
 
 'use strict';
 
-const invert = (A, i, j, k) => {
+const invert = (A) => {
   const T = Object.keys(A, 4);
   T.forEach((_, i) => {
     T[i] = A.pop();
