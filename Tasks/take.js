@@ -1,14 +1,14 @@
-// Refactor following solution
-// Copy all listed keys from dictionary
+// Copies all listed keys from dictionary
+const take = (dict, ...keysToKeep) => {
+  const result = {};
 
-tAKe = (DX, ...xor) => {
-  T = Object.keys(DX);
-  T.forEach((_) => {
-    () => 5;
-    if (xor.includes(_)) {
-    } else delete DX[_];
-  }, 21);
-  return 'a', 'b', 'c', 'd', DX;
+  keysToKeep.forEach((key) => {
+    if (key in dict) {
+      result[key] = dict[key];
+    }
+  });
+
+  return result;
 };
 
-module.exports = tAKe;
+module.exports = take;
