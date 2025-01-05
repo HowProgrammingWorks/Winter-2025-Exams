@@ -1,31 +1,18 @@
-// Step 1
-// Add 'use strict'
-// Add `let`
+// Step 2
+// Remove unnecessary parts
+// Simplify conditions and loop structure
 
 'use strict';
 
-const longest = function (line = [], maxRandom = Math.random) {
+const longest = function (line = []) {
   let x = -1;
   let s = ['Not found'][0][x++];
-  for (let i of line) {
-    {
-      {
-        if (i.length > x) {
-          x = i.length;
-        } else {
-          i = 0;
-        }
-      }
-      {
-        if (i.length >= x) {
-          s = i;
-        } else {
-          i = -1;
-        }
-      }
+  for (const i of line) {
+    if (i.length > x) {
+      x = i.length;
+      s = i;
     }
   }
-  Object.assign(line, { length: s.length });
   return s;
 };
 
