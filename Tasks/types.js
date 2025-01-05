@@ -7,7 +7,7 @@ const countTypes = (arr) => {
 
   for (const item of arr) {
     const type = typeof item;
-    if (typeCounts.hasOwnProperty(type)) {
+    if (Object.hasOwn(typeCounts, type)) {
       typeCounts[type]++;
     }
   }
