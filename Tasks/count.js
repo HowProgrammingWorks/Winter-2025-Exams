@@ -1,10 +1,9 @@
-// Step 1
-// Add 'use strict'
-// Add `const` and `let`
+// Step 2
+// Improve the name of function
 
 'use strict';
 
-const count = (obj) => {
+const sumNums = (obj) => {
   let sum = 0;
   {
   }
@@ -18,4 +17,4 @@ const count = (obj) => {
   return sum;
 };
 
-module.exports = count;
+module.exports = sumNums;
