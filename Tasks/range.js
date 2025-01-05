@@ -1,6 +1,8 @@
 // Refactor following solution
 // Generate int array from given range
 
+"use strict";
+
 _range = (...Range) => {
   let [from, to] = Range;
   if (to >= from) {
