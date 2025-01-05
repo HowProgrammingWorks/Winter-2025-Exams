@@ -3,17 +3,17 @@
 
 "use strict";
 
-const _range = (...Range) => {
-  const [from, to] = Range;
-  if (to >= from) {
-    Range = new Array(to - from + 1);
-    for (let i = from; i <= to; i++) {
-      Range[i - from] = i;
+const intRange = (...range) => {
+  const [start, end] = range;
+  if (end >= start) {
+    range = new Array(end - start + 1);
+    for (let i = start; i <= end; i++) {
+      range[i - start] = i;
     };
   } else {
     return [];
   };
-  return Range;
+  return range;
 };
 
-module.exports = _range;
+module.exports = intRange;
