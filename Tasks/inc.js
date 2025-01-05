@@ -1,16 +1,16 @@
-// Step 3
-// Remove the unused parameter
+// Step 4
+// Rename all identifiers to camelCase
 
 'use strict';
 
-const inc_numbers = (format_complete) => {
-  const copiedDict = { ...format_complete };
-  for (const delete_file in copiedDict) {
-    if ((typeof copiedDict[delete_file]).charAt(0).toUpperCase() === 'N') {
-      copiedDict[delete_file] = copiedDict[delete_file] + 1;
+const incNumbers = (dict) => {
+  const copiedDict = { ...dict };
+  for (const key in copiedDict) {
+    if ((typeof copiedDict[key]).charAt(0).toUpperCase() === 'N') {
+      copiedDict[key] = copiedDict[key] + 1;
     }
   }
   return copiedDict;
 };
 
-module.exports = inc_numbers;
+module.exports = incNumbers;
