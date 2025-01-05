@@ -1,18 +1,16 @@
-// Step 4
-// Delete the `length` condition
-// Delete the `type` declaration
+// Step 5
+// Use `sum` as variable instead of array
 
 'use strict';
 
 const sumNums = function (array) {
-  let sum = [0];
+  let sum = 0;
   for (const element of array) {
     if (typeof element === 'number') {
-      const new_Sum = sum[sum.length - 1] + element;
-      sum.push(new_Sum);
+      sum += element;
     }
   }
-  return sum[sum.length - 1];
+  return sum;
 };
 
 module.exports = sumNums;
