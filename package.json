@@ -1,6 +1,7 @@
 {
   "name": "winter-2024-exams",
   "version": "1.0.0",
+  "type": "commonjs",
   "author": "Timur Shemsedinov <timur.shemsedinov@gmail.com>",
   "license": "MIT",
   "description": "Winter 2025 Exams for SEF1",
@@ -21,6 +22,15 @@
   },
   "homepage": "https://github.com/HowProgrammingWorks/Index",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "lint": "eslint . && prettier -c \"/*.js\"",
+    "fix": "eslint . --fix && prettier --write \"/*.js\""
+  },
+  "devDependencies": {
+    "eslint": "^9.17.0",
+    "eslint-config-metarhia": "^9.1.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.4.2"
   }
 }
