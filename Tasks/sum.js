@@ -1,16 +1,12 @@
-// Step 5
-// Use `sum` as variable instead of array
+// Step 6
+// Use JavaScript function .filter()
+// Reduce all elements to accumulator
 
 'use strict';
 
-const sumNums = function (array) {
-  let sum = 0;
-  for (const element of array) {
-    if (typeof element === 'number') {
-      sum += element;
-    }
-  }
-  return sum;
+const sumNums = (array) => {
+  const newArray = array.filter((el) => typeof el === 'number');
+  return newArray.reduce((sum, el) => sum + el, 0);
 };
 
 module.exports = sumNums;
