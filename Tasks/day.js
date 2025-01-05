@@ -1,14 +1,15 @@
-// Step 2
-// Improve the names of identifiers
+// Step 3
+// Change `WEEK` elements to LowerCase
+// Remove unnecessary .toLowerCase()
 
 'use strict';
 
-const WEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const WEEK = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
 const getNumOfDay = (input) => {
   let order;
   for (order = 0; order < WEEK.length; order++) {
-    if (input.startsWith(WEEK[order].toLowerCase())) {
+    if (input.startsWith(WEEK[order])) {
       return order + 1;
     }
   }
