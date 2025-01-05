@@ -1,15 +1,15 @@
-// Step 2
-// Delete unused and unnecessary parts
+// Step 3
+// Improve the names of identifiers
 
 'use strict';
 
-const sum = function (s) {
+const sumNums = function (array) {
   let sum = [0];
-  for (const i of s) {
-    let t = typeof i;
-    if (t === 'number') {
+  for (const element of array) {
+    let type = typeof element;
+    if (type === 'number') {
       if (sum.length > 0) {
-        const new_Sum = sum[sum.length - 1] + i;
+        const new_Sum = sum[sum.length - 1] + element;
         sum.push(new_Sum);
       }
     }
@@ -17,4 +17,4 @@ const sum = function (s) {
   return sum[sum.length - 1];
 };
 
-module.exports = sum;
+module.exports = sumNums;
