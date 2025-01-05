@@ -1,6 +1,6 @@
-// Refactor following solution
-// Count words in a string
+'use strict';
 
+// Counts words in a string
 const countWords = (str) => {
   if (!str.trim()) return 0;
 
