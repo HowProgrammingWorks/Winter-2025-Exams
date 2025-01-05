@@ -1,18 +1,18 @@
-// Step 1
-// Add 'use strict' and `const`
+// Step 2
+// Improve the names of identifiers
 
 'use strict';
 
-const Filter = (T, t) => {
+const filter = (array, typeName) => {
   const remove = [];
-  for (const C of T) {
-    const x = T.indexOf(C);
-    if (typeof T[x] !== t) {
-      remove.unshift(x);
+  for (const element of array) {
+    const index = array.indexOf(element);
+    if (typeof array[index] !== typeName) {
+      remove.unshift(index);
     }
   }
-  for (const x of remove) T.splice(x, 1);
-  return T;
+  for (const index of remove) array.splice(index, 1);
+  return array;
 };
 
-module.exports = Filter;
+module.exports = filter;
