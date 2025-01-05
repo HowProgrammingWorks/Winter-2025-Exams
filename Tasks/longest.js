@@ -1,14 +1,12 @@
-// Step 4
-// Convert to arrow function
+// Step 5
+// Improve iteration
 
 'use strict';
 
 const longest = (line = []) => {
-  let x = -1;
-  let s = undefined;
+  let s = line[0];
   for (const i of line) {
-    if (i.length > x) {
-      x = i.length;
+    if (i.length > s.length) {
       s = i;
     }
   }
