@@ -21,6 +21,18 @@
   },
   "homepage": "https://github.com/HowProgrammingWorks/Index",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "fmt": "npx prettier ./Tasks --write --tab-width 2",
+    "lint": "npx eslint ./Tasks"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
+    "jest": "^29.7.0",
+    "prettier": "3.4.2"
+  },
+  "dependencies": {
+    "@jest/globals": "^29.7.0"
   }
 }
