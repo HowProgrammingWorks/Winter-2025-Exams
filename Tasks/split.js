@@ -1,8 +1,10 @@
-// Refactor following solution
-// Split an array into two parts
+// Step 1
+// Add 'use strict' and `const`
 
-let split_Array = (index, array) => {
-  begin = array.slice(0, index);
+'use strict';
+
+const split_Array = (index, array) => {
+  const begin = array.slice(0, index);
   const len = array.length;
   array = array.slice(index, len);
   return [begin, array];
