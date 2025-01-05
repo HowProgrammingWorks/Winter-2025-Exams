@@ -1,12 +1,13 @@
-// step4
-//change the method of objects
+// step5
+// renamed the function parameters
 
 'use strict';
 
-let compare = (first_values, ...parameters_LIST) => {
-  const firstKeys = Object.entries(first_values);
-  const secondKeys = Object.entries(parameters_LIST[0]);
+const compare = (firstObject, secondObject) => {
+  const firstEntries = Object.entries(firstObject);
+  const secondEntries = Object.entries(secondObject);
 
-  return firstKeys.join('-') === secondKeys.join('-');
+  return firstEntries.join('-') === secondEntries.join('-');
 };
+
 module.exports = compare;
