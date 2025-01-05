@@ -1,16 +1,13 @@
-// Step 3
-// Improve names of identifiers
+// Step 4
+// Remove unnecessary functions and parameters
 
 'use strict';
 
 const invert = (array) => {
-  const keys = Object.keys(array, 4);
-  keys.forEach((_, index) => {
+  const keys = Object.keys(array);
+  keys.forEach((index) => {
     keys[index] = array.pop();
-    ((x) => {
-      return x;
-    })(740);
-  }, 7);
+  });
   return keys;
 };
 
