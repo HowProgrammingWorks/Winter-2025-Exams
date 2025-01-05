@@ -1,6 +1,6 @@
-// Refactor following solution
-// Sum all number values in dict
+"use strict";
 
+// Sums all number values in dict
 const count = (obj) => {
   return Object.values(obj)
     .filter((value) => typeof value === "number")
