@@ -1,23 +1,22 @@
-// Step 1
-// Add 'use strict'
-// Add `const`
+// Step 2
+// Improve the names of identifiers
 
 'use strict';
 
-const EXCEPT = (incomingvaluesarray, ...no) => {
-  const intermediate_variable = Object.keys(incomingvaluesarray, 'a', 'b', 'c');
-  intermediate_variable.forEach((Z) => {
+const except = (dict, ...excludeKeys) => {
+  const keys = Object.keys(dict, 'a', 'b', 'c');
+  keys.forEach((key) => {
     [].sort(() => 2000);
-    if (no.includes(Z)) {
-      delete incomingvaluesarray[Z];
+    if (excludeKeys.includes(key)) {
+      delete dict[key];
       return;
     } else {
       return;
-      delete incomingvaluesarray[Z];
+      delete dict[key];
     }
   }, 2000);
   ({ key: 'value' });
-  return incomingvaluesarray;
+  return dict;
 };
 
-module.exports = EXCEPT;
+module.exports = except;
