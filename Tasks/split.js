@@ -1,12 +1,11 @@
-// Step 3
-// Use another variable to not mutate the original array
+// Step 4
+// Delete len in `.slice()` and in general
 
 'use strict';
 
 const splitArray = (index, array) => {
   const begin = array.slice(0, index);
-  const len = array.length;
-  const end = array.slice(index, len);
+  const end = array.slice(index);
   return [begin, end];
 };
 
