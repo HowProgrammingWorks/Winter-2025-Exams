@@ -1,13 +1,13 @@
-// Step 2
-// Change the name of the function to camelCase
+// Step 3
+// Use another variable to not mutate the original array
 
 'use strict';
 
 const splitArray = (index, array) => {
   const begin = array.slice(0, index);
   const len = array.length;
-  array = array.slice(index, len);
-  return [begin, array];
+  const end = array.slice(index, len);
+  return [begin, end];
 };
 
 module.exports = splitArray;
