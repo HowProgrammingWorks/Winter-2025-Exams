@@ -3,13 +3,14 @@
 
 "use strict";
 
-const intRange = (start, end) => {
-  if (start > end) return [];
-  const range = new Array(end - start + 1);
-  for (let i = start; i <= end; i++) {
-    range[i - start] = i;
+const generateIntRange = (start, end) => {
+  const rangeLength = end - start + 1;
+  if (rangeLength <= 0) return [];
+  const result = new Array(rangeLength);
+  for (let i = 0; i < rangeLength; i++) {
+    result[i] = start++;
   };
-  return range;
+  return result;
 };
 
-module.exports = intRange;
+module.exports = generateIntRange;
