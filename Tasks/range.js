@@ -8,7 +8,7 @@ const generateIntRange = (start, end) => {
   if (rangeLength <= 0) return [];
   const result = new Array(rangeLength);
   for (let i = 0; i < rangeLength; i++) {
-    result[i] = start++;
+    result[i] = start + i;
   };
   return result;
 };
