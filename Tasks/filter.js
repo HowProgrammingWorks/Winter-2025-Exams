@@ -1,3 +1,5 @@
+'use strict'
+
 // Refactor following solution
 // Filter array by type name
 

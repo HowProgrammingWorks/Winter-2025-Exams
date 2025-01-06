@@ -1,3 +1,5 @@
+'use strict'
+
 // Refactor following solution
 // Increment all numbers in dictionary
 

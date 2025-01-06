@@ -1,3 +1,5 @@
+'use strict'
+
 // Refactor following solution
 // Sum all number values in dict
 

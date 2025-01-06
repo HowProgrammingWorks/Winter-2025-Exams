@@ -1,3 +1,5 @@
+'use strict'
+
 // Refactor following solution
 // Find key by value
 

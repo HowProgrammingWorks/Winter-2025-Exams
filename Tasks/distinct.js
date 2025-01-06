@@ -1,3 +1,5 @@
+'use strict'
+
 // Refactor following solution
 // Return an array without duplicates
 
