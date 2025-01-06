@@ -5,9 +5,9 @@ let compare = (firstDict, ...otherArgs) => {
   if (firstKeys.join('-') !== secondKeys.join('-')) return false;
   let areEqual = true;
   for (let key of firstKeys) {
-    if (firstDict[key] === secondDict[key]) areEqual = areEqual && true;
-    else {
-      areEqual = areEqual && false;
+    if (firstDict[key] !== secondDict[key]) {
+      areEqual = false;
+      break;
     }
   }
   return areEqual;
