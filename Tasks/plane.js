@@ -1,10 +1,13 @@
-// Step 4
-// Convert to arrow function
+// Step 5
+// Remove redundant parameters and variables to simplify code
+// Add them as intermediate variables
 
 'use strict';
 
-const getFlatArray = (array, result = []) => {
-  for (let index = 0, length = array.length; index < length; index++) {
+const getFlatArray = (array) => {
+  const result = [];
+  const length = array.length;
+  for (let index = 0; index < length; index++) {
     const value = array[index];
     if (Array.isArray(value)) {
       result.push(...getFlatArray(value));
