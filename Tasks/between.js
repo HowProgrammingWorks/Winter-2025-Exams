@@ -14,8 +14,7 @@ const getvaluebetween = (inputString, prefix, suffix) => {
     prefixIndex > suffixIndex
   )
     return "";
-  inputString = inputString.substring(prefixIndex + 1, suffixIndex);
-  return inputString;
+    return inputString.substring(prefixIndex + 1, suffixIndex);
 };
 
 module.exports = getvaluebetween;
