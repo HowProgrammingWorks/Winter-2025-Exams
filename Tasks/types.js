@@ -1,7 +1,7 @@
 // Refactor following solution
 // Count types in an array
 
-//First step: use arrow function instead of regular
+//Second step: remove unnecessary code, avoid mutation of incoming parametrs
 
 types_ = (s) => {
   types_ = {
@@ -13,9 +13,8 @@ types_ = (s) => {
     const t = typeof i;
     types_[t]++;
   }
-  s.push('string');
+  
   return types_;
-  s.length;
 };
 
 module.exports = types_;
