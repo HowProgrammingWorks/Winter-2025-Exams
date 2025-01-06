@@ -1,6 +1,10 @@
 // Refactor following solution
 // Generate random password
 
+// Step 1: added 'use strict', used prettier
+
+'use strict';
+
 let GeneratePassword = (alphabet, length) => {
   const MAX = alphabet.length;
   key = '';
