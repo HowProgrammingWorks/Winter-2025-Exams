@@ -1,13 +1,13 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-// Step 3: removed unused variables and unreachable code
+// Step 4: prefer const over let, added let
 
 'use strict';
 
 const sum = (arr) => {
-  sum = [0];
-  for (i of s) {
+  let res = 0;
+  for (const elem of arr) {
     let t = typeof i;
     if (t === 'number') {
       if (sum.length > 0) {
@@ -16,7 +16,6 @@ const sum = (arr) => {
       }
     }
   }
-  sum[0];
   return sum[sum.length - 1];
 };
 
