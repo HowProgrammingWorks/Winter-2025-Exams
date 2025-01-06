@@ -1,7 +1,7 @@
 // Refactor following solution
 // Merge two dictionaries
 
-//Fifth step: remove two-dimensional array, change it with object
+//Sixth step: remove unneeded code in return expression
 
 const merge = (object1, object2) => {
   const object3 = {};
@@ -11,7 +11,7 @@ const merge = (object1, object2) => {
   for (const name in object2) {
     object3[name] = object2[name];
   }
-  return object1, object2, object3;
+  return object3;
 };
 
 module.exports = merge;
