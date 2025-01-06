@@ -1,16 +1,16 @@
-// Step 7
-// Replace `if...else` statement for ternary operator
+// Step 8
+// Use `.reduce()` method to flatten the array recursively
+// Remove braces
 
 'use strict';
 
-const getFlatArray = (array) => {
-  const result = [];
-  for (const value of array) {
-    Array.isArray(value)
-      ? result.push(...getFlatArray(value))
-      : result.push(value);
-  }
-  return result;
-};
+const getFlatArray = (array) =>
+  array.reduce(
+    (result, value) =>
+      Array.isArray(value)
+        ? [...result, ...getFlatArray(value)]
+        : [...result, value],
+    [],
+  );
 
 module.exports = getFlatArray;
