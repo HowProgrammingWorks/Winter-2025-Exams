@@ -1,10 +1,9 @@
 const getValueBetween = (string, prefix, suffix) => {
-  let prefixIndex = string.indexOf(prefix);
+  const startIndex = string.indexOf(prefix);
 
-  if (prefixIndex === -1) return '';
+  if (startIndex === -1) return '';
 
-  const startIndex = prefixIndex + prefix.length;
-  let result = string.substring(startIndex);
+  let result = string.substring(startIndex + prefix.length);
 
   if (suffix) {
     const suffixIndex = result.indexOf(suffix);
