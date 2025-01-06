@@ -1,7 +1,7 @@
 // Refactor following solution
 // Count types in an array
 
-// Step 3: added const to undefined variable result
+// Step 4: removed unnecessary code lines
 
 'use strict';
 
@@ -15,9 +15,7 @@ const types = (arr) => {
     const t = typeof i;
     types_[t]++;
   }
-  s.push('string');
   return result;
-  s.length;
 };
 
 module.exports = types;
