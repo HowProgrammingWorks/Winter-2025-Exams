@@ -1,10 +1,11 @@
 'use strict';
-// Step 5
-// Remove else branching and 'selected' variable
-// Simplify code
+// Step 6
+// Correct 'startIndex' initialization to handle prefixes longer than one character
 
 const getValueBetween = (str, prefix, suffix) => {
-  const startIndex = str.indexOf(prefix) + 1;
+  const startIndex = str.includes(prefix)
+    ? str.indexOf(prefix) + prefix.length
+    : -1;
   const endIndex = str.indexOf(suffix);
   if (startIndex === -1 || endIndex === -1) {
     return '';
