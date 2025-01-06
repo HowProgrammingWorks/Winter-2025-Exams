@@ -1,31 +1,22 @@
 // Refactor following solution
 // Change double quotation to open or close quotation
+'use strict';
 
-const EMPTY = '';
+const SEPARATOR = '';
 
-quotes = function (s) {
-  res = [];
-  open = false;
-  for (c of s) {
-    if (c === '"') {
-      for (i of c) {
-        if (!open) {
-          res.push('«');
-          open = true;
-        } else {
-          res.push('»');
-          open = false;
-        }
-      }
-    } else {
-      if (c !== '"') {
-        for (i of c) {
-          res.push(i);
-        }
-      }
-    }
+const changeQuoteMarks = (string) => {
+  const result = [];
+  let isQuotesOpen = false;
+  for (const char of string) {
+    if (char === '"') {
+      isQuotesOpen ? result.push('»') : result.push('«');
+
+      isQuotesOpen = !isQuotesOpen;
+    } 
+    else result.push(char);
   }
-  return res.join(EMPTY);
+
+  return result.join(SEPARATOR);
 };
 
-module.exports = quotes;
+module.exports = changeQuoteMarks;
