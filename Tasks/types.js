@@ -1,7 +1,9 @@
 // Refactor following solution
 // Count types in an array
 
-types_ = function (s) {
+//First step: use arrow function instead of regular
+
+types_ = (s) => {
   types_ = {
     number: 0,
     string: 0,
