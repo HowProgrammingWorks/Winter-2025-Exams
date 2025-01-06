@@ -1,16 +1,8 @@
-// Step 8
-// Use `.reduce()` method to flatten the array recursively
-// Remove braces
+// Step 9
+// Use `.flat()` method for array flattening
 
 'use strict';
 
-const getFlatArray = (array) =>
-  array.reduce(
-    (result, value) =>
-      Array.isArray(value)
-        ? [...result, ...getFlatArray(value)]
-        : [...result, value],
-    [],
-  );
+const plane = (arr) => arr.flat(Infinity);
 
-module.exports = getFlatArray;
+module.exports = plane;
