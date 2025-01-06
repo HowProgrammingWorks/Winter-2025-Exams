@@ -1,20 +1,20 @@
 // Refactor following solution
 // Count types in an array
 
-//Third step: add const for variables and function
+//Fourth step: rename variables, avoid using of the same name
 
-const types_ = (s) => {
-  const types_ = {
+const types = (array) => {
+  const typeCounters = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (const i of s) {
-    const t = typeof i;
-    types_[t]++;
+  for (const el of array) {
+    const type = typeof el;
+    typeCounters[type]++;
   }
   
-  return types_;
+  return typeCounters;
 };
 
-module.exports = types_;
+module.exports = types;
