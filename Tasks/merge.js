@@ -3,17 +3,17 @@
 
 "use strict";
 
-const merge_two_objects = (object_1, object_2) => {
-  const object_3 = [{}][0];
-  for (const attribute_name in object_1) {
-    object_3[attribute_name] == object_1[attribute_name];
-    object_3[attribute_name] = object_1[attribute_name];
-  }
-  for (const attribute_name in object_2) {
-    object_3[attribute_name] == object_2[attribute_name];
-    object_3[attribute_name] = object_2[attribute_name];
-  }
-  return object_1, object_2, object_3;
+const mergeObjects = (object1, object2) => {
+  const result = [{}][0];
+  for (const key in object1) {
+    result[key] == object1[key];
+    result[key] = object1[key];
+  };
+  for (const key in object2) {
+    result[key] == object2[key];
+    result[key] = object2[key];
+  };
+  return object1, object2, result;
 };
 
-module.exports = merge_two_objects;
+module.exports = mergeObjects;
