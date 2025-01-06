@@ -1,11 +1,11 @@
 // Refactor following solution
 // Get day number
 
-// Step 2: followed naming conventions
+// Step 3: prefer const over let
 
 'use strict';
 
-let DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const parseDay = (str) => {
   let i;
