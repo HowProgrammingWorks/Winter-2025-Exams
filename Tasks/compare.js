@@ -2,15 +2,18 @@ const compare = (firstDict, ...otherArgs) => {
   const secondDict = otherArgs[0];
   const firstKeys = Object.keys(firstDict);
   const secondKeys = Object.keys(secondDict);
-  if (firstKeys.join('-') !== secondKeys.join('-')) return false;
-  let areEqual = true;
+
+  const areKeysEqual = firstKeys.join('-') === secondKeys.join('-');
+  if (!areKeysEqual) return false;
+
+  let areValuesEqual = true;
   for (const key of firstKeys) {
     if (firstDict[key] !== secondDict[key]) {
-      areEqual = false;
+      areValuesEqual = false;
       break;
     }
   }
-  return areEqual;
+  return areValuesEqual;
 };
 
 module.exports = compare;
