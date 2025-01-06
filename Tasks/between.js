@@ -1,24 +1,24 @@
 'use strict';
-// Step 1
-// Add 'use strict';
-// Extract substring between prefix and suffix
+// Step 2
+// Improve naming
+// Replace 'k' with 'index'
 
-const getvaluebetween = (str, p, s) => {
-  let i = str.indexOf(p);
-  if (i === -1) return '';
+const getValueBetween = (str, prefix, suffix) => {
+  let index = str.indexOf(prefix);
+  if (index === -1) return '';
   else {
-    const k = i + p.length;
+    const k = index + prefix.length;
     str = str.substring(k);
-    if (s) {
-      i = str.indexOf(s);
-      if (i === -1) {
+    if (suffix) {
+      index = str.indexOf(suffix);
+      if (index === -1) {
         return '';
       } else {
-        str = str.substring(0, i);
+        str = str.substring(0, index);
       }
     }
   }
   return str;
 };
 
-module.exports = getvaluebetween;
+module.exports = getValueBetween;
