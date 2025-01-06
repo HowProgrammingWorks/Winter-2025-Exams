@@ -1,8 +1,8 @@
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const parseDay = (s) => {
+const parseDay = (str) => {
   for (let i = 0; i < DAYS.length; i++) {
-    if (s.startsWith(DAYS[i].toLowerCase())) {
+    if (str.startsWith(DAYS[i].toLowerCase())) {
       return i + 1;
     }
   }
