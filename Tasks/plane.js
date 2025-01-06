@@ -1,14 +1,13 @@
-// Step 5
-// Remove redundant parameters and variables to simplify code
-// Add them as intermediate variables
+// Step 6
+// Improve iteration
+// Delete `length` variable
+// Replace `for` loop for `for...of`
 
 'use strict';
 
 const getFlatArray = (array) => {
   const result = [];
-  const length = array.length;
-  for (let index = 0; index < length; index++) {
-    const value = array[index];
+  for (const value of array) {
     if (Array.isArray(value)) {
       result.push(...getFlatArray(value));
     } else {
