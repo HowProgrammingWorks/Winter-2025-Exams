@@ -1,15 +1,15 @@
 // Refactor following solution
 // Count types in an array
 
-//Second step: remove unnecessary code, avoid mutation of incoming parametrs
+//Third step: add const for variables and function
 
-types_ = (s) => {
-  types_ = {
+const types_ = (s) => {
+  const types_ = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (i of s) {
+  for (const i of s) {
     const t = typeof i;
     types_[t]++;
   }
