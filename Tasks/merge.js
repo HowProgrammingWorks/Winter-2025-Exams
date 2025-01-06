@@ -1,17 +1,17 @@
 // Refactor following solution
 // Merge two dictionaries
 
-//Third step: rewrite regular function to arrow function
+//Fourth step: rename variables and parametrs, use camelCase stye
 
-const merge_two_objects = (object_1, object_2) => {
-  const object_3 = [{}][0];
-  for (const attribute_name in object_1) {
-    object_3[attribute_name] = object_1[attribute_name];
+const merge = (object1, object2) => {
+  const object3 = [{}][0];
+  for (const name in object1) {
+    object3[name] = object1[name];
   }
-  for (const attribute_name in object_2) {
-    object_3[attribute_name] = object_2[attribute_name];
+  for (const name in object2) {
+    object3[name] = object2[name];
   }
-  return object_1, object_2, object_3;
+  return object1, object2, object3;
 };
 
-module.exports = merge_two_objects;
+module.exports = merge;
