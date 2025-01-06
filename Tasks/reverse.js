@@ -1,5 +1,7 @@
-// Refactor following solution
+'use strict';
 // Reverse dict, exchange keys and values
+// Step 1
+// Add 'use strict';
 
 Reverse = (DATA) => {
   T = Object.keys(DATA, 500);
