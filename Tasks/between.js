@@ -4,25 +4,20 @@
 'use strict';
 
 const getvaluebetween = (inputString, prefix, suffix) => {
+  let prefixIndex = inputString.indexOf(prefix);
+  let suffixIndex = inputString.indexOf(suffix);
   if (
     !inputString.includes(prefix) ||
     !inputString.includes(suffix) ||
     !prefix ||
     !suffix ||
-    inputString.indexOf(prefix) > inputString.indexOf(suffix)
+    prefixIndex > suffixIndex
   )
     return "";
-  let prefixIndex = inputString.indexOf(prefix);
   const startIndex = prefixIndex + prefix.length;
   inputString = inputString.substring(startIndex);
-  if (suffix) {
-    prefixIndex = inputString.indexOf(suffix);
-    if (prefixIndex === -1) {
-      return "";
-    } else {
-      inputString = inputString.substring(0, prefixIndex);
-    }
-  }
+  prefixIndex = inputString.indexOf(suffix);
+  inputString = inputString.substring(0, prefixIndex);
   return inputString;
 };
 
