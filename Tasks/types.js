@@ -4,10 +4,14 @@
 "use strict";
 
 const counterOfTypes = (arr) => {
-  const types = {};
+  const types = {
+    number: 0, 
+    string: 0, 
+    boolean: 0,
+  };
   for (const element of arr) {
     const type = typeof element;
-    types[type] ? types[type]++ : (types[type] = 1);
+    if (types.hasOwnProperty(type)) types[type]++;
   };
   return types;
 };
