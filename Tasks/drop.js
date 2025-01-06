@@ -1,7 +1,5 @@
 const dropKeys = (obj, ...keysToRemove) => {
-  let objectKeys = Object.keys(obj);
-
-  objectKeys.forEach((key) => {
+  Object.keys(obj).forEach((key) => {
     if (keysToRemove.includes(key)) {
       delete obj[key];
     }
