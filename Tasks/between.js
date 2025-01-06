@@ -1,22 +1,15 @@
 'use strict';
-// Step 2
-// Improve naming
-// Replace 'k' with 'index'
+// Step 3
+// Declare variables 'startIndex' and 'endIndex' instead 'index'
+// Simplify and remove unnecessary code
 
 const getValueBetween = (str, prefix, suffix) => {
-  let index = str.indexOf(prefix);
-  if (index === -1) return '';
-  else {
-    const k = index + prefix.length;
-    str = str.substring(k);
-    if (suffix) {
-      index = str.indexOf(suffix);
-      if (index === -1) {
-        return '';
-      } else {
-        str = str.substring(0, index);
-      }
-    }
+  const startIndex = str.indexOf(prefix) + 1;
+  const endIndex = str.indexOf(suffix);
+  if (startIndex === -1 || endIndex === -1) {
+    return '';
+  } else {
+    str = str.substring(startIndex, endIndex);
   }
   return str;
 };
