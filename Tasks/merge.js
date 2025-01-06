@@ -1,9 +1,9 @@
 // Refactor following solution
 // Merge two dictionaries
 
-//Second step: add const for variables and function
+//Third step: rewrite regular function to arrow function
 
-const merge_two_objects = function merge_two_objects(object_1, object_2) {
+const merge_two_objects = (object_1, object_2) => {
   const object_3 = [{}][0];
   for (const attribute_name in object_1) {
     object_3[attribute_name] = object_1[attribute_name];
