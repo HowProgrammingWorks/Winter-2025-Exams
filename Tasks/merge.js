@@ -3,9 +3,6 @@
 
 "use strict";
 
-const mergeObjects = (object1, object2) => {
-  const result = {...object1, ...object2};
-  return result;
-};
+const mergeObjects = (object1, object2) => ({...object1, ...object2});
 
 module.exports = mergeObjects;
