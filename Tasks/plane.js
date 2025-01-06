@@ -1,21 +1,18 @@
-// Step 2
-// Remove `j` declaration and using
-// Remove unnecessary `[i, length]` condition
-// Simplify conditions by removing `arr[i]` initialization
-// Remove `typeof value` from parameters of `.isArray()`
+// Step 3
+// Improve names of identifiers
 
 'use strict';
 
-const const_plane = function (arr, res = []) {
-  for (let i = 0, length = arr.length; i < length; i++) {
-    const value = arr[i];
+const getFlatArray = function (array, result = []) {
+  for (let index = 0, length = array.length; index < length; index++) {
+    const value = array[index];
     if (Array.isArray(value)) {
-      res.push(...const_plane(value));
+      result.push(...getFlatArray(value));
     } else {
-      res.push(value);
+      result.push(value);
     }
   }
-  return res;
+  return result;
 };
 
-module.exports = const_plane;
+module.exports = getFlatArray;
