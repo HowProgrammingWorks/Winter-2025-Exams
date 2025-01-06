@@ -1,7 +1,7 @@
 // Refactor following solution
 // Count types in an array
 
-// Step 4: removed unnecessary code lines
+// Step 5: removed unnecessary intermediate variable, done
 
 'use strict';
 
@@ -11,9 +11,8 @@ const types = (arr) => {
     string: 0,
     boolean: 0,
   };
-  for (i of s) {
-    const t = typeof i;
-    types_[t]++;
+  for (const elem of arr) {
+    result[typeof elem]++;
   }
   return result;
 };
