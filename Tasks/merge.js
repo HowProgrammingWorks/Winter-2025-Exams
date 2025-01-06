@@ -1,17 +1,10 @@
 // Refactor following solution
 // Merge two dictionaries
 
-//Sixth step: remove unneeded code in return expression
+//Seventh step: rewrite function using destructuration
 
 const merge = (object1, object2) => {
-  const object3 = {};
-  for (const name in object1) {
-    object3[name] = object1[name];
-  }
-  for (const name in object2) {
-    object3[name] = object2[name];
-  }
-  return object3;
-};
+  return {...object1, ...object2};
+;};
 
 module.exports = merge;
