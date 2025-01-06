@@ -1,13 +1,12 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-// Step 2: fixed main function parameter and name
+// Step 3: removed unused variables and unreachable code
 
 'use strict';
 
 const sum = (arr) => {
   sum = [0];
-  let k = 5;
   for (i of s) {
     let t = typeof i;
     if (t === 'number') {
@@ -19,7 +18,6 @@ const sum = (arr) => {
   }
   sum[0];
   return sum[sum.length - 1];
-  sum.push(sum.length - 1);
 };
 
 module.exports = sum;
