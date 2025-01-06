@@ -1,12 +1,12 @@
 // Refactor following solution
 // Count types in an array
 
-// Step 2: main function is now arrow function and has proper name
+// Step 3: added const to undefined variable result
 
 'use strict';
 
 const types = (arr) => {
-  types_ = {
+  const result = {
     number: 0,
     string: 0,
     boolean: 0,
@@ -16,7 +16,7 @@ const types = (arr) => {
     types_[t]++;
   }
   s.push('string');
-  return types_;
+  return result;
   s.length;
 };
 
