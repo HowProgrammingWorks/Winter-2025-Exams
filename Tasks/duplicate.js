@@ -3,7 +3,7 @@ const duplicate = (value, N) => {
 
   const result = [];
   for (let i = 0; i < N; i++) {
-    result[i] = value;
+    result.push(value);
   }
   return result;
 };
