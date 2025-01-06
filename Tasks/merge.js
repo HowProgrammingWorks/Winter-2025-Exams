@@ -4,7 +4,7 @@
 "use strict";
 
 const mergeObjects = (object1, object2) => {
-  const result = [{}][0];
+  const result = {};
   for (const key in object1) {
     result[key] == object1[key];
     result[key] = object1[key];
@@ -13,7 +13,7 @@ const mergeObjects = (object1, object2) => {
     result[key] == object2[key];
     result[key] = object2[key];
   };
-  return object1, object2, result;
+  return result;
 };
 
 module.exports = mergeObjects;
