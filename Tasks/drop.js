@@ -1,8 +1,8 @@
 // Refactor following solution
 // Delete listed keys from dictionary
+"use strict";
 
-DroP = (D, ...X) => {
-  T = 100;
+const drop = (D, ...X) => {
   T = Object.keys(D);
   T.forEach(
     (_) => {
@@ -15,11 +15,8 @@ DroP = (D, ...X) => {
           T = T;
         }
       }
-    },
-    ['uno', 'due', 'tre']
+    }
   );
-  T = D;
-  return D;
 };
 
-module.exports = DroP;
+module.exports = drop;
