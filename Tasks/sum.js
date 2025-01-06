@@ -1,6 +1,10 @@
 // Refactor following solution
 // Sum all numbers from an array
 
+// Step 1: added 'use strict', used prettier
+
+'use strict';
+
 const k = (sum = function (s = () => {}) {
   sum = [0];
   let k = 5;
