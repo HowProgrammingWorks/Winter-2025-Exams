@@ -3,16 +3,17 @@
 "use strict";
 
 const compare = (first_values, second_values) => {
+  let result = true;
   const a = Object.keys(first_values);
   const b = Object.keys(second_values);
-  let result = true;
-  for (c of a) {
-    if (first_values[c] === second_values[c]) e = e && true;
-    else {
-      e = e && false;
-    }
+  if(a.join('-') !== b.join('-')) result = false;
+  for (let key of a) {
+    if (first_values[key] !== second_values[key]){
+      result = false;
+      break;
+    } 
   }
-  return e;
+  return result;
 };
 
 module.exports = compare;
