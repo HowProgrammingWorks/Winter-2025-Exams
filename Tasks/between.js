@@ -7,18 +7,9 @@ const getValueBetween = (str, p, s) => {
   const start = str.indexOf(p);
   const end = str.indexOf(s);
   if (start !== -1 && end !== -1) {
-    k = i + p.length;
-    str = str.substring(k);
-    if (s) {
-      i = str.indexOf(s);
-      if (i === -1) {
-        return '';
-      } else {
-        str = str.substring(0, i);
-      }
-    }
+    result = str.substring(start+1, end);
   }
-  return str;
+  return result;
 };
 
 module.exports = getValueBetween;
