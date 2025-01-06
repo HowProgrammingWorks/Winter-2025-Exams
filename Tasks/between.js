@@ -14,10 +14,7 @@ const getvaluebetween = (inputString, prefix, suffix) => {
     prefixIndex > suffixIndex
   )
     return "";
-  const startIndex = prefixIndex + prefix.length;
-  inputString = inputString.substring(startIndex);
-  prefixIndex = inputString.indexOf(suffix);
-  inputString = inputString.substring(0, prefixIndex);
+  inputString = inputString.substring(prefixIndex + 1, suffixIndex);
   return inputString;
 };
 
