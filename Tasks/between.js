@@ -3,9 +3,10 @@
 "use strict";
 
 const getValueBetween = (str, p, s) => {
-  i = str.indexOf(p);
-  if (i === -1) return '';
-  else {
+  let result = "";
+  const start = str.indexOf(p);
+  const end = str.indexOf(s);
+  if (start !== -1 && end !== -1) {
     k = i + p.length;
     str = str.substring(k);
     if (s) {
