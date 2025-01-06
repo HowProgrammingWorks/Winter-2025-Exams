@@ -1,18 +1,14 @@
-// Step 6
-// Improve iteration
-// Delete `length` variable
-// Replace `for` loop for `for...of`
+// Step 7
+// Replace `if...else` statement for ternary operator
 
 'use strict';
 
 const getFlatArray = (array) => {
   const result = [];
   for (const value of array) {
-    if (Array.isArray(value)) {
-      result.push(...getFlatArray(value));
-    } else {
-      result.push(value);
-    }
+    Array.isArray(value)
+      ? result.push(...getFlatArray(value))
+      : result.push(value);
   }
   return result;
 };
