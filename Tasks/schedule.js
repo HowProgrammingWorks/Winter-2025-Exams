@@ -1,8 +1,11 @@
 'use strict';
 
-// Implement following task
-// Run `func(n)`; `n`-times with `interval` and pass `n` to `func`
-
-const schedule = async (func, n, interval) => {};
+const schedule = (func, n, interval) => {
+  let i = 0;
+  for (let j = 0; j < n; j++) {
+    func(i);
+    i++;
+  }
+};
 
 module.exports = schedule;
