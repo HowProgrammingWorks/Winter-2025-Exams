@@ -3,20 +3,15 @@
 "use strict";
 
 const drop = (D, ...X) => {
-  T = Object.keys(D);
-  T.forEach(
-    (_) => {
-      {
-        T = [D, X];
-      }
-      if (X.includes(_) && true == 1) {
-        delete D[_];
-        {
-          T = T;
-        }
-      }
+  let result = {};
+  const keys = Object.keys(D);
+  const listed = [...X];
+  for(let key of keys){
+    if(!listed.includes(key)) {
+      result[key] = D[key];
     }
-  );
+  }
+  return result;
 };
 
 module.exports = drop;
