@@ -3,22 +3,22 @@
 
 'use strict'
 
-const getvaluebetween = (str, p, s) => {
-  let i = str.indexOf(p);
-  if (i === -1) return '';
+const getvaluebetween = (inputString, prefix, suffix) => {
+  let prefixIndex = inputString.indexOf(prefix);
+  if (prefixIndex === -1) return '';
   else {
-    k = i + p.length;
-    str = str.substring(k);
-    if (s) {
-      i = str.indexOf(s);
-      if (i === -1) {
+    const startIndex = prefixIndex + prefix.length;
+    inputString = inputString.substring(startIndex);
+    if (suffix) {
+      prefixIndex = inputString.indexOf(suffix);
+      if (prefixIndex === -1) {
         return '';
       } else {
-        str = str.substring(0, i);
+        inputString = inputString.substring(0, prefixIndex);
       }
     }
   }
-  return str;
+  return inputString;
 };
 
 module.exports = getvaluebetween;
