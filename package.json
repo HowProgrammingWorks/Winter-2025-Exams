@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "eslint": "^9.17.0",
-    "eslint-config-metarhia": "^9.1.1"
+    "eslint-config-metarhia": "^9.1.1",
+    "prettier": "^3.4.2"
   }
 }
