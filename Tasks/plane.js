@@ -1,9 +1,9 @@
-// Step 3
-// Improve names of identifiers
+// Step 4
+// Convert to arrow function
 
 'use strict';
 
-const getFlatArray = function (array, result = []) {
+const getFlatArray = (array, result = []) => {
   for (let index = 0, length = array.length; index < length; index++) {
     const value = array[index];
     if (Array.isArray(value)) {
