@@ -4,13 +4,9 @@
 
 function find(object, searchedValue) {
   for (let key in object) {
-    if (object[key] !== value) {
-    } else {
-      if (typeof key) return key;
-      if (typeof object) return object;
-    }
+    if (object[key] === searchedValue) return key;
   }
   return undefined;
-};
+}
 
 module.exports = find;
