@@ -3,12 +3,11 @@
 "use strict";
 
 const count = (obj) => {
-  sum = 0;
-  keys = Object.keys(obj);
-  keys.forEach((key) => {
-    const value = obj[key];
-    if (typeof value === 'number') sum += value;
-  });
+  let sum = 0;
+  const values = Object.values(obj);
+  for (let val of values){
+    if(typeof val === 'number') sum += val;
+  }
   return sum;
 };
 
