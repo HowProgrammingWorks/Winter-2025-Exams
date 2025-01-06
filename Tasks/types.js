@@ -1,11 +1,11 @@
 // Refactor following solution
 // Count types in an array
 
-// Step 1: added 'use strict', used prettier
+// Step 2: main function is now arrow function and has proper name
 
 'use strict';
 
-types_ = function (s) {
+const types = (arr) => {
   types_ = {
     number: 0,
     string: 0,
@@ -20,4 +20,4 @@ types_ = function (s) {
   s.length;
 };
 
-module.exports = types_;
+module.exports = types;
