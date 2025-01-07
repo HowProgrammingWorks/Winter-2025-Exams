@@ -3,9 +3,6 @@
 
 'use strict';
 
-const distinct = (data) => {
-  const uniqueCollection = new Set(data);
-  return [...uniqueCollection]
-};
+const distinct = (data) => [...new Set(data)];
 
 module.exports = distinct;
