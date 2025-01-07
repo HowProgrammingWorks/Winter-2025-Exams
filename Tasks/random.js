@@ -1,15 +1,12 @@
 // Refactor following solution
 // Generate random integer value in given range
 
-// Step 4: on max undefined 0 is assigned to min to unify the returns
+// Step 5: entire if block is replaced by nullish coalescing, done
 
 'use strict';
 
 const random = (min, max) => {
-  if (max === undefined) {
-    max = min;
-    min = 0;
-  }
+  max ?? (max = min, min = 0);
   return min + Math.floor(Math.random() * (max - min + 1));
 };
 
