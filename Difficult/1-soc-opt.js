@@ -61,3 +61,81 @@ const data = `city,population,area,density,country
   Bangkok,8280925,1569,5279,Thailand`;
 
 processCityData(data);
+
+const testParseData = () => {
+  const sampleData = `city,population,area,density,country
+CityA,1000,100,10,CountryA
+CityB,2000,200,20,CountryB`;
+  const parsed = parseData(sampleData);
+  console.assert(parsed.length === 2, 'Test Failed: Parsing Rows');
+  console.assert(parsed[0][0] === 'CityA', 'Test Failed: Parsing Row Data');
+};
+
+const testFindMaxDensity = () => {
+  const sampleTable = [
+    ['CityA', '1000', '100', '10', 'CountryA'],
+    ['CityB', '2000', '200', '20', 'CountryB'],
+  ];
+  const max = findMaxDensity(sampleTable);
+  console.assert(max === 20, 'Test Failed: Finding Max Density');
+};
+
+const testCalculateDensityPercentage = () => {
+  const sampleTable = [
+    ['CityA', '1000', '100', '10', 'CountryA'],
+    ['CityB', '2000', '200', '20', 'CountryB'],
+  ];
+  const maxDensity = 20;
+  const result = calculateDensityPercentage(sampleTable, maxDensity);
+  console.assert(
+    result[0][5] === '50',
+    'Test Failed: Density Percentage CityA',
+  );
+  console.assert(
+    result[1][5] === '100',
+    'Test Failed: Density Percentage CityB',
+  );
+};
+
+const testSortTableByDensityPercentage = () => {
+  const sampleTable = [
+    ['CityA', '1000', '100', '10', 'CountryA', '50'],
+    ['CityB', '2000', '200', '20', 'CountryB', '100'],
+  ];
+  const result = sortTableByDensityPercentage(sampleTable);
+  console.assert(result[0][0] === 'CityB', 'Test Failed: Sorting Order');
+  console.assert(result[1][0] === 'CityA', 'Test Failed: Sorting Order');
+};
+
+const testDisplayTable = () => {
+  const sampleTable = [
+    ['CityA', '1000', '100', '10', 'CountryA', '50'],
+    ['CityB', '2000', '200', '20', 'CountryB', '100'],
+  ];
+  const originalConsoleLog = console.log;
+  let logOutput = [];
+  console.log = (output) => logOutput.push(output);
+
+  displayTable(sampleTable);
+
+  console.assert(
+    logOutput.length === 2,
+    'Test Failed: Table Display Output Count',
+  );
+  console.assert(
+    logOutput[0].includes('CityA'),
+    'Test Failed: Table Display CityA',
+  );
+  console.assert(
+    logOutput[1].includes('CityB'),
+    'Test Failed: Table Display CityB',
+  );
+
+  console.log = originalConsoleLog;
+};
+
+testParseData();
+testFindMaxDensity();
+testCalculateDensityPercentage();
+testSortTableByDensityPercentage();
+testDisplayTable();
