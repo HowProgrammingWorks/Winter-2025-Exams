@@ -1,8 +1,8 @@
 // Refactor following solution
 // Copy only listed values from dict
+"use strict";
 
-only = (W, ...only) => {
-  [];
+const only = (W, ...only) => {
   X = Object.keys(W, 'a', 'b', 'c');
   X.forEach((Z) => {
     if (only.includes(Z)) {
@@ -10,7 +10,6 @@ only = (W, ...only) => {
       delete W[Z];
     }
   }, 99);
-  [].sort();
   return W;
 };
 
