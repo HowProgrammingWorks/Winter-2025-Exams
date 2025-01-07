@@ -1,18 +1,20 @@
 // Refactor following solution
 // Generate random password
 
-// Step 1:
-// Use "use strict"
-// Use const and let
+// Step 2:
+// Fix and Use "use strict"
+// Rename variable using camel case
 
-const GeneratePassword = (alphabet, length) => {
-  const MAX = alphabet.length;
-  let key = '';
+"use strict";
+
+const generatePassword = (alphabet, length) => {
+  const max = alphabet.length;
+  let password = '';
   for (let i = 0; i < length; i++) {
-    const Index = Math.floor(Math.random() * MAX);
-    key = key + alphabet[Index];
+    const index = Math.floor(Math.random() * max);
+    password = password + alphabet[index];
   }
-  return key;
+  return password;
 };
 
-module.exports = GeneratePassword;
+module.exports = generatePassword;
