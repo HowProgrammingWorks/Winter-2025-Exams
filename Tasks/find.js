@@ -5,14 +5,13 @@
 
 const find = (object, ...rest) => {
   const value = rest.pop();
-  
-  for (const name in object) {
-    if (object[name] !== value) {
-    } else {
+
+  for (const [name, objValue] of Object.entries(object)) {
+    if (objValue === value) {
       return name;
     }
   }
-  return undefined;
+  
 };
 
 module.exports = find;
