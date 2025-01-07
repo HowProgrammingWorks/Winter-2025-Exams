@@ -9,9 +9,9 @@
 
 ## Prerequisites
 
-- You need github and gmail accounts, node.js and text editor or any IDE installed
+- You need github and gmail accounts, node.js, and a text editor or any IDE installed
 - You can use any online materials, docs, FAQs, AI tools, Videos, etc. it is not important how can you get understanding of tasks and solutions, but we need understanding, not just solutions done
-- Here is additional materials you may refer:
+- Here are additional materials you may refer to:
   - [JavaScript Guide - English version on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
   - [JavaScript for beginners - Ukrainian version](https://youtu.be/FlXsGI7rzWE)
   - [JavaScript for beginners - Russian version](https://youtu.be/HetL0ETbN6Y)
@@ -30,13 +30,14 @@
 ## Steps to pass the exam
 
 - Choose [one or more of alternatives](https://github.com/HowProgrammingWorks/Winter-2025-Exams/blob/main/README.md#choose-alternative)
-- Clone and fill self assessment repo: https://github.com/HowProgrammingWorks/SelfAssessment
+- Clone and fill the self assessment repo: https://github.com/HowProgrammingWorks/SelfAssessment
   - Fill your skills before course in branch: `main`
   - Fill your skills after course in branch: `2025-winter`
   - Open pull request from `2025-winter` to `main` but do not merge it
 - Fill this form: https://forms.gle/saZw1PRo9aiQiF1Y8
-  - Double сheck if the form has been submitted, editing is allowed
+  - Double-сheck if the form has been submitted, editing is allowed
   - A notification should be sent to your mailbox
+- Submit form before deadline and come to the exams
 
 ## Choose alternative
 
@@ -48,9 +49,9 @@
 - Conference talk or seminar participation: submit link to google forms
 - For those who want technical interview: submit link to google forms
 - For those who have projects instead of this exams tasks:
-  - Pet-projects, commercial projects, practical programming experience in products
-  - You need to create screencast video presentation of codebase and project functionality: 15-30 minutes length
-  - Upload it to Youtube, Google disk or other hosting with video support and add link to this video in your project repository
+  - Pet projects, commercial projects, practical programming experience in products
+  - You need to create a screencast video presentation of codebase and project functionality (15-30 minutes long)
+  - Upload it to Youtube, Google Drive, or other hosting with video support and add link to this video in your project repository
 - Articles: submit links to google forms
 - MDN contribution: submit links to google forms
 
@@ -85,7 +86,7 @@
 - I'd advice to find a few friends from the group and cross-review the code
 - Here is a checklist of common problems we have in code:
   - Do not mutate function input parameters
-  - Prefer arrow functions for JavaScript and `lambda` for `Python`
+  - Prefer arrow functions in JavaScript and `lambda` in `Python`
   - Preferably use `for..of` or `for` on a variable or `Array/map`, and avoid `for..in` and `forEach`
   - Use intermediate identifiers to separate long expressions
   - Prefer `const` and use `let` as a last resort, but never use `var`
@@ -114,7 +115,7 @@
   - Decompose long expressions
   - Return result of logical expression instead of `return true; else return false;`
 - Make each refactoring and optimization step a separate commit
-- It is important not to rewrite code from scratch but to improve it step by step
+- It is important not to rewrite a code from scratch but to improve it step by step
 - At the seminar (see links above), I showed an example of how to optimize the code step by step
 - When you're done, make a pull request to my repository
 - Good luck!
