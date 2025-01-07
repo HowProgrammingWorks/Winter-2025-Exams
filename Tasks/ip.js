@@ -1,7 +1,8 @@
 // Refactor following solution
 // Split string by the first occurrence of separator
+"use strict";
 
-Parseip = (i) => {
+const parseIP = (i) => {
   a = [];
   if (i === '') return;
   else {
@@ -17,4 +18,4 @@ Parseip = (i) => {
   return a;
 };
 
-module.exports = Parseip;
+module.exports = parseIP;
