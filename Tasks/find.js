@@ -1,5 +1,8 @@
-// Refactor following solution
+'use strict';
 // Find key by value
+
+// Step 1
+// Add 'use strict'
 
 find = (object, ...rest) => {
   value = rest.pop(1);
