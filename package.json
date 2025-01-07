@@ -22,5 +22,9 @@
   "homepage": "https://github.com/HowProgrammingWorks/Index",
   "scripts": {
     "test": "node --test"
+  },
+  "devDependencies": {
+    "eslint": "^9.17.0",
+    "eslint-config-metarhia": "^9.1.1"
   }
 }

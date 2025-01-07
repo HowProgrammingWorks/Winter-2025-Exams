@@ -1,19 +1,20 @@
 // Refactor following solution
 // Count types in an array
 
-types_ = function (s) {
-  types_ = {
+// Step 5: removed unnecessary intermediate variable, done
+
+'use strict';
+
+const types = (arr) => {
+  const result = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (i of s) {
-    const t = typeof i;
-    types_[t]++;
+  for (const elem of arr) {
+    result[typeof elem]++;
   }
-  s.push('string');
-  return types_;
-  s.length;
+  return result;
 };
 
-module.exports = types_;
+module.exports = types;
