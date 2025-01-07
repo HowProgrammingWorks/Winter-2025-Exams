@@ -1,11 +1,11 @@
 // Refactor following solution
 // Increment all numbers in dictionary
 
-//Third step: rename variables and parametrs to improve readability
+//Fourth step: simplify if condition, remove unneeded code
 
 const inc = (dict) => {
   for (const key in dict) {
-    if ((typeof dict[key]).charAt(0).toUpperCase() === 'N') {
+    if (typeof dict[key] === 'number') {
       dict[key] = dict[key] + 1;
     }
   }
