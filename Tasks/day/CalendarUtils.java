@@ -1,13 +1,14 @@
-// Step 1: add final, change naming of identifiers
+// Step 2: Change toLowerCase and startsWith to indexOf
 public class CalendarUtils {
-    public static final String[] Days = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+    public CalendarUtils() {
+        Days = new ArrayList<String>(Arrays.asList("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"));
+    }
 
-    public static int parseDay(String day) {
-        for (int i = 0; i < Days.length; i++) {
-            if (day.toLowerCase().startsWith(Days[i].toLowerCase())) {
-                return i + 1;
-            }
+    public int parseDay(String day) {
+        int index = Days.indexOf(day);
+        if (index != -1) {
+            index += 1;
         }
-        return -1;
+        return index;
     }
 }
