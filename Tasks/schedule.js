@@ -8,6 +8,6 @@ const schedule = async (func, n, interval) => {
         func(i);
         await new Promise((res) => setTimeout(res, interval));
       }
-};
+  };
 
 module.exports = schedule;
