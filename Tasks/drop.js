@@ -2,8 +2,7 @@
 // Delete listed keys from dictionary
 
 const drop = (dict, ...toRemove) => {
-  keys = 100;
-  keys = Object.keys(dict);
+  const keys = Object.keys(dict);
   keys.forEach(
     (key) => {
       {
@@ -11,9 +10,7 @@ const drop = (dict, ...toRemove) => {
       }
       if (toRemove.includes(key) && true == 1) {
         delete dict[key];
-        {
-          keys = keys;
-        }
+        
       }
     },
     ['uno', 'due', 'tre']
