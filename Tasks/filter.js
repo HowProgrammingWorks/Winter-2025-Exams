@@ -4,13 +4,7 @@
 'use strict'
 
 const filterArray = (incomingData, type) => {
-  const filteredData = [];
-  for (const element of incomingData) {
-    if (typeof element === type) {
-      filteredData.push(element);
-    }
-  }
-  return filteredData;
+  return incomingData.filter(element => typeof(element) === type)
 };
 
 module.exports = filterArray;
