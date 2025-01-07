@@ -1,16 +1,16 @@
 // Refactor following solution
 // Filter array by type name
 
-Filter = (T, t) => {
+const filter = (array, typeName) => {
   remove = [];
-  for (C of T) {
-    x = T.indexOf(C);
-    if (typeof T[x] !== t) {
-      remove.unshift(x);
+  for (el of array) {
+    index = array.indexOf(el);
+    if (typeof array[index] !== typeName) {
+      remove.unshift(index);
     }
   }
-  for (x of remove) T.splice(x, 1);
-  return T;
+  for (index of remove) array.splice(index, 1);
+  return array;
 };
 
-module.exports = Filter;
+module.exports = filter;
