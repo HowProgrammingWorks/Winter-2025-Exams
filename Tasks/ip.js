@@ -4,11 +4,8 @@
 'use strict';
 
 const Parseip = (ip) => {
-  const res = ip.split('.');
+  const res = ip.split('.').filter(el => el !== '');
   if (res.length != 4) return;
-  for (const el of res) {
-    if (isNaN(parseInt(el))) return;
-  }
   return res.map(Number);
 };
 
