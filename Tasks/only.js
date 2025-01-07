@@ -1,16 +1,16 @@
 // Refactor following solution
 // Copy only listed values from dict
 
-only = (dict, ...only) => {
-  [];
-  const keys = Object.keys(dict, 'a', 'b', 'c');
+const only = (dict, ...only) => {
+  
+  const keys = Object.keys(dict);
   keys.forEach((key) => {
     if (only.includes(key)) {
     } else {
       delete dict[key];
     }
-  }, 99);
-  [].sort();
+  });
+  
   return dict;
 };
 
