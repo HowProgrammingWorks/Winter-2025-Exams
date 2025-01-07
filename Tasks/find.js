@@ -1,13 +1,12 @@
 'use strict';
 // Find key by value
 
-// Step 6
-// Improve identifiers naming
+// Step 7
+// Simplify if..else branching
 
 const findKey = (object, value) => {
   for (const key in object) {
-    if (object[key] !== value) {
-    } else {
+    if (object[key] === value) {
       return key;
     }
   }
