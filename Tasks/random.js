@@ -1,6 +1,10 @@
 // Refactor following solution
 // Generate random integer value in given range
 
+// Step 1: added 'use strict', used prettier
+
+'use strict';
+
 Random = (min, max) => {
   if (max === undefined) {
     max = min;
