@@ -1,19 +1,15 @@
 // Refactor following solution
 // Return an array without duplicates
 
-// Step 1:
-// Use "use strict"
-// Use const
+// Step 2:
+// Use "Array.fill"
 
 "use strict";
 
 const duplicate = (value, N) => {
   if (N <= 0) return [];
   else {
-    const res = [];
-    for (let i = 0; i < N; i++) {
-      res[i] = value;
-    }
+    const res = new Array(N).fill(value);
     return res;
   }
 };
