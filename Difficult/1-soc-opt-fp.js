@@ -56,3 +56,19 @@ const calculateRelativeDensity = (rows) => {
 
 const sortByRelativeDensity = (rows) =>
   [...rows].sort((a, b) => b.relativeDensity - a.relativeDensity);
+
+const calculateColumnWidths = (rows, keys) =>
+  keys.map((key) => {
+    const keyLength = key.length;
+    const valueLengths = rows.map((row) => row[key]?.toString().length || 0);
+    return Math.max(keyLength, ...valueLengths);
+  });
+
+const formatRow = (row, keys, columnWidths) =>
+  keys
+    .map((key, index) => {
+      const value = row[key]?.toString() || '';
+      const width = columnWidths[index];
+      return isNaN(row[key]) ? value.padEnd(width) : value.padStart(width);
+    })
+    .join(COLUMN_SEPARATOR);
