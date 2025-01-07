@@ -5,11 +5,11 @@
 const duplicate = (value, count) => {
   if (count <= 0) return [];
   else {
-    const res = [];
+    const result = [];
     for (let i = 0; i < count; i++) {
-      res.push(value);
+      result.push(value);
     }
-    return res;
+    return result;
   }
 };
 
