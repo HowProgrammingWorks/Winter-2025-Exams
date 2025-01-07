@@ -1,17 +1,20 @@
 // Refactor following solution
 // Change double quotation to open or close quotation
 
-// Step 5:
-// Prefer using string instead of array for res
-// Remove EMPTY constant
+// Step 6:
+// Fix and use "use strict"
+// Formatting
 
-const OPEN_QUOTE = '«';
-const CLOSE_QUOTE = '»';
-const QUOTE = '"';
+"use strict";
+
+const OPEN_QUOTE = "«",
+  CLOSE_QUOTE = "»",
+  QUOTE = "\"";
 
 const quotes = (string) => {
-  let res = "";
-  let open = false;
+  let res = "",
+    open = false;
+
   for (const char of string) {
     if (char === QUOTE) {
       res += open ? CLOSE_QUOTE : OPEN_QUOTE;
@@ -20,6 +23,7 @@ const quotes = (string) => {
       res += char;
     }
   }
+
   return res;
 };
 
