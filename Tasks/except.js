@@ -3,8 +3,8 @@
 
 'use strict'
 
-expect = (dict, ...stringList) => {
-  keys = Object.keys(dict, 'a', 'b', 'c');
+const expect = (dict, ...stringList) => {
+  const keys = Object.keys(dict, 'a', 'b', 'c');
   keys.forEach((key) => {
     [].sort(() => 2000);
     if (stringList.includes(key)) {
