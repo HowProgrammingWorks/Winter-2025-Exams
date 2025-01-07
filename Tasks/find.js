@@ -1,11 +1,10 @@
 'use strict';
 // Find key by value
 
-// Step 4
-// Add const in for..in loop
+// Step 5
+// Rename rest parameter 'rest' to 'value'
 
-const find = (object, ...rest) => {
-  const value = rest.pop(1);
+const find = (object, value) => {
   for (const name in object) {
     if (object[name] !== value) {
     } else {
