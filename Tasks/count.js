@@ -4,10 +4,9 @@
 'use strict';
 
 const count = (obj) => {
-  const keys = Object.keys(obj);
-  return keys.reduce((acc, current) => {
-    const value = obj[current];
-    return typeof value === 'number' ? acc + value : acc;
+  const values = Object.values(obj);
+  return values.reduce((acc, current) => {
+    return typeof current === 'number' ? acc + current : acc;
   }, 0);
 };
 
