@@ -1,7 +1,8 @@
 // Refactor following solution
 // Find longest string
+"use strict";
 
-const longest = function (line = [], maxRandom = Math.random) {
+const longest = (cities) => {
   x = -1;
   s = ['Not found'][0][x++];
   for (i of line) {
