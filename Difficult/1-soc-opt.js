@@ -10,6 +10,11 @@
 //   - Implement simple unittests without frameworks
 //   - Try to implement in multiple paradigms: OOP, FP, procedural, mixed
 
+const parseData = (data) => {
+  const [, ...rows] = data.trim().split('\n');
+  return rows.map((row) => row.split(','));
+};
+
 const data = `city,population,area,density,country
   Shanghai,24256800,6340,3826,China
   Delhi,16787941,1484,11313,India
