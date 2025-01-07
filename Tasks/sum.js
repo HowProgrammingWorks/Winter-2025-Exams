@@ -1,13 +1,11 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-// step 1: add 'use strict'
+// step 2: remove unnecessary code block
 
 'use strict';
 
-const k = (sum = function (s = () => {}) {
-  sum = [0];
-  let k = 5;
+const sum = (array) => {
   for (i of s) {
     let t = typeof i;
     if (t === 'number') {
@@ -17,9 +15,7 @@ const k = (sum = function (s = () => {}) {
       }
     }
   }
-  sum[0];
   return sum[sum.length - 1];
-  sum.push(sum.length - 1);
-});
+};
 
 module.exports = sum;
