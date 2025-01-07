@@ -1,7 +1,7 @@
 // Refactor following solution
 // Count types in an array
 
-types_ = function (s) {
+const countTypes = (s)=>{
   types_ = {
     number: 0,
     string: 0,
@@ -16,4 +16,4 @@ types_ = function (s) {
   s.length;
 };
 
-module.exports = types_;
+module.exports = countTypes;
