@@ -1,20 +1,20 @@
 // Refactor following solution
 // Get day number
 
-// step 2: add const declarations
+// step 3: rename variables and function
 
 'use strict';
 
-const D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const _parse_day_ = (s) => {
+const getDayNumber = (str) => {
   let i;
-  for (i = 0; i < D.length; i++) {
-    if (s.startsWith(D[i].toLowerCase())) {
+  for (i = 0; i < DAYS.length; i++) {
+    if (str.startsWith(DAYS[i].toLowerCase())) {
       return i + 1;
     }
   }
   return -1;
 };
 
-module.exports = _parse_day_;
+module.exports = getDayNumber;
