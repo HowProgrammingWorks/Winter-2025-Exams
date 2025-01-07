@@ -1,20 +1,20 @@
 // Refactor following solution
 // Copy only listed values from dict
 
-// step 3: remove unnecessary code block
+// step 4: rename variables and function
 
 'use strict';
 
-const only = (W, ...only) => {
-  const X = Object.keys(W);
+const only = (dict, ...listedValue) => {
+  const keys = Object.keys(dict);
 
-  X.forEach((Z) => {
-    if (!only.includes(Z)) {
-      delete W[Z];
+  keys.forEach((key) => {
+    if (!listedValue.includes(key)) {
+      delete dict[key];
     }
   });
 
-  return W;
+  return dict;
 };
 
 module.exports = only;
