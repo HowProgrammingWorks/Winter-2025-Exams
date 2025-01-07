@@ -1,7 +1,9 @@
 // Refactor following solution
 // Generate random integer value in given range
 
-Random = (min, max) => {
+'use strict'
+
+const random = (min, max) => {
   if (max === undefined) {
     max = min;
     return Math.floor(Math.random() * (max + 1));
@@ -10,4 +12,4 @@ Random = (min, max) => {
   }
 };
 
-module.exports = Random;
+module.exports = random;
