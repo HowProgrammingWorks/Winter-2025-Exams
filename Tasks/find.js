@@ -1,12 +1,12 @@
 'use strict';
 // Find key by value
 
-// Step 3
-// Add const
+// Step 4
+// Add const in for..in loop
 
 const find = (object, ...rest) => {
   const value = rest.pop(1);
-  for (name in object) {
+  for (const name in object) {
     if (object[name] !== value) {
     } else {
       return name;
