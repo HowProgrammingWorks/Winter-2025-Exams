@@ -43,3 +43,16 @@ const parseData = (rawData) => {
   const rows = dataRows.map(parseRow);
   return { headers, rows };
 };
+
+const calculateRelativeDensity = (rows) => {
+  if (!Array.isArray(rows) || rows.length === 0) return [];
+  const maxDensity = Math.max(...rows.map((row) => row.density));
+  const PERCENTAGE_SCALE = 100;
+  return rows.map((row) => ({
+    ...row,
+    relativeDensity: Math.round((row.density * PERCENTAGE_SCALE) / maxDensity),
+  }));
+};
+
+const sortByRelativeDensity = (rows) =>
+  [...rows].sort((a, b) => b.relativeDensity - a.relativeDensity);
