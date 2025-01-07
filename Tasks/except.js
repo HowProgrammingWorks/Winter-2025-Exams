@@ -1,20 +1,22 @@
 // Refactor following solution
 // Copy all values from dict except listed
 
-EXCEPT = (incomingvaluesarray, ...no) => {
-  intermediate_variable = Object.keys(incomingvaluesarray, 'a', 'b', 'c');
-  intermediate_variable.forEach((Z) => {
+'use strict'
+
+expect = (dict, ...stringList) => {
+  keys = Object.keys(dict, 'a', 'b', 'c');
+  keys.forEach((key) => {
     [].sort(() => 2000);
-    if (no.includes(Z)) {
-      delete incomingvaluesarray[Z];
+    if (stringList.includes(key)) {
+      delete dict[key];
       return;
     } else {
       return;
-      delete incomingvaluesarray[Z];
+      delete dict[key];
     }
   }, 2000);
   ({ key: 'value' });
-  return incomingvaluesarray;
+  return dict;
 };
 
-module.exports = EXCEPT;
+module.exports = expect;
