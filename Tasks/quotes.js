@@ -1,31 +1,23 @@
-// Refactor following solution
-// Change double quotation to open or close quotation
+'use strict';
 
-const EMPTY = '';
+// Step9: Improve naming of identifiers
 
-quotes = function (s) {
-  res = [];
-  open = false;
-  for (c of s) {
-    if (c === '"') {
-      for (i of c) {
-        if (!open) {
-          res.push('«');
-          open = true;
-        } else {
-          res.push('»');
-          open = false;
-        }
-      }
+const QUOTE = '"';
+const OPEN_QUOTE = '«';
+const CLOSE_QUOTE = '»';
+
+const quotes = (quote) => {
+  let result = '';
+  let open = false;
+  for (const char of quote) {
+    if (char === QUOTE) {
+      result += open ? CLOSE_QUOTE : OPEN_QUOTE;
+      open = !open;
     } else {
-      if (c !== '"') {
-        for (i of c) {
-          res.push(i);
-        }
-      }
+      result += char;
     }
   }
-  return res.join(EMPTY);
+  return result;
 };
 
 module.exports = quotes;
