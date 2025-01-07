@@ -3,8 +3,9 @@
 
 'use strict';
 
-const compare = (firstDict, secondDict) => {
-  return JSON.stringify(firstDict) === JSON.stringify(secondDict);
+const compare = (firstDict, ...otherDicts) => {
+  const firstJSON = JSON.stringify(firstDict);
+  return otherDicts.every(dict => JSON.stringify(dict) === firstJSON);
 };
 
 module.exports = compare;
