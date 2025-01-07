@@ -1,4 +1,4 @@
-// Refactor following solution
+'use strict';
 // Compare two dictionaries
 
 let compare = (first_values, ...parameters_LIST) => {
