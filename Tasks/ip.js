@@ -2,13 +2,13 @@
 // Split string by the first occurrence of separator
 
 const parseIp = (IPString) => {
-  res = [];
+  const res = [];
   if (IPString === '') return;
 
   else {
-    ipArray = IPString.split('.');
+    const ipArray = IPString.split('.');
     if (ipArray.length != 4) return;
-    i = 0;
+    let i = 0;
     for (const ipEl of ipArray) {
       res[i] = parseInt(ipEl);
       if (isNaN(res[i])) return;
