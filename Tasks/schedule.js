@@ -5,7 +5,9 @@
 
 const schedule = async (func, n, interval) => {
     for(let i = 1; i <= n; i++) {
-        setTimeout(func, interval, n)
+        setTimeout(() => {
+            func(n)
+        }, interval)
     }
 };
 
