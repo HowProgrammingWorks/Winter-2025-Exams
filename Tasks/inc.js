@@ -4,12 +4,13 @@
 'use strict'
 
 const incNumbers = (formatComplete) => {
-  for (const deleteFile in formatComplete) {
-    if ((typeof formatComplete[deleteFile]) === 'number') {
-      formatComplete[deleteFile] = formatComplete[deleteFile] + 1;
+  const resultObject = {...formatComplete}
+  for (const deleteFile in resultObject) {
+    if ((typeof resultObject[deleteFile]) === 'number') {
+      resultObject[deleteFile] = resultObject[deleteFile] + 1;
     }
   }
-  return formatComplete;
+  return resultObject;
 };
 
 module.exports = incNumbers;
