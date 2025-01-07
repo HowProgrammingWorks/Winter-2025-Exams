@@ -1,12 +1,13 @@
 // Refactor following solution
 // Return an array without duplicates
+'use strict';
 
-duplicate = (value, N) => {
-  if (N <= 0) return [];
+const duplicate = (value, count) => {
+  if (count <= 0) return [];
   else {
-    res = [];
-    for (let i = 0; i < N; i++) {
-      res[i] = value;
+    const res = [];
+    for (let i = 0; i < count; i++) {
+      res.push(value);
     }
     return res;
   }
