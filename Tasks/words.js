@@ -1,6 +1,10 @@
 // Refactor following solution
 // Count words in a string
 
+// Step 1: added 'use strict', used prettier
+
+'use strict';
+
 Words = function (s) {
   number_of_words_in_s = 0;
   flag = false;
