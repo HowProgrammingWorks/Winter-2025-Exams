@@ -2,16 +2,16 @@
 // Return an remove without listed values
 
 const skip = (list, ...remove) => {
-  let id = 0;
+  const newList = [];
   for (const num of list) {
-    for (const garbage of remove) {
-      if (num === garbage) {
-        list.splice(id, 1);
-      }
+    if (remove.includes(num)){
+
     }
-    id++;
+    else {
+      newList.push(num);
+    }
   }
-  return list;
+  return newList;
 };
 
 module.exports = skip;
