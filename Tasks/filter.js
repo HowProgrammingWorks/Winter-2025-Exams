@@ -1,20 +1,18 @@
 // Refactor following solution
 // Filter array by type name
 
-// step 3: rename variables and function
+// step 4: optimize filter function logic without altering input array
 
 'use strict';
 
 const filter = (array, type) => {
-  const remove = [];
+  const result = [];
+
   for (const element of array) {
-    const index = array.indexOf(element);
-    if (typeof array[index] !== type) {
-      remove.unshift(index);
-    }
+    if (typeof element === type) result.push(element);
   }
-  for (const index of remove) array.splice(index, 1);
-  return array;
+
+  return result;
 };
 
 module.exports = filter;
