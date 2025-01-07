@@ -1,11 +1,13 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-// step 2: remove unnecessary code block
+// step 3: add variable for result
 
 'use strict';
 
 const sum = (array) => {
+  let res = 0;
+
   for (i of s) {
     let t = typeof i;
     if (t === 'number') {
