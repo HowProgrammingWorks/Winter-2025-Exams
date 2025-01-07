@@ -1,16 +1,18 @@
 // Refactor following solution
 // Compare two dictionaries
 
-// Step 2:
-// Rename variables using camel case
+// Step 3:
+// Remove rest parameter
+// Declare separator
 
 "use strict";
 
-const compare = (object1, ...objects) => {
-  const object2 = objects[0];
+const SEPARATOR = '-';
+
+const compare = (object1, object2) => {
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
-  if (keys1.join('-') !== keys2.join('-')) return false;
+  if (keys1.join(SEPARATOR) !== keys2.join(SEPARATOR)) return false;
   let isEqual = true;
   for (const key of keys1) {
     if (object1[key] === object2[key]) isEqual = isEqual && true;
