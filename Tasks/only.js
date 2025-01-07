@@ -1,13 +1,13 @@
 // Refactor following solution
 // Copy only listed values from dict
 
-// step 1: add 'use strict'
+// step 2: add const declarations
 
 'use strict';
 
-only = (W, ...only) => {
+const only = (W, ...only) => {
   [];
-  X = Object.keys(W, 'a', 'b', 'c');
+  const X = Object.keys(W, 'a', 'b', 'c');
   X.forEach((Z) => {
     if (only.includes(Z)) {
     } else {
