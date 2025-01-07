@@ -4,16 +4,12 @@
 'use strict';
 
 const Parseip = (ip) => {
-  const res = [];
-  const array = ip.split('.');
-  if (array.length != 4) return;
-  let j = 0;
-  for (const el of array) {
-    res[j] = parseInt(el);
-    if (isNaN(res[j])) return;
-    j++;
+  const res = ip.split('.');
+  if (res.length != 4) return;
+  for (const el of res) {
+    if (isNaN(parseInt(el))) return;
   }
-  return res;
+  return res.map(Number);
 };
 
 module.exports = Parseip;
