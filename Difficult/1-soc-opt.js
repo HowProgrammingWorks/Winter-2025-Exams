@@ -36,8 +36,8 @@ const formTable = (data) => {
 const getMax = (table) => {
   let max = 0;
   for (const row of table) {
-    const d = parseInt(row[3]);
-    if (d > max) max = d;
+    const density = parseInt(row[3]);
+    if (density > max) max = density;
   }
   return max;
 };
