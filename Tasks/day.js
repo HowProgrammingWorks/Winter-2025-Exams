@@ -3,7 +3,7 @@
 // Refactor following solution
 // Get day number
 
-let weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const parseDay = (day) => {
   if(typeof day !== 'string') return -1
