@@ -1,26 +1,24 @@
 // Refactor following solution
 // Compare two dictionaries
 
-// Step 1:
-// Use "use strict"
-// Prefer const
-// Add const in loop
+// Step 2:
+// Rename variables using camel case
 
 "use strict";
 
-const compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  const a = Object.keys(first_values);
-  const b = Object.keys(second_values);
-  if (a.join('-') !== b.join('-')) return false;
-  let e = true;
-  for (const c of a) {
-    if (first_values[c] === second_values[c]) e = e && true;
+const compare = (object1, ...objects) => {
+  const object2 = objects[0];
+  const keys1 = Object.keys(object1);
+  const keys2 = Object.keys(object2);
+  if (keys1.join('-') !== keys2.join('-')) return false;
+  let isEqual = true;
+  for (const key of keys1) {
+    if (object1[key] === object2[key]) isEqual = isEqual && true;
     else {
-      e = e && false;
+      isEqual = isEqual && false;
     }
   }
-  return e;
+  return isEqual;
 };
 
 module.exports = compare;
