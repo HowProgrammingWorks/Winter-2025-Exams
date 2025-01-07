@@ -24,16 +24,11 @@ const data = `city,population,area,density,country
 
 const formTable = (data) => {
   const lines = data.split('\n');
-  lines.pop();
+  lines.splice(0, 1);
   const table = [];
-  let first = true;
   for (const line of lines) {
-    if (first) {
-      first = false;
-    } else {
-      const cells = line.split(',');
-      table.push([cells[0], cells[1], cells[2], cells[3], cells[4]]);
-    }
+    const cells = line.split(',');
+    table.push(cells);
   }
   return table;
 };
