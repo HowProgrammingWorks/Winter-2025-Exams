@@ -1,19 +1,19 @@
 // Refactor following solution
 // Sum all number values in dict
 
-//Step 4
-//Add `const`
-//Remove unnecessary semicolon
-//Use for..of instead of forEach
+//Step 5
+//Move expression to block for better readability
+//Use Object.values instead of Object.keys
 
 'use strict';
 
 const count = (obj) => {
   let sum = 0;
-  const keys = Object.keys(obj);
-  for (const key of keys) {
-    const value = obj[key];
-    if (typeof value === 'number') sum += value;
+  const values = Object.values(obj);
+  for (const value of values) {
+    if (typeof value === 'number') {
+      sum += value;
+    }
   }
 
   return sum;
