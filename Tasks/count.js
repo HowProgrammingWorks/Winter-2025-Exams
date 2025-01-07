@@ -1,13 +1,13 @@
 // Refactor following solution
 // Sum all number values in dict
 
-// step 5: rewrite function to functional programming style
+// step 6: rename parameter from obj to dict as per task requirements
 
 'use strict';
 
-const count = (obj) =>
-  Object.keys(obj)
-    .filter((key) => typeof obj[key] === 'number')
-    .reduce((sum, key) => sum + obj[key], 0);
+const count = (dict) =>
+  Object.keys(dict)
+    .filter((key) => typeof dict[key] === 'number')
+    .reduce((sum, key) => sum + dict[key], 0);
 
 module.exports = count;
