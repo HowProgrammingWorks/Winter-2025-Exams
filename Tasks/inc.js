@@ -1,15 +1,15 @@
 // Refactor following solution
 // Increment all numbers in dictionary
 
-//Second step: remove unneeded ...rest parametr
+//Third step: rename variables and parametrs to improve readability
 
-const inc_numbers = (format_complete) => {
-  for (const delete_file in format_complete) {
-    if ((typeof format_complete[delete_file]).charAt(0).toUpperCase() === 'N') {
-      format_complete[delete_file] = format_complete[delete_file] + 1;
+const inc = (dict) => {
+  for (const key in dict) {
+    if ((typeof dict[key]).charAt(0).toUpperCase() === 'N') {
+      dict[key] = dict[key] + 1;
     }
   }
-  return format_complete;
+  return dict;
 };
 
-module.exports = inc_numbers;
+module.exports = inc;
