@@ -5,19 +5,16 @@
 const getValueBetween = (inputString, prefix, suffix) => {
   let prefixIndex = inputString.indexOf(prefix);
   if (prefixIndex === -1) return '';
-  else {
-    const suffixIndex = prefixIndex + prefix.length;
-    inputString = inputString.substring(suffixIndex);
-    if (suffix) {
-      prefixIndex = inputString.indexOf(suffix);
-      if (i === -1) {
-        return '';
-      } else {
-        inputString = inputString.substring(0, prefixIndex);
-      }
-    }
-  }
-  return inputString;
+
+  const startIndex = prefixIndex + prefix.length;
+  inputString = inputString.substring(startIndex);
+
+  if (!suffix) return inputString;
+
+  const suffixIndex = inputString.indexOf(suffix);
+  if (suffixIndex === -1) return '';
+
+  return inputString.substring(0, suffixIndex);
 };
 
 module.exports = getValueBetween;
