@@ -3,19 +3,19 @@
 
 'use strict'
 
-const compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  const a = Object.keys(first_values);
-  const b = Object.keys(second_values);
-  if (a.join('-') !== b.join('-')) return false;
-  let e = true;
-  for (const key of a) {
-    if (first_values[key] === second_values[key]) e = e && true;
+const compare = (firstDict, ...otherDict) => {
+  const secondDict = otherDict[0];
+  const firstDictKeys = Object.keys(firstDict);
+  const secondDictKeys = Object.keys(secondDict);
+  if (firstDictKeys.join('-') !== secondDictKeys.join('-')) return false;
+  let flag = true;
+  for (const key of firstDictKeys) {
+    if (firstDict[key] === secondDict[key]) flag = flag && true;
     else {
-      e = e && false;
+      flag = flag && false;
     }
   }
-  return e;
+  return flag;
 };
 
 module.exports = compare;
