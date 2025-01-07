@@ -4,15 +4,8 @@
 'use strict';
 
 const distinct = (data) => {
-  const uniqueCollection = new Set();
-  data.map((element, index) => {
-    if (uniqueCollection.has(element)) {
-      delete data[index];
-    } else {
-      uniqueCollection.add(element);
-    }
-  });
-  return data.filter (x => typeof x === 'number');
+  const uniqueCollection = new Set(data);
+  return [...uniqueCollection]
 };
 
 module.exports = distinct;
