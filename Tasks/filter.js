@@ -4,15 +4,13 @@
 'use strict'
 
 const filterArray = (incomingData, type) => {
-  const removeIndex = [];
+  const filteredData = [];
   for (const element of incomingData) {
-    const index = incomingData.indexOf(element);
-    if (typeof incomingData[index] !== type) {
-      removeIndex.unshift(index);
+    if (typeof element === type) {
+      filteredData.push(element);
     }
   }
-  for (const element of removeIndex) incomingData.splice(element, 1);
-  return incomingData;
+  return filteredData;
 };
 
 module.exports = filterArray;
