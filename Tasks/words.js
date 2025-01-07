@@ -1,14 +1,14 @@
 // Refactor following solution
 // Count words in a string
 
-// Step 2: all variables defined correctly
+// Step 3: followed naming conventions
 
 'use strict';
 
-const Words = function (s) {
-  let number_of_words_in_s = 0;
+const words = function (str) {
+  let result = 0;
   let flag = false;
-  for (const c of s) {
+  for (const c of str) {
     if (!flag) {
       if (c === ' ') {
         if (flag === true) {
@@ -22,7 +22,7 @@ const Words = function (s) {
         } else {
           flag = true;
         }
-        number_of_words_in_s++;
+        result++;
       }
     } else {
       if (c === ' ') {
@@ -40,7 +40,7 @@ const Words = function (s) {
       }
     }
   }
-  return number_of_words_in_s;
+  return result;
 };
 
-module.exports = Words;
+module.exports = words;
