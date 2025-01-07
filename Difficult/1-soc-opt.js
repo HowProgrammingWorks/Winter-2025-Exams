@@ -19,6 +19,15 @@ const findMaxDensity = (table) => {
   return Math.max(...table.map((row) => parseInt(row[3], 10)));
 };
 
+const calculateDensityPercentage = (table, maxDensity) => {
+  return table.map((row) => {
+    const densityPercentage = Math.round(
+      (parseInt(row[3], 10) * 100) / maxDensity,
+    );
+    return [...row, densityPercentage.toString()];
+  });
+};
+
 const data = `city,population,area,density,country
   Shanghai,24256800,6340,3826,China
   Delhi,16787941,1484,11313,India
