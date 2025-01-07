@@ -79,4 +79,4 @@ const logTable = (table) => {
   }
 };
 
-logTable(createTable(data));
+if (data) logTable(createTable(data));
