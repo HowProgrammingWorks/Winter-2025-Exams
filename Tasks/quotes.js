@@ -1,26 +1,26 @@
 // Refactor following solution
 // Change double quotation to open or close quotation
 
-// Step 4:
-// Simplify if else statement
+// Step 5:
+// Prefer using string instead of array for res
+// Remove EMPTY constant
 
-const EMPTY = '';
 const OPEN_QUOTE = '«';
 const CLOSE_QUOTE = '»';
 const QUOTE = '"';
 
 const quotes = (string) => {
-  const res = [];
+  let res = "";
   let open = false;
   for (const char of string) {
     if (char === QUOTE) {
-      res.push(open ? CLOSE_QUOTE : OPEN_QUOTE);
+      res += open ? CLOSE_QUOTE : OPEN_QUOTE;
       open = !open;
     } else {
-      res.push(char);
+      res += char;
     }
   }
-  return res.join(EMPTY);
+  return res;
 };
 
 module.exports = quotes;
