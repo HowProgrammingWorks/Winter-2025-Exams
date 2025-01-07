@@ -1,9 +1,9 @@
 // Refactor following solution
 // Change double quotation to open or close quotation
 
-// Step 2:
-// Rename variables
-// Declare separators
+// Step 3:
+// Remove unnecessary loops for char
+// Remove unnecessary if conditions
 
 const EMPTY = '';
 const OPEN_QUOTE = '«';
@@ -15,21 +15,15 @@ const quotes = (string) => {
   let open = false;
   for (const char of string) {
     if (char === QUOTE) {
-      for (const i of char) {
-        if (!open) {
-          res.push(OPEN_QUOTE);
-          open = true;
-        } else {
-          res.push(CLOSE_QUOTE);
-          open = false;
-        }
+      if (!open) {
+        res.push(OPEN_QUOTE);
+        open = true;
+      } else {
+        res.push(CLOSE_QUOTE);
+        open = false;
       }
     } else {
-      if (char !== '"') {
-        for (const i of char) {
-          res.push(i);
-        }
-      }
+      res.push(char);
     }
   }
   return res.join(EMPTY);
