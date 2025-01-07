@@ -1,20 +1,16 @@
 // Refactor following solution
 // Find key by value
 
-// step 5: rename variable 'name' to 'propertyValue' for clarity
+// step 6: rewrite function to functional programming style
 
 'use strict';
 
 const find = (object, ...rest) => {
   const value = rest.pop();
 
-  for (const [key, propertyValue] of Object.entries(object)) {
-    if (propertyValue === value) {
-      return key;
-    }
-  }
-
-  return undefined;
+  return Object.entries(object).find(
+    ([, propertyValue]) => propertyValue === value,
+  )?.[0];
 };
 
 module.exports = find;
