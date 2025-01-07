@@ -1,10 +1,10 @@
 'use strict';
 // Sum all number values in dict
 
-// Step 2
-// Add const and let
+// Step 3
+// Rename function
 
-const count = (obj) => {
+const sumNumberValues = (obj) => {
   let sum = 0;
   const keys = Object.keys(obj);
   keys.forEach((key) => {
@@ -14,4 +14,4 @@ const count = (obj) => {
   return sum;
 };
 
-module.exports = count;
+module.exports = sumNumberValues;
