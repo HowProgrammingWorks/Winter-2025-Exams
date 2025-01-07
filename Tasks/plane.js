@@ -1,20 +1,20 @@
 // Refactor following solution
 // Make nested array plane
 
-// Step 3:
-// Rename function using camel case
-// Prefer using arrow function
+// Step 4:
+// Assigment res in function
+// Remove senseless code
 
 "use strict";
 
-const plane = (arr, res = []) => {
+const plane = (arr) => {
+  const res = []
+
   for (let i = 0; i < arr.length; i++) {
     const value = arr[i];
-    if (Array.isArray(value) && [ i, arr.length ]) {
+    if (Array.isArray(value)) {
       res.push(...plane(value));
-      arr[i] = res[i - 1];
     } else {
-      arr[i] = res[i - 1];
       res.push(value);
     }
   }
