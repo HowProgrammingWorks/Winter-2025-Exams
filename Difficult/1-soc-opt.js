@@ -15,6 +15,10 @@ const parseData = (data) => {
   return rows.map((row) => row.split(','));
 };
 
+const findMaxDensity = (table) => {
+  return Math.max(...table.map((row) => parseInt(row[3], 10)));
+};
+
 const data = `city,population,area,density,country
   Shanghai,24256800,6340,3826,China
   Delhi,16787941,1484,11313,India
