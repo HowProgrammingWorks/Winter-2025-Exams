@@ -72,3 +72,31 @@ const formatRow = (row, keys, columnWidths) =>
       return isNaN(row[key]) ? value.padEnd(width) : value.padStart(width);
     })
     .join(COLUMN_SEPARATOR);
+
+const displayHeaders = (keys, columnWidths) => {
+  const headerLine = keys
+  .map((key, index) => key.padEnd(columnWidths[index]))
+  .join(COLUMN_SEPARATOR);
+  console.log(headerLine);
+  console.log(ROW_SEPARATOR.repeat(headerLine.length));
+};
+
+const displayRows = (rows, keys, columnWidths) => {
+  for (const row of rows) {
+    const formattedRow = formatRow(row, keys, columnWidths);
+    console.log(formattedRow);
+  }
+};
+
+const displayTable = (data) => {
+  const { headers, rows } = data;
+  if (!rows.length) {
+    console.log('No data available to display.');
+    return;
+  }
+
+  const keys = [...headers, 'relativeDensity'];
+  const columnWidths = calculateColumnWidths(rows, keys);
+  displayHeaders(keys, columnWidths);
+  displayRows(rows, keys, columnWidths);
+};
