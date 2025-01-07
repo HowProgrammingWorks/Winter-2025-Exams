@@ -1,21 +1,13 @@
 // Refactor following solution
 // Sum all number values in dict
 
-// step 4: replace forEach with for...of loop
+// step 5: rewrite function to functional programming style
 
 'use strict';
 
-const count = (obj) => {
-  let sum = 0;
-
-  const keys = Object.keys(obj);
-
-  for (const key of keys) {
-    const value = obj[key];
-    if (typeof value === 'number') sum += value;
-  }
-
-  return sum;
-};
+const count = (obj) =>
+  Object.keys(obj)
+    .filter((key) => typeof obj[key] === 'number')
+    .reduce((sum, key) => sum + obj[key], 0);
 
 module.exports = count;
