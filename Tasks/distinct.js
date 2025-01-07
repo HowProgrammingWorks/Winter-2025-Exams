@@ -5,14 +5,14 @@
 
 const distinct = (data) => {
   const uniqueCollection = new Set();
-  const uniqueData = [];
-  data.forEach((element) => {
-    if (!uniqueCollection.has(element) && typeof element === 'number') {
+  data.map((element, index) => {
+    if (uniqueCollection.has(element)) {
+      delete data[index];
+    } else {
       uniqueCollection.add(element);
-      uniqueData.push(element);
     }
   });
-  return uniqueData;
+  return data.filter (x => typeof x === 'number');
 };
 
 module.exports = distinct;
