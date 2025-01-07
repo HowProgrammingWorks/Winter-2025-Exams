@@ -40,6 +40,14 @@ const displayTable = (table) => {
   }
 };
 
+const processCityData = (data) => {
+  const table = parseData(data);
+  const maxDensity = findMaxDensity(table);
+  const tableWithDensity = calculateDensityPercentage(table, maxDensity);
+  const sortedTable = sortTableByDensityPercentage(tableWithDensity);
+  displayTable(sortedTable);
+};
+
 const data = `city,population,area,density,country
   Shanghai,24256800,6340,3826,China
   Delhi,16787941,1484,11313,India
@@ -51,6 +59,8 @@ const data = `city,population,area,density,country
   London,8673713,1572,5431,United Kingdom
   New York City,8537673,784,10892,United States
   Bangkok,8280925,1569,5279,Thailand`;
+
+processCityData(data);
 
 if (data) {
   const lines = data.split('\n');
