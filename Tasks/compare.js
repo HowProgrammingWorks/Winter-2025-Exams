@@ -1,9 +1,9 @@
 // Refactor following solution
 // Compare two dictionaries
 
-// Step 3:
-// Remove rest parameter
-// Declare separator
+// Step 4:
+// Remove senseless else statement and invert condition
+// Simplify isEqual assignment
 
 "use strict";
 
@@ -15,10 +15,7 @@ const compare = (object1, object2) => {
   if (keys1.join(SEPARATOR) !== keys2.join(SEPARATOR)) return false;
   let isEqual = true;
   for (const key of keys1) {
-    if (object1[key] === object2[key]) isEqual = isEqual && true;
-    else {
-      isEqual = isEqual && false;
-    }
+    if (object1[key] !== object2[key]) isEqual = true;
   }
   return isEqual;
 };
