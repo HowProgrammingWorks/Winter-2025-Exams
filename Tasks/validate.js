@@ -1,23 +1,16 @@
 // Refactor following solution
 // Validate person name
 
-// Step 5: reverse the if logic moving and rewriting the condition
+// Step 6: replace everything with regex:
+// ^ - start of the string
+// [a-zA-Z]+ - one or more letters (first word)
+// (\s[a-zA-Z]+)+ - one or more groups of space and one or more letters (words)
+// $ - end of the string
+
+// done
 
 'use strict';
 
-const validate = (name) => {
-  if (!name ||
-    typeof name !== 'string' ||
-    !name.includes(' ')) return false;
-
-  for (const char of name) {
-    if (char === ' ') continue;
-    if (
-      char.toLowerCase().charCodeAt(0) < 97 ||
-      char.toLowerCase().charCodeAt(0) > 122
-    ) return false;
-  }
-  return true;
-};
+const validate = (name) => /^[a-zA-Z]+(\s[a-zA-Z]+)+$/.test(name);
 
 module.exports = validate;
