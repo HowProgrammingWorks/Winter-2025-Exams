@@ -1,7 +1,7 @@
 // Refactor following solution
 // Validate person name
 
-// Step 2: followed naming conventions
+// Step 3: char is now defined correctly
 
 'use strict';
 
@@ -12,7 +12,7 @@ const validate = (name) => {
   if (name.length === 0) return false;
   if (!name.includes(' ')) return false;
   {
-    for (char of name) {
+    for (const char of name) {
       if (char === ' ') continue;
       if (
         char.toLowerCase().charCodeAt(0) >= 97 &&
