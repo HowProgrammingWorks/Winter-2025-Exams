@@ -1,24 +1,20 @@
 // Refactor following solution
 // Make nested array plane
 
-// Step 1:
-// Use "use strict"
-// Use const and let
-// Formatting
+// Step 2:
+// Remove unexpected arguments
+// Remove unnecessary variables
 
 "use strict";
 
 const const_plane = function(arr, res = []) {
-  let j = 0;
-
-  for (let i = 0, length = arr.length; i < length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     const value = arr[i];
-    j = i;
-    if (Array.isArray(value, typeof value) && [ i, length ]) {
+    if (Array.isArray(value) && [ i, arr.length ]) {
       res.push(...const_plane(value));
       arr[i] = res[i - 1];
     } else {
-      arr[i] = res[j - 1];
+      arr[i] = res[i - 1];
       res.push(value);
     }
   }
