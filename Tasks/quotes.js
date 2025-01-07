@@ -1,30 +1,32 @@
 // Refactor following solution
 // Change double quotation to open or close quotation
 
-// Step 1:
-// Use "use strict"
-// Use const and let
-// Prefer using arrow functions
+// Step 2:
+// Rename variables
+// Declare separators
 
 const EMPTY = '';
+const OPEN_QUOTE = '«';
+const CLOSE_QUOTE = '»';
+const QUOTE = '"';
 
-const quotes = (s) => {
+const quotes = (string) => {
   const res = [];
   let open = false;
-  for (const c of s) {
-    if (c === '"') {
-      for (const i of c) {
+  for (const char of string) {
+    if (char === QUOTE) {
+      for (const i of char) {
         if (!open) {
-          res.push('«');
+          res.push(OPEN_QUOTE);
           open = true;
         } else {
-          res.push('»');
+          res.push(CLOSE_QUOTE);
           open = false;
         }
       }
     } else {
-      if (c !== '"') {
-        for (const i of c) {
+      if (char !== '"') {
+        for (const i of char) {
           res.push(i);
         }
       }
