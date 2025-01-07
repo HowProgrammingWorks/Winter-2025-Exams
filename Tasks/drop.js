@@ -4,13 +4,12 @@
 'use strict'
 
 const drop = (dictionary, ...keyList) => {
-  const newDictionary = {...dictionary} 
-  Object.keys(newDictionary).forEach((key) => {
-      if (keyList.includes(key)) {
-        delete newDictionary[key];
+  return Object.keys(dictionary).reduce((acc, key) => {
+      if (!keyList.includes(key)) {
+          acc[key] = dictionary[key];
       }
-    });
-  return newDictionary;
+      return acc;
+    },{})
 };
 
 module.exports = drop;
