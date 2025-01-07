@@ -2,6 +2,8 @@
 // Sum all number values in dict
 
 count = (obj) => {
+  if (!obj || typeof obj !== 'object') return 0;
+
   let sum = 0;
   for (const key of Object.keys(obj)) {
     const value = obj[key];
@@ -11,4 +13,5 @@ count = (obj) => {
 };
 
 module.exports = count;
+
 
