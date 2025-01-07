@@ -6,12 +6,8 @@
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const getDayNumber = (oneDay) => {
-  for (let i = 0; i < days.length; i++) {
-    if (oneDay.startsWith(days[i].toLowerCase())) {
-      return i + 1;
-    }
-  }
-  return -1;
+    const index = days.findIndex(day => oneDay.toLowerCase().startsWith(day.toLowerCase()));
+    return index !== -1 ? index + 1: -1;
 };
 
 module.exports = getDayNumber;
