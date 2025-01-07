@@ -1,18 +1,20 @@
 // Refactor following solution
 // Compare two dictionaries
 
-'use strict'
+'use strict';
 
-const compare = (firstDict, secondDict) => {
-    const firstDictKeys = Object.keys(firstDict);
-    const secondDictKeys = Object.keys(secondDict);
-    if (firstDictKeys.join('-') !== secondDictKeys.join('-')) return false;
+const compare = (firstDict, ...otherDicts) => {
+  const firstDictKeys = Object.keys(firstDict);
+  for (const dict of otherDicts) {
+    const dictKeys = Object.keys(dict);
+    if (firstDictKeys.join("-") !== dictKeys.join("-")) return false;
     for (const key of firstDictKeys) {
-      if (firstDict[key] !== secondDict[key]) {
+      if (firstDict[key] !== dict[key]) {
         return false;
-      };
+      }
     }
-    return true;
-  };
-  
-  module.exports = compare;
+  }
+  return true;
+};
+
+module.exports = compare;
