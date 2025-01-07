@@ -1,7 +1,7 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-// step 5: rename variables
+// step 6: simplified function logic
 
 'use strict';
 
@@ -9,15 +9,12 @@ const sum = (array) => {
   let res = 0;
 
   for (const elem of array) {
-    const type = typeof elem;
-    if (type === 'number') {
-      if (array.length > 0) {
-        const newSum = array[array.length - 1] + elem;
-        array.push(newSum);
-      }
+    if (typeof elem === 'number') {
+      res += elem;
     }
   }
-  return array[array.length - 1];
+
+  return res;
 };
 
 module.exports = sum;
