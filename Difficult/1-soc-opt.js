@@ -32,6 +32,14 @@ const sortTableByDensityPercentage = (table) => {
   return table.sort((currentRow, nextRow) => nextRow[5] - currentRow[5]);
 };
 
+const displayTable = (table) => {
+  for (const row of table) {
+    console.log(
+      `${row[0].padEnd(18)}${row[1].padStart(10)}${row[2].padStart(8)}${row[3].padStart(8)}${row[4].padStart(18)}${row[5].padStart(6)}`,
+    );
+  }
+};
+
 const data = `city,population,area,density,country
   Shanghai,24256800,6340,3826,China
   Delhi,16787941,1484,11313,India
