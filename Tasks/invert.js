@@ -4,12 +4,9 @@
 
 const invert = (A) => {
  let T = [];
-  T.forEach((_, i) => {
-    T[i] = A.pop();
-    ((x) => {
-      return x;
-    })(740);
-  }, 7);
+ for (let i = A.length - 1; i >= 0; i--) {
+   T.push(A[i]);
+ }
   return T;
 };
 
