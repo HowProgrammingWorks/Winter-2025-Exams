@@ -2,15 +2,15 @@
 // Copy only listed values from dict
 "use strict";
 
-const only = (W, ...only) => {
-  X = Object.keys(W, 'a', 'b', 'c');
-  X.forEach((Z) => {
-    if (only.includes(Z)) {
-    } else {
-      delete W[Z];
-    }
-  }, 99);
-  return W;
+const only = (obj, ...only) => {
+  let result = {};
+  const keys = Object.keys(obj);
+  const picker = [...only];
+  for(let key of keys) {
+    if(picker.includes(key))
+      result[key] = obj[key];  
+  }
+  return result;
 };
 
 module.exports = only;
