@@ -1,7 +1,7 @@
 // Refactor following solution
 // Extract substring between prefix and suffix
 
-getvaluebetween = (str, p, s) => {
+const getValueBetween = (str, p, s) => {
   i = str.indexOf(p);
   if (i === -1) return '';
   else {
@@ -19,4 +19,4 @@ getvaluebetween = (str, p, s) => {
   return str;
 };
 
-module.exports = getvaluebetween;
+module.exports = getValueBetween;
