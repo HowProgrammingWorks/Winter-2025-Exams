@@ -5,12 +5,8 @@
 const duplicate = (value, count) => {
   if (count <= 0) return [];
   else {
-    const result = [];
-    for (let i = 0; i < count; i++) {
-      result.push(value);
-    }
-    return result;
+    return Array(count).fill(value);
   }
-};
+}
 
 module.exports = duplicate;
