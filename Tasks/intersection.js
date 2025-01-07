@@ -1,3 +1,4 @@
+'use strict';
 // Refactor following solution
 // Find an intersection of two dictionaries
 
