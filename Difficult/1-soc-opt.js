@@ -44,12 +44,13 @@ const getMax = (table) => {
 
 const sortTable = (table) => {
   const max = getMax(table);
-  for (const row of table) {
-    const a = Math.round((row[3] * 100) / max);
-    row.push(a.toString());
+  const sortedTable = [...table];
+  for (const row of sortedTable) {
+    const ratio = Math.round((row[3] * 100) / max);
+    row.push(ratio.toString());
   }
-  table.sort((r1, r2) => r2[5] - r1[5]);
-  return table;
+  sortedTable.sort((r1, r2) => r2[5] - r1[5]);
+  return sortedTable;
 };
 
 const createTable = (data) => {
