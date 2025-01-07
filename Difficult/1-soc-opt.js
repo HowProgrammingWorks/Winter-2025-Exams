@@ -62,15 +62,20 @@ const createTable = (data) => {
   return sortedTable;
 };
 
+const formatRow = (row, paddings) => {
+  const formattedRow = row.map((item, index) =>
+    index === 0
+      ? item.trim().padEnd(paddings[index])
+      : item.padStart(paddings[index]),
+  );
+  return formattedRow.join('');
+};
+
 const logTable = (table) => {
+  const paddings = [18, 10, 8, 8, 18, 6];
   for (const row of table) {
-    let s = row[0].padEnd(18);
-    s += row[1].padStart(10);
-    s += row[2].padStart(8);
-    s += row[3].padStart(8);
-    s += row[4].padStart(18);
-    s += row[5].padStart(6);
-    console.log(s);
+    const str = formatRow(row, paddings);
+    console.log(str);
   }
 };
 
