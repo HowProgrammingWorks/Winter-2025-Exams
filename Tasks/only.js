@@ -1,18 +1,16 @@
 // Refactor following solution
 // Copy only listed values from dict
 
-// step 4: rename variables and function
+// step 5: replace forEach with for...of loop
 
 'use strict';
 
 const only = (dict, ...listedValue) => {
   const keys = Object.keys(dict);
 
-  keys.forEach((key) => {
-    if (!listedValue.includes(key)) {
-      delete dict[key];
-    }
-  });
+  for (const key of keys) {
+    if (!listedValue.includes(key)) delete dict[key];
+  }
 
   return dict;
 };
