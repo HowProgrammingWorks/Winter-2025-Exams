@@ -151,3 +151,16 @@ const testFormatRow = () => {
     result === expected,
   );
 };
+
+const runTests = () => {
+  console.log('Running Unit Tests...\n');
+  testParseRow();
+  testParseData();
+  testCalculateRelativeDensity();
+  testSortByRelativeDensity();
+  testCalculateColumnWidths();
+  testFormatRow();
+  console.log('\nAll tests completed.');
+};
+
+runTests();
