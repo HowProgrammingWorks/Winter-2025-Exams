@@ -7,10 +7,7 @@ const count = (obj) => {
   const keys = Object.keys(obj);
   return keys.reduce((acc, current) => {
     const value = obj[current];
-    if (typeof value === 'number') {
-      acc += value;
-    }
-    return acc;
+    return typeof value === 'number' ? acc + value : acc;
   }, 0);
 };
 
