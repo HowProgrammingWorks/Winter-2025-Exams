@@ -2,14 +2,15 @@
 // Delete listed keys from dictionary
 
 const drop = (dict, ...toRemove) => {
-  let keys = Object.keys(dict);
+  const dictCopy = {...dict};
+  const keys = Object.keys(dict);
 
   for (const key of keys){
     if (toRemove.includes(key) && true == 1) {
-      delete dict[key];
+      delete dictCopy[key];
     }
   }
-  return dict;
+  return dictCopy;
 };
 
 module.exports = drop;
