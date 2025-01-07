@@ -1,3 +1,4 @@
+'use strict';
 // Refactor following solution
 // Extract substring between prefix and suffix
 
