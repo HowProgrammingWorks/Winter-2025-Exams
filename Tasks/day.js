@@ -1,3 +1,4 @@
+'use strict';
 // Refactor following solution
 // Get day number
 
