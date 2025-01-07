@@ -6,13 +6,11 @@
 const compare = (firstDict, ...otherDicts) => {
   const firstDictKeys = Object.keys(firstDict);
   for (const dict of otherDicts) {
-    const dictKeys = Object.keys(dict);
-    if (firstDictKeys.join("-") !== dictKeys.join("-")) return false;
-    for (const key of firstDictKeys) {
-      if (firstDict[key] !== dict[key]) {
-        return false;
-      }
-    }
+    const dictkeys = Object.keys(dict);
+    if (firstDictKeys.join("-") !== dictkeys.join("-")) return false;
+    return firstDictKeys.every(key => {
+        return firstDict[key] === dict[key];
+    })
   }
   return true;
 };
