@@ -4,15 +4,9 @@
 'use strict';
 
 const distinct = (data) => {
-  const array = [];
-  for(const value of data)
-  {
-    if (array.includes(value) != 1)
-    {
-      array.push(value);
-    }
-  }
-  return array;
+  const array = data;
+
+  return array.filter((item, index) => array.indexOf(item) === index);
 };
 
 module.exports = distinct;
