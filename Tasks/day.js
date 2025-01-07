@@ -1,19 +1,13 @@
 // Refactor following solution
 // Get day number
 
-// step 5: move declaration of let i inside the loop
+// step 6: rewrite function to functional programming style
 
 'use strict';
 
 const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
-const getDayNumber = (str) => {
-  for (let i = 0; i < DAYS.length; i++) {
-    if (str.startsWith(DAYS[i])) {
-      return i + 1;
-    }
-  }
-  return -1;
-};
+const getDayNumber = (str) =>
+  DAYS.findIndex((day) => str.startsWith(day)) + 1 || -1;
 
 module.exports = getDayNumber;
