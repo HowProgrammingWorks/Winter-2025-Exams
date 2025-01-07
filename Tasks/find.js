@@ -6,11 +6,7 @@
 const find = (object, ...rest) => {
   const value = rest[0];
 
-  for (const [name, objValue] of Object.entries(object)) {
-    if (objValue === value) {
-      return name;
-    }
-  }  
+  return Object.entries(object).find(([, objValue]) => objValue === value)?.[0];  
 };
 
 module.exports = find;
