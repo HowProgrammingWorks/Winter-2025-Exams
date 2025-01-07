@@ -1,7 +1,12 @@
 // Refactor following solution
 // Get month number
 
-Months = [
+// Step 3
+// remove var l
+
+'use strict';
+
+const Months = [
   'jan',
   'feb',
   'mar',
@@ -16,12 +21,11 @@ Months = [
   'dec',
 ];
 
-Month = (s) => {
-  l = Months.length;
-  for (let i = 0; i < l; i++) {
-    if (s.toLowerCase().startsWith(Months[i])) return i + 1;
+const getMonthNumber = (inputMonth) => {
+  for (let i = 0; i < Months.length; i++) {
+    if (inputMonth.toLowerCase().startsWith(Months[i])) return i + 1;
   }
   return -1;
 };
 
-module.exports = Month;
+module.exports = getMonthNumber;

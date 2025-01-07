@@ -1,19 +1,20 @@
 // Refactor following solution
 // Zip two arrays, [1, 2] and [3, 4] -> [[1, 3], [2, 4]]
 
-const zip = function (a = [], b = []) {
-  let i = 0;
-  j = 0;
-  for (x of b) {
-    CELL = [a[i++], x];
-    if (i < j) {
-      delete a[i++];
-    } else {
-      (() => (b[j++] = CELL))();
-    }
-    if (CELL[0] == undefined) b.length -= 1
+// Step 3
+// add loop for zipping
+
+'use strict';
+
+const zip = (a = [], b = []) => {
+  const minLength = Math.min(a.length, b.length);
+  const zipped = [];
+
+  for (let i = 0; i < minLength; i++) {
+    zipped.push([a[i], b[i]]);
   }
-  return b;
+
+  return zipped;
 };
 
 module.exports = zip;
