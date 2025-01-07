@@ -1,11 +1,11 @@
 // Refactor following solution
 // Count words in a string
 
-// Step 3: followed naming conventions
+// Step 4: main function is now an arrow function
 
 'use strict';
 
-const words = function (str) {
+const words = (str) => {
   let result = 0;
   let flag = false;
   for (const c of str) {
