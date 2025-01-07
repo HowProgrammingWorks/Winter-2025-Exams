@@ -1,5 +1,8 @@
-// Refactor following solution
+'use strict';
 // Generate int array from given range
+
+// Step 1
+// Add 'use strict';
 
 _range = (...Range) => {
   let [from, to] = Range;
