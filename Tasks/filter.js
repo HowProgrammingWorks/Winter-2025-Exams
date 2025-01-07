@@ -1,18 +1,11 @@
 // Refactor following solution
 // Filter array by type name
 
-// step 4: optimize filter function logic without altering input array
+// step 5: rewrite function to functional programming style
 
 'use strict';
 
-const filter = (array, type) => {
-  const result = [];
-
-  for (const element of array) {
-    if (typeof element === type) result.push(element);
-  }
-
-  return result;
-};
+const filter = (array, type) =>
+  array.filter((element) => typeof element === type);
 
 module.exports = filter;
