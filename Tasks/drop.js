@@ -4,9 +4,7 @@
 'use strict'
 
 const drop = (dictionary, ...keyList) => {
-  const arrayOfDictionaryKeys = Object.keys(dictionary);
-  arrayOfDictionaryKeys.forEach(
-    (key) => {
+  Object.keys(dictionary).forEach((key) => {
       if (keyList.includes(key)) {
         delete dictionary[key];
       }
