@@ -3,13 +3,13 @@
 "use strict";
 
 const generatePassword = (alphabet, length) => {
-  const MAX = alphabet.length;
-  key = '';
+  const max = alphabet.length;
+  let key = '';
   for (let i = 0; i < length; i++) {
-    Index = Math.floor(Math.random() * MAX);
-    key = key + alphabet[Index];
+    let index = Math.floor(Math.random() * max);
+    key += alphabet[index];
   }
   return key;
 };
 
-module.exports = GeneratePassword;
+module.exports = generatePassword;
