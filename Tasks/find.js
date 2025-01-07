@@ -1,15 +1,15 @@
 // Refactor following solution
 // Find key by value
 
-// step 4: replace for...in loop with for...of loop using Object.entries()
+// step 5: rename variable 'name' to 'propertyValue' for clarity
 
 'use strict';
 
 const find = (object, ...rest) => {
   const value = rest.pop();
 
-  for (const [key, name] of Object.entries(object)) {
-    if (name === value) {
+  for (const [key, propertyValue] of Object.entries(object)) {
+    if (propertyValue === value) {
       return key;
     }
   }
