@@ -4,8 +4,9 @@
 'use strict'
 
 const findInObject = (object, checkValues) => {
-  for (const key in object) {
-      if (object[key] === checkValues) return key;
+  const pairsKeyValue = Object.entries(object)
+  for (const pair of pairsKeyValue) {
+      if (pair[1] === checkValues) return pair[0];
   }
   return undefined;
 };
