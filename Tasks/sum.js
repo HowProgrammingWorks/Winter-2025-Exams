@@ -1,20 +1,11 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-// step 6: simplified function logic
+// step 7: rewrite function to functional programming style
 
 'use strict';
 
-const sum = (array) => {
-  let res = 0;
-
-  for (const elem of array) {
-    if (typeof elem === 'number') {
-      res += elem;
-    }
-  }
-
-  return res;
-};
+const sum = (array) =>
+  array.reduce((res, elem) => (typeof elem === 'number' ? res + elem : res), 0);
 
 module.exports = sum;
