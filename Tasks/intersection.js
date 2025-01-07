@@ -4,13 +4,14 @@
 'use strict'
 
 const intersection = (firstObject, secondObject) => {
+  const newObject = {};
   const firstKeys = Object.keys(firstObject);
   for (const attributeName of firstKeys) {
-    if (firstObject[attributeName] !== secondObject[attributeName]) {
-      delete firstObject[attributeName]
+    if (firstObject[attributeName] === secondObject[attributeName]) {
+      newObject[attributeName] = firstObject[attributeName];
     }
   }
-  return firstObject;
+  return newObject;
 };
 
 module.exports = intersection;
