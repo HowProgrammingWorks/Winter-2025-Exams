@@ -1,13 +1,13 @@
 'use strict';
 // Generate int array from given range
 
-// Step 5
-// Rename function
+// Step 6
+// Modify the logic for adding numbers to 'result'
 
 const getRangeArray = (first, last) => {
   let result = [];
   for (let i = first; i <= last; i++) {
-    result[i - first] = i;
+    result.push(i);
   }
   return result;
 };
