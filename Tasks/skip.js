@@ -4,13 +4,9 @@
 'use strict'
 
 const skip = (list, ...remove) => {
-  const newList = [];
-  for (const num of list) {
-    if (!remove.includes(num)){
-      newList.push(num);
-    }
-  }
-  return newList;
+  const newList = list;
+
+  return newList.filter((num) => !remove.includes(num));
 };
 
 module.exports = skip;
