@@ -1,6 +1,10 @@
 // Refactor following solution
 // Filter array by type name
 
+// step 1: add 'use strict'
+
+'use strict';
+
 Filter = (T, t) => {
   remove = [];
   for (C of T) {
