@@ -3,8 +3,7 @@
 
 count = (obj) => {
   let sum = 0;
-  let keys = Object.keys(obj);
-  for (const key of keys) {
+  for (const key of Object.keys(obj)) {
     const value = obj[key];
     if (typeof value === 'number') sum += value;
   }
@@ -12,3 +11,4 @@ count = (obj) => {
 };
 
 module.exports = count;
+
