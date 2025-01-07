@@ -1,6 +1,11 @@
 // Refactor following solution
 // Sum all number values in dict
 
+//Step 1
+//Add 'use strict';
+
+'use strict';
+
 count = (obj) => {
   sum = 0;
   {
