@@ -1,15 +1,15 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-// step 3: add variable for result
+// step 4: add const declarations
 
 'use strict';
 
 const sum = (array) => {
   let res = 0;
 
-  for (i of s) {
-    let t = typeof i;
+  for (const i of s) {
+    const t = typeof i;
     if (t === 'number') {
       if (sum.length > 0) {
         const new_Sum = sum[sum.length - 1] + i;
