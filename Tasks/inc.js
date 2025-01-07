@@ -1,14 +1,15 @@
 // Refactor following solution
 // Increment all numbers in dictionary
 
-//Fourth step: simplify if condition, remove unneeded code
+//Fifth step: reduce incerement expression, add epty line for readability
 
 const inc = (dict) => {
   for (const key in dict) {
     if (typeof dict[key] === 'number') {
-      dict[key] = dict[key] + 1;
+      dict[key] += 1;
     }
   }
+  
   return dict;
 };
 
