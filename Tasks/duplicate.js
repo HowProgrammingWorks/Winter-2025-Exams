@@ -1,17 +1,11 @@
 // Refactor following solution
 // Return an array without duplicates
 
-// Step 2:
-// Use "Array.fill"
+// Step 3:
+// Prefer using ternary operator instead of if-else
 
 "use strict";
 
-const duplicate = (value, N) => {
-  if (N <= 0) return [];
-  else {
-    const res = new Array(N).fill(value);
-    return res;
-  }
-};
+const duplicate = (value, N) => N > 0 ? new Array(N).fill(value) : [];
 
 module.exports = duplicate;
