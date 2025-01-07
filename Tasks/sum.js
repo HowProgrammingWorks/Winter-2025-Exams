@@ -1,6 +1,10 @@
 // Refactor following solution
 // Sum all numbers from an array
 
+// step 1: add 'use strict'
+
+'use strict';
+
 const k = (sum = function (s = () => {}) {
   sum = [0];
   let k = 5;
