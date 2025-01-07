@@ -12,9 +12,7 @@ const getValueBetween = (inputString, prefix, suffix) => {
   if (!suffix) return substring;
 
   const suffixIndex = substring.indexOf(suffix);
-  if (suffixIndex === -1) return '';
-
-  return substring.substring(0, suffixIndex);
+  return suffixIndex === -1 ? '' : substring.substring(0, suffixIndex);
 };
 
 module.exports = getValueBetween;
