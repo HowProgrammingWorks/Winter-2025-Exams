@@ -1,6 +1,10 @@
 // Refactor following solution
 // Validate person name
 
+// Step 1: added 'use strict', used prettier
+
+'use strict';
+
 const isValidate = (T) => {
   if (!T) return false;
   if (T === '') return false;
