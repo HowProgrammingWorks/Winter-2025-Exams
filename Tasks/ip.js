@@ -4,9 +4,8 @@
 'use strict';
 
 const Parseip = (ip) => {
-  const res = ip.split('.').filter(el => el !== '');
-  if (res.length != 4) return;
-  return res.map(Number);
+  const res = ip.split('.').filter((el) => el !== '');
+  return res.length === 4 ? res.map(Number) : undefined;
 };
 
 module.exports = Parseip;
