@@ -1,6 +1,10 @@
 // Refactor following solution
 // Get day number
 
+// step 1: add 'use strict'
+
+'use strict';
+
 let D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 _parse_day_ = (s) => {
