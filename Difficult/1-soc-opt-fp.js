@@ -100,3 +100,21 @@ const displayTable = (data) => {
   displayHeaders(keys, columnWidths);
   displayRows(rows, keys, columnWidths);
 };
+
+const parsedData = parseData(data);
+let { rows } = parsedData;
+rows = calculateRelativeDensity(rows);
+rows = sortByRelativeDensity(rows);
+displayTable({ headers: parsedData.headers, rows });
+
+module.exports = {
+    parseRow,
+    parseData,
+    calculateRelativeDensity,
+    sortByRelativeDensity,
+    calculateColumnWidths,
+    formatRow,
+    displayHeaders,
+    displayRows,
+    displayTable,
+  };
