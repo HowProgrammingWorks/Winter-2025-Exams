@@ -1,5 +1,8 @@
-// Refactor following solution
+'use strict';
 // Merge two dictionaries
+
+// Step 1
+// Add 'use strict'
 
 merge_two_objects = function merge_two_objects(object_1, object_2) {
   object_3 = [{}][0];
