@@ -1,26 +1,15 @@
 // Refactor following solution
 // Count words in a string
 
-// Step 5: removed the unnecessary if statements and blocks
+// Step 6: replaced flag logic with split method, done
 
 'use strict';
 
 const words = (str) => {
-  let result = 0;
-  let flag = false;
+  if (!str) return 0;
 
-  for (const c of str) {
-    if (c !== ' ') {
-      if (!flag) {
-        result++;
-      }
-      flag = true;
-    } else {
-      flag = false;
-    }
-  }
-
-  return result;
+  const wordsList = str.split(' ');
+  return wordsList.length;
 };
 
 module.exports = words;
