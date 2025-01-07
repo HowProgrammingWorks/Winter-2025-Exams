@@ -3,18 +3,18 @@
 // Extract substring between prefix and suffix
 
 const getValueBetween = (inputString, prefix, suffix) => {
-  let prefixIndex = inputString.indexOf(prefix);
+  const prefixIndex = inputString.indexOf(prefix);
   if (prefixIndex === -1) return '';
 
   const startIndex = prefixIndex + prefix.length;
-  inputString = inputString.substring(startIndex);
+  const substring = inputString.substring(startIndex);
 
-  if (!suffix) return inputString;
+  if (!suffix) return substring;
 
-  const suffixIndex = inputString.indexOf(suffix);
+  const suffixIndex = substring.indexOf(suffix);
   if (suffixIndex === -1) return '';
 
-  return inputString.substring(0, suffixIndex);
+  return substring.substring(0, suffixIndex);
 };
 
 module.exports = getValueBetween;
