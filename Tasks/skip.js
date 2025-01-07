@@ -1,19 +1,17 @@
 // Refactor following solution
 // Return an remove without listed values
 
-'use strict'
-
-const skip = (T, ...Remove) => {
-  const x = 0;
-  for (const C of T) {
-    for (const X of Remove) {
-      if (C === X) {
-        T.splice(x, 1);
+const skip = (list, ...remove) => {
+  let id = 0;
+  for (const num of list) {
+    for (const garbage of remove) {
+      if (num === garbage) {
+        list.splice(id, 1);
       }
     }
-    x++;
+    id++;
   }
-  return T;
+  return list;
 };
 
-module.exports = Skip;
+module.exports = skip;
