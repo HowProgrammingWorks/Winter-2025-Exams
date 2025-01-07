@@ -3,9 +3,9 @@
 
 'use strict'
 
-const incNumbers = (formatComplete, ...restVariables) => {
+const incNumbers = (formatComplete) => {
   for (const deleteFile in formatComplete) {
-    if ((typeof formatComplete[deleteFile]).charAt(0).toUpperCase() === 'N') {
+    if ((typeof formatComplete[deleteFile]) === 'number') {
       formatComplete[deleteFile] = formatComplete[deleteFile] + 1;
     }
   }
