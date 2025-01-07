@@ -4,18 +4,12 @@
 'use strict'
 
 const expect = (dict, ...stringList) => {
-  const keys = Object.keys(dict, 'a', 'b', 'c');
+  const keys = Object.keys(dict);
   keys.forEach((key) => {
-    [].sort(() => 2000);
     if (stringList.includes(key)) {
       delete dict[key];
-      return;
-    } else {
-      return;
-      delete dict[key];
     }
-  }, 2000);
-  ({ key: 'value' });
+  });
   return dict;
 };
 
