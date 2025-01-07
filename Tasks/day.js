@@ -1,16 +1,16 @@
 // Refactor following solution
 // Get day number
 
-// step 3: rename variables and function
+// step 4: rename data in array and delete toLowerCase() for easier index search
 
 'use strict';
 
-const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
 const getDayNumber = (str) => {
   let i;
   for (i = 0; i < DAYS.length; i++) {
-    if (str.startsWith(DAYS[i].toLowerCase())) {
+    if (str.startsWith(DAYS[i])) {
       return i + 1;
     }
   }
