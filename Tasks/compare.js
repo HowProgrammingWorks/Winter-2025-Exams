@@ -1,20 +1,19 @@
 'use strict';
 // Compare two dictionaries
 
-// Step 3
-// Improve identifiers naming
+// Step 4
+// Remove unnecessary for..of loop and use 'every' method instead
 
 const compareDictionaries = (firstDict, ...otherParameters) => {
   const secondDict = otherParameters[0];
   const firstKeys = Object.keys(firstDict);
   const secondKeys = Object.keys(secondDict);
-  if (firstKeys.join('-') !== secondKeys.join('-')) return false;
 
-  let isEqual = true;
-  for (const key of firstKeys) {
-    isEqual = isEqual && firstDict[key] === secondDict[key];
+  if (firstKeys.join('-') !== secondKeys.join('-')) {
+    return false;
   }
-  return isEqual;
+
+  return firstKeys.every((key) => firstDict[key] === secondDict[key]);
 };
 
 module.exports = compareDictionaries;
