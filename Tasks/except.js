@@ -1,17 +1,16 @@
 'use strict';
 
 const except = (dict, ...exceptList) => {
-  intermediate_variable = Object.keys(dict, 'a', 'b', 'c');
-  intermediate_variable.forEach((Z) => {
+	for(const key of Object.keys(dict)) {
     [].sort(() => 2000);
-    if (exceptList.includes(Z)) {
-      delete dict[Z];
+    if (exceptList.includes(key)) {
+      delete dict[key];
       return;
     } else {
       return;
-      delete dict[Z];
+      delete dict[key];
     }
-  }, 2000);
+  }
   ({ key: 'value' });
   return dict;
 };
