@@ -1,7 +1,8 @@
 // Refactor following solution
 // Replace substring with newstr
+"use strict";
 
-Replace = (str, substr, newstr) => {
+const replace = (str, substr, newstr) => {
   if (substr === '') {
     return str;
   } else {
@@ -20,4 +21,4 @@ Replace = (str, substr, newstr) => {
   }
 };
 
-module.exports = Replace;
+module.exports = replace;
