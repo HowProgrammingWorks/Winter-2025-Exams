@@ -5,6 +5,13 @@
  * @returns {Array} The filtered array
  */
 const filterByType = (array, targetType) => {
+    if (!Array.isArray(array)) {
+        throw new TypeError('First argument must be an array');
+    }
+    if (typeof targetType !== 'string') {
+        throw new TypeError('Second argument must be a type name string');
+    }
+    
     const result = [...array];
     let removeIndices = [];
     for (let i = 0; i < result.length; i++) {
