@@ -1,26 +1,17 @@
-//Step 1: Change naming of identifiers
-
+//Step 2: Delete useless conditions and duplicates
 public class Words {
     public static int countWords(String str) {
-    int countWords = 0;
-    boolean inWord = false;
-
-    for (char c : str.toCharArray()) {
-        if (!inWord) {
-            if (c == ' ') {
+        int countwords = 0;
+        boolean inWord = false;
+        
+        for (char character : str.toCharArray()) {
+            if (character == ' ') {
                 inWord = false;
-            } else {
+            } else if (!inWord) {
                 inWord = true;
-                countWords++;
-            }
-        } else {
-            if (c == ' ') {
-                inWord = false;
-            } else {
-                inWord = true;
+                countwords++;
             }
         }
-    }
-    return countWords;
+        return countwords;
     }
 }
