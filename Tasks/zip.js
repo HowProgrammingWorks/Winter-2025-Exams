@@ -1,20 +1,18 @@
 // Refactor following solution
 // Zip two arrays, [1, 2] and [3, 4] -> [[1, 3], [2, 4]]
 
-// Step 2:
-// Remove unnecessary statements
+// Step 4:
+// Rename variables using camel case
 
 "use strict";
 
-const zip = (a = [], b = []) => {
-  let i = 0;
-  let j = 0;
-  for (const x of b) {
-    const CELL = [a[i++], x];
-    b[j++] = CELL;
-    if (CELL[0] == undefined) b.length -= 1
+const zip = (arr1 = [], arr2 = []) => {
+  for (let i = 0; i < arr2.length; i++) {
+    const cell = [arr1[i], arr2[i]];
+    arr2[i] = cell;
+    if (cell[0] == undefined) arr2.length -= 1
   }
-  return b;
+  return arr2;
 };
 
 module.exports = zip;
