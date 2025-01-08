@@ -9,8 +9,6 @@ const intersection = (object1, object2) => {
   for (attributeName of firstKeys) {
     if (object1[attributeName] === object2[attributeName]) {
       object2[attributeName] = object1[attributeName];
-    } else {
-      delete object1[attributName];
     }
   }
 
