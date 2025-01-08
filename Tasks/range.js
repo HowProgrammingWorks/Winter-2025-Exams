@@ -5,7 +5,7 @@
 // Modify the logic for adding numbers to 'result'
 
 const getRangeArray = (first, last) => {
-  let result = [];
+  const result = [];
   for (let i = first; i <= last; i++) {
     result.push(i);
   }
