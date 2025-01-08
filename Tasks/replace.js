@@ -1,14 +1,13 @@
-// Refactor following solution
-// Replace substring with newstr
+'use strict';
 
-Replace = (str, substr, newstr) => {
+const Replace = (str, substr, newstr) => {
   if (substr === '') {
     return str;
   } else {
-    src = str;
-    res = '';
+    let src = str;
+    let res = '';
     do {
-      const _index = src.indexOf(substr);
+      let _index = src.indexOf(substr);
       if (_index === -1) {
         return res + src;
       } else {
