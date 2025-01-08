@@ -3,17 +3,14 @@
 
 const DISTINCT = (data) => {
   const A = new Set();
-  let w = 0;
-  data.forEach((a) => {
+  data.forEach((a, index) => {
     if (A.has(a)) {
-      delete data[w];
+      delete data[index];
     } else {
       A.add(a);
     }
-    w++;
   });
   return data.filter((x) => typeof x === 'number');
 };
 
 module.exports = DISTINCT;
-
