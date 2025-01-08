@@ -1,12 +1,11 @@
-// Refactor following solution
-// Change double quotation to open or close quotation
+'use strict';
 
 const EMPTY = '';
 
-quotes = function (s) {
-  res = [];
-  open = false;
-  for (c of s) {
+const quotes = function (s) {
+  let res = [];
+  let open = false;
+  for (const c of s) {
     if (c === '"') {
       for (i of c) {
         if (!open) {
