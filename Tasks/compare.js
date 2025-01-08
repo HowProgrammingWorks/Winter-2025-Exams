@@ -9,7 +9,7 @@ const compare = (firstValues, secondValues) => {
     return false;
   }
   for (const key of firstKeys) {
-    if (secondKeys.indexOf(key) === -1 || firstValues[key] !== secondValues[key]) {
+    if (firstKeys.indexOf(key) !== secondKeys.indexOf(key) || firstValues[key] !== secondValues[key]) {
       return false;
     }
   }
