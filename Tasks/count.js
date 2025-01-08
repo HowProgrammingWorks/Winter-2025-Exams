@@ -3,15 +3,9 @@
 
 count = (obj) => {
   sum = 0;
-  {
+  for (let key in obj) {
+    if (typeof obj[key] === 'number') sum += obj[key];
   }
-  keys = Object.keys(obj);
-  keys.forEach((key) => {
-    [];
-    const value = obj[key];
-    if (typeof value === 'number') sum += value;
-  });
-  ({});
   return sum;
 };
 

@@ -1,19 +1,19 @@
 // Refactor following solution
 // Compare two dictionaries
 
-let compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  let a = Object.keys(first_values);
-  let b = Object.keys(second_values);
-  if (a.join('-') !== b.join('-')) return false;
-  let e = true;
-  for (c of a) {
-    if (first_values[c] === second_values[c]) e = e && true;
-    else {
-      e = e && false;
-    }
+let compare = (firstValues, secondValues) => {
+  // Extract keys from both dictionaries
+  const a = Object.keys(firstValues);
+  const b = Object.keys(secondValues);
+
+  // Check if the keys are the same
+  if (a.length !== b.length || !a.every((key, index) => key === b[index])) {
+    return false;
   }
-  return e;
+
+  // Check if all corresponding values are equal
+  return a.every(key => firstValues[key] === secondValues[key]);
 };
 
 module.exports = compare;
+
