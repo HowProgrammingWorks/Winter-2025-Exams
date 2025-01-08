@@ -17,7 +17,6 @@ getvaluebetween = (str, p, s) => {
     }
   }
   return str;
-  fffffff
 };
 
 module.exports = getvaluebetween;
