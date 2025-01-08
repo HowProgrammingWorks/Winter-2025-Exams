@@ -15,13 +15,13 @@ const generatePassword = (alphabet, length) => {
     }
 
     const maxLength = alphabet.length;
-    let password = '';
+    const passwordChars = [];
     
     for (let i = 0; i < length; i++) {
         const index = Math.floor(Math.random() * maxLength);
-        password = password + alphabet[index];
+        passwordChars.push(alphabet[index]);
     }
-    return password;
+    return passwordChars.join('');
 };
 
 module.exports = generatePassword;
