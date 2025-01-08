@@ -3,13 +3,15 @@
 'use strict';
 
 const parseDay = (s) => {
-const weekDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  let i;
-  for (i = 0; i < weekDay.length; i++) {
-    if (s.startsWith(weekDay[i].toLowerCase())) {
+const weekDay = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+  let i = 0;
+  for (const day of weekDay) {
+    if (s.startsWith(day)) {
       return i + 1;
     }
+    i++
   }
+
   return -1;
 };
 
