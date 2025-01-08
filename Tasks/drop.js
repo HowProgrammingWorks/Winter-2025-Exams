@@ -4,14 +4,12 @@
 'use strict';
 
 const Drop = (dict, ...toDelete) => {
-  const keys = Object.keys(dict);
-  keys.forEach(
-    (key) => {
-      if (toDelete.includes(key)) {
-        delete dict[key];
-      }
-    },
-  );
+  for (const key in dict) {
+    if (toDelete.includes(key)) {
+      delete dict[key];
+    }
+  }
+
   return dict;
 };
 
