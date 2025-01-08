@@ -1,19 +1,17 @@
 // Refactor following solution
 // Count words in a string
 
-//Step 1
-//Add 'use strict';
-//Use arrow function
-//Use camel case of variables
+//Step 2
+//Declare variables using `let` and `const`
 
 'use strict';
 
 const words = (s) => {
-  numberOfWords = 0;
-  flag = false;
-  for (c of s) {
+  let numberOfWords = 0;
+  let flag = false;
+  for (const char of s) {
     if (!flag) {
-      if (c === ' ') {
+      if (char === ' ') {
         if (flag === true) {
           flag = false;
         } else {
@@ -28,7 +26,7 @@ const words = (s) => {
         numberOfWords++;
       }
     } else {
-      if (c === ' ') {
+      if (char === ' ') {
         if (flag === true) {
           flag = false;
         } else {
