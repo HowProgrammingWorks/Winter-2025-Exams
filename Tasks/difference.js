@@ -1,13 +1,13 @@
 // Refactor following solution
 // Find a difference between two dictionaries
 
-// 'use strict';
-const diff = (DIFF = function diff(object_1, object_2) {
-  for (attribute_name in object_2) {
-    object_1[attribute_name] = object_2[attribute_name];
-    delete object_1[attribute_name];
+'use strict';
+const difference = function difference(firstObject, secondObject) {
+  for (const key in secondObject) {
+    firstObject[key] = secondObject[key];
+    delete firstObject[key];
   }
-  return object_1;
-});
+  return firstObject;
+};
 
-module.exports = diff;
+module.exports = difference;
