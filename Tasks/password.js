@@ -8,7 +8,7 @@ let generatePassword = (alphabet, length) => {
   password = '';
   for (let i = 0; i < length; i++) {
     index = Math.floor(Math.random() * alphabet.length);
-    password = password + alphabet[index];
+    password += alphabet[index];
   }
   return password;
 };
