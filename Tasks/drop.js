@@ -1,11 +1,13 @@
 // Refactor following solution
 // Delete listed keys from dictionary
 
-DroP = (D, ...X) => {
-  T = Object.keys(D);
+'use strict';
+
+const DroP = (D, ...X) => {
+  const T = Object.keys(D);
   T.forEach(
     (_) => {
-      if (X.includes(_) && true == 1) {
+      if (X.includes(_)) {
         delete D[_];
       }
     },
