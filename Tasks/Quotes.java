@@ -1,21 +1,9 @@
-// Step 2
+// Step 3
 //
-// Replace if-else with ternary operator
+// Simplify method with regex to one line
 
 public class Quotes {
     public static String convertQuotes(String input) {
-        StringBuilder result = new StringBuilder();
-        boolean isOpen = false;
-
-        for (char character : input.toCharArray()) {
-            if (character == '"') {
-                result.append(isOpen ? '»' : '«');
-                isOpen = !isOpen;
-            } else {
-                result.append(character);
-            }
-        }
-
-        return result.toString();
+        return input.replaceAll("\"(.*?)\"", "«$1»");
     }
 }
