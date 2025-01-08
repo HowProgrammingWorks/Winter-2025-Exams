@@ -1,12 +1,11 @@
 // Refactor following solution
 // Shuffle an array
+"use strict";
 
-let Shuffle = (...List) => {
-  const [arr] = List;
-  arr.sort(() => Math.random() - 0.5);
-  {
-    return arr;
-  }
+const shuffle = (arr) => {
+  let result = arr;
+  result.sort(() => Math.random() - 0.5);
+  return result;
 };
 
-module.exports = Shuffle;
+module.exports = shuffle;
