@@ -3,14 +3,14 @@
 
 'use strict';
 
-const incNumbers = (dictionary, ...restVariables) => {
+const incNumbers = (dictionary) => {
   const result = { ...dictionary };
-  for (const key in result) {
+  Object.keys(result).forEach(key) {
     if (typeof result[key] === 'number') {
-      result [key] += 1;
+      result[key] += 1;
     }
   }
-  
+
   return result;
 };
 
