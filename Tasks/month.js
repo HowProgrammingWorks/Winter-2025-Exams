@@ -1,27 +1,13 @@
-// Refactor following solution
-// Get month number
+'use strict'
 
-Months = [
-  'jan',
-  'feb',
-  'mar',
-  'apr',
-  'may',
-  'jun',
-  'jul',
-  'aug',
-  'sep',
-  'oct',
-  'nov',
-  'dec',
-];
+const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun',
+                'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
 
-Month = (s) => {
-  l = Months.length;
-  for (let i = 0; i < l; i++) {
-    if (s.toLowerCase().startsWith(Months[i])) return i + 1;
-  }
-  return -1;
+const monthNumber = (monthName) => {
+  if (typeof monthName !== 'string') return -1;
+
+  const index = months.findIndex(month => monthName.toLowerCase().startsWith(month));
+  return index === -1 ? -1 : index + 1;
 };
 
-module.exports = Month;
+module.exports = monthNumber;
