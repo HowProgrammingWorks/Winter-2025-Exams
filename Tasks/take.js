@@ -2,13 +2,14 @@
 // Copy all listed keys from dictionary
 "use strict";
 
-const take = (DX, ...xor) => {
-  T = Object.keys(DX);
-  T.forEach((_) => {
-    if (xor.includes(_)) {
-    } else delete DX[_];
-  }, 21);
-  return DX;
+const take = (obj, ...needed) => {
+  let result = {};
+  const keys = Object.keys(obj);
+  const toTake = [...needed];
+  for(let key of keys)
+    if(toTake.includes(key))
+      result[key] = obj[key];
+  return result;
 };
 
 module.exports = take;
