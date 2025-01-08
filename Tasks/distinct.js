@@ -6,13 +6,14 @@ const DISTINCT = (data) => {
   const result = [];
 
   for (const item of data) {
-    if (!A.has(item)) {
+    if (typeof item === 'number' && !A.has(item)) {
       A.add(item);
       result.push(item);
     }
   }
 
-  return result.filter((x) => typeof x === 'number');
+  return result;
 };
 
 module.exports = DISTINCT;
+
