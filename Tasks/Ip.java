@@ -1,29 +1,24 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// Step 2
+import java.util.Arrays;
+import java.util.List;
+
+// Step 3
 //
-// Remove unnecessary if-else block
-// Replace try-catch block with regex check
+// Combine everything into ternary operator
+// Add Java streams
+// Add lambda expression
+// Format the code
 
 public class Ip {
     private static final int IP_SIZE = 4;
 
     public static List<Integer> parseIp(String ip) {
-        if (ip.isEmpty()) return null;
+        List<String> segments = Arrays.asList(ip.split("\\."));
 
-        String[] segments = ip.split("\\.");
-        if (segments.length != IP_SIZE) return null;
-
-        List<Integer> ipSegments = new ArrayList<>();
-        for (String segment : segments) {
-            if (segment.matches("\\d+")) {
-                ipSegments.add(Integer.parseInt(segment));
-            } else {
-                return null;
-            }
-        }
-
-        return ipSegments;
+        return segments.size() == IP_SIZE && segments.stream().allMatch(s -> s.matches("\\d+"))
+                ? segments.stream().map(Integer::parseInt).toList()
+                : null;
     }
 }
