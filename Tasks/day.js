@@ -6,7 +6,12 @@ let D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const parseDay = (s) => {
   if (typeof s !== 'string') return -1;
   const lowerS = s.toLowerCase();
-  return D.findIndex(day => day.toLowerCase().startsWith(lowerS)) + 1 || -1;
+  for (let i = 0; i < D.length; i++) {
+    if (D[i].toLowerCase().startsWith(lowerS)) {
+      return i + 1;
+    }
+  }
+  return -1;
 };
 
 
