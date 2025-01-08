@@ -4,11 +4,10 @@
 'use strict';
 
 const parseIP = (input) => {
-  const parsed = [];
-  if (input === '') return;
+  if (!input || input.split('.').length !==4) return;
 
+    const parsed = [];
     const segments = input.split('.');
-    if (segments.length != 4) return;
 
     for (const segment of segments) {
       const number = parseInt(segment);
