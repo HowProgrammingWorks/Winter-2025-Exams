@@ -1,22 +1,23 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// Step 0
+// Step 1
 //
-// Convert into java as close as possible
+// Fix formatting
+// Improve naming
 
 public class Filter {
-    public static <T> List<T> filter(List<T> T, String t) {
+    public static <T> List<T> filter(List<T> list, String type) {
         List<Integer> remove = new ArrayList<>();
-        for (Object C : T) {
-            int x = T.indexOf(C);
-            if (!T.get(x).getClass().getSimpleName().equalsIgnoreCase(t)) {
-                remove.add(0, x);
+        for (T obj : list) {
+            int index = list.indexOf(obj);
+            if (!list.get(index).getClass().getSimpleName().equalsIgnoreCase(type)) {
+                remove.add(0, index);
             }
         }
-        for (int x : remove) {
-            T.remove(x);
+        for (int index : remove) {
+            list.remove(index);
         }
-        return T;
+        return list;
     }
 }
