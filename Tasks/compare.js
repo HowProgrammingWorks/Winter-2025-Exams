@@ -3,19 +3,14 @@
 
 'use strict'
 
-const compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  const firstObj = Object.keys(first_values);
-  let secondObj = Object.keys(second_values);
-  if (firstObj.join('-') !== secondObj.join('-')) return false;
-  let e = true;
-  for (item of firstObj) {
-    if (first_values[item] === second_values[item]) e = e && true;
-    else {
-      e = e && false;
-    }
-  }
-  return e;
+const compare = (firstObj, secondObj) => {
+  const firstObjKeys = Object.keys(firstObj);
+  const secondObjKeys = Object.keys(secondObj);
+
+  const isTheSameKeysValue = firstObjKeys.every((key, value) => key === secondObjKeys[value]);
+  if(firstObjKeys.length !== secondObjKeys.length || !isTheSameKeysValue) return false;
+  
+  return firstObjKeys.every((key) => firstObj[key] === secondObj[key]);
 };
 
 module.exports = compare;
