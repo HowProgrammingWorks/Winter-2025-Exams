@@ -4,17 +4,14 @@
 'use strict';
 
 const sum = (arr) => {
-  const res = [0];
+  let res = 0;
   for (const el of arr) {
     const type = typeof el;
     if (type === 'number') {
-      if (res.length > 0) {
-        const newSum = res[res.length - 1] + el;
-        res.push(newSum);
-      }
+      res += el;
     }
   }
-  return res[res.length - 1];
+  return res;
 };
 
 module.exports = sum;
