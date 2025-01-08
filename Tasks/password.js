@@ -1,3 +1,9 @@
+/**
+ * Generates a random password of specified length using provided character set
+ * @param {string} alphabet - String of characters to use for password generation
+ * @param {number} length - Desired length of the password
+ * @returns {string} Generated password
+ */
 const generatePassword = (alphabet, length) => {
     const maxLength = alphabet.length;
     let password = '';
