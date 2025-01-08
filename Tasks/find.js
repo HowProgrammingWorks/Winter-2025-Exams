@@ -16,3 +16,24 @@ find = (object, ...rest) => {
 };
 
 module.exports = find;
+
+
+/** Steps
+ * Change function names
+ * Remove unnecessary parameters and variables
+ * Get rid of unnecessary operations
+ * Delete typeof name and typeof object
+ */
+
+const findKeyByValue = (object, value) => {
+  for (const key in object) {
+    
+    if (object[key] === value) {
+      return key; 
+    }
+  }
+
+  return undefined;
+};
+
+module.exports = findKeyByValue;
