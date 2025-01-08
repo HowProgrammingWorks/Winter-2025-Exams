@@ -1,10 +1,12 @@
-const config = require('eslint-config-metarhia');
+'use strict';
 
-module.exports = [
-    ...config,
-    {
-        rules: {
-            'no-unused-vars': 'warn',
-        },
-    },
-];
+const eslintConfig = require('eslint-config-metarhia');
+const rules = {
+  'no-undef': 'warn',
+  'linebreak-style': 'off',
+  quotes: 'off',
+  'comma-dangle': 'off',
+  'eol-last': 'off',
+  'consistent-return': 'off',
+};
+module.exports = [...eslintConfig, { rules }];
