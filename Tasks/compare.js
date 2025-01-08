@@ -5,15 +5,11 @@ const compare = (firstValues, ...parametersList) => {
   const secondValues = parametersList[0];
   const firstKeys = Object.keys(firstValues);
   const secondKeys = Object.keys(secondValues);
-  if (a.join('-') !== b.join('-')) return false;
-  let e = true;
-  for (c of a) {
-    if (first_values[c] === second_values[c]) e = e && true;
-    else {
-      e = e && false;
-    }
+  if (firstKeys.length !== secondKeys.length || !firstKeys.every(key => secondKeys.includes(key))) {
+    return false;
   }
-  return e;
-};
+
+  return firstKeys.every(key => firstValues[key] === secondValues[key]);
+}
 
 module.exports = compare;
