@@ -5,7 +5,7 @@
 // Prefer for..of instead for..in
 
 const mergeTwoObjects = (object1, object2) => {
-  let mergedObject = {};
+  const mergedObject = {};
   for (const key of Object.keys(object1)) {
     mergedObject[key] = object1[key];
   }
