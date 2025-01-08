@@ -6,16 +6,16 @@
 const parseIP = (input) => {
   if (!input || input.split('.').length !==4) return;
 
-    const parsed = [];
     const segments = input.split('.');
+    const result = [];
 
     for (const segment of segments) {
       const number = parseInt(segment);
       if (isNaN(number)) return;
       parsed.push(number);
     }
-  }
-  return parsed;
+
+  return result;
 };
 
 module.exports = parseIP;
