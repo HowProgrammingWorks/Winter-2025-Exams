@@ -6,13 +6,11 @@
 
 const duplicate = (data, length) => {
   if (length <= 0) return [];
-  else {
-  const res = [];
+  const result = [];
     for (let i = 0; i < length; i++) {
-      res[i] = data;
+      result[i] = data;
     }
-    return res;
-  }
+    return result;
 };
 
 module.exports = duplicate;
