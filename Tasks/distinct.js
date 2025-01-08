@@ -7,12 +7,12 @@ const distinct = (data) => {
   const uniqueVAlues = new Set();
   const result = [];
 
-  data.forEach((item) => {
+  for (const item of data) {
     if (!uniqueVAlues.has(item)) {
       uniqueVAlues.add(item);
       result.push(item);
     }
-  });
+  };
   return result.filter((x) => typeof x === 'number');
 };
 
