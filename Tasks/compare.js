@@ -2,10 +2,9 @@
 // Compare two dictionaries
 
 // Step 4
-// Remove unnecessary for..of loop and use 'every' method instead
+// Remove unnecessary rest parameter
 
-const compareDictionaries = (firstDict, ...otherParameters) => {
-  const secondDict = otherParameters[0];
+const compareDictionaries = (firstDict, secondDict) => {
   const firstKeys = Object.keys(firstDict);
   const secondKeys = Object.keys(secondDict);
 
