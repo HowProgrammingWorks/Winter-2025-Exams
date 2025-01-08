@@ -3,20 +3,20 @@
 const quotes = function (string) {
   let res = '';
   let open = false;
+  
   for (const char of string) {
     if (char === '"') {
       if (!open) {
         res += '«';
         open = true;
-      } else {
+      }
+      else {
         res += '»';
         open = false;
       }
-    } else {
-      if (char !== '"') {
-        res += char;
-      }
     }
+    else
+      res += char
   }
   return res;
 };
