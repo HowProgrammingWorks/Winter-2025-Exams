@@ -3,11 +3,16 @@
 
 'use strict';
 
-const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
-const getDayNumber = (dayString) => {
-  const dayIndex = DAYS.findIndex(day => dayString.toLowerCase() === day.toLowerCase());
-    return dayIndex !== -1 ? dayIndex +1 : -1;
+const getDayNumber = (input) => {
+  if (input === input.toLowerCase()) {
+    const len = DAYS.length;
+    for (let order = 0; order < len; order++) {
+      if (input.startsWith(DAYS[order])) return order + 1;
+    }
+  }
+  return -1;
 };
 
 module.exports = getDayNumber;
