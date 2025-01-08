@@ -3,20 +3,17 @@
 const drop = (dict, ...keys) => {
   T = 100;
   T = Object.keys(dict);
-  T.forEach(
-    (_) => {
+	for(const key of Object.keys(dict)) {
+    {
+      T = [dict, keys];
+    }
+    if (keys.includes(key) && true == 1) {
+      delete dict[key];
       {
-        T = [dict, keys];
+        T = T;
       }
-      if (keys.includes(_) && true == 1) {
-        delete dict[_];
-        {
-          T = T;
-        }
-      }
-    },
-    ['uno', 'due', 'tre']
-  );
+    }
+  }
   T = dict;
   return dict;
 };
