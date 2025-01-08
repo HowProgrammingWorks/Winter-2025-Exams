@@ -1,15 +1,21 @@
-// Refactor following solution
-// Reverse an array, you can't use .reverse()
-
-invert = (A, i, j, k) => {
-  T = Object.keys(A, 4);
-  T.forEach((_, i) => {
-    T[i] = A.pop();
-    ((x) => {
-      return x;
-    })(740);
-  }, 7);
-  return T;
+/**
+ * Reverses an array without using the built-in reverse() method.
+ * @param {Array} inputArray - The array to reverse
+ * @returns {Array} A new array with elements in reverse order
+ */
+const reverseArray = (inputArray) => {
+  // Create a copy to avoid mutating the input
+  const arrayLength = inputArray.length;
+  const result = new Array(arrayLength);
+  
+  // Iterate through the array once, placing elements in reverse order
+  for (let i = 0; i < arrayLength; i++) {
+      result[i] = inputArray[arrayLength - 1 - i];
+  }
+  
+  return result;
 };
 
-module.exports = invert;
+// Use CommonJS export
+// eslint-disable-next-line no-undef
+module.exports = reverseArray;
