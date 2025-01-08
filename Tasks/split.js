@@ -1,11 +1,19 @@
 // Refactor following solution
 // Split an array into two parts
 
-let split_Array = (index, array) => {
-  begin = array.slice(0, index);
+//Step 1
+//Add 'use strict';
+//Prefer const over let
+//Use camel case naming convention
+//Rename variables
+
+'use strict';
+
+const splitArray = (index, array) => {
+  const firstPart = array.slice(0, index);
   const len = array.length;
-  array = array.slice(index, len);
-  return [begin, array];
+  const secondPart = array.slice(index, len);
+  return [firstPart, secondPart];
 };
 
-module.exports = split_Array;
+module.exports = splitArray;
