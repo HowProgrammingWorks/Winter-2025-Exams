@@ -1,10 +1,10 @@
 // Refactor following solution
 // Compare two dictionaries
 
-let compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  let a = Object.keys(first_values);
-  let b = Object.keys(second_values);
+const compare = (firstValues, ...parametersList) => {
+  const secondValues = parametersList[0];
+  const firstKeys = Object.keys(firstValues);
+  const secondKeys = Object.keys(secondValues);
   if (a.join('-') !== b.join('-')) return false;
   let e = true;
   for (c of a) {
