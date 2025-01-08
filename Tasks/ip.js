@@ -4,16 +4,18 @@
 'use strict';
 
 const parseIP = (input) => {
-  if (!input || input.split('.').length !==4) return;
+  if (!input || typeof input !== 'string') return;
 
-    const segments = input.split('.');
-    const result = [];
+  const segments = input.split('.');
 
-    for (const segment of segments) {
-      const number = parseInt(segment);
-      if (isNaN(number)) return;
-      parsed.push(number);
-    }
+  if (segments.length !== 4) return;
+
+  const result = [];
+  for (const segment of segments) {
+    const number = parseInt(segment, 10);
+    if (isNaN(number) || number < 0 || number > 255) return;
+    result.push(number);
+  }
 
   return result;
 };
