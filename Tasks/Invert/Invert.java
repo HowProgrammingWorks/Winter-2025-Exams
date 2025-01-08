@@ -1,11 +1,9 @@
-// Step 1: Change naming of identifiers, remove unused parts, magic numbers
+//Step 2: Use swap
 public class Invert {
-    static public List<Integer> invert(List<Integer> array) {
-        List<Integer> reversedArray = new ArrayList<>();
-
-        for (int i = array.size() - 1; i >= 0; i--) {
-            reversedArray.add(array.get(i));
+    public static List<Integer> invert(List<Integer> array) {
+        for (int i = 0; i < array.size() / 2; i++) {
+            Collections.swap(array, i, array.size() - i - 1);
         }
-        return reversedArray;
+        return array;
     }
 }
