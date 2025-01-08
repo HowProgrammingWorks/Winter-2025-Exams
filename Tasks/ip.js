@@ -3,9 +3,9 @@
 
 'use strict';
 
-const Parseip = (ip) => {
+const parseIp = (ip) => {
   const res = ip.split('.').filter((el) => el !== '');
   return res.length === 4 ? res.map(Number) : undefined;
 };
 
-module.exports = Parseip;
+module.exports = parseIp;

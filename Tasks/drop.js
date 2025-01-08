@@ -3,7 +3,7 @@
 
 'use strict';
 
-const Drop = (dict, ...toDelete) => {
+const drop = (dict, ...toDelete) => {
   const res = {};
   for (const key in dict) {
     if (!toDelete.includes(key)) {
@@ -15,4 +15,4 @@ const Drop = (dict, ...toDelete) => {
   return res;
 };
 
-module.exports = Drop;
+module.exports = drop;
