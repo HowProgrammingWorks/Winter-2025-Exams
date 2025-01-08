@@ -13,7 +13,7 @@ const distinct = (data) => {
       result.push(item);
     }
   };
-  return result.filter((x) => typeof x === 'number');
+  return result.filter((item) => typeof item === 'number');
 };
 
 module.exports = distinct;
