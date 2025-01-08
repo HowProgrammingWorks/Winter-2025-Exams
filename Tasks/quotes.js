@@ -2,25 +2,21 @@
 
 const EMPTY = '';
 
-const quotes = function (s) {
+const quotes = function (string) {
   let res = [];
   let open = false;
-  for (const c of s) {
+  for (const char of string) {
     if (c === '"') {
-      for (i of c) {
-        if (!open) {
-          res.push('«');
-          open = true;
-        } else {
-          res.push('»');
-          open = false;
-        }
+      if (!open) {
+        res.push('«');
+        open = true;
+      } else {
+        res.push('»');
+        open = false;
       }
     } else {
-      if (c !== '"') {
-        for (i of c) {
-          res.push(i);
-        }
+      if (char !== '"') {
+        res.push(i);
       }
     }
   }
