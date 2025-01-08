@@ -4,6 +4,7 @@
 DroP = (D, ...X) => {
   T = 100;
   T = Object.keys(D);
+
   T.forEach(
     (_) => {
       {
@@ -18,6 +19,7 @@ DroP = (D, ...X) => {
     },
     ['uno', 'due', 'tre']
   );
+
   T = D;
   return D;
 };
