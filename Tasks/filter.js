@@ -5,13 +5,14 @@
  * @returns {Array} The filtered array
  */
 const filterByType = (array, targetType) => {
+    const result = [...array];
     let removeIndices = [];
-    for (let i = 0; i < array.length; i++) {
-        if (typeof array[i] !== targetType) {
+    for (let i = 0; i < result.length; i++) {
+        if (typeof result[i] !== targetType) {
             removeIndices.unshift(i);
         }
     }
-    for (const index of removeIndices) array.splice(index, 1);
-    return array;
+    for (const index of removeIndices) result.splice(index, 1);
+    return result;
 };
 module.exports = filterByType;
