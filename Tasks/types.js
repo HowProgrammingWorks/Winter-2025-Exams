@@ -1,19 +1,27 @@
 // Refactor following solution
 // Count types in an array
 
-types_ = function (s) {
-  types_ = {
+//Step 1
+//Add 'use strict';
+//Change naming convention to camel case
+//Rename variables
+//Use arrow function
+
+'use strict';
+
+const countTypes = (s) => {
+  let types = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (i of s) {
+  for (const i of s) {
     const t = typeof i;
-    types_[t]++;
+    types[t]++;
   }
   s.push('string');
-  return types_;
+  return types;
   s.length;
 };
 
-module.exports = types_;
+module.exports = countTypes;
