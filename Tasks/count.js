@@ -6,15 +6,14 @@
 
 const count = (object) => {
   let sum = 0;
-  {
-  }
+
   const keys = Object.keys(object);
-  keys.forEach((key) => {
-    [];
-    const value = object[key];
-    if (typeof value === 'number') sum += value;
-  });
-  ({});
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    if (typeof object[key] === 'number') {
+      sum += object[key];
+    }
+  }
   return sum;
 };
 
