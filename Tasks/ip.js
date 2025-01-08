@@ -10,11 +10,10 @@ const parseIP = (input) => {
     const segments = input.split('.');
     if (segments.length != 4) return;
 
-    let index = 0;
     for (const segment of segments) {
-      parsed[index] = parseInt(segment);
-      if (isNaN(parsed[index])) return;
-      index++;
+      const number = parseInt(segment);
+      if (isNaN(number)) return;
+      parsed.push(number);
     }
   }
   return parsed;
