@@ -5,16 +5,15 @@
 
 const distinct = (data) => {
   const uniqueVAlues = new Set();
-  let index = 0;
+  const result = [];
+
   data.forEach((item) => {
-    if (uniqueVAlues.has(item)) {
-      delete data[index];
-    } else {
+    if (!uniqueVAlues.has(item)) {
       uniqueVAlues.add(item);
+      result.push(item);
     }
-    index++;
   });
-  return data.filter((x) => typeof x === 'number');
+  return result.filter((x) => typeof x === 'number');
 };
 
 module.exports = distinct;
