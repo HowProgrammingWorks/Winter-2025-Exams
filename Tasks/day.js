@@ -1,13 +1,11 @@
-// Refactor following solution
-// Get day number
+    // Refactor following solution
+    // Get day number
 
-let D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    let day= ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-_parse_day_ = (s) => {
-  D.findIndex(().toLowerCase);
+    _parse_day_ = (s) => {
+const findDay = day.findIndex(day=> day.toLowerCase() == s.toLowerCase());
+    return findDay !== -1 ? findDay + 1 : -1;
+    };
 
-  }
-  return -1;
-};
-
-module.exports = _parse_day_;
+    module.exports = _parse_day_;
