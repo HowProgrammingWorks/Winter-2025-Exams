@@ -6,19 +6,11 @@
 const getValueBetween = (str, prefix, suffix) => {
   let index = str.indexOf(prefix);
   if (index === -1) return '';
-  else {
-    const start = index + prefix.length;
-    str = str.substring(start);
-    if (suffix) {
-      index = str.indexOf(suffix);
-      if (index === -1) {
-        return '';
-      } else {
-        str = str.substring(0, index);
-      }
-    }
-  }
-  return str;
+
+  const endIndex = suffix ? str.indexOf(suffix, index + prefix.length) : str.length;
+  if (endIndex === -1) return '';
+
+  return str.slice(index + prefix.length, endIndex);
 };
 
 module.exports = getValueBetween;
