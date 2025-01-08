@@ -6,10 +6,9 @@
  */
 const filterByType = (array, targetType) => {
     let removeIndices = [];
-    for (const element of array) {
-        let currentIndex = array.indexOf(element);
-        if (typeof array[currentIndex] !== targetType) {
-            removeIndices.unshift(currentIndex);
+    for (let i = 0; i < array.length; i++) {
+        if (typeof array[i] !== targetType) {
+            removeIndices.unshift(i);
         }
     }
     for (const index of removeIndices) array.splice(index, 1);
