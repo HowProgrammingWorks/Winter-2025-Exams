@@ -6,10 +6,12 @@
 
 const duplicate = (data, length) => {
   if (length <= 0) return [];
+
   const result = [];
     for (let i = 0; i < length; i++) {
-      result[i] = data;
+      result.push(data);
     }
+
     return result;
 };
 
