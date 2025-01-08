@@ -6,16 +6,17 @@ const replace = (str, substr, newstr) => {
 
   let temp = str;
   let res = '';
-  do {
-    let index = temp.indexOf(substr);
-    if (index === -1) {
-      return res + temp;
-    } else {
-      const start = temp.substring(0, index);
-      temp = temp.substring(index + substr.length, temp.length);
-      res += start + newstr;
-    }
-  } while (true);
+
+  let index = temp.indexOf(substr);
+  while(index !== -1) {
+    const start = temp.substring(0, index);
+    temp = temp.substring(index + substr.length, temp.length);
+    res += start + newstr;
+
+		index = temp.indexOf(substr);
+  } 
+
+  return res + temp;
 };
 
 module.exports = replace;
