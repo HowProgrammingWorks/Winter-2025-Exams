@@ -4,12 +4,10 @@
 'use strict';
 
 const inc = (dict) => {
-  for (const key in dict) {
-    if (typeof dict[key] === 'number') {
-      dict[key]++;
-    }
-  }
-  return dict;
+  return Object.entries(dict).reduce((acc, [key, value]) => {
+    acc[key] = typeof value === 'number' ? value + 1 : value;
+    return acc;
+  }, {});
 };
 
 module.exports = inc;
