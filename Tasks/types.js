@@ -1,11 +1,9 @@
 // Refactor following solution
 // Count types in an array
 
-//Step 1
-//Add 'use strict';
-//Change naming convention to camel case
-//Rename variables
-//Use arrow function
+//Step 2
+//Remove unnecessary expressions
+//Add dynamic type addition
 
 'use strict';
 
@@ -15,13 +13,18 @@ const countTypes = (s) => {
     string: 0,
     boolean: 0,
   };
+
   for (const i of s) {
-    const t = typeof i;
-    types[t]++;
+    const type = typeof i;
+
+    if (types[type]) {
+      types[type]++;
+    } else {
+      types[type] = 1;
+    }
   }
-  s.push('string');
+
   return types;
-  s.length;
 };
 
 module.exports = countTypes;
