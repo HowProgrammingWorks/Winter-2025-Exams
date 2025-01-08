@@ -11,7 +11,7 @@ const words = (s) => {
   let inWord = false;
   
   for (const char of s) {
-    if (char!== ' ' && !inWord) {
+    if (char !== ' ' && !inWord) {
       inWord = true;
       numberOfWords++;
     } else if (char === ' ') {
