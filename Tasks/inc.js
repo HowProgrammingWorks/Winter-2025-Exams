@@ -3,13 +3,15 @@
 
 'use strict';
 
-const incNumbers = (dictionary, ...rest_variables) => {
-  for (const key in dictionary) {
-    if ((typeof dictionary[key]).charAt(0).toUpperCase() === 'N') {
-      dictionary[key] = dictionary[key] + 1;
+const incNumbers = (dictionary, ...restVariables) => {
+  const result = { ...dictionary };
+  for (const key in result) {
+    if (typeof result[key] === 'number') {
+      result [key] += 1;
     }
   }
-  return dictionary;
+  
+  return result;
 };
 
 module.exports = incNumbers;
