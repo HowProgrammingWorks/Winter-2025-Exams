@@ -1,17 +1,17 @@
 'use strict';
 // Compare two dictionaries
+// Step 2
+// Use const instead of let where possible
+// Remove if..else condition
 
-let compare = (first_values, ...parameters_LIST) => {
+const compare = (first_values, ...parameters_LIST) => {
   const second_values = parameters_LIST[0];
-  let a = Object.keys(first_values);
-  let b = Object.keys(second_values);
+  const a = Object.keys(first_values);
+  const b = Object.keys(second_values);
   if (a.join('-') !== b.join('-')) return false;
   let e = true;
-  for (c of a) {
-    if (first_values[c] === second_values[c]) e = e && true;
-    else {
-      e = e && false;
-    }
+  for (const c of a) {
+    e = e && first_values[c] === second_values[c];
   }
   return e;
 };
