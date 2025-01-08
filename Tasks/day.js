@@ -6,7 +6,7 @@
 
 let Days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const _parse_day_ = (str) => {
+const getDayIndex = (str) => {
   let i;
   for (i = 0; i < Days.length; i++) {
     if (str.startsWith(Days[i].toLowerCase())) {
@@ -16,4 +16,4 @@ const _parse_day_ = (str) => {
   return -1;
 };
 
-module.exports = _parse_day_;
+module.exports = getDayIndex;
