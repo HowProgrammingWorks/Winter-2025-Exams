@@ -1,19 +1,20 @@
 'use strict';
 // Compare two dictionaries
-// Step 2
-// Use const instead of let where possible
-// Remove if..else condition
 
-const compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  const a = Object.keys(first_values);
-  const b = Object.keys(second_values);
-  if (a.join('-') !== b.join('-')) return false;
-  let e = true;
-  for (const c of a) {
-    e = e && first_values[c] === second_values[c];
+// Step 3
+// Improve identifiers naming
+
+const compareDictionaries = (firstDict, ...otherParameters) => {
+  const secondDict = otherParameters[0];
+  const firstKeys = Object.keys(firstDict);
+  const secondKeys = Object.keys(secondDict);
+  if (firstKeys.join('-') !== secondKeys.join('-')) return false;
+
+  let isEqual = true;
+  for (const key of firstKeys) {
+    isEqual = isEqual && firstDict[key] === secondDict[key];
   }
-  return e;
+  return isEqual;
 };
 
-module.exports = compare;
+module.exports = compareDictionaries;
