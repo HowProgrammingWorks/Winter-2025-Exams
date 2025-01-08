@@ -3,11 +3,11 @@
 
 let compare = (first_values, ...parameters_LIST) => {
   const second_values = parameters_LIST[0];
-  let a = Object.keys(first_values);
-  let b = Object.keys(second_values);
-  if (a.join('-') !== b.join('-')) return false;
+  let firstValue = Object.keys(first_values);
+  let secondValue = Object.keys(second_values);
+  if (firstValue.join('-') !== secondValue.join('-')) return false;
   let e = true;
-  for (c of a) {
+  for (c of firstValue) {
     if (first_values[c] === second_values[c]) e = e && true;
     else {
       e = e && false;
