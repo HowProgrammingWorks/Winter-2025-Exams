@@ -3,18 +3,18 @@
 
 'use strict';
 
-const sum = (s) => {
-  const sum = [0];
-  for (const i of s) {
-    const t = typeof i;
-    if (t === 'number') {
-      if (sum.length > 0) {
-        const new_Sum = sum[sum.length - 1] + i;
-        sum.push(new_Sum);
+const sum = (arr) => {
+  const res = [0];
+  for (const el of arr) {
+    const type = typeof el;
+    if (type === 'number') {
+      if (res.length > 0) {
+        const newSum = res[res.length - 1] + el;
+        res.push(newSum);
       }
     }
   }
-  return sum[sum.length - 1];
+  return res[res.length - 1];
 };
 
 module.exports = sum;
