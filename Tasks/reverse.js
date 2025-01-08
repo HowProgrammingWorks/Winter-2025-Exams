@@ -4,7 +4,7 @@
 // Declare variable 'result' to avoid incoming parameters mutation
 
 const reverse = (obj) => {
-  let result = {};
+  const result = {};
   const keys = Object.keys(obj);
   for (const key of keys) {
     const value = obj[key];
