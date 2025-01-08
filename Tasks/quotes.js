@@ -1,6 +1,6 @@
 'use strict';
 
-const quotes = function (string) {
+const quotes = (string) => {
   let res = '';
   let open = false;
   
@@ -18,6 +18,7 @@ const quotes = function (string) {
     else
       res += char
   }
+  
   return res;
 };
 
