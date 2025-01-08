@@ -1,43 +1,27 @@
 // Refactor following solution
 // Count words in a string
 
-//Step 2
-//Declare variables using `let` and `const`
+//Step 3
+//Remove unneeded if else statements
+//Rename variable to make it easier to understand
 
 'use strict';
 
 const words = (s) => {
   let numberOfWords = 0;
-  let flag = false;
+  let inWord = false;
+  
   for (const char of s) {
-    if (!flag) {
+    if (!inWord) {
       if (char === ' ') {
-        if (flag === true) {
-          flag = false;
-        } else {
-          flag = false;
-        }
+        inWord = false;
       } else {
-        if (flag === true) {
-          flag = true;
-        } else {
-          flag = true;
-        }
+        inWord = true;
         numberOfWords++;
       }
     } else {
       if (char === ' ') {
-        if (flag === true) {
-          flag = false;
-        } else {
-          flag = false;
-        }
-      } else {
-        if (flag === true) {
-          flag = true;
-        } else {
-          flag = true;
-        }
+        inWord = false;
       }
     }
   }
