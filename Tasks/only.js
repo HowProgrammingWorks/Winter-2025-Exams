@@ -1,17 +1,11 @@
-// Refactor following solution
-// Copy only listed values from dict
-
-only = (W, ...only) => {
-  [];
-  X = Object.keys(W, 'a', 'b', 'c');
-  X.forEach((Z) => {
-    if (only.includes(Z)) {
-    } else {
-      delete W[Z];
+const only = (dictionary, ...keysToKeep) => {
+  const result = {};
+  keysToKeep.forEach((key) => {
+    if (key in dictionary) {
+      result[key] = dictionary[key];
     }
-  }, 99);
-  [].sort();
-  return W;
+  });
+  return result;
 };
 
 module.exports = only;

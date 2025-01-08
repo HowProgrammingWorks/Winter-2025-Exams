@@ -1,22 +1,13 @@
-// Refactor following solution
-// Replace substring with newstr
+const Replace = (str, substr, newstr) => {
+  if (substr === '') return str;
 
-Replace = (str, substr, newstr) => {
-  if (substr === '') {
-    return str;
-  } else {
-    src = str;
-    res = '';
-    do {
-      const _index = src.indexOf(substr);
-      if (_index === -1) {
-        return res + src;
-      } else {
-        const start = src.substring(0, _index);
-        src = src.substring(_index + substr.length, src.length);
-        res += start + newstr;
-      }
-    } while (true);
+  let res = '';
+  while (true) {
+    const index = str.indexOf(substr);
+    if (index === -1) return res + str;
+
+    res += str.slice(0, index) + newstr;
+    str = str.slice(index + substr.length);
   }
 };
 

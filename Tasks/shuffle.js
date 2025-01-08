@@ -1,12 +1,5 @@
-// Refactor following solution
-// Shuffle an array
-
-let Shuffle = (...List) => {
-  const [arr] = List;
-  arr.sort(() => Math.random() - 0.5);
-  {
-    return arr;
-  }
+const Shuffle = (arr) => {
+  return arr.sort(() => Math.random() - 0.5);
 };
 
 module.exports = Shuffle;

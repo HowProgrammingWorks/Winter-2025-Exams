@@ -1,16 +1,11 @@
-// Refactor following solution
-// Get day number
+const parseDay = (s) => {
+  const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
-let D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  if (s !== s.toLowerCase()) return -1;
 
-_parse_day_ = (s) => {
-  let i;
-  for (i = 0; i < D.length; i++) {
-    if (s.startsWith(D[i].toLowerCase())) {
-      return i + 1;
-    }
-  }
-  return -1;
+  const dayIndex = days.findIndex(day => day === s);
+
+  return dayIndex === -1 ? -1 : dayIndex + 1;
 };
 
-module.exports = _parse_day_;
+module.exports = parseDay;
