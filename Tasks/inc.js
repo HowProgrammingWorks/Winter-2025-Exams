@@ -5,7 +5,8 @@
 
 const incNumbers = (dictionary) => {
   const result = { ...dictionary };
-  Object.keys(result).forEach(key) {
+
+  for (const key of Object.keys(result)) {
     if (typeof result[key] === 'number') {
       result[key] += 1;
     }
