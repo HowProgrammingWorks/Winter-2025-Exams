@@ -1,21 +1,20 @@
 import java.util.Map;
-
-import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-// Step 1
+// Step 2
 //
-// Remove empty blocks
-// Make code runnable in Java
-// Make sum atomic to be able to use it in lambda expression
+// Change incoming identifiers name
+// Remove the parentheses around the "key" parameter
+// Replace instanceof check and cast with "instanceof Number number"
+// and use instead of cast expression
 
 public class Count {
-    public static <K, V> int count(Map<K, V> obj) {
+    public static <K, V> int count(Map<K, V> map) {
         AtomicInteger sum = new AtomicInteger();
-        var keys = obj.keySet();
-        keys.forEach((key) -> {
-            var value = obj.get(key);
-            if (value instanceof Number) sum.addAndGet(((Number) value).intValue());
+        var keys = map.keySet();
+        keys.forEach(key -> {
+            var value = map.get(key);
+            if (value instanceof Number number) sum.addAndGet(number.intValue());
         });
         return sum.get();
     }
