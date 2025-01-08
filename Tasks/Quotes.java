@@ -1,32 +1,29 @@
-// Step 0
+// Step 1
 //
-// Convert into java as close as possible
+// Fix naming
+// Remove unnecessary for-each loops, nested if statement,
+// call to String.join() and constant EMPTY
+// Format and add empty lines for readability
 
 public class Quotes {
-    public static final String EMPTY = "";
+    public static String convertQuotes(String input) {
+        StringBuilder result = new StringBuilder();
+        boolean isOpen = false;
 
-    public static String quotes(String s) {
-        StringBuilder res = new StringBuilder();
-        boolean open = false;
-        for (char c : s.toCharArray()) {
-            if (c == '"') {
-                for (char i : String.valueOf(c).toCharArray()) {
-                    if (!open) {
-                        res.append('«');
-                        open = true;
-                    } else {
-                        res.append('»');
-                        open = false;
-                    }
+        for (char character : input.toCharArray()) {
+            if (character == '"') {
+                if (!isOpen) {
+                    result.append('«');
+                    isOpen = true;
+                } else {
+                    result.append('»');
+                    isOpen = false;
                 }
             } else {
-                if (c != '"') {
-                    for (char i : String.valueOf(c).toCharArray()) {
-                        res.append(i);
-                    }
-                }
+                result.append(character);
             }
         }
-        return String.join(EMPTY, res);
+
+        return result.toString();
     }
 }
