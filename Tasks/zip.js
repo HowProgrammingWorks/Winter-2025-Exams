@@ -1,18 +1,20 @@
 // Refactor following solution
 // Zip two arrays, [1, 2] and [3, 4] -> [[1, 3], [2, 4]]
 
-// Step 4:
-// Rename variables using camel case
+// Step 5:
+// Do not mutate incoming arrays
+// Declare minLength
 
 "use strict";
 
 const zip = (arr1 = [], arr2 = []) => {
-  for (let i = 0; i < arr2.length; i++) {
+  const result = [];
+  const minLength = Math.min(arr1.length, arr2.length);
+  for (let i = 0; i < minLength; i++) {
     const cell = [arr1[i], arr2[i]];
-    arr2[i] = cell;
-    if (cell[0] == undefined) arr2.length -= 1
+    result.push(cell);
   }
-  return arr2;
+  return result;
 };
 
 module.exports = zip;
