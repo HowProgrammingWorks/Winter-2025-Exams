@@ -1,26 +1,24 @@
 'use strict';
 
-const EMPTY = '';
-
 const quotes = function (string) {
-  let res = [];
+  let res = '';
   let open = false;
   for (const char of string) {
-    if (c === '"') {
+    if (char === '"') {
       if (!open) {
-        res.push('«');
+        res += '«';
         open = true;
       } else {
-        res.push('»');
+        res += '»';
         open = false;
       }
     } else {
       if (char !== '"') {
-        res.push(i);
+        res += char;
       }
     }
   }
-  return res.join(EMPTY);
+  return res;
 };
 
 module.exports = quotes;
