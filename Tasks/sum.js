@@ -3,15 +3,10 @@
 
 'use strict';
 
-const sum = (arr) => {
-  let res = 0;
-  for (const el of arr) {
-    const type = typeof el;
-    if (type === 'number') {
-      res += el;
-    }
-  }
-  return res;
-};
+const sum = (arr) =>
+  arr.reduce(
+    (curSum, el) => (typeof el === 'number' ? curSum + el : curSum),
+    0,
+  );
 
 module.exports = sum;
