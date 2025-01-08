@@ -12,14 +12,6 @@ const filterByType = (array, targetType) => {
         throw new TypeError('Second argument must be a type name string');
     }
     
-    const result = [...array];
-    let removeIndices = [];
-    for (let i = 0; i < result.length; i++) {
-        if (typeof result[i] !== targetType) {
-            removeIndices.unshift(i);
-        }
-    }
-    for (const index of removeIndices) result.splice(index, 1);
-    return result;
+    return array.filter(item => typeof item === targetType);
 };
 module.exports = filterByType;
