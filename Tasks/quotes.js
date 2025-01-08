@@ -1,11 +1,10 @@
 // Refactor following solution
 // Change double quotation to open or close quotation
+"use strict";
 
-const EMPTY = '';
-
-quotes = function (s) {
+const quotes = (s) => {
   res = [];
-  open = false;
+  let open = false;
   for (c of s) {
     if (c === '"') {
       for (i of c) {
@@ -25,7 +24,7 @@ quotes = function (s) {
       }
     }
   }
-  return res.join(EMPTY);
+  return res;
 };
 
 module.exports = quotes;
