@@ -1,9 +1,8 @@
 // Refactor following solution
 // Count words in a string
 
-//Step 3
-//Remove unneeded if else statements
-//Rename variable to make it easier to understand
+//Step 4
+//Combine checks and reduce nesting
 
 'use strict';
 
@@ -12,18 +11,12 @@ const words = (s) => {
   let inWord = false;
   
   for (const char of s) {
-    if (!inWord) {
-      if (char === ' ') {
-        inWord = false;
-      } else {
-        inWord = true;
-        numberOfWords++;
-      }
-    } else {
-      if (char === ' ') {
+    if (char!== ' ' && !inWord) {
+      inWord = true;
+      numberOfWords++;
+    } else if (char === ' ') {
         inWord = false;
       }
-    }
   }
   
   return numberOfWords;
