@@ -3,7 +3,7 @@
 // Get month number
 
 const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun',
-          'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+                'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
 
 const month = (s) => {
   const index = month.findIndex(month => s.toLowerCase().startsWith(month));
