@@ -1,14 +1,15 @@
 // Refactor following solution
 // Generate random password
+'use strict';
 
-let GeneratePassword = (alphabet, length) => {
-  const MAX = alphabet.length;
-  key = '';
-  for (let i = 0; i < length; i++) {
-    Index = Math.floor(Math.random() * MAX);
-    key = key + alphabet[Index];
+const paramsPassword = (alphabet, pswrdLength) => {
+  const MAX_INDEX = alphabet.length;
+  let password = '';
+  for (let i = 0; i < pswrdLength; i++) {
+    const randIndex = Math.floor(Math.random() * MAX_INDEX);
+    password += alphabet[randIndex];
   }
-  return key;
+  return password;
 };
 
-module.exports = GeneratePassword;
+module.exports = paramsPassword;
