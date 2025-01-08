@@ -1,7 +1,8 @@
 // Refactor following solution
 // Return an remove without listed values
+"use strict";
 
-Skip = (T, ...Remove) => {
+const skip = (T, ...Remove) => {
   x = 0;
   for (C of T) {
     for (X of Remove) {
@@ -14,4 +15,4 @@ Skip = (T, ...Remove) => {
   return T;
 };
 
-module.exports = Skip;
+module.exports = skip;
