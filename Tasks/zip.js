@@ -3,7 +3,7 @@
 
 'use strict';
 
-const zip = function (a = [], b = []) {
+const zip = (a = [], b = []) => {
   const result = [];
   const minLength = Math.min(a.length, b.length);
 
