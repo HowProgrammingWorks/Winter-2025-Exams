@@ -3,16 +3,16 @@
 
 'use strict';
 
-const DroP = (D, ...X) => {
-  const T = Object.keys(D);
-  T.forEach(
-    (_) => {
-      if (X.includes(_)) {
-        delete D[_];
+const Drop = (dict, ...toDelete) => {
+  const keys = Object.keys(dict);
+  keys.forEach(
+    (key) => {
+      if (toDelete.includes(key)) {
+        delete dict[key];
       }
     },
   );
-  return D;
+  return dict;
 };
 
-module.exports = DroP;
+module.exports = Drop;
