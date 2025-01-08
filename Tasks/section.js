@@ -1,13 +1,14 @@
-// Refactor following solution
-// Split string into array by the first occurrence of separator
+// Step 5
+//renamed the function parameters
+//delete a check TypeError
 
-SectionString = (s, t) => {
-  i = s.indexOf(t);
-  if (i < 0 || t == '') {
-    return [s, ''];
-  } else {
-    return [s.slice(0, i), s.slice(i + t.length)];
-  }
+'use strict';
+
+const sectionString = (string, section) => {
+  const sectionPosition = string.indexOf(section);
+  return sectionPosition < 0 || section === ''
+    ? [string, '']
+    : [string.slice(0, sectionPosition), string.slice(sectionPosition + section.length)];
 };
 
-module.exports = SectionString;
+module.exports = sectionString;

@@ -1,17 +1,12 @@
-// Refactor following solution
-// Generate int array from given range
+// step5
+//renamed the function parameters
 
-_range = (...Range) => {
-  let [from, to] = Range;
-  if (to >= from) {
-    Range = new Array(to - from + 1);
-    for (let i = from; i <= to; i++) {
-      Range[i - from] = i;
-    }
-  } else {
-    return [];
-  }
-  return Range;
+'use strict';
+
+const range = (from, to) => {
+  return to < from
+    ? []
+    : Array.from({ length: to - from + 1 }, (_, i) => from + i);
 };
 
-module.exports = _range;
+module.exports = range;

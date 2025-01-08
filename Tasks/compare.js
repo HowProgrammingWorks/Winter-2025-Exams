@@ -1,19 +1,13 @@
-// Refactor following solution
-// Compare two dictionaries
+// step5
+// renamed the function parameters
 
-let compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  let a = Object.keys(first_values);
-  let b = Object.keys(second_values);
-  if (a.join('-') !== b.join('-')) return false;
-  let e = true;
-  for (c of a) {
-    if (first_values[c] === second_values[c]) e = e && true;
-    else {
-      e = e && false;
-    }
-  }
-  return e;
+'use strict';
+
+const compare = (firstObject, secondObject) => {
+  const firstEntries = Object.entries(firstObject);
+  const secondEntries = Object.entries(secondObject);
+
+  return firstEntries.join('-') === secondEntries.join('-');
 };
 
 module.exports = compare;
