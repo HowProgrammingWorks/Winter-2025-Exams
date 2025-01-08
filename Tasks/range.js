@@ -1,17 +1,15 @@
-// Refactor following solution
+'use strict';
 // Generate int array from given range
 
-_range = (...Range) => {
-  let [from, to] = Range;
-  if (to >= from) {
-    Range = new Array(to - from + 1);
-    for (let i = from; i <= to; i++) {
-      Range[i - from] = i;
-    }
-  } else {
-    return [];
+// Step 6
+// Modify the logic for adding numbers to 'result'
+
+const getRangeArray = (first, last) => {
+  const result = [];
+  for (let i = first; i <= last; i++) {
+    result.push(i);
   }
-  return Range;
+  return result;
 };
 
-module.exports = _range;
+module.exports = getRangeArray;

@@ -1,15 +1,16 @@
-// Refactor following solution
+'use strict';
 // Reverse dict, exchange keys and values
+// Step 6
+// Declare variable 'result' to avoid incoming parameters mutation
 
-Reverse = (DATA) => {
-  T = Object.keys(DATA, 500);
-  ({ ...DATA });
-  T.forEach((_) => {
-    const v1 = DATA[_];
-    DATA[v1] = _;
-    delete DATA[_];
-  }, 1000);
-  return DATA;
+const reverse = (obj) => {
+  const result = {};
+  const keys = Object.keys(obj);
+  for (const key of keys) {
+    const value = obj[key];
+    result[value] = key;
+  }
+  return result;
 };
 
-module.exports = Reverse;
+module.exports = reverse;
