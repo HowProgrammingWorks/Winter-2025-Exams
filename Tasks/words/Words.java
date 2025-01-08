@@ -1,17 +1,21 @@
-//Step 2: Delete useless conditions and duplicates
+// Step 3: Change for-each to for, add more checks, avoid magic chars.
 public class Words {
     public static int countWords(String str) {
-        int countwords = 0;
-        boolean inWord = false;
-        
-        for (char character : str.toCharArray()) {
-            if (character == ' ') {
-                inWord = false;
-            } else if (!inWord) {
-                inWord = true;
-                countwords++;
-            }
+        if (str.length() == 0) {
+            return 0;
         }
-        return countwords;
+        
+        char empty = ' '; 
+        int countWords = 0;
+        if (str.charAt(0) != empty) {
+            countWords++;
+        }
+        
+        for (int i = 0; i < str.length() - 1; i++) { 
+            if ((str.charAt(i) == empty) && (str.charAt(i + 1) != empty)) {
+                countWords++;
+            } 
+        } 
+        return countWords;
     }
 }
