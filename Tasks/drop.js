@@ -4,13 +4,15 @@
 'use strict';
 
 const Drop = (dict, ...toDelete) => {
+  const res = {};
   for (const key in dict) {
-    if (toDelete.includes(key)) {
-      delete dict[key];
+    if (!toDelete.includes(key)) {
+      const value = dict[key];
+      res[key] = value;
     }
   }
 
-  return dict;
+  return res;
 };
 
 module.exports = Drop;
