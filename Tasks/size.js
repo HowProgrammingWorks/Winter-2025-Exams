@@ -1,15 +1,11 @@
-// Refactor following solution
-// Convert number to file size in bytes, kb, mb, and gb
+const size = (bytes) => {
+  if (bytes === 0) return '0 byte';
 
-let size = (size) => {
-  if (size === 0) return '0 byte';
-  else {
-    const exp = Math.floor(Math.log(size) / Math.log(1000));
-    if (exp == 0) return size + ' byte';
-    else if (exp == 1) return Math.round(size / 1000) + ' kb';
-    else if (exp == 2) return Math.round(size / 1000000) + ' mb';
-    else if (exp == 3) return Math.round(size / 1000000000) + ' gb';
-  }
+  const units = ['byte', 'kb', 'mb', 'gb'];
+  const exp = Math.floor(Math.log(bytes) / Math.log(1000));
+  const value = Math.round(bytes / Math.pow(1000, exp));
+
+  return `${value} ${units[exp]}`;
 };
 
 module.exports = size;
