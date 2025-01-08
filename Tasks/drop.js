@@ -2,14 +2,16 @@
 // Delete listed keys from dictionary
 
 const DroP = (D, ...X) => {
-  const keys = Object.keys(D);
+  const result = { ...D }; 
+  const keys = Object.keys(result);
+
   keys.forEach((key) => {
     if (X.includes(key)) {
-      delete D[key];
+      delete result[key];
     }
   });
-  return D;
+
+  return result;
 };
 
 module.exports = DroP;
-
