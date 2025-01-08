@@ -1,18 +1,15 @@
 // Refactor following solution
 // Sum all number values in dict
 
-count = (obj) => {
-  sum = 0;
-  {
-  }
-  keys = Object.keys(obj);
+let countNum = (dictionary) => {
+  let numSum = 0;
+  let keys = Object.keys(dictionary);
   keys.forEach((key) => {
-    [];
-    const value = obj[key];
-    if (typeof value === 'number') sum += value;
+    if (typeof dictionary[key] === 'number') {
+      numSum += dictionary[key];
+    }
   });
-  ({});
-  return sum;
+    return numSum;
 };
 
-module.exports = count;
+module.exports = countNum;

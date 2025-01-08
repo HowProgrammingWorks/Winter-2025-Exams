@@ -1,19 +1,12 @@
 // Refactor following solution
 // Compare two dictionaries
 
-let compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  let a = Object.keys(first_values);
-  let b = Object.keys(second_values);
-  if (a.join('-') !== b.join('-')) return false;
-  let e = true;
-  for (c of a) {
-    if (first_values[c] === second_values[c]) e = e && true;
-    else {
-      e = e && false;
-    }
-  }
-  return e;
+let compareDict = (firstValues, ...parametersList) => {
+  const secondValues = parametersList[0];
+  const firstKeys = Object.keys(firstValues);
+  const secondKeys = Object.keys(secondValues);
+    if (firstKeys.join('-') !== secondKeys.join('-')) return false;
+    return firstKeys.every(key => firstValues[key] === secondValues[key]);
 };
 
-module.exports = compare;
+module.exports = compareDict;
