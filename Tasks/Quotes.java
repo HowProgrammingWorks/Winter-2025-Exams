@@ -1,9 +1,6 @@
-// Step 1
+// Step 2
 //
-// Fix naming
-// Remove unnecessary for-each loops, nested if statement,
-// call to String.join() and constant EMPTY
-// Format and add empty lines for readability
+// Replace if-else with ternary operator
 
 public class Quotes {
     public static String convertQuotes(String input) {
@@ -12,13 +9,8 @@ public class Quotes {
 
         for (char character : input.toCharArray()) {
             if (character == '"') {
-                if (!isOpen) {
-                    result.append('«');
-                    isOpen = true;
-                } else {
-                    result.append('»');
-                    isOpen = false;
-                }
+                result.append(isOpen ? '»' : '«');
+                isOpen = !isOpen;
             } else {
                 result.append(character);
             }
