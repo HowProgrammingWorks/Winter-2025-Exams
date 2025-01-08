@@ -4,17 +4,12 @@
 
 const constPlane = (arr) => {
   let res = [];
-  let j = 0; 
   for(let i = 0; i < arr.length; i++) {
     let value = arr[i];
-    j = i;
-    if (Array.isArray(value, typeof value)) {
+    if (Array.isArray(value))
       res.push(...constPlane(value));
-      arr[i] = res[i - 1];
-    } else {
-      arr[i] = res[j - 1];
+    else 
       res.push(value);
-    }
   }
   return res;
 }
