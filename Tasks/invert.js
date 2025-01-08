@@ -1,11 +1,13 @@
 // Refactor following solution
 // Reverse an array, you can't use .reverse()
+'use strict';
 
-invert = (simpleArray) => {
-  reverseArray = Object.keys(simpleArray);
-  reverseArray.forEach((_, i) => {
-    reverseArray[i] = simpleArray.pop();
-  })
+const invert = (simpleArray) => {
+  let reverseArray = [];
+  for (const elem of simpleArray) {
+    reverseArray.unshift(elem);
+  }
+
   return reverseArray;
 };
 
