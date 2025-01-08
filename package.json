@@ -22,5 +22,8 @@
   "homepage": "https://github.com/HowProgrammingWorks/Index",
   "scripts": {
     "test": "node --test"
+  },
+  "devDependencies": {
+    "nyc": "^17.1.0"
   }
 }

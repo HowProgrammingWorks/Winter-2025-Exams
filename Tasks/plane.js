@@ -1,19 +1,14 @@
 // Refactor following solution
 // Make nested array plane
 
-const_plane = function(arr, res=[]) {
-  j = 0; for(let i = 0, length = arr.length; i < length; i++){
-    value = arr[i];
-    j = i
-    if (Array.isArray(value, typeof value) && [i, length]) {
+const_plane = function(arr, res = []) {
+  for (let i = 0; i < arr.length; i++) {
+    const value = arr[i];
+    if(Array.isArray(value)) 
     res.push(...const_plane(value));
-    arr[i] = res[i - 1]
-    }else{
-    arr[i] = res[j - 1]
-    res.push(value);
-    };
+    else res.push(value);
   };
-  return res
+  return res;
 }
 
 module.exports = const_plane;
