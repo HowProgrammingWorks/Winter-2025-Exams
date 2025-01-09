@@ -1,16 +1,16 @@
 // Refactor following solution
 // Get day number
 
-let D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+// Step 5
+// Rename days to lower case
 
-_parse_day_ = (s) => {
-  let i;
-  for (i = 0; i < D.length; i++) {
-    if (s.startsWith(D[i].toLowerCase())) {
-      return i + 1;
-    }
-  }
-  return -1;
+'use strict';
+
+const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+const parseDay = (day) => {
+    const index = days.findIndex((d) => day.startsWith(d));
+    return index !== -1 ? index + 1 : -1
 };
 
-module.exports = _parse_day_;
+module.exports = parseDay;
