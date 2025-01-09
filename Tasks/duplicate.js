@@ -1,5 +1,3 @@
-const duplicate = (value, N) => {
-  return N > 0 ? Array(N).fill(value) : [];
-};
+const duplicate = (value, count) => (count > 0 ? Array(count).fill(value) : []);
 
 module.exports = duplicate;
