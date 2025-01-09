@@ -18,11 +18,13 @@ const parseData = (data) => {
 const findMaxDensity = (table, columnIndex) =>
   Math.max(...table.map((row) => parseInt(row[columnIndex])));
 
-const calculateDensityPercentage = (table, maxDensity) => {
+const calculatePropotion = (value, maxValue, scale = 100) =>
+  Math.round((value * scale) / maxValue);
+
+const calculateDensityPercentage = (table, maxDensity, columnIndex) => {
   return table.map((row) => {
-    const densityPercentage = Math.round(
-      (parseInt(row[3], 10) * 100) / maxDensity,
-    );
+    const density = parseInt(row[columnIndex]);
+    const densityPercentage = calculatePropotion(density, maxDensity);
     return [...row, densityPercentage.toString()];
   });
 };
@@ -41,8 +43,13 @@ const displayTable = (table) => {
 
 const processCityData = (data) => {
   const table = parseData(data);
-  const maxDensity = findMaxDensity(table, 3);
-  const tableWithDensity = calculateDensityPercentage(table, maxDensity);
+  const columnDensityIndex = 3;
+  const maxDensity = findMaxDensity(table, columnDensityIndex);
+  const tableWithDensity = calculateDensityPercentage(
+    table,
+    maxDensity,
+    columnDensityIndex,
+  );
   const sortedTable = sortTableByDensityPercentage(tableWithDensity);
   displayTable(sortedTable);
 };
@@ -75,7 +82,8 @@ const testFindMaxDensity = () => {
     ['CityA', '1000', '100', '10', 'CountryA'],
     ['CityB', '2000', '200', '20', 'CountryB'],
   ];
-  const max = findMaxDensity(sampleTable, 3);
+  const columnDensityIndex = 3;
+  const max = findMaxDensity(sampleTable, columnDensityIndex);
   console.assert(max === 20, 'Test Failed: Finding Max Density');
 };
 
@@ -85,7 +93,12 @@ const testCalculateDensityPercentage = () => {
     ['CityB', '2000', '200', '20', 'CountryB'],
   ];
   const maxDensity = 20;
-  const result = calculateDensityPercentage(sampleTable, maxDensity);
+  const columnDensityIndex = 3;
+  const result = calculateDensityPercentage(
+    sampleTable,
+    maxDensity,
+    columnDensityIndex,
+  );
   console.assert(
     result[0][5] === '50',
     'Test Failed: Density Percentage CityA',
