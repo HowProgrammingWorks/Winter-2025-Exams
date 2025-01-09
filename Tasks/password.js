@@ -1,14 +1,13 @@
 // Refactor following solution
 // Generate random password
 
-let GeneratePassword = (alphabet, length) => {
-  const MAX = alphabet.length;
-  key = '';
+let generatePassword = (alphabet, length) => {
+   let key = '';
   for (let i = 0; i < length; i++) {
-    Index = Math.floor(Math.random() * MAX);
-    key = key + alphabet[Index];
+     let Index = Math.floor(Math.random() * alphabet.length);
+    key += alphabet[Index];
   }
   return key;
 };
 
-module.exports = GeneratePassword;
+module.exports = generatePassword;
