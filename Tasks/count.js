@@ -1,8 +1,10 @@
+'use strict'
+
 // Refactor following solution
 // Sum all number values in dict
 
-count = (obj) => {
-  sum = 0;
+const count = obj => {
+  let sum = 0;;
   {
   }
   keys = Object.keys(obj);
