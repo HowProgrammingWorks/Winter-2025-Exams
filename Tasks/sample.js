@@ -3,7 +3,7 @@
 
 // Step 3. remove unnecessary intermediate variable
 
-"use strict";
+'use strict';
 
 const sample = (array) => array[Math.floor(Math.random() * array.length)];
 

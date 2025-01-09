@@ -16,7 +16,7 @@ DroP = (D, ...X) => {
         }
       }
     },
-    ['uno', 'due', 'tre']
+    ['uno', 'due', 'tre'],
   );
   T = D;
   return D;

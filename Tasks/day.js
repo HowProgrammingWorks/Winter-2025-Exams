@@ -3,9 +3,9 @@
 
 // Step 4. refix naming and rewrite into functional style with ternary operator
 
-"use strict";
+'use strict';
 
-const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const DAYS_OF_WEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const getDayNumber = (day) => {
   const index = DAYS_OF_WEEK.findIndex((substr) =>

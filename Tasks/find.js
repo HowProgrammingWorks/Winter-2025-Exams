@@ -3,7 +3,7 @@
 
 // Step 5. change condition to shortize the code
 
-"use strict";
+'use strict';
 
 const find = (object, target) => {
   for (const key in object) {

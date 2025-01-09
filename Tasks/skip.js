@@ -3,7 +3,7 @@
 
 // Step 5. rewrite function's body to functional style
 
-"use strict";
+'use strict';
 
 const skip = (arr, ...remove) =>
   arr.filter((element) => !remove.includes(element));

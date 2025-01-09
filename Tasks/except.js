@@ -3,7 +3,7 @@
 
 // Step 7. using suggestions replace destructuring in filter method for better optimization
 
-"use strict";
+'use strict';
 
 const except = (obj, ...exceptions) => {
   return Object.fromEntries(

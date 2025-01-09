@@ -3,7 +3,7 @@
 
 // Step 5. rewrite func using while-loop
 
-"use strict";
+'use strict';
 
 const invert = (array) => {
   const result = [];
