@@ -15,9 +15,8 @@ const parseData = (data) => {
   return rows.map((row) => row.split(','));
 };
 
-const findMaxDensity = (table) => {
-  return Math.max(...table.map((row) => parseInt(row[3], 10)));
-};
+const findMaxDensity = (table, columnIndex) =>
+  Math.max(...table.map((row) => parseInt(row[columnIndex])));
 
 const calculateDensityPercentage = (table, maxDensity) => {
   return table.map((row) => {
@@ -42,7 +41,7 @@ const displayTable = (table) => {
 
 const processCityData = (data) => {
   const table = parseData(data);
-  const maxDensity = findMaxDensity(table);
+  const maxDensity = findMaxDensity(table, 3);
   const tableWithDensity = calculateDensityPercentage(table, maxDensity);
   const sortedTable = sortTableByDensityPercentage(tableWithDensity);
   displayTable(sortedTable);
@@ -76,7 +75,7 @@ const testFindMaxDensity = () => {
     ['CityA', '1000', '100', '10', 'CountryA'],
     ['CityB', '2000', '200', '20', 'CountryB'],
   ];
-  const max = findMaxDensity(sampleTable);
+  const max = findMaxDensity(sampleTable, 3);
   console.assert(max === 20, 'Test Failed: Finding Max Density');
 };
 
