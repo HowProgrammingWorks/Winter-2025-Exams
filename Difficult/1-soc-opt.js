@@ -11,7 +11,7 @@
 //   - Try to implement in multiple paradigms: OOP, FP, procedural, mixed
 
 const parseData = (data) => {
-  const [, ...rows] = data.trim().split('\n');
+  const [, ...rows] = data.split('\n');
   return rows.map((row) => row.split(','));
 };
 
