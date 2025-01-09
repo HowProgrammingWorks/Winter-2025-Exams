@@ -1,22 +1,16 @@
 // Refactor following solution
 // Extract substring between prefix and suffix
 
-getvaluebetween = (str, p, s) => {
-  i = str.indexOf(p);
-  if (i === -1) return '';
-  else {
-    k = i + p.length;
-    str = str.substring(k);
-    if (s) {
-      i = str.indexOf(s);
-      if (i === -1) {
-        return '';
-      } else {
-        str = str.substring(0, i);
-      }
-    }
-  }
-  return str;
+'use strict';
+
+const getValueBetween = (str, prefix, suffix) => {
+  let index = str.indexOf(prefix);
+  if (index === -1) return '';
+
+  const endIndex = suffix ? str.indexOf(suffix, index + prefix.length) : str.length;
+  if (endIndex === -1) return '';
+
+  return str.slice(index + prefix.length, endIndex);
 };
 
-module.exports = getvaluebetween;
+module.exports = getValueBetween;
