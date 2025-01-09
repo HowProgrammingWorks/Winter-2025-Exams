@@ -2,12 +2,12 @@ const distinct = (data) => {
   const uniqueSet = new Set();
   const result = [];
 
-  data.forEach((item) => {
+  for (const item of data) {
     if (!uniqueSet.has(item)) {
       uniqueSet.add(item);
       result.push(item);
     }
-  });
+  }
 
   return result.filter((x) => typeof x === 'number');
 };
