@@ -54,8 +54,9 @@ const calculateRelativeDensity = (rows) => {
   }));
 };
 
-const sortByRelativeDensity = (rows) =>
-  [...rows].sort((a, b) => b.relativeDensity - a.relativeDensity);
+const sortByProperty = (rows, property) =>
+  [...rows].toSorted((current, next) =>
+    next[property] - current[property]);
 
 const calculateColumnWidths = (rows, keys) =>
   keys.map((key) => {
@@ -104,14 +105,14 @@ const displayTable = (data) => {
 const parsedData = parseData(data);
 let { rows } = parsedData;
 rows = calculateRelativeDensity(rows);
-rows = sortByRelativeDensity(rows);
+rows = sortByProperty(rows, 'relativeDensity');
 displayTable({ headers: parsedData.headers, rows });
 
 module.exports = {
     parseRow,
     parseData,
     calculateRelativeDensity,
-    sortByRelativeDensity,
+    sortByProperty,
     calculateColumnWidths,
     formatRow,
     displayHeaders,

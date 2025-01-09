@@ -5,7 +5,7 @@ const {
   parseRow,
   parseData,
   calculateRelativeDensity,
-  sortByRelativeDensity,
+  sortByProperty,
   calculateColumnWidths,
   formatRow,
 } = require('./1-soc-opt-fp.js');
@@ -100,7 +100,7 @@ const testSortByRelativeDensity = () => {
     { density: 11313, relativeDensity: 100 },
     { density: 3826, relativeDensity: 28 },
   ];
-  const result = sortByRelativeDensity(rows);
+  const result = sortByProperty(rows, 'relativeDensity');
   assert(
     'sortByRelativeDensity should sort rows desc of relative density',
     JSON.stringify(result) === JSON.stringify(expected),

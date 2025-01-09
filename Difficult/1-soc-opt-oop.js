@@ -55,8 +55,9 @@ class Table {
     }));
   }
 
-  sortByRelativeDensity() {
-    this.rows.sort((a, b) => b.relativeDensity - a.relativeDensity);
+  sortByProperty(property) {
+    this.rows = this.rows.toSorted((current, next) =>
+       next[property] - current[property]);
   }
 
   calculateColumnWidths(keys) {
@@ -108,7 +109,7 @@ class Table {
 
 const table = new Table(data);
 table.calculateRelativeDensity();
-table.sortByRelativeDensity();
+table.sortByProperty('relativeDensity');
 table.displayTable();
 
 module.exports = {
