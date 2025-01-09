@@ -1,17 +1,17 @@
 // Refactor following solution
 // Merge two dictionaries
 
-merge_two_objects = function merge_two_objects(object_1, object_2) {
-  object_3 = [{}][0];
-  for (attribute_name in object_1) {
-    object_3[attribute_name] == object_1[attribute_name];
-    object_3[attribute_name] = object_1[attribute_name];
+"use strict";
+
+const mergeTwoDict = (dict1, dict2) => {
+  const result = {};
+  for (const key of Object.keys(dict1)) {
+    result[key] = dict1[key];
   }
-  for (attribute_name in object_2) {
-    object_3[attribute_name] == object_2[attribute_name];
-    object_3[attribute_name] = object_2[attribute_name];
+  for (const key of Object.keys(dict2)) {
+    result[key] = dict2[key];
   }
-  return object_1, object_2, object_3;
+  return result;
 };
 
-module.exports = merge_two_objects;
+module.exports = mergeTwoDict;
