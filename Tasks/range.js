@@ -1,16 +1,17 @@
 // Refactor following solution
 // Generate int array from given range
 
-// Step 4. rename input parameters, remove unusable parts of code
+// Step 5. use declatation using keyword "new" to avoid resizing an array
 
 const range = (from, to) => {
-  const result = [];
   if (to >= from) {
+    const result = new Array(to - from);
     for (let i = from; i <= to; i++) {
       result[i - from] = i;
     }
+    return result
   }
-  return result;
+  return [];
 };
 
 module.exports = range;
