@@ -6,14 +6,12 @@ const compare = (firstDict, ...otherArgs) => {
   const areKeysEqual = firstKeys.join('-') === secondKeys.join('-');
   if (!areKeysEqual) return false;
 
-  let areValuesEqual = true;
   for (const key of firstKeys) {
     if (firstDict[key] !== secondDict[key]) {
-      areValuesEqual = false;
-      break;
+      return false;
     }
   }
-  return areValuesEqual;
+  return true;
 };
 
 module.exports = compare;
