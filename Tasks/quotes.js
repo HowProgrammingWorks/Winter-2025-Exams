@@ -6,7 +6,7 @@
 const quotes = (str) => {
   let open = true;
   while (str.includes('"')) {
-    str = open ? s.replace('"', '«') : s.replace('"', '»');
+    str = open ? str.replace('"', '«') : str.replace('"', '»');
     open = !open;
   }
   return str;
