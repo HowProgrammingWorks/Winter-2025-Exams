@@ -6,9 +6,9 @@
 
 'use strict';
 
-const Random = (min, max = min) => {
-  if (min === max) return min;
-  return min + Math.floor(Math.random() * (max - min + 1));
+const getRandomNumber = (min, max = min) => {
+    if (min === max) return min;
+    return min + Math.floor(Math.random() * (max - min + 1));
 };
 
-module.exports = Random;
+module.exports = getRandomNumber;
