@@ -14,10 +14,10 @@ const sumNumericValues = (sourceObj) => {
     throw new TypeError('Argument must be a non-null object');
   }
 
-  return Object.keys(sourceObj).reduce((accumulator, key) => {
-    const value = sourceObj[key];
-    return typeof value === 'number' ? accumulator + value : accumulator;
-  }, 0);
+  return Object.values(sourceObj)
+    .filter((value) => typeof value === 'number')
+    .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 };
+
 
 module.exports = sumNumericValues;
