@@ -137,7 +137,7 @@ const testDisplayTable = () => {
     ['CityB', '2000', '200', '20', 'CountryB', '100'],
   ];
   const originalConsoleLog = console.log;
-  let logOutput = [];
+  const logOutput = [];
   console.log = (output) => logOutput.push(output);
 
   displayTable(sampleTable);
