@@ -12,4 +12,4 @@ const parseDay = (str) => {
   return -1;
 };
 
- module.exports = parseDay;
+module.exports = parseDay;
