@@ -1,6 +1,7 @@
-// Step 0
+// Step 1
 //
-// Convert into java as close as possible
+// Remove unnecessary if-else statements, simplify other ones
+// Format code
 
 public class Words {
     public static int words(String s) {
@@ -8,34 +9,12 @@ public class Words {
         boolean flag = false;
         for (char c : s.toCharArray()) {
             if (!flag) {
-                if (c == ' ') {
-                    if (flag == true) {
-                        flag = false;
-                    } else {
-                        flag = false;
-                    }
-                } else {
-                    if (flag == true) {
-                        flag = true;
-                    } else {
-                        flag = true;
-                    }
+                if (c != ' ') {
+                    flag = true;
                     number_of_words_in_s++;
                 }
             } else {
-                if (c == ' ') {
-                    if (flag == true) {
-                        flag = false;
-                    } else {
-                        flag = false;
-                    }
-                } else {
-                    if (flag == true) {
-                        flag = true;
-                    } else {
-                        flag = true;
-                    }
-                }
+                flag = c != ' ';
             }
         }
         return number_of_words_in_s;
