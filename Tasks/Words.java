@@ -1,23 +1,16 @@
-// Step 2
+// Step 3
 //
-// Further simplify if-else statements
-// Fix naming
+// Simplify code by using regex
 // Add empty lines for better readability
 
 public class Words {
     public static int countWords(String input) {
-        int wordCount = 0;
-        boolean inWord = false;
+        String trimmedInput = input.trim();
 
-        for (char character : input.toCharArray()) {
-            if (!inWord && character != ' ') {
-                inWord = true;
-                wordCount++;
-            } else {
-                inWord = character != ' ';
-            }
+        if (trimmedInput.isEmpty()) {
+            return 0;
         }
 
-        return wordCount;
+        return trimmedInput.split("\\s+").length;
     }
 }
