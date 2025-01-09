@@ -4,7 +4,7 @@
 //Fifth step: replace forEach function with for..of loop, create empty lines for readability
 
 const drop = (object, ...keysToRemove) => {
-  const res = {...object};
+  const res = { ...object };
 
   const keys = Object.keys(object);
   for (const key of keys) {
@@ -12,7 +12,7 @@ const drop = (object, ...keysToRemove) => {
       delete res[key];
     }
   }
-  
+
   return res;
 };
 
