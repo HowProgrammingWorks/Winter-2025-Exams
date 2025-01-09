@@ -14,16 +14,7 @@ const removeDuplicates = (data) => {
     throw new TypeError('Input must be an array');
   }
 
-  const seenElements = new Set();
-  return data.filter((element) => {
-    if (typeof element !== 'number') return false;
-    if (seenElements.has(element)) {
-      return false;
-    } else {
-      seenElements.add(element);
-      return true;
-    }
-  });
+  return [...new Set(data.filter((element) => typeof element === 'number'))];
 };
 
 module.exports = removeDuplicates;
