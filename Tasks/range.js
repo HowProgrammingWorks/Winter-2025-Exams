@@ -9,7 +9,7 @@ const range = (from, to) => {
     for (let i = from; i <= to; i++) {
       result[i - from] = i;
     }
-    return result
+    return result;
   }
   return [];
 };

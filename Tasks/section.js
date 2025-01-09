@@ -8,12 +8,11 @@
 const sectionOfString = (str, separator) => {
   if (separator && str.includes(separator)) {
     const separatorIndex = str.indexOf(separator);
-    const firstPart = str.slice(0, separatorIndex); 
+    const firstPart = str.slice(0, separatorIndex);
     const secondPart = str.slice(separatorIndex + separator.length);
     return [firstPart, secondPart];
   }
   return [str, ''];
-}
-  
+};
 
 module.exports = sectionOfString;

@@ -1,7 +1,7 @@
 // Refactor following solution
 // Get one random element from an array
 
-// Step 4. decomposed to random(min, max) and sample(array) 
+// Step 4. decomposed to random(min, max) and sample(array)
 
 'use strict';
 
