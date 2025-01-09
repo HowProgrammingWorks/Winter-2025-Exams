@@ -3,13 +3,13 @@
 
 "use strict"
 
-const quotes = (s) => {
+const quotes = (str) => {
   let open = true;
-  while (s.includes('"')) {
-    s = open ? s.replace('"', '«') : s.replace('"', '»');
+  while (str.includes('"')) {
+    str = open ? s.replace('"', '«') : s.replace('"', '»');
     open = !open;
   }
-  return s;
+  return str;
 };
 
 module.exports = quotes;

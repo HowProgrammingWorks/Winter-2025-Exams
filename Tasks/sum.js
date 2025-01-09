@@ -4,7 +4,7 @@
 const sumNumbers = (array) => {
   let sum = 0;
   for (const item of array) {
-    if (typeof item === 'number') {
+    if (typeof item === "number") {
       sum += item;
     }
   }
