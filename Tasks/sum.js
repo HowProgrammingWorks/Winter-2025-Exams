@@ -4,9 +4,8 @@
 'use strict';
 
 const sum = (arr) =>
-  arr.reduce(
-    (curSum, el) => (typeof el === 'number' ? curSum + el : curSum),
-    0,
-  );
+  arr
+    .filter((el) => typeof el === 'number')
+    .reduce((curSum, el) => curSum + el, 0);
 
 module.exports = sum;
