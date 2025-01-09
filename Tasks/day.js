@@ -9,10 +9,8 @@
 const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
 const parseDay = (day) => {
-  for (let i = 0; i < days.length; i++) {
-    if (day.startsWith(days[i])) return i + 1;
-  }
-  return -1;
+    const index = days.findIndex((d) => day.startsWith(d));
+    return index !== -1 ? index + 1 : -1
 };
 
 module.exports = parseDay;
