@@ -1,22 +1,23 @@
-// Step 1
+// Step 2
 //
-// Remove unnecessary if-else statements, simplify other ones
-// Format code
+// Further simplify if-else statements
+// Fix naming
+// Add empty lines for better readability
 
 public class Words {
-    public static int words(String s) {
-        int number_of_words_in_s = 0;
-        boolean flag = false;
-        for (char c : s.toCharArray()) {
-            if (!flag) {
-                if (c != ' ') {
-                    flag = true;
-                    number_of_words_in_s++;
-                }
+    public static int countWords(String input) {
+        int wordCount = 0;
+        boolean inWord = false;
+
+        for (char character : input.toCharArray()) {
+            if (!inWord && character != ' ') {
+                inWord = true;
+                wordCount++;
             } else {
-                flag = c != ' ';
+                inWord = character != ' ';
             }
         }
-        return number_of_words_in_s;
+
+        return wordCount;
     }
 }
