@@ -21,13 +21,12 @@ const findMaxDensity = (table, columnIndex) =>
 const calculatePropotion = (value, maxValue, scale = 100) =>
   Math.round((value * scale) / maxValue);
 
-const calculateDensityPercentage = (table, maxDensity, columnIndex) => {
-  return table.map((row) => {
+const calculateDensityPercentage = (table, maxDensity, columnIndex) =>
+  table.map((row) => {
     const density = parseInt(row[columnIndex]);
     const densityPercentage = calculatePropotion(density, maxDensity);
     return [...row, densityPercentage.toString()];
   });
-};
 
 const sortTableByDensityPercentage = (table, columnIndex) =>
   table.toSorted(
