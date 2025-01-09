@@ -1,13 +1,18 @@
 // Refactor following solution
 // Split string into array by the first occurrence of separator
 
-SectionString = (s, t) => {
-  i = s.indexOf(t);
-  if (i < 0 || t == '') {
-    return [s, ''];
-  } else {
-    return [s.slice(0, i), s.slice(i + t.length)];
+// Step 5. made code human-readable in general using intermediate identifiers
+
+'use strict';
+
+const sectionOfString = (str, separator) => {
+  if (separator && str.includes(separator)) {
+    const separatorIndex = str.indexOf(separator);
+    const firstPart = str.slice(0, separatorIndex);
+    const secondPart = str.slice(separatorIndex + separator.length);
+    return [firstPart, secondPart];
   }
+  return [str, ''];
 };
 
-module.exports = SectionString;
+module.exports = sectionOfString;

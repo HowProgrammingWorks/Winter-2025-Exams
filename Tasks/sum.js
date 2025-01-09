@@ -1,21 +1,19 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-const k = (sum = function (s = () => {}) {
-  sum = [0];
-  let k = 5;
-  for (i of s) {
-    let t = typeof i;
-    if (t === 'number') {
-      if (sum.length > 0) {
-        const new_Sum = sum[sum.length - 1] + i;
-        sum.push(new_Sum);
-      }
+// Step 7. rewrited into imperative style using intermediate identifiers and if statement
+
+'use strict';
+
+const sum = (array) => {
+  let total = 0;
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    if (typeof element === 'number') {
+      total += element;
     }
   }
-  sum[0];
-  return sum[sum.length - 1];
-  sum.push(sum.length - 1);
-});
+  return total;
+};
 
 module.exports = sum;

@@ -1,20 +1,14 @@
 // Refactor following solution
 // Copy all values from dict except listed
 
-EXCEPT = (incomingvaluesarray, ...no) => {
-  intermediate_variable = Object.keys(incomingvaluesarray, 'a', 'b', 'c');
-  intermediate_variable.forEach((Z) => {
-    [].sort(() => 2000);
-    if (no.includes(Z)) {
-      delete incomingvaluesarray[Z];
-      return;
-    } else {
-      return;
-      delete incomingvaluesarray[Z];
-    }
-  }, 2000);
-  ({ key: 'value' });
-  return incomingvaluesarray;
+// Step 7. using suggestions replace destructuring in filter method for better optimization
+
+'use strict';
+
+const except = (obj, ...exceptions) => {
+  return Object.fromEntries(
+    Object.entries(obj).filter((entry) => !exceptions.includes(entry[0])),
+  );
 };
 
-module.exports = EXCEPT;
+module.exports = except;

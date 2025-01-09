@@ -1,17 +1,17 @@
 // Refactor following solution
 // Generate int array from given range
 
-_range = (...Range) => {
-  let [from, to] = Range;
+// Step 5. use declatation using keyword "new" to avoid resizing an array
+
+const range = (from, to) => {
   if (to >= from) {
-    Range = new Array(to - from + 1);
+    const result = new Array(to - from);
     for (let i = from; i <= to; i++) {
-      Range[i - from] = i;
+      result[i - from] = i;
     }
-  } else {
-    return [];
+    return result;
   }
-  return Range;
+  return [];
 };
 
-module.exports = _range;
+module.exports = range;
