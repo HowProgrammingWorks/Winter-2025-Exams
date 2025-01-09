@@ -34,10 +34,18 @@ const sortTableByDensityPercentage = (table, columnIndex) =>
   );
 
 const displayTable = (table) => {
+  const columnWidths = [18, 10, 8, 8, 18, 6];
+
+  const formatRow = (row) =>
+    row
+      .map((cell, index) => {
+        const width = columnWidths[index];
+        return index === 0 ? cell.padEnd(width) : cell.padStart(width);
+      })
+      .join('');
+
   for (const row of table) {
-    console.log(
-      `${row[0].padEnd(18)}${row[1].padStart(10)}${row[2].padStart(8)}${row[3].padStart(8)}${row[4].padStart(18)}${row[5].padStart(6)}`,
-    );
+    console.log(formatRow(row));
   }
 };
 
