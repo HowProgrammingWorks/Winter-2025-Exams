@@ -47,10 +47,11 @@
  * @throws {TypeError} - Throws if either `firstDict` or `secondDict` is not a non-null object.
  */
 const compareDictionaries = (firstDict, secondDict) => {
-  if (
-    typeof firstDict !== 'object' || firstDict === null ||
-    typeof secondDict !== 'object' || secondDict === null
-  ) {
+  const areBothObjects =
+    typeof firstDict === 'object' && firstDict !== null &&
+    typeof secondDict === 'object' && secondDict !== null;
+
+  if (!areBothObjects) {
     throw new TypeError('Both arguments must be non-null objects');
   }
 
