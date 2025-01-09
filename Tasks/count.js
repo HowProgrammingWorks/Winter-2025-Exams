@@ -4,11 +4,8 @@
 'use strict';
 
 const count = (obj) => {
-  const values = Object.values(obj);
-  return values.reduce(
-    (curSum, el) => (typeof el === 'number' ? curSum + el : curSum),
-    0,
-  );
+  const values = Object.values(obj).filter((el) => typeof el === 'number');
+  return values.reduce((curSum, el) => curSum + el, 0);
 };
 
 module.exports = count;
