@@ -2,9 +2,14 @@
 //2) Rewrite using iterator(still not optimal beсause of cloned value
 //3) Making loop run from the end
 //4) Same logic but into iterator for cleaner code
+//5) Remove iterator cuz .rev()
+
 fn invert(input: Vec<i32>) -> Vec<i32> {
-    let mut result = Vec::with_capacity(input.len());
-    input.iter().rev().for_each(|&x| result.push(x));
+    let length = input.len();
+    let mut result = Vec::with_capacity(length);
+    for i in 0..length {
+        result.push(input[length - i - 1]);
+    }
     result
 }
 
