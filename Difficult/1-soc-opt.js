@@ -29,9 +29,10 @@ const calculateDensityPercentage = (table, maxDensity, columnIndex) => {
   });
 };
 
-const sortTableByDensityPercentage = (table) => {
-  return table.sort((currentRow, nextRow) => nextRow[5] - currentRow[5]);
-};
+const sortTableByDensityPercentage = (table, columnIndex) =>
+  table.toSorted(
+    (currentRow, nextRow) => nextRow[columnIndex] - currentRow[columnIndex],
+  );
 
 const displayTable = (table) => {
   for (const row of table) {
@@ -50,7 +51,10 @@ const processCityData = (data) => {
     maxDensity,
     columnDensityIndex,
   );
-  const sortedTable = sortTableByDensityPercentage(tableWithDensity);
+  const sortedTable = sortTableByDensityPercentage(
+    tableWithDensity,
+    columnDensityIndex,
+  );
   displayTable(sortedTable);
 };
 
@@ -114,7 +118,8 @@ const testSortTableByDensityPercentage = () => {
     ['CityA', '1000', '100', '10', 'CountryA', '50'],
     ['CityB', '2000', '200', '20', 'CountryB', '100'],
   ];
-  const result = sortTableByDensityPercentage(sampleTable);
+  const columnDensityIndex = 3;
+  const result = sortTableByDensityPercentage(sampleTable, columnDensityIndex);
   console.assert(result[0][0] === 'CityB', 'Test Failed: Sorting Order');
   console.assert(result[1][0] === 'CityA', 'Test Failed: Sorting Order');
 };
