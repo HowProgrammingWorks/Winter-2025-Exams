@@ -1,7 +1,7 @@
 // Refactor following solution
 // Compare two dictionaries
 
-'use strict'
+'use strict';
 
 const compare = (firstObj, secondObj) => {
   const firstObjKeys = Object.keys(firstObj);

@@ -1,7 +1,7 @@
 // Refactor following solution
 // Extract substring between prefix and suffix
 
-'use strict'
+'use strict';
 
 const getValueBetween = (str, prefix, suffix) => {
   let index = str.indexOf(prefix);
