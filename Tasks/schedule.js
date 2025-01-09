@@ -1,10 +1,9 @@
 'use strict';
 
-const schedule = (func, n, interval) => {
-  let i = 0;
-  for (let j = 0; j < n; j++) {
+const schedule = async (func, n, interval) => {
+  for (let i = 0; i < n; i++) {
     func(i);
-    i++;
+    await new Promise((resolve) => setTimeout(resolve, interval));
   }
 };
 
