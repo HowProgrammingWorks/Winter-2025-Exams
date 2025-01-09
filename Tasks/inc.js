@@ -9,8 +9,8 @@ const inc = (dict) => {
       dict[key] += 1;
     }
   }
-  
-  return dict;
+
+  return { ...dict };
 };
 
 module.exports = inc;
