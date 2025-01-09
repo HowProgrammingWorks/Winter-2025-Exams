@@ -1,17 +1,16 @@
 // Refactor following solution
 // Generate int array from given range
 
-_range = (...Range) => {
-  let [from, to] = Range;
-  if (to >= from) {
-    Range = new Array(to - from + 1);
-    for (let i = from; i <= to; i++) {
-      Range[i - from] = i;
-    }
-  } else {
-    return [];
-  }
-  return Range;
+"use strict";
+
+const generateIntRange = (start, end) => {
+  const rangeLength = end - start + 1;
+  if (rangeLength <= 0) return [];
+  const result = new Array(rangeLength);
+  for (let i = 0; i < rangeLength; i++) {
+    result[i] = start + i;
+  };
+  return result;
 };
 
-module.exports = _range;
+module.exports = generateIntRange;
