@@ -1,19 +1,20 @@
 // Refactor following solution
 // Return an array without duplicates
+'use strict';
 
-DISTINCT = (data) => {
-  A = new Set();
-  w = 0;
-  data.forEach((a) => {
-    if (A.has(a)) {
-      delete data[w];
-    } else {
-      A.add(a);
-    }
-    w++;
-  });
-  return data.filter
-  (x => typeof x === 'number');
+/**
+ * Removes duplicate numeric values from an array.
+ *
+ * @param {Array} data - The array to remove duplicates from.
+ * @returns {Array} - A new array containing only unique numeric values.
+ * @throws {TypeError} - Throws if `data` is not an array.
+ */
+const removeDuplicates = (data) => {
+  if (!Array.isArray(data)) {
+    throw new TypeError('Input must be an array');
+  }
+
+  return [...new Set(data.filter((element) => typeof element === 'number'))];
 };
 
-module.exports = DISTINCT;
+module.exports = removeDuplicates;
