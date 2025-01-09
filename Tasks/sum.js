@@ -1,14 +1,19 @@
 // Refactor following solution
 // Sum all numbers from an array
 
-// Step 6. replace for...of-loop with .reduce
+// Step 7. rewrited into imperative style using intermediate identifiers and if statement
 
 'use strict';
 
-const sum = (array) =>
-  array.reduce(
-    (total, element) => total + (typeof element === 'number' ? element : 0),
-    0,
-  );
+const sum = (array) => {
+  let total = 0;
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    if (typeof element === 'number') {
+      total += element;
+    }
+  }
+  return total;
+};
 
 module.exports = sum;
