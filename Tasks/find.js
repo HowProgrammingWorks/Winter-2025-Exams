@@ -3,10 +3,10 @@
 
 //Fourth step: prefer for..of to for..in
 
-const find = (object, value) => {
-  const keys = Object.keys(object);
-  for (const key of keys) {
-    if (object[key] === value) return key;
+const find = (object, valueToFind) => {
+  const props = Object.entries(object);
+  for (const [key, value] of props) {
+    if (value === valueToFind) return key;
   }
 };
 
