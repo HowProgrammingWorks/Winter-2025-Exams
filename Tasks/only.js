@@ -2,17 +2,17 @@
 // Copy only listed values from dict
 
 const only = (dict, ...only) => {
-
-  const res = {...dict};
-
-  const keys = Object.keys(dict);
-  keys.forEach((key) => {
-    if (!only.includes(key)) {
-      delete res[key];
-    }
-  });
+  const res = new Map();
   
-  return res;
+  for (const key of only){
+    const value = dict[key];
+    
+    if (only.includes(key) && value != undefined){
+      res.set(key, value);
+    }
+  }
+
+  return Object.fromEntries(res);
 };
 
 module.exports = only;
