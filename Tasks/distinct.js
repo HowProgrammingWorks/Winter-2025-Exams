@@ -5,7 +5,7 @@
 
 const distinct = (array) => {
   const res = [];
-  for (const el of array) {
+  for (const element of array) {
     if (!res.includes(el)) {
       res.push(el);
     } 
