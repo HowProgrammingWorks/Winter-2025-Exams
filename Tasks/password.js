@@ -1,6 +1,8 @@
 // Refactor following solution
 // Generate random password
 
+'use strict'
+
 let GeneratePassword = (alphabet, length) => {
   const MAX = alphabet.length;
   key = '';
