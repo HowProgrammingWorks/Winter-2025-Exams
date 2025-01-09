@@ -8,7 +8,6 @@ const find = (object, value) => {
   for (const key of keys) {
     if (object[key] === value) return key;
   }
-  return undefined;
 };
 
 module.exports = find;
