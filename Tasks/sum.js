@@ -5,7 +5,11 @@
 
 'use strict';
 
-const sum = (array) =>
-  array.reduce((res, elem) => (typeof elem === 'number' ? res + elem : res), 0);
+const isNumber = (elem) => typeof elem === 'number';
+
+const sum = (array) => {
+  const filteredArray = array.filter(isNumber);
+  return filteredArray.reduce((res, elem) => res + elem, 0);
+};
 
 module.exports = sum;
