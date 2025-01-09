@@ -6,7 +6,7 @@
 const except = (inputObject, ...exceptedKeys) =>
   Object.fromEntries(
     Object.entries(inputObject)
-      .filter(([key]) => !exceptedKeys.includes(key)),
+      .filter((entry) => !exceptedKeys.includes(entry[0])),
   );
 
 module.exports = except;
