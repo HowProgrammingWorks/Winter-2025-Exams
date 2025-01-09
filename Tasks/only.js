@@ -5,12 +5,16 @@
 
 'use strict';
 
-const only = (dict, ...listedValue) =>
-  Object.keys(dict)
-    .filter((key) => listedValue.includes(key))
-    .reduce((res, key) => {
-      res[key] = dict[key];
-      return res;
-    }, {});
+const only = (dict, ...listedValue) => {
+  const result = {};
+
+  for (const key of Object.keys(dict)) {
+    if (listedValue.includes(key)) {
+      result[key] = dict[key];
+    }
+  }
+
+  return result;
+};
 
 module.exports = only;
