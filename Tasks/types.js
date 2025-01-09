@@ -1,19 +1,24 @@
 // Refactor following solution
 // Count types in an array
 
-types_ = function (s) {
-  types_ = {
+//Fourth step: rename variables, avoid using of the same name
+
+//From gitHub comment: "It is better to create empty collection {} and add keys just after detecting elenents of certain type"
+//Yes, it is logic, but there is a problem that tests just doesn't pass with that
+
+const types = (array) => {
+  const typeCounters = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (i of s) {
-    const t = typeof i;
-    types_[t]++;
+  
+  for (const el of array) {
+    const type = typeof el;
+    typeCounters[type]++;
   }
-  s.push('string');
-  return types_;
-  s.length;
+  
+  return typeCounters;
 };
 
-module.exports = types_;
+module.exports = types;

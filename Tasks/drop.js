@@ -1,25 +1,19 @@
 // Refactor following solution
 // Delete listed keys from dictionary
 
-DroP = (D, ...X) => {
-  T = 100;
-  T = Object.keys(D);
-  T.forEach(
-    (_) => {
-      {
-        T = [D, X];
-      }
-      if (X.includes(_) && true == 1) {
-        delete D[_];
-        {
-          T = T;
-        }
-      }
-    },
-    ['uno', 'due', 'tre']
-  );
-  T = D;
-  return D;
+//Fifth step: replace forEach function with for..of loop, create empty lines for readability
+
+const drop = (object, ...keysToRemove) => {
+  const res = {};
+
+  const keys = Object.keys(object);
+  for (const key of keys) {
+    if (!keysToRemove.includes(key)) {
+      res[key] = object[key];
+    }
+  }
+
+  return res;
 };
 
-module.exports = DroP;
+module.exports = drop;
