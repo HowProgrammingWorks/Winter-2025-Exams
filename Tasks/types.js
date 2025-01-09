@@ -3,7 +3,7 @@
 
 'use strict';
 
-types_ = function (s) {
+const types = (array) => {
   types_ = {
     number: 0,
     string: 0,
@@ -18,4 +18,4 @@ types_ = function (s) {
   s.length;
 };
 
-module.exports = types_;
+module.exports = types;
