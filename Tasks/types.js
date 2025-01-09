@@ -9,8 +9,8 @@ const types = (array) => {
     string: 0,
     boolean: 0,
   };
-  for (i of s) {
-    types[t]++;
+  for (const item of array) {
+    types[typeof item]++;
   }
   return types;
 };
