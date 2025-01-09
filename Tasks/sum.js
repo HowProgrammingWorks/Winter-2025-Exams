@@ -19,3 +19,17 @@ const k = (sum = function (s = () => {}) {
 });
 
 module.exports = sum;
+
+
+/** Steps
+ * Usе reduce
+ * Eliminate cycles
+ */
+
+const sumNumbers = (array = []) => {
+
+  return array.reduce((sum, element) => (typeof element === 'number' ? sum + element : sum), 0);
+
+};
+
+module.exports = sumNumbers;

@@ -17,3 +17,30 @@ types_ = function (s) {
 };
 
 module.exports = types_;
+
+
+/** Steps
+ * Replace the types_ global variable with the countTypes variable
+ * Add argument type checking
+ * Delete extra lines
+ * Use the local variable const item
+ */
+
+const countTypes = (array) => {
+  if (!Array.isArray(array)) {
+    throw new TypeError('Input must be an array');
+  }
+
+  const types = { number: 0, string: 0, boolean: 0 };
+
+  for (const item of array) {
+    const type = typeof item;
+    if (types[type] !== undefined) {
+      types[type]++;
+    }
+  }
+
+  return types;
+};
+
+module.exports = countTypes;
