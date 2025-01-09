@@ -1,11 +1,13 @@
 const dropKeys = (obj, ...keysToRemove) => {
-  Object.keys(obj).forEach((key) => {
-    if (keysToRemove.includes(key)) {
-      delete obj[key];
-    }
-  });
+  const result = {};
 
-  return obj;
+  for (const key of Object.keys(obj)) {
+    if (!keysToRemove.includes(key)) {
+      result[key] = obj[key];
+    }
+  }
+
+  return result;
 };
 
 module.exports = dropKeys;
