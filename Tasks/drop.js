@@ -15,16 +15,19 @@ const removeKeys = (dictionary, ...keysToDelete) => {
     throw new TypeError('First argument must be a non-null object');
   }
 
-  for (const key of keysToDelete) {
+  keysToDelete.forEach((key) => {
     if (typeof key !== 'string') {
       throw new TypeError('All keys to delete must be strings');
     }
-    if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
-      delete dictionary[key];
-    }
-  }
+  });
 
-  return dictionary;
+  return Object.keys(dictionary).reduce((acc, key) => {
+    if (!keysToDelete.includes(key)) {
+      acc[key] = dictionary[key];
+    }
+    return acc;
+  }, {});
 };
+
 
 module.exports = removeKeys;
