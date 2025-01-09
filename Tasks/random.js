@@ -4,7 +4,10 @@
 //Third step: remove unneeded code, symplify function
 
 const random = (min, max) => {
-  return min + Math.floor(Math.random() * (max - min + 1));
+  const range = max - min;
+  const randomFloat = min + Math.random() * range;
+  
+  return Math.floor(randomFloat);
 }
 
 module.exports = random;
