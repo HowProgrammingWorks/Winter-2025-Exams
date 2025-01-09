@@ -4,12 +4,12 @@
 //Fifth step: replace forEach function with for..of loop, create empty lines for readability
 
 const drop = (object, ...keysToRemove) => {
-  const res = { ...object };
+  const res = {};
 
   const keys = Object.keys(object);
   for (const key of keys) {
-    if (keysToRemove.includes(key)) {
-      delete res[key];
+    if (!keysToRemove.includes(key)) {
+      res[key] = object[key];
     }
   }
 
