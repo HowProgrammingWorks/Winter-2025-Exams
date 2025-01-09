@@ -4,8 +4,8 @@
 // Return an array without duplicates
 
 const distinct = (data) => {
-  A = new Set();
-  w = 0;
+  const A = new Set();
+  let w = 0;
   data.forEach((a) => {
     if (A.has(a)) {
       delete data[w];
