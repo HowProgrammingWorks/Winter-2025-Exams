@@ -58,19 +58,11 @@ const compareDictionaries = (firstDict, secondDict) => {
   const firstKeys = Object.keys(firstDict);
   const secondKeys = Object.keys(secondDict);
 
-  if (firstKeys.length !== secondKeys.length) return false;
 
-  for (let i = 0; i < firstKeys.length; i++) {
-    const key1 = firstKeys[i];
-    const key2 = secondKeys[i];
-
-    if (key1 !== key2 || firstDict[key1] !== secondDict[key2]) {
-      return false;
-    }
-  }
-
-  return true;
+  return firstKeys.length === secondKeys.length &&
+    firstKeys.every((key, index) =>
+      key === secondKeys[index] && firstDict[key] === secondDict[key],
+    );
 };
-
 
 module.exports = compareDictionaries;
