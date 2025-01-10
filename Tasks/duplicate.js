@@ -1,10 +1,10 @@
 // Refactor following solution
 // Return an array without duplicates
 
-// Step 4:
-// Rename argument
+// Step 5:
+// Use single quotes
 
-"use strict";
+'use strict';
 
 const duplicate = (value, n) => n > 0 ? new Array(n).fill(value) : [];
 
