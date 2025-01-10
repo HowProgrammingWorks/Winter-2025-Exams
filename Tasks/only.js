@@ -3,8 +3,10 @@
 'use strict';
 
 const only = (dict, ...toCopy) => {
+  const copiedDict = {};
   const keys = Object.keys(dict).filter((key) => toCopy.includes(key));
-  return keys.reduce((acc, key) => ({ ...acc, [key]: dict[key] }), {});
+  for (const key of keys) copiedDict[key] = dict[key];
+  return copiedDict;
 };
 
 module.exports = only;
