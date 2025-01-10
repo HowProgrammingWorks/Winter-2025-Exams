@@ -1,11 +1,10 @@
 // Refactor following solution
 // Make nested array plane
 
-// Step 5:
-// Prefer using for...of loop instead of for loop
-// Formatting
+// Step 6:
+// Use single quotes
 
-"use strict";
+'use strict';
 
 const plane = (arr) => {
   const res = [];
