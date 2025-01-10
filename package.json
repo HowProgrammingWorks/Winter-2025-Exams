@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/HowProgrammingWorks/Index",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "lint": "eslint",
+    "fix": "eslint --fix"
+  },
+  "dependencies": {
+    "eslint": "^9.17.0"
   }
 }

@@ -1,15 +1,8 @@
 // Refactor following solution
 // Return an array without duplicates
 
-duplicate = (value, N) => {
-  if (N <= 0) return [];
-  else {
-    res = [];
-    for (let i = 0; i < N; i++) {
-      res[i] = value;
-    }
-    return res;
-  }
-};
+'use strict';
+
+const duplicate = (value, count) => new Array(count > 0 ? count : 0).fill(value);
 
 module.exports = duplicate;
