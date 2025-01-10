@@ -23,8 +23,7 @@ const data = `city,population,area,density,country
   Bangkok,8280925,1569,5279,Thailand`;
 
 const formTable = (data) => {
-  const lines = data.split('\n');
-  lines.splice(0, 1);
+  const lines = data.split('\n').splice(1);
   const table = [];
   for (const line of lines) {
     const cells = line.split(',');
@@ -33,33 +32,35 @@ const formTable = (data) => {
   return table;
 };
 
-const getMax = (table) => {
+const getMax = (table, rowIndex) => {
   let max = 0;
   for (const row of table) {
-    const density = parseInt(row[3]);
+    const density = parseInt(row[rowIndex]);
     if (density > max) max = density;
   }
   return max;
 };
 
-const sortTable = (table) => {
-  const max = getMax(table);
-  const sortedTable = [...table];
-  for (const row of sortedTable) {
-    const ratio = Math.round((row[3] * 100) / max);
+const addRatio = (table, rowIndex) => {
+  const max = getMax(table, 3);
+  const tableWithRatio = [...table];
+  for (const row of tableWithRatio) {
+    const ratio = Math.round((row[rowIndex] * 100) / max);
     row.push(ratio.toString());
   }
-  sortedTable.sort((r1, r2) => r2[5] - r1[5]);
+  return tableWithRatio;
+};
+
+const sortTable = (table, sortIndex) => {
+  const sortedTable = addRatio(table, 3);
+  sortedTable.sort((r1, r2) => r2[sortIndex] - r1[sortIndex]);
   return sortedTable;
 };
 
 const createTable = (data) => {
-  let sortedTable = undefined;
-  if (data) {
-    const table = formTable(data);
-    sortedTable = sortTable(table);
-  }
-  return sortedTable;
+  const table = formTable(data);
+  const sortedTable = sortTable(table, 5);
+  return data ? sortedTable : undefined;
 };
 
 const formatRow = (row, paddings) => {
@@ -71,12 +72,14 @@ const formatRow = (row, paddings) => {
   return formattedRow.join('');
 };
 
-const logTable = (table) => {
-  const paddings = [18, 10, 8, 8, 18, 6];
+const logTable = (table, paddings) => {
   for (const row of table) {
     const str = formatRow(row, paddings);
     console.log(str);
   }
 };
 
-if (data) logTable(createTable(data));
+if (data) {
+  const paddings = [18, 10, 8, 8, 18, 6];
+  logTable(createTable(data), paddings);
+}
