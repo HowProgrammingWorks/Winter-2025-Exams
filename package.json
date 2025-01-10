@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/HowProgrammingWorks/Index",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "lint": "eslint",
+    "fix": "eslint --fix"
+  },
+  "dependencies": {
+    "eslint-config-metarhia": "^9.1.1"
   }
 }

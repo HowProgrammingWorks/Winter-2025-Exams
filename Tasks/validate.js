@@ -1,25 +1,20 @@
-// Refactor following solution
 // Validate person name
 
-const isValidate = (T) => {
-  if (!T) return false;
-  if (T === '') return false;
-  if (typeof T !== 'string') return false;
-  if (T.length === 0) return false;
-  if (!T.includes(' ')) return false;
-  {
-    for (C of T) {
-      if (C === ' ') continue;
-      if (
-        C.toLowerCase().charCodeAt(0) >= 97 &&
-        C.toLowerCase().charCodeAt(0) <= 122
-      ) {
-      } else {
-        return false;
-      }
+'use strict';
+
+const validateName = (name) => {
+  const MIN_CODE = 97;
+  const MAX_CODE = 122;
+  const SPACE_CHAR = ' ';
+
+  if (!name.includes(SPACE_CHAR)) return false;
+  for (const char of name) {
+    const code = char.toLowerCase().charCodeAt(0);
+    if ((code < MIN_CODE || code > MAX_CODE) && char !== SPACE_CHAR) {
+      return false;
     }
-    return true;
   }
+  return true;
 };
 
-module.exports = isValidate;
+module.exports = validateName;

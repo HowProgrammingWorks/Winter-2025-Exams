@@ -1,13 +1,11 @@
-// Refactor following solution
 // Generate random integer value in given range
 
-Random = (min, max) => {
-  if (max === undefined) {
-    max = min;
-    return Math.floor(Math.random() * (max + 1));
-  } else {
-    return min + Math.floor(Math.random() * (max - min + 1));
-  }
+'use strict';
+
+const randNum = (min, max) => {
+  const range = max ? max - min : min;
+  const num = Math.floor(Math.random() * (range + 1));
+  return max ? num + min : num;
 };
 
-module.exports = Random;
+module.exports = randNum;

@@ -1,15 +1,5 @@
 'use strict';
 
-// Tasks for rewriting:
-//   - Apply optimizations of computing resources: processor, memory
-//   - Minimize cognitive complexity
-//   - Respect SRP and SoC
-//   - Improve readability (understanding), reliability
-//   - Optimize for maintainability, reusability, flexibility
-//   - Make code testable
-//   - Implement simple unittests without frameworks
-//   - Try to implement in multiple paradigms: OOP, FP, procedural, mixed
-
 const data = `city,population,area,density,country
   Shanghai,24256800,6340,3826,China
   Delhi,16787941,1484,11313,India
@@ -41,8 +31,7 @@ const getMax = (table, rowIndex) => {
   return max;
 };
 
-const addRatio = (table, rowIndex) => {
-  const max = getMax(table, 3);
+const addRatio = (table, max, rowIndex) => {
   const tableWithRatio = [...table];
   for (const row of tableWithRatio) {
     const ratio = Math.round((row[rowIndex] * 100) / max);
@@ -51,35 +40,24 @@ const addRatio = (table, rowIndex) => {
   return tableWithRatio;
 };
 
-const sortTable = (table, sortIndex) => {
-  const sortedTable = addRatio(table, 3);
-  sortedTable.sort((r1, r2) => r2[sortIndex] - r1[sortIndex]);
-  return sortedTable;
-};
-
-const createTable = (data) => {
-  const table = formTable(data);
-  const sortedTable = sortTable(table, 5);
-  return data ? sortedTable : undefined;
-};
-
-const formatRow = (row, paddings) => {
-  const formattedRow = row.map((item, index) =>
-    index === 0
-      ? item.trim().padEnd(paddings[index])
-      : item.padStart(paddings[index]),
-  );
-  return formattedRow.join('');
-};
+const sortTable = (table, index) =>
+  table.sort((r1, r2) => r2[index] - r1[index]);
 
 const logTable = (table, paddings) => {
   for (const row of table) {
-    const str = formatRow(row, paddings);
+    let str = '';
+    for (let i = 0; i < row.length; i++) {
+      str += i === 0 ? row[0].trim().padEnd(18) : row[i].padStart(paddings[i]);
+    }
     console.log(str);
   }
 };
 
 if (data) {
   const paddings = [18, 10, 8, 8, 18, 6];
-  logTable(createTable(data), paddings);
+  const table = formTable(data);
+  const max = getMax(table, 3);
+  const tableWithRatio = addRatio(table, max, 3);
+  const sortedTable = sortTable(tableWithRatio, 5);
+  logTable(sortedTable, paddings);
 }
