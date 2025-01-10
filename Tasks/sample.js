@@ -1,9 +1,13 @@
 // Refactor following solution
 // Get one random element from an array
 
-const SAMPLE = (arr) => {
-  arr = arr[Math.floor(Math.random() * arr.length)];
-  return arr;
-};
+//Step 4
+//Decompose into two functions
 
-module.exports = SAMPLE;
+'use strict';
+
+const random = (max) => Math.floor(Math.random() * max;
+
+const randomElement = (arr) => arr[random(arr.length)];
+
+module.exports = randomElement;

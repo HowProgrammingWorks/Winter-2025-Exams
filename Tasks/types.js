@@ -1,19 +1,31 @@
 // Refactor following solution
 // Count types in an array
 
-types_ = function (s) {
-  types_ = {
-    number: 0,
-    string: 0,
-    boolean: 0,
-  };
-  for (i of s) {
-    const t = typeof i;
-    types_[t]++;
+//Step 4
+//Implement without predefined types
+//but add them later, to pass the tests
+
+'use strict';
+
+const countTypes = (arr) => {
+  const types = {};
+
+  for (const item of arr) {
+    const type = typeof item;
+
+    types[type] = (types[type] || 0) + 1;
   }
-  s.push('string');
-  return types_;
-  s.length;
+
+  // Initialize missing types (number, string, boolean) with 0 if not present
+  const necessaryTypes = ['number', 'string', 'boolean'];
+  
+  for (const type of necessaryTypes) {
+    if (types[type] === undefined) {
+      types[type] = 0;
+    }
+  };
+
+  return types;
 };
 
-module.exports = types_;
+module.exports = countTypes;

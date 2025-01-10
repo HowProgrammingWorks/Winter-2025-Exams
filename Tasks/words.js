@@ -1,42 +1,18 @@
 // Refactor following solution
 // Count words in a string
 
-Words = function (s) {
-  number_of_words_in_s = 0;
-  flag = false;
-  for (c of s) {
-    if (!flag) {
-      if (c === ' ') {
-        if (flag === true) {
-          flag = false;
-        } else {
-          flag = false;
-        }
-      } else {
-        if (flag === true) {
-          flag = true;
-        } else {
-          flag = true;
-        }
-        number_of_words_in_s++;
-      }
-    } else {
-      if (c === ' ') {
-        if (flag === true) {
-          flag = false;
-        } else {
-          flag = false;
-        }
-      } else {
-        if (flag === true) {
-          flag = true;
-        } else {
-          flag = true;
-        }
-      }
-    }
-  }
-  return number_of_words_in_s;
+//Step 5
+//Implement without loop, using .split()
+
+'use strict';
+
+const words = (string) => {
+  if (string.trim() === '') return 0; //preventing array with an empty string
+
+  const wordsArray = string.split(' ');
+  const numberOfWords = wordsArray.length;
+  
+  return numberOfWords;
 };
 
-module.exports = Words;
+module.exports = words;

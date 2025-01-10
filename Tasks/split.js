@@ -1,11 +1,15 @@
 // Refactor following solution
 // Split an array into two parts
 
-let split_Array = (index, array) => {
-  begin = array.slice(0, index);
-  const len = array.length;
-  array = array.slice(index, len);
-  return [begin, array];
+//Step 2
+//.slice() second parameter may be omitted, then array.length will be used
+
+'use strict';
+
+const splitArray = (index, array) => {
+  const firstPart = array.slice(0, index);
+  const secondPart = array.slice(index);
+  return [firstPart, secondPart];
 };
 
-module.exports = split_Array;
+module.exports = splitArray;
