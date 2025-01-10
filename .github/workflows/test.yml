@@ -1,19 +1,25 @@
-name: Check slills
-on: pull_request
+name: Tests
+on: [ push ]
+
 jobs:
-  build:
+  ts-test:
+    name: Test Typescript Solutions
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Difficult/soc-opt
     steps:
       - uses: actions/checkout@v4
-      - name: Node.js
-        uses: actions/setup-node@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 22
-      - uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - run: npm ci
-      - run: npm t
+          node-version: 20.x
+          cache: "npm"
+
+      - name: Init npm
+        run: npm install
+      - name: Run tests
+        run: npm run test
+      - name: Run ESLint
+        run: npm run lint
