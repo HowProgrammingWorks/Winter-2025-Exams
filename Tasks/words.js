@@ -1,23 +1,16 @@
 // Refactor following solution
 // Count words in a string
 
-//Step 4
-//Combine checks and reduce nesting
+//Step 5
+//Implement without loop, using .split()
 
 'use strict';
 
-const words = (s) => {
-  let numberOfWords = 0;
-  let inWord = false;
-  
-  for (const char of s) {
-    if (char !== ' ' && !inWord) {
-      inWord = true;
-      numberOfWords++;
-    } else if (char === ' ') {
-        inWord = false;
-      }
-  }
+const words = (string) => {
+  if (string.trim() === '') return 0; //preventing array with an empty string
+
+  const wordsArray = string.split(' ');
+  const numberOfWords = wordsArray.length;
   
   return numberOfWords;
 };
