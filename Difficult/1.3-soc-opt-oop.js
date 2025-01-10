@@ -13,30 +13,32 @@ const data = `city,population,area,density,country
   Bangkok,8280925,1569,5279,Thailand`;
 
 class Table {
-  constructor(data) {
+  constructor(data, paddings) {
     this.rawData = data;
-    this.paddings = [18, 10, 8, 8, 18, 6];
+    this.paddings = paddings;
     this.table = [];
     this.sortedTable = [];
   }
 
   formTable() {
-    const lines = this.rawData.split('\n');
-    lines.splice(0, 1);
+    const lines = this.rawData.split('\n').splice(1);
     this.table = lines.map((line) => line.split(','));
   }
 
-  getMax() {
-    return Math.max(...this.table.map((row) => row[3]));
+  getMax(index) {
+    return Math.max(...this.table.map((row) => row[index]));
   }
 
-  sortTable() {
-    const max = this.getMax();
-    this.sortedTable = this.table.map((row) => [
+  addRatio(index) {
+    const max = this.getMax(index);
+    this.table = this.table.map((row) => [
       ...row,
-      Math.round((row[3] * 100) / max),
+      Math.round((row[index] * 100) / max),
     ]);
-    this.sortedTable.sort((r1, r2) => r2[5] - r1[5]);
+  }
+
+  sortTable(index) {
+    this.sortedTable = this.table.sort((r1, r2) => r2[index] - r1[index]);
   }
 
   formatRow(row) {
@@ -57,12 +59,14 @@ class Table {
 
   processTable() {
     this.formTable();
-    this.sortTable();
+    this.addRatio(3);
+    this.sortTable(5);
     this.logTable();
   }
 }
 
 if (data) {
-  const table = new Table(data);
+  const paddings = [18, 10, 8, 8, 18, 6];
+  const table = new Table(data, paddings);
   table.processTable();
 }
