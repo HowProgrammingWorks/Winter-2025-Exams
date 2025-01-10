@@ -1,19 +1,16 @@
-//STEP 4(v2):
-//"for" loop wasn`t removed, and that’s also a good idea to let it stay here.
-//Added day`s type checker.
+//STEP 5:
+//It is better to remove any loop and use "findIndexOf"
+//It is better to rename const "days" to "DAYS"
+//Rename function
 
-const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
-const parseDay = (day) => {
+const findDay = (day) => {
     if (typeof day !== "string") {
         return -1;
     };
-    for (let i = 0; i < days.length; i++) {
-        if (day.startsWith(days[i])) {
-            return i + 1;
-        }
-    }
-    return -1;
+    const index = DAYS.findIndex((part) => day.startsWith(part));
+    return (index + 1) || -1;
 };
 
-module.exports = parseDay;
+module.exports = findDay;
