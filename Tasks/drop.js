@@ -1,16 +1,16 @@
 // Refactor following solution
 // Delete listed keys from dictionary
 
-'use strict'
+'use strict'; //Use loop instead of .reduce
 
 const drop = (dictionary, ...keyList) => {
-  return Object.keys(dictionary).reduce((acc, key) => {
-      if (!keyList.includes(key)) {
-          acc[key] = dictionary[key];
-      }
-      return acc;
-    },{})
+  const newObj = {};
+  for (const key of keyList) {
+    if (!(key in dictionary)) {
+      newObj[key] = dictionary[key];
+    }
+  }
+  return newObj;
 };
 
 module.exports = drop;
-
