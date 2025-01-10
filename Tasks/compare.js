@@ -1,12 +1,12 @@
 // Refactor following solution
 // Compare two dictionaries
 
-// Step 7:
-// Remove multiple identifiers definition 
+// Step 8:
+// Use single quotes
 
-"use strict";
+'use strict';
 
-const SEPARATOR = "-";
+const SEPARATOR = '-';
 
 const compare = (object1, object2) => {
   const keys1 = Object.keys(object1);
