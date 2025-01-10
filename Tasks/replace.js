@@ -1,23 +1,23 @@
-// Refactor following solution
-// Replace substring with newstr
+'use strict';
 
-Replace = (str, substr, newstr) => {
-  if (substr === '') {
+const replace = (str, substr, newstr) => {
+  if (substr === '')
     return str;
-  } else {
-    src = str;
-    res = '';
-    do {
-      const _index = src.indexOf(substr);
-      if (_index === -1) {
-        return res + src;
-      } else {
-        const start = src.substring(0, _index);
-        src = src.substring(_index + substr.length, src.length);
-        res += start + newstr;
-      }
-    } while (true);
-  }
+
+  let res = '';
+  let temp = str;
+
+  let index = temp.indexOf(substr);
+  while(index !== -1) {
+    const start = temp.substring(0, index);
+    temp = temp.substring(index + substr.length, temp.length);
+    res += (start + newstr);
+
+    index = temp.indexOf(substr);
+  } 
+  res += temp;
+
+  return res;
 };
 
-module.exports = Replace;
+module.exports = replace;

@@ -1,16 +1,16 @@
-// Refactor following solution
-// Get day number
+'use strict';
 
-let D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
-_parse_day_ = (s) => {
-  let i;
-  for (i = 0; i < D.length; i++) {
-    if (s.startsWith(D[i].toLowerCase())) {
-      return i + 1;
-    }
-  }
-  return -1;
+const parseDay = (string) => {
+  let result;
+
+  result = DAYS.findIndex((element) => string.includes(element));
+
+  if (result !== -1)
+    ++result;
+  
+  return result;
 };
 
-module.exports = _parse_day_;
+module.exports = parseDay;
