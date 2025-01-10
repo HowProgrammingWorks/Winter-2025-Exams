@@ -1,7 +1,7 @@
 'use strict';
 
 const except = (dict, ...exceptList) => {
-  let res = {};
+  const res = {};
 
   for (const key of Object.keys(dict)) {
     if (!exceptList.includes(key)) {
