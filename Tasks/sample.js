@@ -6,7 +6,7 @@
 
 'use strict';
 
-const getRandomIndex = (arr) => Math.floor(Math.random() * arr.length);
+const random = (max) => Math.floor(Math.random() * max;
 
 const randomElement = (arr) => arr[getRandomIndex(arr)];
 
