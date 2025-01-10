@@ -8,7 +8,7 @@
 'use strict';
 
 const countTypes = (arr) => {
-  let types = {};
+  const types = {};
 
   for (const item of arr) {
     const type = typeof item;
