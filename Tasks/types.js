@@ -13,11 +13,7 @@ const countTypes = (arr) => {
   for (const item of arr) {
     const type = typeof item;
 
-    if (types[type]) {
-      types[type]++;
-    } else {
-      types[type] = 1;
-    }
+    types[type] = (types[type] || 0) + 1;
   }
 
   // Initialize missing types (number, string, boolean) with 0 if not present
