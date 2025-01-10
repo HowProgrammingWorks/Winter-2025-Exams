@@ -2,6 +2,8 @@
 //
 // Create a Main class
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         String data = """
@@ -20,9 +22,8 @@ public class Main {
         CityParser parser = new CityParser();
         List<City> cities = parser.parse(data);
 
-        CityService service = new CityService();
-        service.calculateDensityPercentages(cities);
-        service.sortCitiesByDensityPercentage(cities);
+        CityUtilities.calculateDensityPercentages(cities);
+        CityUtilities.sortCitiesByDensityPercentage(cities);
 
         for (City city : cities) {
             System.out.println(city);
