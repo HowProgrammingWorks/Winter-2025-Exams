@@ -1,17 +1,14 @@
 // Refactor following solution
 // Count types in an array
 
-//Step 3
-//Improve naming
+//Step 4
+//Implement without predefined types
+//but add them later, to pass the tests
 
 'use strict';
 
 const countTypes = (arr) => {
-  let types = {
-    number: 0,
-    string: 0,
-    boolean: 0,
-  };
+  let types = {};
 
   for (const item of arr) {
     const type = typeof item;
@@ -22,6 +19,15 @@ const countTypes = (arr) => {
       types[type] = 1;
     }
   }
+
+  // Initialize missing types (number, string, boolean) with 0 if not present
+  const necessaryTypes = ['number', 'string', 'boolean'];
+  
+  for (const type of necessaryTypes) {
+    if (types[type] === undefined) {
+      types[type] = 0;
+    }
+  };
 
   return types;
 };
