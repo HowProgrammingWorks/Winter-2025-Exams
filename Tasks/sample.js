@@ -8,6 +8,6 @@
 
 const random = (max) => Math.floor(Math.random() * max;
 
-const randomElement = (arr) => arr[getRandomIndex(arr)];
+const randomElement = (arr) => arr[random(arr.length)];
 
 module.exports = randomElement;
