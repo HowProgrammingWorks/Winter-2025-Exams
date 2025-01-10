@@ -1,9 +1,8 @@
 // Refactor following solution
 // Change double quotation to open or close quotation
 
-// Step 6:
-// Fix and use "use strict"
-// Formatting
+// Step 7:
+// Remove multiple identifiers definition 
 
 "use strict";
 
@@ -12,8 +11,8 @@ const OPEN_QUOTE = "«",
   QUOTE = "\"";
 
 const quotes = (string) => {
-  let res = "",
-    open = false;
+  let res = "";
+  let open = false;
 
   for (const char of string) {
     if (char === QUOTE) {
