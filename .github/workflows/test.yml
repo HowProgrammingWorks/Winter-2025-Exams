@@ -3,7 +3,7 @@ on: [ push ]
 
 jobs:
   soc-opt-test:
-    name: 'Tests: Difficult: Cities Statistics Generator'
+    name: 'Difficult: Cities Statistics Generator'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -24,7 +24,7 @@ jobs:
       - name: Run ESLint
         run: npm run lint
   tasks-test:
-    name: 'Tests: Tasks'
+    name: 'Tasks'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -38,6 +38,7 @@ jobs:
       - name: Init npm
         run: npm install
       - name: Run tests
+        working-directory: Tasks
         run: find . \ -type f -name '*.test.js' ! -path './todo/*' -exec node {} \;
       - name: Run ESLint
         run: npx eslint Tasks
