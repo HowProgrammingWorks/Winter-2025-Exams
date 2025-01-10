@@ -1,19 +1,13 @@
-// Refactor following solution
-// Compare two dictionaries
+//STEP 4:
+//Remove current keys`es checker with "some" method.
+//Add new const,use boolean`s logic,rename "check" to "check2".
 
-let compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  let a = Object.keys(first_values);
-  let b = Object.keys(second_values);
-  if (a.join('-') !== b.join('-')) return false;
-  let e = true;
-  for (c of a) {
-    if (first_values[c] === second_values[c]) e = e && true;
-    else {
-      e = e && false;
-    }
-  }
-  return e;
+const compare = (dict1, dict2) => {
+    const keys1 = Object.keys(dict1);
+    const keys2 = Object.keys(dict2);
+    const check1 = keys1.every((key,index) => key === keys2[index]);
+    const check2 = keys1.every((key) => dict1[key] === dict2[key]);
+    return check1 && check2;
 };
 
 module.exports = compare;

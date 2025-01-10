@@ -1,19 +1,18 @@
-// Refactor following solution
-// Count types in an array
+//STEP 2:
+//Delete unreachable code
+//Delete "s.push" because of it`s uselesses
 
-types_ = function (s) {
-  types_ = {
+const typesCounter = (array) => {
+  const types = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (i of s) {
-    const t = typeof i;
-    types_[t]++;
+  for (const element of array) {
+    const type = typeof element;
+    types[type]++;
   }
-  s.push('string');
-  return types_;
-  s.length;
+  return types;
 };
 
-module.exports = types_;
+module.exports = typesCounter;

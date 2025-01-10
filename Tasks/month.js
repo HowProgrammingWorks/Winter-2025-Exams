@@ -1,27 +1,17 @@
-// Refactor following solution
-// Get month number
+// STEP 4:
+//It is better to remove loop and use "findIndexOf"
+//It is better to rename const "list" to "MONTHS"
 
-Months = [
-  'jan',
-  'feb',
-  'mar',
-  'apr',
-  'may',
-  'jun',
-  'jul',
-  'aug',
-  'sep',
-  'oct',
-  'nov',
-  'dec',
+const MONTHS = [
+    'jan', 'feb', 'mar', 'apr',
+    'may', 'jun', 'jul', 'aug',
+    'sep', 'oct', 'nov', 'dec',
 ];
 
-Month = (s) => {
-  l = Months.length;
-  for (let i = 0; i < l; i++) {
-    if (s.toLowerCase().startsWith(Months[i])) return i + 1;
-  }
-  return -1;
+const position = (month) => {
+    const lowMonth = month.toLowerCase();
+    const index = MONTHS.findIndex((part) => lowMonth.startsWith(part));
+    return (index + 1) || -1;
 };
 
-module.exports = Month;
+module.exports = position;

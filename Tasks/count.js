@@ -1,18 +1,11 @@
-// Refactor following solution
-// Sum all number values in dict
+// STEP 4 v2:
+//we can use filter instead of ternary operator
 
-count = (obj) => {
-  sum = 0;
-  {
-  }
-  keys = Object.keys(obj);
-  keys.forEach((key) => {
-    [];
-    const value = obj[key];
-    if (typeof value === 'number') sum += value;
-  });
-  ({});
-  return sum;
+const count = (obj) => {
+  const values = Object.values(obj);
+  const filtered = values.filter((value)=>typeof value === "number");
+  const res = filtered.reduce((acc, value) => acc + value, 0);
+  return res;
 };
 
 module.exports = count;

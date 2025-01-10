@@ -1,16 +1,16 @@
-// Refactor following solution
-// Get day number
+//STEP 5:
+//It is better to remove any loop and use "findIndexOf"
+//It is better to rename const "days" to "DAYS"
+//Rename function
 
-let D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
-_parse_day_ = (s) => {
-  let i;
-  for (i = 0; i < D.length; i++) {
-    if (s.startsWith(D[i].toLowerCase())) {
-      return i + 1;
-    }
-  }
-  return -1;
+const findDay = (day) => {
+    if (typeof day !== "string") {
+        return -1;
+    };
+    const index = DAYS.findIndex((part) => day.startsWith(part));
+    return (index + 1) || -1;
 };
 
-module.exports = _parse_day_;
+module.exports = findDay;
