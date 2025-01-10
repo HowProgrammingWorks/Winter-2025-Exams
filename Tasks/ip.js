@@ -3,22 +3,23 @@
 'use strict';
 
 const parseIp = (ipString) => {
+  const IP_V4 = 4;
   const parts = ipString.split('.');
 
-  if (!ipString || parts.length !== 4) {
+  if (!ipString || parts.length !== IP_V4) {
     return undefined;
   }
 
-  const numbers = [];
-  for (const part of parts) {
+  const numbers = parts.map((part) => {
     const num = parseInt(part);
     if (isNaN(num) || num < 0 || num > 255) {
       return undefined;
     }
-    numbers.push(num);
-  }
 
-  return numbers;
+    return num;
+  }).filter((part) => part !== undefined);
+
+  return numbers.length === IP_V4 ? numbers : undefined;
 };
 
 module.exports = parseIp;

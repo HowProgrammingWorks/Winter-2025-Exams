@@ -4,7 +4,7 @@
 'use strict';
 
 const range = (from, to) => {
-  if(to < from){
+  if (to < from) {
     return [];
   }
 

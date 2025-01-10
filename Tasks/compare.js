@@ -3,8 +3,8 @@
 'use strict';
 const compare = (firstValues, secondValues) => {
 
-  let firstKeys = Object.keys(firstValues);
-  let secondKeys = Object.keys(secondValues);
+  const firstKeys = Object.keys(firstValues);
+  const secondKeys = Object.keys(secondValues);
   if (firstKeys.length !== secondKeys.length) {
     return false;
   }

@@ -3,7 +3,7 @@
 'use strict';
 
 const invert = (simpleArray) => {
-  let reverseArray = [];
+  const reverseArray = [];
   for (const elem of simpleArray) {
     reverseArray.unshift(elem);
   }

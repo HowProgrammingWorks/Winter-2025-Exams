@@ -3,13 +3,12 @@
 'use strict';
 
 const parseDay = (s) => {
-const weekDay = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-  let i = 0;
-  for (const day of weekDay) {
-    if (s.startsWith(day)) {
-      return i + 1;
-    }
-    i++
+  const weekDay = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+  s = s.slice(0, 3);
+  const indexOfElement = weekDay.indexOf(s);
+
+  if (indexOfElement !== -1) {
+    return indexOfElement + 1;
   }
 
   return -1;
