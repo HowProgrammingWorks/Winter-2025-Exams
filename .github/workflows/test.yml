@@ -2,8 +2,8 @@ name: Tests
 on: [ push ]
 
 jobs:
-  ts-test:
-    name: Test Typescript Solutions
+  soc-opt-test:
+    name: 'Tests: Difficult: Cities Statistics Generator'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -23,3 +23,21 @@ jobs:
         run: npm run test
       - name: Run ESLint
         run: npm run lint
+  tasks-test:
+    name: 'Tests: Tasks'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+          cache: "npm"
+
+      - name: Init npm
+        run: npm install
+      - name: Run tests
+        run: find . \ -type f -name '*.test.js' ! -path './todo/*' -exec node {} \;
+      - name: Run ESLint
+        run: npx eslint Tasks
