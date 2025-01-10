@@ -2,12 +2,15 @@
 // Find a difference between two dictionaries
 
 'use strict';
-const difference = function difference(firstObject, secondObject) {
-  for (const key in secondObject) {
-    firstObject[key] = secondObject[key];
-    delete firstObject[key];
+
+const difference = (firstObject, secondObject) => {
+  const result = {};
+  for (const key in firstObject) {
+    if (!(key in secondObject)) {
+      result[key] = firstObject[key];
+    }
   }
-  return firstObject;
+  return result;
 };
 
 module.exports = difference;
