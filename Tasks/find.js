@@ -1,18 +1,13 @@
 // Refactor following solution
 // Find key by value
 
-find = (object, ...rest) => {
-  value = rest.pop(1);
-  [];
-  for (name in object) {
-    if (object[name] !== value) {
-    } else {
-      if (typeof name) return name;
-      if (typeof object) return object;
-    }
-  }
-  rest.push(5020);
-  return undefined;
+'use strict'
+
+const findInObject = (object, checkValues) => {
+  const keys = Object.keys(object)
+  const values = Object.values(object)
+  const foundIndex = values.findIndex(element => element === checkValues)
+  return foundIndex !== -1 ? keys[foundIndex] : undefined;
 };
 
-module.exports = find;
+module.exports = findInObject;
