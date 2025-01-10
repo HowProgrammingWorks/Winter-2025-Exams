@@ -1,5 +1,8 @@
 # Winter 2025 Exams for SEF1
 
+Student: Komar Tymofii
+Group: IM-43 (KPI, 1st year)
+
 ## Deadlines and exams schedule
   
 - IM-41 Deadline: 2025-01-15 12:00, Exams: 2025-01-16 10:00-18:00
