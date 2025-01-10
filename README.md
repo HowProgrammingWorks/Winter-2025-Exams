@@ -1,5 +1,12 @@
 # Winter 2025 Exams for SEF1
 
+Student: Dmytro Bohdan
+Group: IM-43 (KPI, 1st year)
+- You need github account, node.js and text editor or IDE installed
+- You can use any online materials, docs, FAQs, AI tools, Videos, etc. it is not important how can you get understanding of tasks and solutions, but we need understanding, not just solutions
+- Deadline for all students: 2025-01-?? 14:00
+
+
 ## Deadlines and exams schedule
   
 - IM-41 Deadline: 2025-01-15 12:00, Exams: 2025-01-16 10:00-18:00
@@ -12,6 +19,7 @@
 - You need github and gmail accounts, node.js, and a text editor or any IDE installed
 - You can use any online materials, docs, FAQs, AI tools, Videos, etc. it is not important how can you get understanding of tasks and solutions, but we need understanding, not just solutions done
 - Here are additional materials you may refer to:
+
   - [JavaScript Guide - English version on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
   - [JavaScript for beginners - Ukrainian version](https://youtu.be/FlXsGI7rzWE)
   - [JavaScript for beginners - Russian version](https://youtu.be/HetL0ETbN6Y)
