@@ -12,7 +12,7 @@
 
 const parseData = (data) => {
   const rows = data.split('\n').slice(1);
-  return rows.map((row) => row.split(','));
+  return rows.map((row) => row.trim().split(','));
 };
 
 const findMaxDensity = (table, columnIndex) =>
