@@ -1,19 +1,17 @@
 // Refactor following solution
 // Get day number
 
-//Step 2
-//camel case for identifiers
+//Step 3
+//Implement without loops
+
 'use strict';
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const parseDay = (s) => {
-  for (let i = 0; i < days.length; i++) {
-    if (s.startsWith(days[i].toLowerCase())) {
-      return i + 1;
-    }
-  }
-  return -1;
+  const index = days.findIndex((day) => s.startsWith(day.toLowerCase()));
+
+  return index !== -1 ? index + 1 : -1;
 };
 
 module.exports = parseDay;
