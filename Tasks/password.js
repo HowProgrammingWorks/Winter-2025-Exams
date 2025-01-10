@@ -1,14 +1,23 @@
 // Refactor following solution
 // Generate random password
 
-let GeneratePassword = (alphabet, length) => {
-  const MAX = alphabet.length;
-  key = '';
+// Step 5:
+// Use single quotes
+
+'use strict';
+
+const random = (max) => Math.floor(Math.random() * max);
+
+const generatePassword = (alphabet, length) => {
+  const max = alphabet.length;
+  let password = '';
+
   for (let i = 0; i < length; i++) {
-    Index = Math.floor(Math.random() * MAX);
-    key = key + alphabet[Index];
+    const index = random(max);
+    password += alphabet[index];
   }
-  return key;
+
+  return password;
 };
 
-module.exports = GeneratePassword;
+module.exports = generatePassword;

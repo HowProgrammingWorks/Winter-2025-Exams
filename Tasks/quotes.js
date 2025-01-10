@@ -1,31 +1,30 @@
 // Refactor following solution
 // Change double quotation to open or close quotation
 
-const EMPTY = '';
+// Step 8:
+// Use single quotes
+// Remove multiple identifiers definition
 
-quotes = function (s) {
-  res = [];
-  open = false;
-  for (c of s) {
-    if (c === '"') {
-      for (i of c) {
-        if (!open) {
-          res.push('«');
-          open = true;
-        } else {
-          res.push('»');
-          open = false;
-        }
-      }
+'use strict';
+
+const OPEN_QUOTE = '«';
+const CLOSE_QUOTE = '»';
+const QUOTE = '"';
+
+const quotes = (string) => {
+  let res = '';
+  let open = false;
+
+  for (const char of string) {
+    if (char === QUOTE) {
+      res += open ? CLOSE_QUOTE : OPEN_QUOTE;
+      open = !open;
     } else {
-      if (c !== '"') {
-        for (i of c) {
-          res.push(i);
-        }
-      }
+      res += char;
     }
   }
-  return res.join(EMPTY);
+
+  return res;
 };
 
 module.exports = quotes;
