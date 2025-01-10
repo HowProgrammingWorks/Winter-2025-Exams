@@ -10,6 +10,61 @@
 //   - Implement simple unittests without frameworks
 //   - Try to implement in multiple paradigms: OOP, FP, procedural, mixed
 
+const parseData = (data) => {
+  const rows = data.split('\n').slice(1);
+  return rows.map((row) => row.trim().split(','));
+};
+
+const findMaxDensity = (table, columnIndex) =>
+  Math.max(...table.map((row) => parseInt(row[columnIndex])));
+
+const calculatePropotion = (value, maxValue, scale = 100) =>
+  Math.round((value * scale) / maxValue);
+
+const calculateDensityPercentage = (table, maxDensity, columnIndex) =>
+  table.map((row) => {
+    const density = parseInt(row[columnIndex]);
+    const densityPercentage = calculatePropotion(density, maxDensity);
+    return [...row, densityPercentage.toString()];
+  });
+
+const sortTableByDensityPercentage = (table, columnIndex) =>
+  table.toSorted(
+    (currentRow, nextRow) => nextRow[columnIndex] - currentRow[columnIndex],
+  );
+
+const formatRow = (row, columnWidths) =>
+  row
+    .map((cell, index) => {
+      const width = columnWidths[index];
+      return index === 0 ? cell.padEnd(width) : cell.padStart(width);
+    })
+    .join('');
+
+const displayTable = (table) => {
+  const columnWidths = [18, 10, 8, 8, 18, 6];
+
+  for (const row of table) {
+    console.log(formatRow(row, columnWidths));
+  }
+};
+
+const processCityData = (data) => {
+  const table = parseData(data);
+  const columnDensityIndex = 3;
+  const maxDensity = findMaxDensity(table, columnDensityIndex);
+  const tableWithDensity = calculateDensityPercentage(
+    table,
+    maxDensity,
+    columnDensityIndex,
+  );
+  const sortedTable = sortTableByDensityPercentage(
+    tableWithDensity,
+    columnDensityIndex,
+  );
+  displayTable(sortedTable);
+};
+
 const data = `city,population,area,density,country
   Shanghai,24256800,6340,3826,China
   Delhi,16787941,1484,11313,India
@@ -22,34 +77,89 @@ const data = `city,population,area,density,country
   New York City,8537673,784,10892,United States
   Bangkok,8280925,1569,5279,Thailand`;
 
-if (data) {
-  const lines = data.split('\n');
-  lines.pop();
-  const table = [];
-  let first = true;
-  let max = 0;
-  for (const line of lines) {
-    if (first) {
-      first = false;
-    } else {
-      const cells = line.split(',');
-      const d = parseInt(cells[3]);
-      if (d > max) max = d;
-      table.push([cells[0], cells[1], cells[2], cells[3], cells[4]]);
-    }
-  }
-  for (const row of table) {
-    const a = Math.round((row[3] * 100) / max);
-    row.push(a.toString());
-  }
-  table.sort((r1, r2) => r2[5] - r1[5]);
-  for (const row of table) {
-    let s = row[0].padEnd(18);
-    s += row[1].padStart(10);
-    s += row[2].padStart(8);
-    s += row[3].padStart(8);
-    s += row[4].padStart(18);
-    s += row[5].padStart(6);
-    console.log(s);
-  }
-}
+processCityData(data);
+
+const testParseData = () => {
+  const sampleData = `city,population,area,density,country
+CityA,1000,100,10,CountryA
+CityB,2000,200,20,CountryB`;
+  const parsed = parseData(sampleData);
+  console.assert(parsed.length === 2, 'Test Failed: Parsing Rows');
+  console.assert(parsed[0][0] === 'CityA', 'Test Failed: Parsing Row Data');
+};
+
+const testFindMaxDensity = () => {
+  const sampleTable = [
+    ['CityA', '1000', '100', '10', 'CountryA'],
+    ['CityB', '2000', '200', '20', 'CountryB'],
+  ];
+  const columnDensityIndex = 3;
+  const max = findMaxDensity(sampleTable, columnDensityIndex);
+  console.assert(max === 20, 'Test Failed: Finding Max Density');
+};
+
+const testCalculateDensityPercentage = () => {
+  const sampleTable = [
+    ['CityA', '1000', '100', '10', 'CountryA'],
+    ['CityB', '2000', '200', '20', 'CountryB'],
+  ];
+  const maxDensity = 20;
+  const columnDensityIndex = 3;
+  const result = calculateDensityPercentage(
+    sampleTable,
+    maxDensity,
+    columnDensityIndex,
+  );
+  console.assert(
+    result[0][5] === '50',
+    'Test Failed: Density Percentage CityA',
+  );
+  console.assert(
+    result[1][5] === '100',
+    'Test Failed: Density Percentage CityB',
+  );
+};
+
+const testSortTableByDensityPercentage = () => {
+  const sampleTable = [
+    ['CityA', '1000', '100', '10', 'CountryA', '50'],
+    ['CityB', '2000', '200', '20', 'CountryB', '100'],
+  ];
+  const columnDensityIndex = 3;
+  const result = sortTableByDensityPercentage(sampleTable, columnDensityIndex);
+  console.assert(result[0][0] === 'CityB', 'Test Failed: Sorting Order');
+  console.assert(result[1][0] === 'CityA', 'Test Failed: Sorting Order');
+};
+
+const testDisplayTable = () => {
+  const sampleTable = [
+    ['CityA', '1000', '100', '10', 'CountryA', '50'],
+    ['CityB', '2000', '200', '20', 'CountryB', '100'],
+  ];
+  const originalConsoleLog = console.log;
+  const logOutput = [];
+  console.log = (output) => logOutput.push(output);
+
+  displayTable(sampleTable);
+
+  console.assert(
+    logOutput.length === 2,
+    'Test Failed: Table Display Output Count',
+  );
+  console.assert(
+    logOutput[0].includes('CityA'),
+    'Test Failed: Table Display CityA',
+  );
+  console.assert(
+    logOutput[1].includes('CityB'),
+    'Test Failed: Table Display CityB',
+  );
+
+  console.log = originalConsoleLog;
+};
+
+testParseData();
+testFindMaxDensity();
+testCalculateDensityPercentage();
+testSortTableByDensityPercentage();
+testDisplayTable();

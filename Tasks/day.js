@@ -1,16 +1,13 @@
 // Refactor following solution
 // Get day number
 
-let D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+// step 6: rewrite function to functional programming style
 
-_parse_day_ = (s) => {
-  let i;
-  for (i = 0; i < D.length; i++) {
-    if (s.startsWith(D[i].toLowerCase())) {
-      return i + 1;
-    }
-  }
-  return -1;
-};
+'use strict';
 
-module.exports = _parse_day_;
+const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+const getDayNumber = (str) =>
+  DAYS.findIndex((day) => str.startsWith(day)) + 1 || -1;
+
+module.exports = getDayNumber;
