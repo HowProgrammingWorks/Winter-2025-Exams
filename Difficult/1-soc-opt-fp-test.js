@@ -1,4 +1,3 @@
-// test.js
 'use strict';
 
 const {
@@ -10,13 +9,7 @@ const {
   formatRow,
 } = require('./1-soc-opt-fp.js');
 
-const assert = (description, condition) => {
-  if (condition) {
-    console.log(`✅ ${description}`);
-  } else {
-    console.error(`❌ ${description}`);
-  }
-};
+const assert = require('node:assert');
 
 const testParseRow = () => {
   const row = 'New York City,8537673,784,10892,United States';
@@ -28,17 +21,13 @@ const testParseRow = () => {
     country: 'United States',
   };
   const result = parseRow(row);
-  assert(
-    'parseRow should correctly parse a valid row',
-    JSON.stringify(result) === JSON.stringify(expected),
-  );
+  assert.deepStrictEqual(result, expected,
+    'parseRow should correctly parse a valid row');
 
   const invalidRow = 'Invalid,Data,Here';
   const resultInvalid = parseRow(invalidRow);
-  assert(
-    'parseRow should handle invalid rows gracefully',
-    isNaN(resultInvalid),
-  );
+  assert.ok(isNaN(resultInvalid.population),
+  'parseRow should handle invalid rows gracefully');
 };
 
 const testParseData = () => {
@@ -49,13 +38,15 @@ Delhi,16787941,1484,11313,India`;
   const expected = {
     headers: ['city', 'population', 'area', 'density', 'country'],
     rows: [
-      { city: 'Shanghai',
+      {
+        city: 'Shanghai',
         population: 24256800,
         area: 6340,
         density: 3826,
         country: 'China',
-       },
-      { city: 'Delhi',
+      },
+      {
+        city: 'Delhi',
         population: 16787941,
         area: 1484,
         density: 11313,
@@ -65,10 +56,8 @@ Delhi,16787941,1484,11313,India`;
   };
 
   const result = parseData(rawData);
-  assert(
-    'parseData should correctly parse valid raw data',
-    JSON.stringify(result) === JSON.stringify(expected),
-  );
+  assert.deepStrictEqual(result, expected,
+    'parseData should correctly parse valid raw data');
 };
 
 const testCalculateRelativeDensity = () => {
@@ -83,10 +72,8 @@ const testCalculateRelativeDensity = () => {
     { density: 10000, relativeDensity: 100 },
   ];
   const result = calculateRelativeDensity(rows);
-  assert(
-    'calculateRelativeDensity should correctly calculate relative densities',
-    JSON.stringify(result) === JSON.stringify(expected),
-  );
+  assert.deepStrictEqual(result, expected,
+    'calculateRelativeDensity should correctly calculate relative densities');
 };
 
 const testSortByRelativeDensity = () => {
@@ -101,21 +88,21 @@ const testSortByRelativeDensity = () => {
     { density: 3826, relativeDensity: 28 },
   ];
   const result = sortByProperty(rows, 'relativeDensity');
-  assert(
-    'sortByRelativeDensity should sort rows desc of relative density',
-    JSON.stringify(result) === JSON.stringify(expected),
-  );
+  assert.deepStrictEqual(result, expected,
+    'sortByRelativeDensity should sort rows by descending relative density');
 };
 
 const testCalculateColumnWidths = () => {
   const rows = [
-    { city: 'Shanghai',
-       population: 24256800,
-        area: 6340,
-        density: 3826,
-        country: 'China',
+    {
+      city: 'Shanghai',
+      population: 24256800,
+      area: 6340,
+      density: 3826,
+      country: 'China',
     },
-    { city: 'Delhi',
+    {
+      city: 'Delhi',
       population: 16787941,
       area: 1484,
       density: 11313,
@@ -125,31 +112,30 @@ const testCalculateColumnWidths = () => {
   const keys = ['city', 'population', 'area', 'density', 'country'];
   const expected = [8, 10, 4, 7, 7];
   const result = calculateColumnWidths(rows, keys);
-  assert(
-    'calculateColumnWidths should correctly calculate the maximum width',
-    JSON.stringify(result) === JSON.stringify(expected),
-  );
+  assert.deepStrictEqual(result, expected,
+  'calculateColumnWidths should correctly calculate the maximum column widths');
 };
 
 const testFormatRow = () => {
-  const row =
-   { city: 'Delhi',
+  const row = {
+    city: 'Delhi',
     population: 16787941,
     area: 1484,
     density: 11313,
     country: 'India',
     relativeDensity: 100,
-   };
-  const keys =
-   ['city', 'population', 'area', 'density', 'country', 'relativeDensity'];
+  };
+  const keys = ['city',
+    'population',
+    'area',
+    'density',
+    'country',
+    'relativeDensity'];
   const columnWidths = [8, 8, 4, 5, 7, 15];
   const expected =
-    'Delhi    | 16787941 | 1484 | 11313 | India   |             100';
+  'Delhi    | 16787941 | 1484 | 11313 | India   |             100';
   const result = formatRow(row, keys, columnWidths);
-  assert(
-    'formatRow should correctly format a row based on column widths',
-    result === expected,
-  );
+  assert.strictEqual(result, expected, 'formatRow should correctly show a row');
 };
 
 const runTests = () => {
@@ -160,7 +146,7 @@ const runTests = () => {
   testSortByRelativeDensity();
   testCalculateColumnWidths();
   testFormatRow();
-  console.log('\nAll tests completed.');
+  console.log('\nAll tests passed.');
 };
 
 runTests();

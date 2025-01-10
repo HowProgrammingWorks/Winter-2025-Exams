@@ -30,9 +30,9 @@ const parseRow = (row) => {
   const [city, population, area, density, country] = row.split(COMMA);
   return {
     city,
-    population: +population,
-    area: +area,
-    density: +density,
+    population: parseInt(population, 10),
+    area: parseInt(area, 10),
+    density: parseInt(density, 10),
     country,
   };
 };
