@@ -1,10 +1,10 @@
 // Refactor following solution
 // Zip two arrays, [1, 2] and [3, 4] -> [[1, 3], [2, 4]]
 
-// Step 6:
-// Formatting
+// Step 7:
+// Use single quotes
 
-"use strict";
+'use strict';
 
 const zip = (arr1 = [], arr2 = []) => {
   const result = [],
