@@ -21,12 +21,16 @@ if (data) {
       .map((line) => line.split(','))
       .splice(1);
 
-  const getMax = (table) => Math.max(...table.map((row) => row[3]));
+  const getMax = (table, index) => Math.max(...table.map((row) => row[index]));
 
-  const sortTable = (table, max) =>
-    table
-      .map((row) => [...row, Math.round((row[3] * 100) / max)])
-      .sort((r1, r2) => r2[5] - r1[5]);
+  const addRatio = (table, index) =>
+    table.map((row) => [
+      ...row,
+      Math.round((row[index] * 100) / getMax(table, index)),
+    ]);
+
+  const sortTable = (table, sortIndex) =>
+    table.sort((r1, r2) => r2[sortIndex] - r1[sortIndex]);
 
   const formatTable = (table) =>
     table.reduce(
@@ -43,6 +47,7 @@ if (data) {
     );
 
   const table = formTable(data);
-  const sortedTable = sortTable(table, getMax(table));
+  const tableWithRatio = addRatio(table, 3);
+  const sortedTable = sortTable(tableWithRatio, 5);
   console.log(formatTable(sortedTable));
 }
