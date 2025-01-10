@@ -1,16 +1,16 @@
-// Refactor following solution
-// Get day number
+// Step 6
+// Use intermediate variable
 
-let D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+'use strict';
 
-_parse_day_ = (s) => {
-  let i;
-  for (i = 0; i < D.length; i++) {
-    if (s.startsWith(D[i].toLowerCase())) {
-      return i + 1;
-    }
+const WEEK = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+const getNumOfDay = (input) => {
+  const len = WEEK.length;
+  for (let order = 0; order < len; order++) {
+    if (input.startsWith(WEEK[order])) return ++order;
   }
   return -1;
 };
 
-module.exports = _parse_day_;
+module.exports = getNumOfDay;

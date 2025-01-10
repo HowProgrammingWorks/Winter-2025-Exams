@@ -1,18 +1,14 @@
-// Refactor following solution
-// Sum all number values in dict
+// Step 7
+// Remove the brackets
 
-count = (obj) => {
-  sum = 0;
-  {
-  }
-  keys = Object.keys(obj);
-  keys.forEach((key) => {
-    [];
-    const value = obj[key];
-    if (typeof value === 'number') sum += value;
-  });
-  ({});
-  return sum;
+'use strict';
+
+const sumNums = (obj) => {
+  const values = Object.values(obj);
+  return values.reduce(
+    (acc, value) => typeof value === 'number' ? acc + value : acc,
+    0,
+  );
 };
 
-module.exports = count;
+module.exports = sumNums;

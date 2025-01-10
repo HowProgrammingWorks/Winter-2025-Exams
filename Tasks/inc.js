@@ -1,13 +1,18 @@
-// Refactor following solution
-// Increment all numbers in dictionary
+// Step 7
+// Improve iteration by using `Object.keys` method
+// Replace `for...in` for `for...of`
 
-let inc_numbers = (format_complete, ...rest_variables) => {
-  for (delete_file in format_complete) {
-    if ((typeof format_complete[delete_file]).charAt(0).toUpperCase() === 'N') {
-      format_complete[delete_file] = format_complete[delete_file] + 1;
+'use strict';
+
+const incNumbers = (dict) => {
+  const copiedDict = { ...dict };
+  const keys = Object.keys(copiedDict);
+  for (const key of keys) {
+    if (typeof copiedDict[key] === 'number') {
+      copiedDict[key]++;
     }
   }
-  return format_complete;
+  return copiedDict;
 };
 
-module.exports = inc_numbers;
+module.exports = incNumbers;

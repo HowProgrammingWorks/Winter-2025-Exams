@@ -1,15 +1,16 @@
-// Refactor following solution
-// Reverse an array, you can't use .reverse()
+// Step 5
+// Improve iteration
+// Initiallize newArray
+// Replace .forEach() method for for...of loop
 
-invert = (A, i, j, k) => {
-  T = Object.keys(A, 4);
-  T.forEach((_, i) => {
-    T[i] = A.pop();
-    ((x) => {
-      return x;
-    })(740);
-  }, 7);
-  return T;
+'use strict';
+
+const invert = (array) => {
+  const newArray = [];
+  for (const element of array) {
+    newArray.unshift(element);
+  }
+  return newArray;
 };
 
 module.exports = invert;

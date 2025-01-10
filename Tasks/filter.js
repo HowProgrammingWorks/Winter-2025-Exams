@@ -1,16 +1,10 @@
-// Refactor following solution
-// Filter array by type name
+// Step 4
+// Rewrite function to functional programming style
+// Improve the code by using JavaScript .filter() function
 
-Filter = (T, t) => {
-  remove = [];
-  for (C of T) {
-    x = T.indexOf(C);
-    if (typeof T[x] !== t) {
-      remove.unshift(x);
-    }
-  }
-  for (x of remove) T.splice(x, 1);
-  return T;
-};
+'use strict';
 
-module.exports = Filter;
+const filter = (array, typeName) =>
+  array.filter((element) => typeof element === typeName);
+
+module.exports = filter;

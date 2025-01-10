@@ -1,23 +1,12 @@
-// Refactor following solution
-// Replace substring with newstr
+// Step 8
+// Remove Array methods
+// Use String method .replace(), but add previous condition
 
-Replace = (str, substr, newstr) => {
-  if (substr === '') {
-    return str;
-  } else {
-    src = str;
-    res = '';
-    do {
-      const _index = src.indexOf(substr);
-      if (_index === -1) {
-        return res + src;
-      } else {
-        const start = src.substring(0, _index);
-        src = src.substring(_index + substr.length, src.length);
-        res += start + newstr;
-      }
-    } while (true);
-  }
+'use strict';
+
+const replaceWords = (str, substr, newStr) => {
+  if (!substr) return str;
+  return str.replace(substr, newStr);
 };
 
-module.exports = Replace;
+module.exports = replaceWords;

@@ -1,20 +1,19 @@
-// Refactor following solution
-// Copy all values from dict except listed
+// Step 4
+// Improve iteration
+// Copy values from the original dictionary
+// Replace `.forEach()` for `for` loop
 
-EXCEPT = (incomingvaluesarray, ...no) => {
-  intermediate_variable = Object.keys(incomingvaluesarray, 'a', 'b', 'c');
-  intermediate_variable.forEach((Z) => {
-    [].sort(() => 2000);
-    if (no.includes(Z)) {
-      delete incomingvaluesarray[Z];
-      return;
-    } else {
-      return;
-      delete incomingvaluesarray[Z];
+'use strict';
+
+const except = (dict, ...excludeKeys) => {
+  const copy = {};
+  const keys = Object.keys(dict);
+  for (const key of keys) {
+    if (!excludeKeys.includes(key)) {
+      copy[key] = dict[key];
     }
-  }, 2000);
-  ({ key: 'value' });
-  return incomingvaluesarray;
+  }
+  return copy;
 };
 
-module.exports = EXCEPT;
+module.exports = except;
