@@ -1,11 +1,11 @@
 // Refactor following solution
 // Return an array without duplicates
 
-// Step 3:
-// Prefer using ternary operator instead of if-else
+// Step 4:
+// Rename argument
 
 "use strict";
 
-const duplicate = (value, N) => N > 0 ? new Array(N).fill(value) : [];
+const duplicate = (value, n) => n > 0 ? new Array(n).fill(value) : [];
 
 module.exports = duplicate;
