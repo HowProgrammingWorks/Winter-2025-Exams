@@ -1,21 +1,20 @@
 // Refactor following solution
 // Count types in an array
 
-//Step 2
-//Remove unnecessary expressions
-//Add dynamic type addition
+//Step 3
+//Improve naming
 
 'use strict';
 
-const countTypes = (s) => {
+const countTypes = (arr) => {
   let types = {
     number: 0,
     string: 0,
     boolean: 0,
   };
 
-  for (const i of s) {
-    const type = typeof i;
+  for (const item of arr) {
+    const type = typeof item;
 
     if (types[type]) {
       types[type]++;
