@@ -3,6 +3,10 @@
 
 'use strict';
 
-const count = (obj) => Object.values(obj).reduce((acc, current) => typeof current === "number" ? acc + current: acc, 0)
+const count = (obj) => {
+    const values = Object.values(obj)
+    return values.reduce((acc, current) =>{
+        return typeof current === "number" ? acc + current: acc, 0
+    })}
 
 module.exports = count;
