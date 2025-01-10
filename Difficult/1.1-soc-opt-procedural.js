@@ -12,36 +12,52 @@ const data = `city,population,area,density,country
   New York City,8537673,784,10892,United States
   Bangkok,8280925,1569,5279,Thailand`;
 
-if (data) {
-  const lines = data.split('\n');
+const formTable = (data) => {
+  const lines = data.split('\n').splice(1);
   const table = [];
-  const paddings = [10, 8, 8, 18, 6];
-  let max = 0;
-
-  lines.splice(0, 1);
-
   for (const line of lines) {
     const cells = line.split(',');
     table.push(cells);
   }
+  return table;
+};
 
+const getMax = (table, rowIndex) => {
+  let max = 0;
   for (const row of table) {
-    const density = parseInt(row[3]);
+    const density = parseInt(row[rowIndex]);
     if (density > max) max = density;
   }
+  return max;
+};
 
-  for (const row of table) {
-    const ratio = Math.round((row[3] * 100) / max);
+const addRatio = (table, max, rowIndex) => {
+  const tableWithRatio = [...table];
+  for (const row of tableWithRatio) {
+    const ratio = Math.round((row[rowIndex] * 100) / max);
     row.push(ratio.toString());
   }
+  return tableWithRatio;
+};
 
-  table.sort((r1, r2) => r2[5] - r1[5]);
+const sortTable = (table, index) =>
+  table.sort((r1, r2) => r2[index] - r1[index]);
 
+const logTable = (table, paddings) => {
   for (const row of table) {
-    let str = row[0].trim().padEnd(18);
-    for (let i = 1; i < row.length; i++) {
-      str += row[i].padStart(paddings[i - 1]);
+    let str = '';
+    for (let i = 0; i < row.length; i++) {
+      str += i === 0 ? row[0].trim().padEnd(18) : row[i].padStart(paddings[i]);
     }
     console.log(str);
   }
+};
+
+if (data) {
+  const paddings = [18, 10, 8, 8, 18, 6];
+  const table = formTable(data);
+  const max = getMax(table, 3);
+  const tableWithRatio = addRatio(table, max, 3);
+  const sortedTable = sortTable(tableWithRatio, 5);
+  logTable(sortedTable, paddings);
 }
