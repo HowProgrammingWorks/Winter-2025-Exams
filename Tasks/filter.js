@@ -2,9 +2,6 @@
 // Filter array by type name
 'use strict';
 
-const Filter = (array, type) => {
-    const newArray = array;
+const myFilter = (array, type) => array.filter((x) => typeof x === type);
 
-    return newArray.filter((x) => typeof x === type);
-};
-module.exports = Filter;
+module.exports = myFilter;
