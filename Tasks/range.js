@@ -1,17 +1,19 @@
 // Refactor following solution
 // Generate int array from given range
 
-_range = (...Range) => {
-  let [from, to] = Range;
-  if (to >= from) {
-    Range = new Array(to - from + 1);
-    for (let i = from; i <= to; i++) {
-      Range[i - from] = i;
-    }
-  } else {
+'use strict';
+
+const range = (from, to) => {
+  if (to < from) {
     return [];
   }
-  return Range;
+
+  const range = [];
+  for (let i = from; i <= to; i++) {
+    range.push(i);
+  }
+
+  return range;
 };
 
-module.exports = _range;
+module.exports = range;

@@ -1,16 +1,17 @@
 // Refactor following solution
 // Get day number
+'use strict';
 
-let D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const parseDay = (s) => {
+  const weekDay = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+  s = s.slice(0, 3);
+  const indexOfElement = weekDay.indexOf(s);
 
-_parse_day_ = (s) => {
-  let i;
-  for (i = 0; i < D.length; i++) {
-    if (s.startsWith(D[i].toLowerCase())) {
-      return i + 1;
-    }
+  if (indexOfElement !== -1) {
+    return indexOfElement + 1;
   }
+
   return -1;
 };
 
-module.exports = _parse_day_;
+module.exports = parseDay;
