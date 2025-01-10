@@ -33,19 +33,19 @@ const sortTableByDensityPercentage = (table, columnIndex) =>
     (currentRow, nextRow) => nextRow[columnIndex] - currentRow[columnIndex],
   );
 
+const formatRow = (row, columnWidths) =>
+  row
+    .map((cell, index) => {
+      const width = columnWidths[index];
+      return index === 0 ? cell.padEnd(width) : cell.padStart(width);
+    })
+    .join('');
+
 const displayTable = (table) => {
   const columnWidths = [18, 10, 8, 8, 18, 6];
 
-  const formatRow = (row) =>
-    row
-      .map((cell, index) => {
-        const width = columnWidths[index];
-        return index === 0 ? cell.padEnd(width) : cell.padStart(width);
-      })
-      .join('');
-
   for (const row of table) {
-    console.log(formatRow(row));
+    console.log(formatRow(row, columnWidths));
   }
 };
 
