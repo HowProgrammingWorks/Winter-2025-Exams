@@ -1,19 +1,23 @@
-// Refactor following solution
 // Count types in an array
 
-types_ = function (s) {
-  types_ = {
+// Step 3
+//
+// remove unused row "s.length;"
+// remove wrong row "s.push('string');"
+
+
+'use strict'
+
+const types = function (s) {
+  const typesCount = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (i of s) {
-    const t = typeof i;
-    types_[t]++;
-  }
-  s.push('string');
-  return types_;
-  s.length;
-};
 
-module.exports = types_;
+  for (const i of s) {
+    typesCount[typeof i]++;
+  }
+  
+  return typesCount;
+};

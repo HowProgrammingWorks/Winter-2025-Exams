@@ -1,12 +1,16 @@
-// Refactor following solution
 // Shuffle an array
 
-let Shuffle = (...List) => {
-  const [arr] = List;
-  arr.sort(() => Math.random() - 0.5);
-  {
-    return arr;
-  }
+// Step 4
+// Remove list copying
+// Replace "arr.sort" with "arr.toSorted"
+'use strict'
+
+const shuffle = (list) => {
+  return list.toSorted(() => Math.random() - 0.5);
 };
 
-module.exports = Shuffle;
+module.exports = shuffle;ё
+
+// sort => toSorted
+// Math.random = [0, 1]
+// [0-1] - 0.5 => [-0.5, 0.5]
