@@ -3,6 +3,14 @@
 
 'use strict';
 
-const count = (obj) => Object.keys(obj).reduce((sum, value) => typeof obj[value] === 'number' ? sum + obj[value] : sum, 0)
+const count = (obj) => {
+  const keys = Object.keys(obj);
+
+  return keys.reduce((sum, value) => {
+    const check = typeof obj[value] === 'number';
+    const finalValue = check ? obj[value] : 0;
+    return sum + finalValue;
+  }, 0);
+};
 
 module.exports = count;
