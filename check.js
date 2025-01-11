@@ -13,13 +13,16 @@ const logger = (color) => (s) => {
 logger.error = logger(COLOR_ERROR);
 logger.info = logger(COLOR_INFO);
 
-const serialize = (args) => [...args].map((x) => {
-  const type = typeof x;
-  if (type === 'object') return JSON.stringify(x);
-  if (type === 'string') return `'${x}'`;
-  if (type === 'number') return x.toString();
-  return x.toString();
-}).join(', ');
+const serialize = (args) =>
+  [...args]
+    .map((x) => {
+      const type = typeof x;
+      if (type === 'object') return JSON.stringify(x);
+      if (type === 'string') return `'${x}'`;
+      if (type === 'number') return x.toString();
+      return x.toString();
+    })
+    .join(', ');
 
 module.exports = (cases) => async (name) => {
   const fn = require(`./Tasks/${name}.js`);

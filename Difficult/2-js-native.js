@@ -14,7 +14,6 @@ class PurchaseIterator {
     this.currentIndex = 0;
   }
 
-  // eslint-disable-next-line consistent-return
   next() {
     if (this.currentIndex < this.names.length) {
       const name = this.names[this.currentIndex];
