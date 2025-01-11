@@ -5,10 +5,9 @@
 
 const drop = (dict, ...toDelete) => {
   const res = {};
-  for (const key in dict) {
+  for (const key of Object.keys(dict)) {
     if (!toDelete.includes(key)) {
-      const value = dict[key];
-      res[key] = value;
+      res[key] = dict[key];
     }
   }
 
