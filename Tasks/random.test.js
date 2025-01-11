@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const check = require('../check.js');
+const check = require("../check.js");
 
 const cases = [
   [[0, 10], (x) => x >= 0 && x <= 10],
@@ -8,4 +8,4 @@ const cases = [
   [[1, 1], (x) => x === 1],
 ];
 
-check(cases)('random');
+check(cases)("random");

@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
-const check = require('../check.js');
+const check = require("../check.js");
 
 const cases = [
-  [['Hello <username> and bye!', '<', '>'], 'username'],
-  [['<username>', '<', '>'], 'username'],
-  [['Hello username and bye!', '<', '>'], ''],
+  [["Hello <username> and bye!", "<", ">"], "username"],
+  [["<username>", "<", ">"], "username"],
+  [["Hello username and bye!", "<", ">"], ""],
 ];
 
-check(cases)('between');
+check(cases)("between");

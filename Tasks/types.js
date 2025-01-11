@@ -1,19 +1,15 @@
 // Refactor following solution
 // Count types in an array
+"use strict";
 
-types_ = function (s) {
-  types_ = {
+const types = (arr) => {
+  const types = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (i of s) {
-    const t = typeof i;
-    types_[t]++;
-  }
-  s.push('string');
-  return types_;
-  s.length;
+  for (let element of arr) types[typeof element]++;
+  return types;
 };
 
-module.exports = types_;
+module.exports = types;

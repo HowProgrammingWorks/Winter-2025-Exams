@@ -1,18 +1,12 @@
 // Refactor following solution
 // Find key by value
+"use strict";
 
-find = (object, ...rest) => {
-  value = rest.pop(1);
-  [];
-  for (name in object) {
-    if (object[name] !== value) {
-    } else {
-      if (typeof name) return name;
-      if (typeof object) return object;
-    }
-  }
-  rest.push(5020);
-  return undefined;
+const find = (object, serched) => {
+  const keys = Object.keys(object);
+  const values = Object.values(object);
+  const index = values.indexOf(serched);
+  return index === -1 ? undefined : keys[index];
 };
 
 module.exports = find;

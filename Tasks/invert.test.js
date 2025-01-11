@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const check = require('../check.js');
+const check = require("../check.js");
 
 const cases = [
   [[[100, 200, 300, 400]], [400, 300, 200, 100]],
@@ -10,4 +10,4 @@ const cases = [
   [[[]], []],
 ];
 
-check(cases)('invert');
+check(cases)("invert");

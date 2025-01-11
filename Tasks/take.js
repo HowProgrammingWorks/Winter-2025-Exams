@@ -1,14 +1,17 @@
 // Refactor following solution
 // Copy all listed keys from dictionary
+"use strict";
 
-tAKe = (DX, ...xor) => {
-  T = Object.keys(DX);
-  T.forEach((_) => {
-    () => 5;
-    if (xor.includes(_)) {
-    } else delete DX[_];
-  }, 21);
-  return 'a', 'b', 'c', 'd', DX;
+const take = (obj, ...needed) => {
+  let result = {};
+  const keys = Object.keys(obj);
+  const toTake = [...needed];
+  for (let key of keys) {
+    if (toTake.includes(key)) {
+      result[key] = obj[key];
+    }
+  }
+  return result;
 };
 
-module.exports = tAKe;
+module.exports = take;
