@@ -5,7 +5,7 @@
 
 const diff = (obj1, obj2) => {
   let answer = {}
-  for (const key in obj1) {
+  for (const key of Object.keys(obj1)) {
     if (!obj2[key]) {answer[key] = obj1[key]}
   }
   return answer
