@@ -2,18 +2,16 @@
 // Compare two dictionaries
 "use strict";
 
-const compare = (first_values, second_values) => {
-  let result = true;
-  const a = Object.keys(first_values);
-  const b = Object.keys(second_values);
-  if(a.join('-') !== b.join('-')) result = false;
+const compare = (firstValues, secondValues) => {
+  const a = Object.keys(firstValues);
+  const b = Object.keys(secondValues);
+  if (a.join("-") !== b.join("-")) return false;
   for (let key of a) {
-    if (first_values[key] !== second_values[key]){
-      result = false;
-      break;
-    } 
+    if (firstValues[key] !== secondValues[key]) {
+      return false;
+    }
   }
-  return result;
+  return true;
 };
 
 module.exports = compare;

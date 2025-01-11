@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Implement following task
 // Run `func(n)`; `n`-times with `interval` and pass `n` to `func`

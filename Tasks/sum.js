@@ -4,9 +4,11 @@
 
 const sum = (arr) => {
   let sum = 0;
-  for(let elemet of arr)
-    if(typeof elemet === 'number')
+  for (let elemet of arr) {
+    if (typeof elemet === "number") {
       sum += elemet;
+    }
+  }
   return sum;
 };
 

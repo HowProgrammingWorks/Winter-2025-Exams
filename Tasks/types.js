@@ -8,8 +8,7 @@ const types = (arr) => {
     string: 0,
     boolean: 0,
   };
-  for (let element of arr) 
-    ++types[typeof element];
+  for (let element of arr) types[typeof element]++;
   return types;
 };
 

@@ -3,8 +3,8 @@
 "use strict";
 
 const replace = (str, substr, newstr) => {
-  let res = '';
-  if (str === '' || substr === '') {
+  let res = "";
+  if (str === "" || substr === "") {
     return str;
   } else {
     let src = str;

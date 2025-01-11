@@ -1,15 +1,57 @@
-'use strict';
+"use strict";
 
-const check = require('../check.js');
+const check = require("../check.js");
 
 const cases = [
-  [[{ a: 1, c: 'hello' }, { a: 1, c: 'hello' }], true],
-  [[{ a: 1, c: 'hello' }, { a: 2, c: 'hello' }], false],
-  [[{ a: 2, c: 'hello' }, { a: 1, c: 'hello' }], false],
-  [[{ a: 1, c: 'helo' }, { a: 1, c: 'hello' }], false],
-  [[{ a: 1, c: 'hello' }, { a: 1, c: 'helo' }], false],
-  [[{ c: 'hello', a: 1 }, { a: 1, c: 'hello' }], false],
-  [[{ a: 1, c: 'hello' }, { c: 'hello', a: 1 }], false],
+  [
+    [
+      { a: 1, c: "hello" },
+      { a: 1, c: "hello" },
+    ],
+    true,
+  ],
+  [
+    [
+      { a: 1, c: "hello" },
+      { a: 2, c: "hello" },
+    ],
+    false,
+  ],
+  [
+    [
+      { a: 2, c: "hello" },
+      { a: 1, c: "hello" },
+    ],
+    false,
+  ],
+  [
+    [
+      { a: 1, c: "helo" },
+      { a: 1, c: "hello" },
+    ],
+    false,
+  ],
+  [
+    [
+      { a: 1, c: "hello" },
+      { a: 1, c: "helo" },
+    ],
+    false,
+  ],
+  [
+    [
+      { c: "hello", a: 1 },
+      { a: 1, c: "hello" },
+    ],
+    false,
+  ],
+  [
+    [
+      { a: 1, c: "hello" },
+      { c: "hello", a: 1 },
+    ],
+    false,
+  ],
 ];
 
-check(cases)('compare');
+check(cases)("compare");

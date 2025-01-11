@@ -3,8 +3,11 @@
 "use strict";
 
 const incNumbers = (obj) => {
-  for(let key in obj)
-    if(typeof obj[key] == "number") ++obj[key];
+  for (let key in obj) {
+    if (typeof obj[key] === "number") {
+      obj[key]++;
+    }
+  }
   return obj;
 };
 

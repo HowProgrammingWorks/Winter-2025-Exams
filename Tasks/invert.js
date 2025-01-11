@@ -4,8 +4,7 @@
 
 const invert = (arr) => {
   let result = [];
-  for(let element of arr)
-    result.unshift(element);
+  for (let element of arr) result.unshift(element);
   arr = result;
   return arr; // .reverse() has data mutability
 };

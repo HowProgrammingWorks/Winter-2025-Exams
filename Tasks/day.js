@@ -3,17 +3,18 @@
 "use strict";
 
 const WEEK = [
-  'sunday', 
-  'monday', 
-  'tuesday', 
-  'wednesday', 
-  'thursday', 
-  'friday', 
-  'saturday'];
+  "sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday",
+];
 
 const parseDay = (s) => {
-  let i = WEEK.indexOf(s);
-  return i === -1 ? -1 : ++i;
+  const i = WEEK.indexOf(s);
+  return i + 1 || -1;
 };
 
 module.exports = parseDay;

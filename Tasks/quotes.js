@@ -3,17 +3,14 @@
 "use strict";
 
 const quotes = (s) => {
-  let res = '';
+  let res = "";
   let open = false;
   for (let c of s) {
     if (c === '"') {
-      if (!open)
-        res += '«';
-      else 
-        res += '»';
+      if (!open) res += "«";
+      else res += "»";
       open = !open;
-    } 
-    else res += c;
+    } else res += c;
   }
   return res;
 };

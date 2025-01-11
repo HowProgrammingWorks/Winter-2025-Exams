@@ -2,9 +2,9 @@
 // Generate int array from given range
 "use strict";
 
-const range = (...Range) => {
+const range = (...range) => {
   let result = [];
-  let [from, to] = Range;
+  let [from, to] = range;
   if (to >= from) {
     for (let i = from; i <= to; i++) {
       result[i - from] = i;

@@ -5,10 +5,9 @@
 const skip = (data, ...remove) => {
   let result = [];
   const toRemove = [...remove];
-  if(toRemove.length === 0) return data;
-  for(let element of data)
-    if(!toRemove.includes(element))
-      result.push(element);
+  if (toRemove.length === 0) return data;
+  for (let element of data)
+    if (!toRemove.includes(element)) result.push(element);
   return result;
 };
 

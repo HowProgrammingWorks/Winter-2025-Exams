@@ -7,7 +7,7 @@ const getValueBetween = (str, p, s) => {
   const start = str.indexOf(p);
   const end = str.indexOf(s);
   if (start !== -1 && end !== -1) {
-    result = str.substring(start+1, end);
+    result = str.substring(start + 1, end);
   }
   return result;
 };
