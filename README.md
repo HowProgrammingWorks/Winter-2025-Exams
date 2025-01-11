@@ -1,7 +1,7 @@
 # Winter 2025 Exams for SEF1
 
 ## Deadlines and exams schedule
-  
+
 - IM-41 Deadline: 2025-01-15 12:00, Exams: 2025-01-16 10:00-18:00
 - IM-42 Deadline: 2025-01-16 12:00, Exams: 2025-01-17 10:00-18:00
 - IM-43 Deadline: 2025-01-08 12:00, Exams: 2025-01-09 10:00-18:00

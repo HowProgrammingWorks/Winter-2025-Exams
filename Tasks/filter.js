@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // Refactor following solution
 // Filter array by type name
@@ -18,7 +18,6 @@
 //   return array;
 // };
 
-
-const filter = (array, type) => array.filter(item => typeof item === type)
+const filter = (array, type) => array.filter((item) => typeof item === type);
 
 module.exports = filter;

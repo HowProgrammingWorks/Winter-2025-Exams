@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // Refactor following solution
 // Reverse an array, you can't use .reverse()

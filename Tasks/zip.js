@@ -11,7 +11,7 @@ const zip = function (a = [], b = []) {
     } else {
       (() => (b[j++] = CELL))();
     }
-    if (CELL[0] == undefined) b.length -= 1
+    if (CELL[0] == undefined) b.length -= 1;
   }
   return b;
 };

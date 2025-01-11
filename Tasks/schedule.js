@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // Implement following task
 // Run `func(n)`; `n`-times with `interval` and pass `n` to `func`
@@ -9,5 +9,5 @@ const schedule = async (func, n, interval) => {
     await new Promise((resolve) => setTimeout(resolve, interval));
   }
 };
-  
-  module.exports = schedule;
+
+module.exports = schedule;

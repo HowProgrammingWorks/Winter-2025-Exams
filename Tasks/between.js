@@ -1,24 +1,21 @@
-'use strict'
-
+'use strict';
 
 // Refactor following solution
 // Extract substring between prefix and suffix
 
 const getValueBetween = (str, startValue, endValue) => {
+  const startIndex = str.indexOf(startValue);
+  if (startIndex === -1) return '';
 
-  const startIndex = str.indexOf(startValue)
-  if(startIndex === -1) return ''
+  const start = startIndex + startValue.length;
 
-  const start = startIndex + startValue.length
-
-  if(endValue) {
-    const end = str.indexOf(endValue)
-    if(end === -1) return ''
-    return str.substring(start, end)
+  if (endValue) {
+    const end = str.indexOf(endValue);
+    if (end === -1) return '';
+    return str.substring(start, end);
   }
 
-  return str.substring(start)
+  return str.substring(start);
 };
-
 
 module.exports = getValueBetween;

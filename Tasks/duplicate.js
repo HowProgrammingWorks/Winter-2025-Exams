@@ -1,16 +1,16 @@
-'use strict'
+'use strict';
 
 // Refactor following solution
 // Return an array without duplicates
 
 const duplicate = (data, lengthOfResult) => {
-  let result = []
+  let result = [];
 
-  for(let i = 0; i < lengthOfResult; i++) {
-    result.push(data)
+  for (let i = 0; i < lengthOfResult; i++) {
+    result.push(data);
   }
 
-  return result
+  return result;
 };
 
 module.exports = duplicate;

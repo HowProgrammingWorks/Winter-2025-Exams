@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // Refactor following solution
 // Return an array without duplicates
@@ -13,7 +13,7 @@
 const distinct = (array) => {
   const collection = {};
 
-  return array.filter(item => {
+  return array.filter((item) => {
     if (collection[item]) {
       return false;
     }
@@ -21,6 +21,5 @@ const distinct = (array) => {
     return true;
   });
 };
-
 
 module.exports = distinct;
