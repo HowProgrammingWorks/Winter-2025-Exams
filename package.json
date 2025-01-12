@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/HowProgrammingWorks/Index",
   "scripts": {
-    "test": "node --test",
+    "test": "node --test Tasks/*.test.js",
     "fmt": "npx prettier ./Tasks --write --tab-width 2",
     "lint": "npx eslint ./Tasks"
   },
