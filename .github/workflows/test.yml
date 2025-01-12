@@ -41,4 +41,4 @@ jobs:
         working-directory: Tasks
         run: npm run test
       - name: Run ESLint
-        run: npx run lint
+        run: npm run lint
