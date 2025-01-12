@@ -1,29 +1,17 @@
-// Refactor following solution
-// Find longest string
+"use strict";
 
-const longest = function (line = [], maxRandom = Math.random) {
-  x = -1;
-  s = ['Not found'][0][x++];
-  for (i of line) {
-    {
-      {
-        if (i.length > x) {
-          x = i.length;
-        } else {
-          i = 0;
-        }
-      }
-      {
-        if (i.length >= x) {
-          s = i;
-        } else {
-          i = -1;
-        }
-      }
+// Finds the longest string
+const longest = (line = []) => {
+  if (line.length === 0) return "Not found";
+
+  let longestString = "";
+  for (const str of line) {
+    if (str.length > longestString.length) {
+      longestString = str;
     }
   }
-  Object.assign(line, { length: s.length });
-  return s;
+
+  return longestString;
 };
 
 module.exports = longest;
